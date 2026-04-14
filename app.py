@@ -81,3 +81,27 @@ if st.button("🔮 Maç Sonucunu Tahmin Et", use_container_width=True):
             st.balloons() # Ekranda balonlar uçurur :)
         else:
             st.error(f"💀 **Tahmin: Team 2 Kazanır!** (Team 1'in Kaybetme İhtimali: %{probability[0]*100:.1f})")
+        
+        # --- 6. AŞAMA: NEDEN BU SONUÇ ÇIKTI? (GRAFİK) ---
+        st.markdown("---")
+        st.subheader("🧠 Model Bu Kararı Nasıl Verdi?")
+        
+        # Ekranı çok kaplamaması için açılır/kapanır bir kutu (expander) içine koyuyoruz
+        with st.expander("Arka Plandaki Matematiksel Ağırlıkları İncele"):
+            st.info("Aşağıdaki grafik, modelin eğitildiği yüzlerce maça dayanarak, galibiyete en çok etki eden 15 faktörü (Ajanlar ve Harita Sırası) gösterir.")
+            
+            # Önem derecelerini modelden çekip Pandas tablosu yapıyoruz
+            importances = model.feature_importances_
+            feature_imp_df = pd.DataFrame({
+                'Özellik': model_columns,
+                'Etki Puanı': importances
+            })
+            
+            # En yüksek etkiye sahip ilk 15 özelliği bulup sıralıyoruz
+            top_features = feature_imp_df.sort_values(by='Etki Puanı', ascending=False).head(15)
+            
+            # Grafikte x ekseninde isimlerin görünmesi için indeksi ayarlıyoruz
+            top_features = top_features.set_index('Özellik')
+            
+            # Streamlit'in kendi yerleşik bar grafiği ile çizdiriyoruz
+            st.bar_chart(top_features)
