@@ -11,7 +11,7 @@ https://github.com/SantoPanto/Valolyzer
 
 ## Yöntem
 Makine öğrenmesi algoritmaları, özellikle karmaşık oyun değişkenlerini modellemek için e-spor veri analitiğinde sıklıkla kullanılmaktadır (Silva & Silva, 2020). Projemiz aşağıdaki adımlarla çalışmaktadır:
-1. **Veri Toplama:** Profesyonel e-spor maçlarına ait harita, takım kompozisyonu ve maç sonuçları derlenir.
+1. **Veri Toplama:** Profesyonel e-spor maçlarına ait harita seçimi, harita sırası, takım kompozisyonu ve maç sonuçları derlenir.
 2. **Ön İşleme (Preprocessing):** Takım ve ajan bilgileri gibi metin tabanlı kategorik veriler, sayısal "One-Hot Encoding" formatına dönüştürülür.
 3. **Model Eğitimi:** Hazırlanan veriler Random Forest algoritması kullanılarak eğitilir ve model dışa aktarılır.
 4. **Kullanıcı Etkileşimi:** Kullanıcı arayüzünden seçilen maç verileri, eğitimde kullanılan sütun şablonuna çevrilip modele beslenir.
@@ -22,15 +22,8 @@ Makine öğrenmesi algoritmaları, özellikle karmaşık oyun değişkenlerini m
 
 [Buraya Akış Şeması Görseli Gelecek - Alt kısımdaki Mermaid diyagramı görsel olarak eklenebilir]
 
-```mermaid
-graph TD;
-    A[Girdi: Kullanıcıdan Harita ve 10 Adet Ajan Seçimi Alınır] --> B(İşlem: Seçimler İçi Sıfır Dolu Şablon Üzerinde 1 Yapılır);
-    B --> C(Hesaplama: Hazırlanan Veri Eğitilmiş Makine Öğrenmesi Modeline Verilir);
-    C --> D[Çıktı: Kazanan Takım ve Olasılık Yüzdesi Gösterilir];
-```
-
 ## Uygulama Tasarımı
-- **Kullanıcı ne girer?** Kullanıcı, web arayüzünden maçın harita sırasını (1., 2. veya 3. maç) ve her iki takım için tam olarak beşer adet farklı ajan (karakter) seçer.
+- **Kullanıcı ne girer?** Kullanıcı, web arayüzünden oynanacak haritayı (örn. Ascent, Bind vs.), maçın harita sırasını (1., 2. veya 3. maç) ve her iki takım için tam olarak beşer adet farklı ajan (karakter) seçer.
 - **Program ne hesaplar?** Program, seçilen karakter kompozisyonlarını ve harita dinamiklerini matematiksel değerlere dönüştürüp, geçmiş binlerce profesyonel maç verisi ışığında takımların birbirine karşı olan zayıflık ve üstünlüklerini olasılık formatında (örn: %65 kazanma) hesaplar.
 - **Sonuç nasıl görünür?** Sonuç, ekranda net bir kazanan metni (örneğin "Tahmin: Team 1 Kazanır") ve olasılık yüzdesi şeklinde görünür. Ayrıca kararın arkasındaki nedeni açıklamak üzere, hangi ajanın veya harita sırasının galibiyette en büyük rolü oynadığını gösteren bir "Feature Importance" (Etki Ağırlığı) çubuk grafiği çizilir.
 
@@ -56,7 +49,7 @@ Silva, J., & Silva, T. (2020). Machine Learning in Esports: A survey and future 
 *(Öneri: Yukarıda yazılı raporda verilen Mermaid kodunu veya harici olarak çizilmiş bir diyagramı buraya resim formatında yerleştirebilirsiniz.)*
 
 ### 2. Algoritma Açıklaması
-Sistem, kullanıcının web arayüzünden seçtiği "Harita Sırası", "Team 1 Ajanları" ve "Team 2 Ajanları" verilerini girdi olarak alır. Bu girdiler, backend tarafında `input_data = {col: 0 for col in model_columns}` fonksiyonu yardımıyla makine öğrenmesinin algılayabileceği matematiksel sütunlara (Pandas DataFrame) dönüştürülür. İşlenen veriler `predict_proba()` fonksiyonuna iletilerek Random Forest karar ağaçlarından çıkan sonuçlar yüzdelik başarı oranına çevrilir ve arayüzde bir grafik ile çıktı olarak sunulur.
+Sistem, kullanıcının web arayüzünden seçtiği "Harita Tercihi", "Harita Sırası", "Team 1 Ajanları" ve "Team 2 Ajanları" verilerini girdi olarak alır. Bu girdiler, backend tarafında `input_data = {col: 0 for col in model_columns}` fonksiyonu yardımıyla makine öğrenmesinin algılayabileceği matematiksel sütunlara (Pandas DataFrame) dönüştürülür. İşlenen veriler `predict_proba()` fonksiyonuna iletilerek Random Forest karar ağaçlarından çıkan sonuçlar yüzdelik başarı oranına çevrilir ve arayüzde bir grafik ile çıktı olarak sunulur.
 
 ### 3. Çalışan Prototip Kod
 [Buraya uygulamanın arayüzünün veya IDE'de kodların çalıştığına dair bir ekran görüntüsü/gif eklenecek]
@@ -65,6 +58,7 @@ Sistem, kullanıcının web arayüzünden seçtiği "Harita Sırası", "Team 1 A
 ### 4. Örnek Senaryo
 [Buraya, Fnatic ve LOUD kompozisyonu gibi baştan sona girilmiş ve tahmin sonucu alınmış bir senaryonun ekran görüntüsü eklenecek]
 **Test Edilen Senaryo:**
+- **Harita Tercihi:** Ascent
 - **Harita Sırası:** 1
 - **Team 1:** Jett, Omen, Sova, Killjoy, KAY/O
 - **Team 2:** Raze, Astra, Fade, Cypher, Breach
