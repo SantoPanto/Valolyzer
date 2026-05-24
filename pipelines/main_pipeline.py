@@ -13,6 +13,8 @@ from scrapers.base import ScraperPipeline, BaseScraper
 from parsers.data_parser import DataPipeline
 from utils.logging import get_logger
 from utils.csv_handler import CSVManager
+from utils.validators import BulkValidator
+from utils.debug import DebugManager
 
 logger = get_logger(__name__)
 
@@ -122,6 +124,13 @@ class ValolyzerPipeline:
             self.raw_data["rounds"].extend(scraper.rounds)
 
         logger.info(f"Aggregated raw data: {self._get_data_stats(self.raw_data)}")
+        
+        # Validate raw data
+        validation_results = BulkValidator.validate_all(self.raw_data)
+        logger.info(f"Raw data validation: {validation_results}")
+        
+        # Save debug info
+        DebugManager.save_raw_data_summary(self.raw_data)
 
     def _parse_data(self):
         """Parse and normalize raw data."""
@@ -150,18 +159,24 @@ class ValolyzerPipeline:
         stats = {}
 
         exports = {
-            "matches.csv": self.processed_data.get("matches", []),
-            "maps.csv": self.processed_data.get("maps", []),
-            "compositions.csv": self.processed_data.get("compositions", []),
-            "player_stats.csv": self.processed_data.get("player_stats", []),
-            "rounds.csv": self.processed_data.get("rounds", []),
+            "matches.csv": (self.processed_data.get("matches", []), ["match_id"]),
+            "maps.csv": (self.processed_data.get("maps", []), ["map_id"]),
+            "compositions.csv": (self.processed_data.get("compositions", []), ["map_id", "team"]),
+            "player_stats.csv": (self.processed_data.get("player_stats", []), ["map_id", "player", "team"]),
+            "rounds.csv": (self.processed_data.get("rounds", []), ["round_id"]),
         }
 
-        for filename, data in exports.items():
+        for filename, (data, dedup_keys) in exports.items():
             if data:
                 output_path = self.data_dir / "processed" / filename
-                rows = CSVManager.list_dicts_to_csv(data, output_path, append=True)
+                rows = CSVManager.list_dicts_to_csv(
+                    data, 
+                    output_path, 
+                    deduplicate_on=dedup_keys,
+                    append=True
+                )
                 stats[filename] = rows
+                logger.debug(f"Exported {filename}: {rows} rows (deduplicated on {dedup_keys})")
 
         return stats
 

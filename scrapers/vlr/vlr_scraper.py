@@ -1,8 +1,3 @@
-"""
-VLR.gg scraper - Primary source for professional Valorant match data.
-Scrapes events, matches, maps, and player statistics.
-"""
-
 import re
 import asyncio
 from typing import List, Dict, Any, Optional
@@ -14,7 +9,6 @@ from utils.normalizers import Normalizers
 from utils.logging import get_logger
 
 logger = get_logger(__name__)
-
 
 class VLRScraper(BaseScraper):
     """Scraper for vlr.gg - Primary Valorant esports data source."""
@@ -28,18 +22,11 @@ class VLRScraper(BaseScraper):
         self.events: List[Dict[str, Any]] = []
 
     async def scrape(self) -> Dict[str, List[Dict[str, Any]]]:
-        """
-        Main scraping method.
-
-        Returns:
-            Dictionary with all scraped data
-        """
+        """Main scraping method."""
         try:
-            # Scrape events first
             await self._scrape_events()
             logger.info(f"Found {len(self.events)} events")
 
-            # For each event, scrape matches
             for event in self.events[:5]:  # Limit to recent 5 events for testing
                 await self._scrape_event_matches(event)
 
@@ -50,7 +37,6 @@ class VLRScraper(BaseScraper):
                 "player_stats": self.player_stats,
                 "rounds": self.rounds,
             }
-
         except Exception as e:
             logger.error(f"Error in VLR scraper: {e}", exc_info=True)
             raise
@@ -60,7 +46,6 @@ class VLRScraper(BaseScraper):
         try:
             client = await self.http_client
             html = await client.get(self.EVENTS_URL)
-
             if not html:
                 logger.warning("Failed to fetch events page")
                 return
@@ -80,9 +65,6 @@ class VLRScraper(BaseScraper):
                         "date": event_date.get_text(strip=True) if event_date else None,
                         "source_id": event_url.split("/")[-1],
                     })
-
-            logger.info(f"Scraped {len(self.events)} events")
-
         except Exception as e:
             logger.error(f"Error scraping events: {e}")
 
@@ -91,24 +73,18 @@ class VLRScraper(BaseScraper):
         try:
             client = await self.http_client
             html = await client.get(event["url"])
-
             if not html:
                 logger.warning(f"Failed to fetch event: {event['name']}")
                 return
 
             soup = BeautifulSoup(html, "html.parser")
-            match_items = soup.find_all("a", class_="match-item")
+            # Güncel URL Regex Yakalayıcısı
+            match_items = soup.find_all("a", href=re.compile(r"^\/\d+\/"))
 
             for match_item in match_items:
                 match_url = match_item.get("href")
                 if match_url:
-                    await self._scrape_match_detail(
-                        urljoin(self.BASE_URL, match_url),
-                        event
-                    )
-
-            logger.info(f"Scraped matches for event: {event['name']}")
-
+                    await self._scrape_match_detail(urljoin(self.BASE_URL, match_url), event)
         except Exception as e:
             logger.error(f"Error scraping event {event['name']}: {e}")
 
@@ -117,87 +93,204 @@ class VLRScraper(BaseScraper):
         try:
             client = await self.http_client
             html = await client.get(match_url)
-
-            if not html:
-                return
+            if not html: return
 
             soup = BeautifulSoup(html, "html.parser")
 
-            # Extract match information
             match_data = await self.parse_match_page(soup, event)
             if match_data:
                 self.matches.append(match_data)
 
-            # Extract map information
-            map_items = soup.find_all("div", class_="map-results")
+            map_items = soup.find_all("div", class_="vm-stats-game")
+            
             for idx, map_item in enumerate(map_items):
-                map_data = await self.parse_map_page(map_item, match_data, idx + 1)
-                if map_data:
-                    self.maps.append(map_data)
+                game_id = map_item.get("data-game-id")
+                if game_id == "all": 
+                    continue
 
-                # Extract player stats for map
+                # Extract map name from header
+                map_name = self._extract_map_name(map_item) or f"unknown_map_{idx}"
+                
+                # Extract team scores for this map
+                team_a_score, team_b_score = self._extract_map_scores(map_item)
+
+                map_data = {
+                    "map_id": f"{match_data['match_id']}_{idx}", 
+                    "match_id": match_data["match_id"],
+                    "map_name": map_name,
+                    "map_order": idx,
+                    "team_a_score": team_a_score,
+                    "team_b_score": team_b_score,
+                    "source": "vlr"
+                }
+                self.maps.append(map_data)
+                logger.debug(f"Extracted map: {map_name} ({team_a_score}-{team_b_score})")
+
+                # Oyuncu istatistiklerini çek
                 player_stats = await self.parse_player_stats(map_item, map_data)
                 self.player_stats.extend(player_stats)
-
-                # Extract compositions for map
-                comps = await self.parse_compositions(map_item, map_data)
-                self.compositions.extend(comps)
+                
+                # Ajan kompozisyonlarını kurtar (assume tables are ordered: team_a, then team_b)
+                if match_data and player_stats and len(player_stats) >= 10:
+                    # Split player stats by assuming first 5 are team_a, next 5+ are team_b
+                    # This is a fallback when team info isn't reliably extracted
+                    team_a_stats = [p for p in player_stats if p.get("team") == "team_a"]
+                    team_b_stats = [p for p in player_stats if p.get("team") == "team_b"]
+                    
+                    # If team filtering didn't work, fall back to positional split
+                    if not team_a_stats and not team_b_stats:
+                        team_a_stats = player_stats[:5]
+                        team_b_stats = player_stats[5:10]
+                    
+                    # Extract agents from team_a
+                    if len(team_a_stats) >= 5:
+                        agents_a = [p.get("agent") for p in team_a_stats[:5] if p.get("agent")]
+                        if len(agents_a) == 5:
+                            self.compositions.append({
+                                "map_id": map_data["map_id"], 
+                                "team": match_data["team_a"], 
+                                "agents": agents_a,
+                                "agent_1": agents_a[0], 
+                                "agent_2": agents_a[1], 
+                                "agent_3": agents_a[2], 
+                                "agent_4": agents_a[3], 
+                                "agent_5": agents_a[4], 
+                                "source": "vlr"
+                            })
+                            logger.debug(f"Extracted composition for {match_data['team_a']}: {agents_a}")
+                    
+                    # Extract agents from team_b
+                    if len(team_b_stats) >= 5:
+                        agents_b = [p.get("agent") for p in team_b_stats[:5] if p.get("agent")]
+                        if len(agents_b) == 5:
+                            self.compositions.append({
+                                "map_id": map_data["map_id"], 
+                                "team": match_data["team_b"], 
+                                "agents": agents_b,
+                                "agent_1": agents_b[0], 
+                                "agent_2": agents_b[1], 
+                                "agent_3": agents_b[2], 
+                                "agent_4": agents_b[3], 
+                                "agent_5": agents_b[4], 
+                                "source": "vlr"
+                            })
+                            logger.debug(f"Extracted composition for {match_data['team_b']}: {agents_b}")
 
         except Exception as e:
             logger.error(f"Error scraping match detail: {e}")
 
+    def _extract_map_name(self, map_item: BeautifulSoup) -> Optional[str]:
+        """Extract actual map name from map_item HTML."""
+        try:
+            # Try multiple selectors for map name (defensive parsing)
+            selectors = [
+                ("div", {"class": "map-name"}),
+                ("span", {"class": "map-name"}),
+                ("div", {"class": "vm-map-name"}),
+                ("div", {"class": "stats-header"}),
+            ]
+            
+            for tag, attrs in selectors:
+                element = map_item.find(tag, attrs)
+                if element:
+                    text = element.get_text(strip=True)
+                    if text and not text.startswith("UNKNOWN"):
+                        return text
+            
+            # Fallback: extract from any heading within map_item
+            heading = map_item.find(re.compile("^h[1-6]$"))
+            if heading:
+                return heading.get_text(strip=True)
+            
+            # Final fallback: check for map name in score row
+            score_row = map_item.find("div", class_="map-score-row")
+            if score_row:
+                for text_node in score_row.find_all(string=True):
+                    text = text_node.strip()
+                    if text in Normalizers.MAPS:
+                        return text
+            
+            return None
+        except Exception as e:
+            logger.debug(f"Error extracting map name: {e}")
+            return None
+
+    def _extract_map_scores(self, map_item: BeautifulSoup) -> tuple:
+        """Extract team scores for a specific map."""
+        try:
+            team_a_score = 0
+            team_b_score = 0
+            
+            # Look for score display in map header
+            score_container = map_item.find(re.compile("^div$"), class_=re.compile("score|result"))
+            if score_container:
+                scores_text = score_container.get_text(strip=True)
+                # Try to extract X-Y pattern
+                match = re.search(r"(\d+)\s*[-–]\s*(\d+)", scores_text)
+                if match:
+                    team_a_score = int(match.group(1))
+                    team_b_score = int(match.group(2))
+                    return team_a_score, team_b_score
+            
+            # Alternative: look in table header rows
+            tables = map_item.find_all("table")
+            for table in tables:
+                # Check for score row in table
+                score_cells = table.find_all("td", class_=re.compile("score|result"))
+                if len(score_cells) >= 2:
+                    try:
+                        team_a_score = int(''.join(filter(str.isdigit, score_cells[0].get_text())))
+                        team_b_score = int(''.join(filter(str.isdigit, score_cells[1].get_text())))
+                        return team_a_score, team_b_score
+                    except (ValueError, IndexError):
+                        continue
+            
+            logger.debug(f"Could not extract scores, using defaults: {team_a_score}-{team_b_score}")
+            return team_a_score, team_b_score
+        except Exception as e:
+            logger.debug(f"Error extracting map scores: {e}")
+            return 0, 0
+
+    # --- ABSTRACT CLASS YER TUTUCULARI ---
     async def parse_match(self, match_data: Dict[str, Any]) -> Dict[str, Any]:
         """Parse raw match data."""
-        # This is called when processing stored data
         return match_data
 
     async def parse_map(self, map_data: Dict[str, Any]) -> Dict[str, Any]:
         """Parse raw map data."""
         return map_data
 
-    async def parse_match_page(self, soup: BeautifulSoup, 
-                               event: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """Parse match page to extract match-level data."""
+    # --- GÜNCELLENMİŞ DOM PARSER'LAR ---
+    async def parse_match_page(self, soup: BeautifulSoup, event: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Parse match page to extract match-level data with current VLR classes."""
         try:
-            # Extract teams
-            teams_section = soup.find("div", class_="match-header")
-            if not teams_section:
-                return None
+            teams_section = soup.find("div", class_="match-header-vs")
+            if not teams_section: return None
 
-            team_elements = teams_section.find_all("div", class_="team-name")
-            if len(team_elements) < 2:
-                return None
+            team_elements = teams_section.find_all("div", class_="wf-title-med")
+            if len(team_elements) < 2: return None
 
-            team_a = team_elements[0].get_text(strip=True)
-            team_b = team_elements[1].get_text(strip=True)
+            team_a = Normalizers.normalize_team_name(team_elements[0].get_text(strip=True))
+            team_b = Normalizers.normalize_team_name(team_elements[1].get_text(strip=True))
 
-            # Normalize team names
-            team_a = Normalizers.normalize_team_name(team_a)
-            team_b = Normalizers.normalize_team_name(team_b)
-
-            # Extract score
-            score_section = soup.find("div", class_="match-score")
             score_a, score_b = 0, 0
+            score_section = teams_section.find("div", class_="js-spoiler")
             if score_section:
-                scores = score_section.get_text(strip=True).split("-")
+                scores = score_section.get_text(strip=True).split(":")
                 if len(scores) == 2:
-                    score_a = int(scores[0].strip())
-                    score_b = int(scores[1].strip())
+                    score_a = int(''.join(filter(str.isdigit, scores[0])) or 0)
+                    score_b = int(''.join(filter(str.isdigit, scores[1])) or 0)
 
-            # Extract match ID from URL
-            match_id = re.search(r"/match/(\d+)", soup.find("html").prettify())
-            match_id = match_id.group(1) if match_id else None
-
-            # Extract date and patch
-            date_str = soup.find("div", class_="match-date")
+            match_id_match = re.search(r"vlr\.gg/(\d+)/", soup.prettify())
+            match_id = match_id_match.group(1) if match_id_match else None
             patch = event.get("name", "").split()[-1] if event.get("name") else None
 
             return {
                 "match_id": match_id or f"{event['source_id']}_{team_a}_{team_b}",
                 "event": event["name"],
-                "date": datetime.now(),  # Would parse from page
+                "date": datetime.now(),
                 "patch": Normalizers.normalize_patch(patch) if patch else None,
-                "bo_type": "bo3",  # Default, would detect from page
+                "bo_type": "bo3",
                 "team_a": team_a,
                 "team_b": team_b,
                 "winner": team_a if score_a > score_b else (team_b if score_b > score_a else None),
@@ -206,149 +299,94 @@ class VLRScraper(BaseScraper):
                 "maps_played": score_a + score_b,
                 "source": "vlr",
             }
-
         except Exception as e:
             logger.error(f"Error parsing match page: {e}")
             return None
 
-    async def parse_map_page(self, map_section: BeautifulSoup, 
-                            match_data: Dict[str, Any],
-                            map_order: int) -> Optional[Dict[str, Any]]:
-        """Parse map section to extract map-level data."""
-        try:
-            map_name_el = map_section.find("div", class_="map-name")
-            if not map_name_el:
-                return None
-
-            map_name = map_name_el.get_text(strip=True)
-            map_name = Normalizers.normalize_map_name(map_name)
-
-            # Extract scores
-            scores = map_section.find_all("div", class_="score")
-            score_a, score_b = 0, 0
-            if len(scores) >= 2:
-                score_a = int(scores[0].get_text(strip=True))
-                score_b = int(scores[1].get_text(strip=True))
-
-            return {
-                "map_id": f"{match_data['match_id']}_{map_order}",
-                "match_id": match_data["match_id"],
-                "map_name": map_name,
-                "map_order": map_order,
-                "team_a_score": score_a,
-                "team_b_score": score_b,
-                "attacker_start": "team_a",  # Would detect from page
-                "source": "vlr",
-            }
-
-        except Exception as e:
-            logger.error(f"Error parsing map page: {e}")
-            return None
-
-    async def parse_player_stats(self, map_section: BeautifulSoup,
-                                map_data: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Parse player statistics from map section."""
+    async def parse_player_stats(self, map_section: BeautifulSoup, map_data: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Parse player statistics with team tracking."""
         player_stats = []
-
         try:
-            stat_rows = map_section.find_all("tr", class_="player-stat-row")
+            tables = map_section.find_all("table", class_="wf-table-batched")
+            
+            for table_idx, table in enumerate(tables):
+                # Try to determine which team this table is for
+                # Typically: first table is team_a, second table is team_b
+                team_name = None
+                if table_idx == 0:
+                    # Look for team name before this table
+                    prev_elem = table.find_previous(re.compile("^h[2-4]$|^div$"))
+                    if prev_elem:
+                        team_text = prev_elem.get_text(strip=True).lower()
+                        # Try to match against team aliases/names
+                        for alias in ["team_a", "team_b", "team-a", "team-b"]:
+                            if alias in team_text:
+                                team_name = "team_a"
+                                break
+                elif table_idx == 1:
+                    team_name = "team_b"
+                
+                rows = table.find("tbody").find_all("tr") if table.find("tbody") else table.find_all("tr")
+                for row in rows:
+                    cells = row.find_all("td")
+                    if len(cells) < 7:  # Need at least 7 cells for K D A columns
+                        continue
+                        
+                    # Player name
+                    player_name = cells[0].get_text(strip=True).split()[0] if cells[0].get_text(strip=True) else None
+                    if not player_name:
+                        continue
+                    
+                    # Agent name
+                    agent = ""
+                    agent_img = cells[1].find("img")
+                    if agent_img and agent_img.get("title"):
+                        agent = Normalizers.normalize_agent_name(agent_img.get("title", ""))
+                    
+                    try:
+                        # Parse stats with fallback defaults
+                        acs_text = ''.join(filter(lambda x: x.isdigit() or x == '.', cells[3].get_text(strip=True)))
+                        acs = float(acs_text) if acs_text else 0.0
+                        
+                        kills_text = ''.join(filter(str.isdigit, cells[4].get_text(strip=True)))
+                        kills = int(kills_text) if kills_text else 0
+                        
+                        deaths_text = ''.join(filter(str.isdigit, cells[5].get_text(strip=True)))
+                        deaths = int(deaths_text) if deaths_text else 0
+                        
+                        assists_text = ''.join(filter(str.isdigit, cells[6].get_text(strip=True)))
+                        assists = int(assists_text) if assists_text else 0
 
-            for row in stat_rows:
-                cells = row.find_all("td")
-                if len(cells) < 7:
-                    continue
-
-                player_name = cells[0].get_text(strip=True)
-                agent = cells[1].get_text(strip=True)
-                agent = Normalizers.normalize_agent_name(agent)
-
-                if not agent:
-                    continue
-
-                try:
-                    kills = int(cells[2].get_text(strip=True))
-                    deaths = int(cells[3].get_text(strip=True))
-                    assists = int(cells[4].get_text(strip=True))
-                    acs = float(cells[5].get_text(strip=True))
-                    adr = float(cells[6].get_text(strip=True))
-
-                    hs_percent = 0.0
-                    if len(cells) > 7:
-                        hs_str = cells[7].get_text(strip=True).rstrip("%")
-                        hs_percent = float(hs_str) if hs_str else 0.0
-
-                    player_stats.append({
-                        "map_id": map_data["map_id"],
-                        "player": player_name,
-                        "team": None,  # Would determine from page context
-                        "agent": agent,
-                        "kills": kills,
-                        "deaths": deaths,
-                        "assists": assists,
-                        "acs": acs,
-                        "adr": adr,
-                        "hs_percent": hs_percent,
-                        "source": "vlr",
-                    })
-
-                except (ValueError, IndexError):
-                    continue
-
+                        player_stats.append({
+                            "map_id": map_data["map_id"],
+                            "player": player_name,
+                            "team": team_name,
+                            "agent": agent,
+                            "kills": kills,
+                            "deaths": deaths,
+                            "assists": assists,
+                            "acs": acs,
+                            "adr": 0.0,
+                            "hs_percent": 0.0,
+                            "source": "vlr",
+                        })
+                    except Exception as parse_error:
+                        logger.debug(f"Error parsing player stats row: {parse_error}")
+                        continue
         except Exception as e:
             logger.error(f"Error parsing player stats: {e}")
-
         return player_stats
-
-    async def parse_compositions(self, map_section: BeautifulSoup,
-                                map_data: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Parse agent compositions from map section."""
-        compositions = []
-
-        try:
-            # Find team sections
-            team_sections = map_section.find_all("div", class_="team-comp")
-
-            for team_idx, team_section in enumerate(team_sections):
-                agents = []
-                agent_els = team_section.find_all("div", class_="agent-icon")
-
-                for agent_el in agent_els:
-                    agent_name = agent_el.get("title", "").strip()
-                    agent_name = Normalizers.normalize_agent_name(agent_name)
-
-                    if agent_name:
-                        agents.append(agent_name)
-
-                if len(agents) == 5:
-                    team = map_data["team_a"] if team_idx == 0 else map_data["team_b"]
-                    compositions.append({
-                        "map_id": map_data["map_id"],
-                        "team": team,
-                        "agents": agents,
-                        "source": "vlr",
-                    })
-
-        except Exception as e:
-            logger.error(f"Error parsing compositions: {e}")
-
-        return compositions
-
 
 async def main():
     """Test VLR scraper."""
     scraper = VLRScraper(rate_limit=1.0)
-
     try:
         stats = await scraper.run()
         print(f"Scraping stats: {stats}")
-
-        # Export data
         export_stats = scraper.export_to_csv()
         print(f"Export stats: {export_stats}")
-
     finally:
         await scraper.cleanup()
-
 
 if __name__ == "__main__":
     asyncio.run(main())

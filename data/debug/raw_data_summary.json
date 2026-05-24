@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-05-24T15:04:21.504200",
+  "matches": 101,
+  "maps": 311,
+  "compositions": 0,
+  "player_stats": 0,
+  "rounds": 0,
+  "sample_match": {
+    "match_id": "660369",
+    "event": "VCT 2026: Americas Stage 1",
+    "date": "2026-05-24 15:02:37.224095",
+    "patch": null,
+    "bo_type": "bo3",
+    "team_a": "FURIA",
+    "team_b": "Leviat\u00e1n",
+    "winner": "Leviat\u00e1n",
+    "score_a": 1,
+    "score_b": 2,
+    "maps_played": 3,
+    "source": "vlr"
+  },
+  "sample_map": {
+    "map_id": "660369_0",
+    "match_id": "660369",
+    "map_name": "unknown_map_0",
+    "map_order": 0,
+    "team_a_score": 0,
+    "team_b_score": 0,
+    "source": "vlr"
+  }
+}
