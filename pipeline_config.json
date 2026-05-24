@@ -1,0 +1,8 @@
+{
+  "timestamp": "2026-05-24T15:04:21.524129",
+  "scrapers": [
+    "vlr_scraper"
+  ],
+  "output_format": "csv",
+  "data_directory": "data"
+}

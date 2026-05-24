@@ -51,10 +51,19 @@ class MapParser:
     @staticmethod
     def parse(raw_map: Dict[str, Any]) -> Dict[str, Any]:
         """Normalize raw map data."""
+        raw_map_name = raw_map.get("map_name")
+        normalized_map_name = Normalizers.normalize_map_name(raw_map_name)
+        
+        # Fallback: if normalization fails but we have a map_name, keep the original
+        # (defensive parsing - better to preserve data than lose it)
+        if normalized_map_name is None and raw_map_name:
+            logger.debug(f"Map normalization failed for '{raw_map_name}', using raw value")
+            normalized_map_name = raw_map_name.strip()
+        
         return {
             "map_id": raw_map.get("map_id"),
             "match_id": raw_map.get("match_id"),
-            "map_name": Normalizers.normalize_map_name(raw_map.get("map_name")),
+            "map_name": normalized_map_name,
             "map_order": raw_map.get("map_order"),
             "team_a_score": raw_map.get("team_a_score", 0),
             "team_b_score": raw_map.get("team_b_score", 0),
@@ -97,11 +106,12 @@ class CompositionParser:
 
     @staticmethod
     def validate(comp: Dict[str, Any]) -> bool:
-        """Validate required fields."""
+        """Validate required fields - must have map_id, team, and at least 5 agent slots."""
         agents = [
             comp.get(f"agent_{i}")
             for i in range(1, 6)
         ]
+        # Check if we have map_id and team, and if all 5 agent slots are filled
         return (comp.get("map_id") and 
                 comp.get("team") and 
                 len([a for a in agents if a]) == 5)
@@ -189,15 +199,23 @@ class DataPipeline:
     def process_maps(raw_maps: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Process batch of maps."""
         processed = []
+        failed = []
 
-        for raw in raw_maps:
+        for idx, raw in enumerate(raw_maps):
             try:
                 parsed = MapParser.parse(raw)
                 if MapParser.validate(parsed):
                     processed.append(parsed)
+                else:
+                    failed.append((idx, raw, "validation failed"))
+                    logger.debug(f"Map validation failed: {raw}")
             except Exception as e:
-                logger.error(f"Error processing map: {e}")
+                failed.append((idx, raw, str(e)))
+                logger.error(f"Error processing map {idx}: {e}")
 
+        if failed:
+            logger.warning(f"Failed to process {len(failed)} maps out of {len(raw_maps)}")
+        
         logger.info(f"Processed {len(processed)}/{len(raw_maps)} maps")
         return processed
 
@@ -205,15 +223,23 @@ class DataPipeline:
     def process_compositions(raw_comps: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Process batch of compositions."""
         processed = []
+        failed = []
 
-        for raw in raw_comps:
+        for idx, raw in enumerate(raw_comps):
             try:
                 parsed = CompositionParser.parse(raw)
                 if CompositionParser.validate(parsed):
                     processed.append(parsed)
+                else:
+                    failed.append((idx, raw, "validation failed - incomplete agents"))
+                    logger.debug(f"Composition validation failed for map {raw.get('map_id')}: {raw}")
             except Exception as e:
+                failed.append((idx, raw, str(e)))
                 logger.error(f"Error processing composition: {e}")
 
+        if failed:
+            logger.warning(f"Failed to process {len(failed)} compositions out of {len(raw_comps)}")
+        
         logger.info(f"Processed {len(processed)}/{len(raw_comps)} compositions")
         return processed
 
@@ -221,15 +247,23 @@ class DataPipeline:
     def process_player_stats(raw_stats: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Process batch of player stats."""
         processed = []
+        failed = []
 
-        for raw in raw_stats:
+        for idx, raw in enumerate(raw_stats):
             try:
                 parsed = PlayerStatsParser.parse(raw)
                 if PlayerStatsParser.validate(parsed):
                     processed.append(parsed)
+                else:
+                    failed.append((idx, raw, "validation failed"))
+                    logger.debug(f"Player stats validation failed: {raw}")
             except Exception as e:
+                failed.append((idx, raw, str(e)))
                 logger.error(f"Error processing player stats: {e}")
 
+        if failed:
+            logger.warning(f"Failed to process {len(failed)} player stats out of {len(raw_stats)}")
+        
         logger.info(f"Processed {len(processed)}/{len(raw_stats)} player stats")
         return processed
 
@@ -237,15 +271,23 @@ class DataPipeline:
     def process_rounds(raw_rounds: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
         """Process batch of rounds."""
         processed = []
+        failed = []
 
-        for raw in raw_rounds:
+        for idx, raw in enumerate(raw_rounds):
             try:
                 parsed = RoundParser.parse(raw)
                 if RoundParser.validate(parsed):
                     processed.append(parsed)
+                else:
+                    failed.append((idx, raw, "validation failed"))
+                    logger.debug(f"Round validation failed: {raw}")
             except Exception as e:
+                failed.append((idx, raw, str(e)))
                 logger.error(f"Error processing round: {e}")
 
+        if failed:
+            logger.warning(f"Failed to process {len(failed)} rounds out of {len(raw_rounds)}")
+        
         logger.info(f"Processed {len(processed)}/{len(raw_rounds)} rounds")
         return processed
 

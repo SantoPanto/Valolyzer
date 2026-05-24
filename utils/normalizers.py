@@ -59,7 +59,7 @@ class Normalizers:
         "kru esports": "KRÜ",
         "leviatan": "Leviatán",
         "leviatán": "Leviatán",
-        ""%k": "%K",
+        "%k": "%K",
         "misfits": "Misfits",
         "misfits gaming": "Misfits",
         "guild": "GUILD",

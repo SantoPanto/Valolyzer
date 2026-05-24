@@ -1,0 +1,123 @@
+match_id,event,date,patch,bo_type,team_a,team_b,winner,score_a,score_b,maps_played,source
+660369,VCT 2026: Americas Stage 1,2026-05-24 14:45:17.048165,,bo3,FURIA,Leviatán,Leviatán,1,2,3,vlr
+660370,VCT 2026: Americas Stage 1,2026-05-24 14:45:17.925089,,bo3,G2,100 Thieves,G2,2,0,2,vlr
+660371,VCT 2026: Americas Stage 1,2026-05-24 14:45:18.932153,,bo3,MIBR,Leviatán,Leviatán,1,2,3,vlr
+660372,VCT 2026: Americas Stage 1,2026-05-24 14:45:19.952535,,bo3,KRÜ Esports,G2,G2,0,2,2,vlr
+660373,VCT 2026: Americas Stage 1,2026-05-24 14:45:20.880002,,bo3,Leviatán,G2,Leviatán,2,1,3,vlr
+660374,VCT 2026: Americas Stage 1,2026-05-24 14:45:22.092509,,bo3,Leviatán,G2,,0,0,0,vlr
+660375,VCT 2026: Americas Stage 1,2026-05-24 14:45:22.841505,,bo3,FURIA,NRG,NRG,0,2,2,vlr
+660376,VCT 2026: Americas Stage 1,2026-05-24 14:45:23.890167,,bo3,100 Thieves,LOUD,100 Thieves,2,0,2,vlr
+660377,VCT 2026: Americas Stage 1,2026-05-24 14:45:24.957149,,bo3,KRÜ Esports,NRG,NRG,0,2,2,vlr
+660378,VCT 2026: Americas Stage 1,2026-05-24 14:45:26.048469,,bo3,MIBR,100 Thieves,100 Thieves,0,2,2,vlr
+660379,VCT 2026: Americas Stage 1,2026-05-24 14:45:27.082826,,bo3,NRG,100 Thieves,NRG,2,0,2,vlr
+660380,VCT 2026: Americas Stage 1,2026-05-24 14:45:28.096654,,bo3,G2,NRG,G2,3,2,5,vlr
+681328,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:35.937850,,bo3,TBD,Sentinels,,0,0,0,vlr
+681329,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:36.840820,,bo3,MIBR,KRÜ Esports,,0,0,0,vlr
+681330,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:37.890262,,bo3,100 Thieves,FURIA,,0,0,0,vlr
+681331,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:38.950791,,bo3,LOUD,NRG,,0,0,0,vlr
+681332,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:39.967190,,bo3,TBD,TBD,,0,0,0,vlr
+681333,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:41.029383,,bo3,TBD,TBD,,0,0,0,vlr
+681334,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:41.639214,,bo3,TBD,TBD,,0,0,0,vlr
+681335,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:42.870249,,bo3,TBD,TBD,,0,0,0,vlr
+681336,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:43.977287,,bo3,TBD,TBD,,0,0,0,vlr
+681337,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:45.013522,,bo3,TBD,TBD,,0,0,0,vlr
+681338,Esports World Cup 2026: Americas Qualifier,2026-05-24 14:45:46.034334,,bo3,TBD,TBD,,0,0,0,vlr
+674854,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:52.966688,,bo3,FUT Esports,Natus Vincere,FUT Esports,2,0,2,vlr
+674855,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:53.909137,,bo3,Team Liquid,Gentle Mates,Gentle Mates,0,2,2,vlr
+674856,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:54.921942,,bo3,Fnatic,BBL Esports,Fnatic,2,0,2,vlr
+674857,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:55.932772,,bo3,Karmine Corp,Eternal Fire,Karmine Corp,2,1,3,vlr
+674858,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:57.023386,,bo3,FUT Esports,Gentle Mates,Gentle Mates,0,3,3,vlr
+674859,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:58.085273,,bo3,Fnatic,Karmine Corp,,0,0,0,vlr
+674860,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:59.066544,,bo3,Natus Vincere,Team Liquid,Natus Vincere,2,0,2,vlr
+674861,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:45:59.704252,,bo3,BBL Esports,Eternal Fire,,0,0,0,vlr
+674862,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:46:00.949281,,bo3,TBD,Natus Vincere,,0,0,0,vlr
+674863,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:46:01.930151,,bo3,FUT Esports,TBD,,0,0,0,vlr
+674864,Esports World Cup 2026: EMEA Qualifier,2026-05-24 14:46:02.915366,,bo3,TBD,TBD,,0,0,0,vlr
+675201,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:15.383030,,bo3,Sentinels,Gen.G,Gen.G,1,2,3,vlr
+675202,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:15.981753,,bo3,Rex Regum Qeon,DRX,Rex Regum Qeon,2,0,2,vlr
+675203,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:16.958056,,bo3,T1,Nongshim RedForce,Nongshim RedForce,0,2,2,vlr
+675204,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:17.943361,,bo3,DetonatioN FocusMe,Global Esports,Global Esports,0,2,2,vlr
+675205,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:19.406114,,bo3,Gen.G,Rex Regum Qeon,Rex Regum Qeon,2,3,5,vlr
+675206,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:20.125983,,bo3,Nongshim RedForce,Global Esports,,2,2,4,vlr
+675207,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:21.222782,,bo3,Sentinels,DRX,DRX,1,2,3,vlr
+675208,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:22.049385,,bo3,T1,DetonatioN FocusMe,T1,2,1,3,vlr
+675209,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:22.785880,,bo3,TBD,DRX,,0,0,0,vlr
+675210,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:24.077941,,bo3,Gen.G,T1,,0,0,0,vlr
+675211,Esports World Cup 2026: Pacific Qualifier,2026-05-24 14:46:24.789565,,bo3,TBD,TBD,,0,0,0,vlr
+681009,China Evolution Series 2026: Act 2,2026-05-24 14:46:36.129709,,bo3,All Gamers,Dragon Ranger Gaming,All Gamers,2,0,2,vlr
+681010,China Evolution Series 2026: Act 2,2026-05-24 14:46:37.099179,,bo3,FunPlus Phoenix,Wolves Esports,FunPlus Phoenix,2,0,2,vlr
+681011,China Evolution Series 2026: Act 2,2026-05-24 14:46:38.164353,,bo3,Trace,Any Questions Gaming,Trace,2,0,2,vlr
+681012,China Evolution Series 2026: Act 2,2026-05-24 14:46:39.136050,,bo3,Titan Esports Club,Weibo Gaming,Titan Esports Club,2,1,3,vlr
+681013,China Evolution Series 2026: Act 2,2026-05-24 14:46:40.213853,,bo3,JDG Esports,Xi Lai Gaming,JDG Esports,2,1,3,vlr
+681014,China Evolution Series 2026: Act 2,2026-05-24 14:46:41.172948,,bo3,Nova Esports,KeepBest Gaming,Nova Esports,2,1,3,vlr
+681015,China Evolution Series 2026: Act 2,2026-05-24 14:46:42.186634,,bo3,TYLOO,EDward Gaming,TYLOO,2,0,2,vlr
+681016,China Evolution Series 2026: Act 2,2026-05-24 14:46:43.276252,,bo3,Bilibili Gaming,Sentinels,Bilibili Gaming,1,0,1,vlr
+681017,China Evolution Series 2026: Act 2,2026-05-24 14:46:43.899762,,bo3,All Gamers,FunPlus Phoenix,,0,0,0,vlr
+681018,China Evolution Series 2026: Act 2,2026-05-24 14:46:45.101995,,bo3,Trace,Titan Esports Club,,0,0,0,vlr
+681019,China Evolution Series 2026: Act 2,2026-05-24 14:46:46.186021,,bo3,JDG Esports,Nova Esports,,0,0,0,vlr
+681020,China Evolution Series 2026: Act 2,2026-05-24 14:46:47.074778,,bo3,TYLOO,TBD,,0,0,0,vlr
+681021,China Evolution Series 2026: Act 2,2026-05-24 14:46:48.029402,,bo3,TBD,TBD,,0,0,0,vlr
+681022,China Evolution Series 2026: Act 2,2026-05-24 14:46:49.040384,,bo3,TBD,TBD,,0,0,0,vlr
+681023,China Evolution Series 2026: Act 2,2026-05-24 14:46:50.282307,,bo3,TBD,TBD,,0,0,0,vlr
+681024,China Evolution Series 2026: Act 2,2026-05-24 14:46:51.181821,,bo3,TBD,TBD,,0,0,0,vlr
+660369,VCT 2026: Americas Stage 1,2026-05-24 15:02:37.224095,,bo3,FURIA,Leviatán,Leviatán,1,2,3,vlr
+660370,VCT 2026: Americas Stage 1,2026-05-24 15:02:38.074832,,bo3,G2,100 Thieves,G2,2,0,2,vlr
+660371,VCT 2026: Americas Stage 1,2026-05-24 15:02:39.188011,,bo3,MIBR,Leviatán,Leviatán,1,2,3,vlr
+660372,VCT 2026: Americas Stage 1,2026-05-24 15:02:40.057955,,bo3,KRÜ Esports,G2,G2,0,2,2,vlr
+660373,VCT 2026: Americas Stage 1,2026-05-24 15:02:41.188312,,bo3,Leviatán,G2,Leviatán,2,1,3,vlr
+660374,VCT 2026: Americas Stage 1,2026-05-24 15:02:42.222009,,bo3,Leviatán,G2,,0,0,0,vlr
+660375,VCT 2026: Americas Stage 1,2026-05-24 15:02:43.127290,,bo3,FURIA,NRG,NRG,0,2,2,vlr
+660376,VCT 2026: Americas Stage 1,2026-05-24 15:02:44.050815,,bo3,100 Thieves,LOUD,100 Thieves,2,0,2,vlr
+660377,VCT 2026: Americas Stage 1,2026-05-24 15:02:45.046086,,bo3,KRÜ Esports,NRG,NRG,0,2,2,vlr
+660378,VCT 2026: Americas Stage 1,2026-05-24 15:02:46.231812,,bo3,MIBR,100 Thieves,100 Thieves,0,2,2,vlr
+660379,VCT 2026: Americas Stage 1,2026-05-24 15:02:47.284570,,bo3,NRG,100 Thieves,NRG,2,0,2,vlr
+660380,VCT 2026: Americas Stage 1,2026-05-24 15:02:48.302699,,bo3,G2,NRG,G2,3,2,5,vlr
+681328,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:02:56.135693,,bo3,TBD,Sentinels,,0,0,0,vlr
+681329,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:02:57.038752,,bo3,MIBR,KRÜ Esports,,0,0,0,vlr
+681330,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:02:58.083625,,bo3,100 Thieves,FURIA,,0,0,0,vlr
+681331,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:02:59.091136,,bo3,LOUD,NRG,,0,0,0,vlr
+681332,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:00.107050,,bo3,TBD,TBD,,0,0,0,vlr
+681333,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:01.134411,,bo3,TBD,TBD,,0,0,0,vlr
+681334,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:01.958122,,bo3,TBD,TBD,,0,0,0,vlr
+681335,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:03.087205,,bo3,TBD,TBD,,0,0,0,vlr
+681336,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:04.143421,,bo3,TBD,TBD,,0,0,0,vlr
+681337,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:05.110288,,bo3,TBD,TBD,,0,0,0,vlr
+681338,Esports World Cup 2026: Americas Qualifier,2026-05-24 15:03:06.148352,,bo3,TBD,TBD,,0,0,0,vlr
+674854,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:13.101980,,bo3,FUT Esports,Natus Vincere,FUT Esports,2,0,2,vlr
+674855,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:14.148160,,bo3,Team Liquid,Gentle Mates,Gentle Mates,0,2,2,vlr
+674856,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:15.058319,,bo3,Fnatic,BBL Esports,Fnatic,2,0,2,vlr
+674857,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:16.187841,,bo3,Karmine Corp,Eternal Fire,Karmine Corp,2,1,3,vlr
+674858,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:17.123730,,bo3,FUT Esports,Gentle Mates,Gentle Mates,0,3,3,vlr
+674859,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:18.282933,,bo3,Fnatic,Karmine Corp,,0,0,0,vlr
+674860,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:19.268668,,bo3,Natus Vincere,Team Liquid,Natus Vincere,2,0,2,vlr
+674861,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:19.907164,,bo3,BBL Esports,Eternal Fire,,0,0,0,vlr
+674862,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:21.157007,,bo3,TBD,Natus Vincere,,0,0,0,vlr
+674863,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:21.996828,,bo3,FUT Esports,TBD,,0,0,0,vlr
+674864,Esports World Cup 2026: EMEA Qualifier,2026-05-24 15:03:23.087762,,bo3,TBD,TBD,,0,0,0,vlr
+675201,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:35.466659,,bo3,Sentinels,Gen.G,Gen.G,1,2,3,vlr
+675202,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:36.240430,,bo3,Rex Regum Qeon,DRX,Rex Regum Qeon,2,0,2,vlr
+675203,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:37.133576,,bo3,T1,Nongshim RedForce,Nongshim RedForce,0,2,2,vlr
+675204,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:38.192478,,bo3,DetonatioN FocusMe,Global Esports,Global Esports,0,2,2,vlr
+675205,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:39.656450,,bo3,Gen.G,Rex Regum Qeon,Rex Regum Qeon,2,3,5,vlr
+675206,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:40.374217,,bo3,Nongshim RedForce,Global Esports,,2,2,4,vlr
+675207,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:41.391809,,bo3,Sentinels,DRX,DRX,1,2,3,vlr
+675208,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:42.268345,,bo3,T1,DetonatioN FocusMe,T1,2,1,3,vlr
+675209,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:43.149329,,bo3,TBD,DRX,,0,0,0,vlr
+675210,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:44.286491,,bo3,Gen.G,T1,,0,0,0,vlr
+675211,Esports World Cup 2026: Pacific Qualifier,2026-05-24 15:03:45.247894,,bo3,TBD,TBD,,0,0,0,vlr
+681009,China Evolution Series 2026: Act 2,2026-05-24 15:03:56.426034,,bo3,All Gamers,Dragon Ranger Gaming,All Gamers,2,0,2,vlr
+681010,China Evolution Series 2026: Act 2,2026-05-24 15:03:57.358496,,bo3,FunPlus Phoenix,Wolves Esports,FunPlus Phoenix,2,0,2,vlr
+681011,China Evolution Series 2026: Act 2,2026-05-24 15:03:58.539406,,bo3,Trace,Any Questions Gaming,Trace,2,0,2,vlr
+681012,China Evolution Series 2026: Act 2,2026-05-24 15:03:59.545435,,bo3,Titan Esports Club,Weibo Gaming,Titan Esports Club,2,1,3,vlr
+681013,China Evolution Series 2026: Act 2,2026-05-24 15:04:00.529216,,bo3,JDG Esports,Xi Lai Gaming,JDG Esports,2,1,3,vlr
+681014,China Evolution Series 2026: Act 2,2026-05-24 15:04:01.485058,,bo3,Nova Esports,KeepBest Gaming,Nova Esports,2,1,3,vlr
+681015,China Evolution Series 2026: Act 2,2026-05-24 15:04:02.508890,,bo3,TYLOO,EDward Gaming,TYLOO,2,0,2,vlr
+681016,China Evolution Series 2026: Act 2,2026-05-24 15:04:03.592355,,bo3,Bilibili Gaming,Sentinels,Bilibili Gaming,1,0,1,vlr
+681017,China Evolution Series 2026: Act 2,2026-05-24 15:04:04.240167,,bo3,All Gamers,FunPlus Phoenix,,0,0,0,vlr
+681018,China Evolution Series 2026: Act 2,2026-05-24 15:04:05.512332,,bo3,Trace,Titan Esports Club,,0,0,0,vlr
+681019,China Evolution Series 2026: Act 2,2026-05-24 15:04:06.497787,,bo3,JDG Esports,Nova Esports,,0,0,0,vlr
+681020,China Evolution Series 2026: Act 2,2026-05-24 15:04:07.540395,,bo3,TYLOO,TBD,,0,0,0,vlr
+681021,China Evolution Series 2026: Act 2,2026-05-24 15:04:08.305316,,bo3,TBD,TBD,,0,0,0,vlr
+681022,China Evolution Series 2026: Act 2,2026-05-24 15:04:09.425450,,bo3,TBD,TBD,,0,0,0,vlr
+681023,China Evolution Series 2026: Act 2,2026-05-24 15:04:10.582287,,bo3,TBD,TBD,,0,0,0,vlr
+681024,China Evolution Series 2026: Act 2,2026-05-24 15:04:11.550392,,bo3,TBD,TBD,,0,0,0,vlr
