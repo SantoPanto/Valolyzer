@@ -47,7 +47,7 @@ class VLRScraper(BaseScraper):
             client = await self.http_client
             html = await client.get(self.EVENTS_URL)
             if not html:
-                logger.warning("Failed to fetch events page")
+                #logger.warning("Failed to fetch events page")
                 return
 
             soup = BeautifulSoup(html, "html.parser")
@@ -74,7 +74,7 @@ class VLRScraper(BaseScraper):
             client = await self.http_client
             html = await client.get(event["url"])
             if not html:
-                logger.warning(f"Failed to fetch event: {event['name']}")
+                #logger.warning(f"Failed to fetch event: {event['name']}")
                 return
 
             soup = BeautifulSoup(html, "html.parser")
@@ -97,11 +97,19 @@ class VLRScraper(BaseScraper):
 
             soup = BeautifulSoup(html, "html.parser")
 
-            match_data = await self.parse_match_page(soup, event)
-            if match_data:
-                self.matches.append(match_data)
+            match_data = await self.parse_match_page(soup, event, match_url=match_url)
+            if not match_data:
+                return # Skip if match data couldn't be parsed
 
+            self.matches.append(match_data)
             map_items = soup.find_all("div", class_="vm-stats-game")
+
+            #if not map_items:
+            #    logger.warning(f"Dikkat: {match_url} sayfasında 'vm-stats-game' div'i hiç bulunamadı!")
+            #else:
+            #    tables = map_items[0].find_all("table", class_="wf-table-batched")
+            #    if not tables:
+            #        logger.warning(f"Dikkat: 'vm-stats-game' bulundu ama içinde 'wf-table-batched' tablosu yok!")
             
             for idx, map_item in enumerate(map_items):
                 game_id = map_item.get("data-game-id")
@@ -175,9 +183,12 @@ class VLRScraper(BaseScraper):
                                 "source": "vlr"
                             })
                             logger.debug(f"Extracted composition for {match_data['team_b']}: {agents_b}")
-
         except Exception as e:
             logger.error(f"Error scraping match detail: {e}")
+        # ... map_items döngüsünün dışına veya hemen öncesine ...
+        rounds_extracted = self.parse_rounds(soup, match_data["match_id"])
+        if rounds_extracted:
+            self.rounds.extend(rounds_extracted)
 
     def _extract_map_name(self, map_item: BeautifulSoup) -> Optional[str]:
         """Extract actual map name from map_item HTML."""
@@ -261,17 +272,22 @@ class VLRScraper(BaseScraper):
         return map_data
 
     # --- GÜNCELLENMİŞ DOM PARSER'LAR ---
-    async def parse_match_page(self, soup: BeautifulSoup, event: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    async def parse_match_page(self, soup: BeautifulSoup, event: Dict[str, Any], match_url: str = "") -> Optional[Dict[str, Any]]:
         """Parse match page to extract match-level data with current VLR classes."""
         try:
             teams_section = soup.find("div", class_="match-header-vs")
-            if not teams_section: return None
+            if not teams_section:
+                return None
 
             team_elements = teams_section.find_all("div", class_="wf-title-med")
-            if len(team_elements) < 2: return None
+            if len(team_elements) < 2:
+                return None
 
             team_a = Normalizers.normalize_team_name(team_elements[0].get_text(strip=True))
             team_b = Normalizers.normalize_team_name(team_elements[1].get_text(strip=True))
+
+            if team_a.lower() in ["tbd", "tba"] or team_b.lower() in ["tbd", "tba"]:
+                return None
 
             score_a, score_b = 0, 0
             score_section = teams_section.find("div", class_="js-spoiler")
@@ -281,12 +297,20 @@ class VLRScraper(BaseScraper):
                     score_a = int(''.join(filter(str.isdigit, scores[0])) or 0)
                     score_b = int(''.join(filter(str.isdigit, scores[1])) or 0)
 
-            match_id_match = re.search(r"vlr\.gg/(\d+)/", soup.prettify())
-            match_id = match_id_match.group(1) if match_id_match else None
+            # match_id'yi DOĞRUDAN gelen URL üzerinden çekmek
+            match_id = None
+            if match_url:
+                match_id_match = re.search(r"vlr\.gg/(\d+)/", match_url)
+                if match_id_match:
+                    match_id = match_id_match.group(1)
+
+            # Fallback artık sadece URL tamamen bozuksa devreye girer
+            final_match_id = match_id or f"{event.get('source_id', 'unknown')}_{team_a}_{team_b}_{int(datetime.now().timestamp())}"
+
             patch = event.get("name", "").split()[-1] if event.get("name") else None
 
             return {
-                "match_id": match_id or f"{event['source_id']}_{team_a}_{team_b}",
+                "match_id": final_match_id,
                 "event": event["name"],
                 "date": datetime.now(),
                 "patch": Normalizers.normalize_patch(patch) if patch else None,
@@ -299,15 +323,19 @@ class VLRScraper(BaseScraper):
                 "maps_played": score_a + score_b,
                 "source": "vlr",
             }
+
         except Exception as e:
             logger.error(f"Error parsing match page: {e}")
             return None
-
     async def parse_player_stats(self, map_section: BeautifulSoup, map_data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Parse player statistics with team tracking."""
         player_stats = []
         try:
-            tables = map_section.find_all("table", class_="wf-table-batched")
+            tables = map_section.find_all("table")
+
+            if not tables:
+                logger.debug(f"Map id {map_data.get('map_id')} için hiç HTML table bulunamadı (JavaScript ile yükleniyor olabilir).")
+                return player_stats
             
             for table_idx, table in enumerate(tables):
                 # Try to determine which team this table is for
@@ -376,6 +404,77 @@ class VLRScraper(BaseScraper):
         except Exception as e:
             logger.error(f"Error parsing player stats: {e}")
         return player_stats
+    
+    def parse_rounds(self, soup: BeautifulSoup, match_id: str) -> List[Dict[str, Any]]:
+        """Parse VLR round timeline data dynamically and format for validation."""
+        rounds_data = []
+        try:
+            # Harita harita geziyoruz ki map_id'yi doğru eşleştirelim
+            map_sections = soup.find_all("div", class_="vm-stats-game")
+            
+            for map_index, game in enumerate(map_sections):
+                game_id = game.get("data-game-id")
+                if game_id == "all": 
+                    continue
+                
+                # Validation için zorunlu olan map_id'yi oluşturuyoruz
+                map_id = f"{match_id}_{map_index}"
+                
+                # Bu haritanın içindeki rauntları esnek seçici ile buluyoruz
+                round_elements = game.find_all(
+                    "div", 
+                    class_=lambda c: c and ("vlr-round-info" in c or "rnd-sq" in c or "vlr-rounds" in c)
+                )
+                
+                for rnd in round_elements:
+                    round_number = 0
+                    winner = "unknown"
+                    win_type = "elimination"
+                    
+                    # 1. Raunt Numarası
+                    num_el = rnd.find("div", class_=lambda c: c and "rnd-num" in c)
+                    if num_el:
+                        try:
+                            round_number = int(num_el.get_text(strip=True))
+                        except ValueError:
+                            pass
+                            
+                    # 2. Kazanan Takım (VLR, 'mod-t' yani Attack ve 'mod-ct' yani Defense class'larını kullanır)
+                    classes = rnd.get("class", [])
+                    if any("mod-t" in c for c in classes):
+                        winner = "attack"
+                    elif any("mod-ct" in c for c in classes):
+                        winner = "defense"
+                    else:
+                        winner = "draw/unknown"
+                        
+                    # 3. Kazanma Şekli (Spike, Defuse, Elimination)
+                    icon = rnd.find("i") or rnd.find("img")
+                    if icon:
+                        icon_classes = icon.get("class", [])
+                        src = icon.get("src", "")
+                        if any("spike" in c for c in icon_classes) or "boom" in src:
+                            win_type = "spike"
+                        elif any("defuse" in c for c in icon_classes) or "defuse" in src:
+                            win_type = "defuse"
+                        elif any("time" in c for c in icon_classes) or "clock" in src:
+                            win_type = "time"
+
+                    # VALIDATION İÇİN GEREKEN KUSURSUZ SÖZLÜK YAPISI
+                    rounds_data.append({
+                        "round_id": f"{map_id}_{round_number}",
+                        "map_id": map_id,
+                        "round_number": round_number,
+                        "winner": winner,
+                        "win_type": win_type,
+                        "spike_planted": win_type in ["spike", "defuse"], # Spike patladıysa veya çözüldüyse kurulmuş demektir
+                        "source": "vlr"
+                    })
+                    
+        except Exception as e:
+            logger.error(f"Failed parsing rounds: {e}")
+            
+        return rounds_data
 
 async def main():
     """Test VLR scraper."""

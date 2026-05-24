@@ -39,35 +39,28 @@ def setup_page_config():
 
 def get_map_selection(model_columns, map_agent_stats):
     """Harita seçimini ve harita bazlı ajan istatistiklerini gösterir."""
-
-    # Model sütunlarından map isimlerini çek
+    # app.py içindeki get_map_selection fonksiyonunda:
     available_maps = sorted([
-        col.replace('map_', '')
-        for col in model_columns
-        if col.startswith('map_')
+        col.replace('map_', '') 
+        for col in model_columns 
+        if col.startswith('map_') and col.replace('map_', '') != 'unknown'
     ])
 
-    selected_map = st.selectbox(
-        "🗺️ Maçın Oynanacağı Haritayı Seçin",
-        available_maps
-    )
+    selected_map = st.selectbox("🗺️ Maçın Oynanacağı Haritayı Seçin", available_maps)
 
-    # Harita bazlı en başarılı ajanlar
     st.markdown(f"### 🔥 {selected_map} Haritasında En Başarılı Ajanlar")
 
-    if selected_map in map_agent_stats:
-
+    # Kontrol: Harita verisi var mı VE liste boş değil mi?
+    if selected_map in map_agent_stats and isinstance(map_agent_stats[selected_map], list) and len(map_agent_stats[selected_map]) > 0:
         top_agents = map_agent_stats[selected_map]
-
-        cols = st.columns(len(top_agents))
+        
+        # Sütunları oluşturmadan önce güvenli bir şekilde sayıyı alıyoruz
+        num_cols = len(top_agents)
+        cols = st.columns(num_cols)
 
         for i, (agent, win_rate) in enumerate(top_agents):
             with cols[i]:
-                st.metric(
-                    label=agent,
-                    value=f"%{win_rate}"
-                )
-
+                st.metric(label=agent, value=f"%{win_rate}")
     else:
         st.info("Bu harita için yeterli ajan istatistiği bulunamadı.")
 
