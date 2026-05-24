@@ -191,39 +191,41 @@ class VLRScraper(BaseScraper):
             self.rounds.extend(rounds_extracted)
 
     def _extract_map_name(self, map_item: BeautifulSoup) -> Optional[str]:
-        """Extract actual map name from map_item HTML."""
+        """VLR'nin güncel HTML yapısına göre harita ismi çeker."""
         try:
-            # Try multiple selectors for map name (defensive parsing)
+            # VLR yeni yapısında harita ismini doğrudan <div class="map"> içinde tutuyor.
+            # Veya bazen "vm-stats-game-header" içindeki bir başlıkta.
+            
+            # 1. Öncelik: <div class="map">
+            map_div = map_item.find("div", class_="map")
+            if map_div:
+                return map_div.get_text(strip=True)
+            
+            # 2. Öncelik: vm-stats-game-header içindeki span
+            header = map_item.find("div", class_="vm-stats-game-header")
+            if header:
+                name_span = header.find("span", class_="map")
+                if name_span:
+                    return name_span.get_text(strip=True)
+
+            # 3. Öncelik: Eski yapıları desteklemek için genel bir arama
+            # Bu kısım eskisinden daha geniş kapsamlı
             selectors = [
-                ("div", {"class": "map-name"}),
-                ("span", {"class": "map-name"}),
+                ("div", {"class": "map"}),
                 ("div", {"class": "vm-map-name"}),
-                ("div", {"class": "stats-header"}),
+                ("span", {"class": "map-name"}),
             ]
             
             for tag, attrs in selectors:
                 element = map_item.find(tag, attrs)
                 if element:
                     text = element.get_text(strip=True)
-                    if text and not text.startswith("UNKNOWN"):
-                        return text
-            
-            # Fallback: extract from any heading within map_item
-            heading = map_item.find(re.compile("^h[1-6]$"))
-            if heading:
-                return heading.get_text(strip=True)
-            
-            # Final fallback: check for map name in score row
-            score_row = map_item.find("div", class_="map-score-row")
-            if score_row:
-                for text_node in score_row.find_all(string=True):
-                    text = text_node.strip()
-                    if text in Normalizers.MAPS:
+                    if text and not text.lower().startswith("unknown"):
                         return text
             
             return None
         except Exception as e:
-            logger.debug(f"Error extracting map name: {e}")
+            logger.debug(f"Harita ismi çekilirken hata: {e}")
             return None
 
     def _extract_map_scores(self, map_item: BeautifulSoup) -> tuple:

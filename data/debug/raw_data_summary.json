@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-24T17:20:38.553277",
+  "timestamp": "2026-05-24T18:48:50.589496",
   "matches": 77,
   "maps": 223,
   "compositions": 121,
@@ -8,7 +8,7 @@
   "sample_match": {
     "match_id": "660369",
     "event": "VCT 2026: Americas Stage 1",
-    "date": "2026-05-24 17:18:54.182929",
+    "date": "2026-05-24 18:47:06.338568",
     "patch": null,
     "bo_type": "bo3",
     "team_a": "FURIA",
@@ -22,7 +22,7 @@
   "sample_map": {
     "map_id": "660369_0",
     "match_id": "660369",
-    "map_name": "unknown_map_0",
+    "map_name": "BreezePICK57:08",
     "map_order": 0,
     "team_a_score": 0,
     "team_b_score": 0,
