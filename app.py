@@ -4,132 +4,261 @@ import pandas as pd
 
 # --- Veri Sabitleri ---
 VALORANT_AGENTS = sorted([
-    "Jett", "Raze", "Breach", "Omen", "Brimstone", "Viper", "Killjoy", 
-    "Cypher", "Sova", "Sage", "Phoenix", "Reyna", "Neon", "Fade", 
-    "Astra", "KAY/O", "Chamber", "Skye", "Yoru", "Harbor", "Gekko", 
+    "Jett", "Raze", "Breach", "Omen", "Brimstone", "Viper", "Killjoy",
+    "Cypher", "Sova", "Sage", "Phoenix", "Reyna", "Neon", "Fade",
+    "Astra", "KAY/O", "Chamber", "Skye", "Yoru", "Harbor", "Gekko",
     "Deadlock", "Iso", "Clove", "Vyse"
 ])
 
 # --- Modüler Fonksiyonlar ---
 
 @st.cache_resource
-def load_model_and_columns():
-    """Modeli ve sütun yapılarını diske kaydedilmiş dosyalardan yükler."""
+def load_resources():
+    """Modeli, sütun yapılarını ve harita istatistiklerini yükler."""
     loaded_model = joblib.load('valorant_rf_model.pkl')
     loaded_columns = joblib.load('model_columns.pkl')
-    return loaded_model, loaded_columns
+    loaded_map_stats = joblib.load('map_agent_stats.pkl')
+
+    return loaded_model, loaded_columns, loaded_map_stats
+
 
 def setup_page_config():
-    """Web arayüzünün temel yapılandırmasını ve başlıklarını ayarlar."""
-    st.set_page_config(page_title="Valorant Maç Tahmincisi", page_icon="🎮", layout="wide")
-    st.title("🎮 VCT 2025: Yapay Zeka Maç Tahmincisi")
-    st.markdown("Harita sırasını ve takımların ajan kompozisyonlarını seçin, modelimiz maçın galibini hesaplasın!")
+    """Web arayüzünün temel yapılandırmasını ayarlar."""
+    st.set_page_config(
+        page_title="Valolyzer - Valorant Tahmin Sistemi",
+        page_icon="🎮",
+        layout="wide"
+    )
 
-def get_user_inputs():
-    """Kullanıcıdan harita ve ajan kompozisyonu seçimlerini alır."""
-    st.subheader("📊 Maç Parametreleri")
-    
-    # Harita sırası
-    map_order = st.radio("Bu harita, Best of 3 (Bo3) serisinin kaçıncı maçı?", [1, 2, 3], horizontal=True)
+    st.title("🎮 Valolyzer - Valorant Maç Tahmini")
+    st.markdown(
+        "Haritayı ve takım ajan kompozisyonlarını seçin, "
+        "yapay zeka modelimiz maç sonucunu tahmin etsin!"
+    )
+
+
+def get_map_selection(model_columns, map_agent_stats):
+    """Harita seçimini ve harita bazlı ajan istatistiklerini gösterir."""
+
+    # Model sütunlarından map isimlerini çek
+    available_maps = sorted([
+        col.replace('map_', '')
+        for col in model_columns
+        if col.startswith('map_')
+    ])
+
+    selected_map = st.selectbox(
+        "🗺️ Maçın Oynanacağı Haritayı Seçin",
+        available_maps
+    )
+
+    # Harita bazlı en başarılı ajanlar
+    st.markdown(f"### 🔥 {selected_map} Haritasında En Başarılı Ajanlar")
+
+    if selected_map in map_agent_stats:
+
+        top_agents = map_agent_stats[selected_map]
+
+        cols = st.columns(len(top_agents))
+
+        for i, (agent, win_rate) in enumerate(top_agents):
+            with cols[i]:
+                st.metric(
+                    label=agent,
+                    value=f"%{win_rate}"
+                )
+
+    else:
+        st.info("Bu harita için yeterli ajan istatistiği bulunamadı.")
+
+    return selected_map
+
+
+def get_team_inputs():
+    """Takım ajan seçimlerini kullanıcıdan alır."""
+
     st.markdown("---")
-    
-    # Ajan seçimleri
+    st.subheader("📊 Takım Kompozisyonları")
+
     col1, col2 = st.columns(2)
+
     with col1:
         st.header("🛡️ Team 1")
-        team1_agents = st.multiselect("Team 1 Ajanlarını Seçin (Tam 5 Adet)", VALORANT_AGENTS, max_selections=5, key="t1")
-    
+
+        team1_agents = st.multiselect(
+            "Team 1 Ajanlarını Seçin (Tam 5 Adet)",
+            VALORANT_AGENTS,
+            max_selections=5,
+            key="t1"
+        )
+
     with col2:
         st.header("⚔️ Team 2")
-        team2_agents = st.multiselect("Team 2 Ajanlarını Seçin (Tam 5 Adet)", VALORANT_AGENTS, max_selections=5, key="t2")
-        
-    return map_order, team1_agents, team2_agents
 
-def predict_match(team1_agents, team2_agents, map_order, model, model_columns):
-    """Gelen verilere göre tahminde bulunur ve kazanma yüzdelerini döndürür."""
-    # 1. İçi 0 dolu bir şablon oluştur
+        team2_agents = st.multiselect(
+            "Team 2 Ajanlarını Seçin (Tam 5 Adet)",
+            VALORANT_AGENTS,
+            max_selections=5,
+            key="t2"
+        )
+
+    return team1_agents, team2_agents
+
+
+def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns):
+    """Model için gerekli input dataframe'ini oluşturur."""
+
+    # Tüm feature'ları 0 yap
     input_data = {col: 0 for col in model_columns}
-    
-    # 2. Seçimleri 1 olarak güncelle
-    if 'map_order' in input_data:
-        input_data['map_order'] = map_order
-        
+
+    # Seçilen haritayı aktif et
+    map_column = f"map_{selected_map}"
+
+    if map_column in input_data:
+        input_data[map_column] = 1
+
+    # Team 1 ajanları
     for agent in team1_agents:
-        if f"{agent}_t1" in input_data:
-            input_data[f"{agent}_t1"] = 1
-            
+
+        agent_column = f"{agent}_t1"
+
+        if agent_column in input_data:
+            input_data[agent_column] = 1
+
+    # Team 2 ajanları
     for agent in team2_agents:
-        if f"{agent}_t2" in input_data:
-            input_data[f"{agent}_t2"] = 1
-            
-    # 3. Pandas tablosuna çevir
-    input_df = pd.DataFrame([input_data])
-    
-    # 4. Tahmin yap
+
+        agent_column = f"{agent}_t2"
+
+        if agent_column in input_data:
+            input_data[agent_column] = 1
+
+    return pd.DataFrame([input_data])
+
+
+def predict_match(selected_map, team1_agents, team2_agents, model, model_columns):
+    """Maç tahmini yapar."""
+
+    input_df = prepare_input_data(
+        selected_map,
+        team1_agents,
+        team2_agents,
+        model_columns
+    )
+
     prediction = model.predict(input_df)[0]
     probability = model.predict_proba(input_df)[0]
+
     return prediction, probability
 
+
 def display_prediction_result(prediction, probability):
-    """Tahmin sonucunu ekrana yazdırır."""
+    """Tahmin sonucunu kullanıcıya gösterir."""
+
+    st.markdown("---")
+
     if prediction == 1:
-        st.success(f"🏆 **Tahmin: Team 1 Kazanır!** (Kazanma İhtimali: %{probability[1]*100:.1f})")
+
+        st.success(
+            f"🏆 Tahmin: Team 1 Kazanır! "
+            f"(Kazanma İhtimali: %{probability[1] * 100:.1f})"
+        )
+
         st.balloons()
+
     else:
-        st.error(f"💀 **Tahmin: Team 2 Kazanır!** (Team 1'in Kaybetme İhtimali: %{probability[0]*100:.1f})")
+
+        st.error(
+            f"💀 Tahmin: Team 2 Kazanır! "
+            f"(Team 1 Kaybetme İhtimali: %{probability[0] * 100:.1f})"
+        )
+
 
 def display_feature_importance(model, model_columns):
-    """Modelin karar alırken kullandığı özellik ağırlıklarını grafik olarak çizer."""
+    """Modelin en önemli feature'larını grafik olarak gösterir."""
+
     st.markdown("---")
     st.subheader("🧠 Model Bu Kararı Nasıl Verdi?")
-    
-    with st.expander("Arka Plandaki Matematiksel Ağırlıkları İncele"):
-        st.info("Aşağıdaki grafik, galibiyete en çok etki eden 15 faktörü gösterir.")
-        
-        # Etki oranları
+
+    with st.expander("Feature Importance Grafiğini Göster"):
+
+        st.info(
+            "Aşağıdaki grafik modelin karar verirken "
+            "en çok önem verdiği 15 özelliği göstermektedir."
+        )
+
         importances = model.feature_importances_
+
         feature_imp_df = pd.DataFrame({
             'Özellik': model_columns,
             'Etki Puanı': importances
         })
-        
-        # En iyi 15 özellik
-        top_features = feature_imp_df.sort_values(by='Etki Puanı', ascending=False).head(15)
-        top_features = top_features.set_index('Özellik')
-        
-        # Grafik üretimi
+
+        top_features = (
+            feature_imp_df
+            .sort_values(by='Etki Puanı', ascending=False)
+            .head(15)
+            .set_index('Özellik')
+        )
+
         st.bar_chart(top_features)
 
-# --- Ana Akış (Program İskeleti) ---
+
+# --- Ana Program Akışı ---
 
 def main():
-    """Programın ana akışını kontrol eden temel (iskenlet) fonksiyondur."""
-    # 1. UI Hazırlığı
+
+    # Sayfa ayarları
     setup_page_config()
-    
-    # 2. Modeli Yükleme
-    model, model_columns = load_model_and_columns()
-    
-    # 3. Girdi İşlemleri
-    map_order, team1_agents, team2_agents = get_user_inputs()
-    
-    # 4. İşlem Hattı (Pipeline) Çalıştırma ve Çıktı Üretme
+
+    # Kaynakları yükle
+    model, model_columns, map_agent_stats = load_resources()
+
+    # Harita seçimi + harita istatistikleri
+    selected_map = get_map_selection(
+        model_columns,
+        map_agent_stats
+    )
+
+    # Takım seçimleri
+    team1_agents, team2_agents = get_team_inputs()
+
+    # Tahmin butonu
     st.markdown("---")
+
     if st.button("🔮 Maç Sonucunu Tahmin Et", use_container_width=True):
-        
+
         # Validasyon
         if len(team1_agents) != 5 or len(team2_agents) != 5:
-            st.warning("Lütfen tahmin yapmadan önce her iki takım için de tam 5 ajan seçtiğinizden emin olun!")
-        else:
-            # Hesaplama İşlemi (Girdi -> Tahmin Çıktısı)
-            prediction, probability = predict_match(team1_agents, team2_agents, map_order, model, model_columns)
-            
-            # Sonuç Gösterimi
-            display_prediction_result(prediction, probability)
-            
-            # Ara Çıktı Üretimi (Grafik/Tablo Gösterimi)
-            display_feature_importance(model, model_columns)
 
-# Sadece bu dosya doğrudan çalıştırıldığında main() tetiklensin
+            st.warning(
+                "Lütfen her iki takım için de tam 5 ajan seçin!"
+            )
+
+        else:
+
+            # Tahmin işlemi
+            prediction, probability = predict_match(
+                selected_map,
+                team1_agents,
+                team2_agents,
+                model,
+                model_columns
+            )
+
+            # Sonuç gösterimi
+            display_prediction_result(
+                prediction,
+                probability
+            )
+
+            # Feature importance grafiği
+            display_feature_importance(
+                model,
+                model_columns
+            )
+
+
+# Program başlangıcı
 if __name__ == "__main__":
     main()
