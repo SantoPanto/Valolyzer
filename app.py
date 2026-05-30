@@ -2,6 +2,34 @@ import streamlit as st
 import joblib
 import pandas as pd
 
+# --- VALORANT CUSTOM CSS ---
+st.markdown("""
+<style>
+    /* Tahmin butonunu ve tüm butonları keskinleştir, Valorant stili ver */
+    div.stButton > button {
+        border-radius: 0px !important; 
+        border: 2px solid #ff4655 !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Butonun üzerine gelince (hover) ne olacak? */
+    div.stButton > button:hover {
+        background-color: #ff4655 !important;
+        color: #0f1923 !important;
+        border-color: #ff4655 !important;
+        box-shadow: 0px 0px 15px rgba(255, 70, 85, 0.5);
+    }
+
+    /* Gereksiz Streamlit yazılarını ve sağ üst menüyü gizle (Daha pro dursun) */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)
+# ---------------------------
 # --- Veri Sabitleri ---
 VALORANT_AGENTS = sorted([
     "Jett", "Raze", "Breach", "Omen", "Brimstone", "Viper", "Killjoy",
