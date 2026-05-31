@@ -1,0 +1,2476 @@
+map_id,team,agent_1,agent_2,agent_3,agent_4,agent_5,source
+681328_0,Sentinels,Viper,Sova,Iso,Harbor,Neon,vlr
+681328_2,Sentinels,Viper,Fade,Astra,Raze,Neon,vlr
+681328_3,Sentinels,Omen,Viper,Killjoy,Sova,Neon,vlr
+681329_2,KRÜ Esports,Viper,Vyse,Fade,Neon,Omen,vlr
+681330_0,FURIA,Omen,Sova,Phoenix,Cypher,Jett,vlr
+681330_2,FURIA,Viper,KAY/O,Jett,Harbor,Sova,vlr
+681331_0,NRG,Sova,Harbor,KAY/O,Jett,Viper,vlr
+681331_2,NRG,Sova,Jett,KAY/O,Omen,Vyse,vlr
+681332_0,MIBR,Neon,Fade,Omen,Cypher,Raze,vlr
+681332_2,MIBR,Sova,Neon,Cypher,Phoenix,Harbor,vlr
+681332_3,MIBR,Omen,Jett,Sova,Neon,Cypher,vlr
+681333_0,LOUD,Neon,Omen,Phoenix,Sova,Cypher,vlr
+681333_2,LOUD,Neon,Vyse,Viper,Omen,Fade,vlr
+681333_3,LOUD,Astra,Vyse,Phoenix,Neon,Fade,vlr
+681335_0,NRG,Raze,Omen,Vyse,Fade,Viper,vlr
+681335_2,NRG,Jett,Sova,Omen,Phoenix,Cypher,vlr
+681336_0,Sentinels,Harbor,Viper,Neon,Sova,Iso,vlr
+681336_2,Sentinels,Fade,Cypher,Raze,Omen,Neon,vlr
+681336_3,Sentinels,Vyse,Neon,Phoenix,Astra,Fade,vlr
+681337_2,NRG,Omen,Viper,Raze,Vyse,Fade,vlr
+681337_2,NRG,Omen,Viper,Raze,Vyse,Fade,vlr
+681336_0,Sentinels,Harbor,Viper,Neon,Sova,Iso,vlr
+681336_2,Sentinels,Fade,Cypher,Raze,Omen,Neon,vlr
+681336_3,Sentinels,Vyse,Neon,Phoenix,Astra,Fade,vlr
+681333_0,LOUD,Neon,Omen,Phoenix,Sova,Cypher,vlr
+681333_2,LOUD,Neon,Vyse,Viper,Omen,Fade,vlr
+681333_3,LOUD,Astra,Vyse,Phoenix,Neon,Fade,vlr
+681335_0,NRG,Raze,Omen,Vyse,Fade,Viper,vlr
+681335_2,NRG,Jett,Sova,Omen,Phoenix,Cypher,vlr
+681332_0,MIBR,Neon,Fade,Omen,Cypher,Raze,vlr
+681332_2,MIBR,Sova,Neon,Cypher,Phoenix,Harbor,vlr
+681332_3,MIBR,Omen,Jett,Sova,Neon,Cypher,vlr
+674854_0,Natus Vincere,Viper,Omen,Fade,Chamber,Neon,vlr
+674854_2,Natus Vincere,Omen,Raze,Cypher,Fade,Neon,vlr
+674855_0,Gentle Mates,Raze,Cypher,Omen,Fade,Neon,vlr
+674855_2,Gentle Mates,Phoenix,Cypher,Jett,Sova,Omen,vlr
+674856_0,BBL Esports,Jett,Viper,Omen,Neon,Sova,vlr
+674856_2,BBL Esports,Vyse,Raze,Neon,Astra,Fade,vlr
+674857_0,Eternal Fire,Astra,Raze,Cypher,Neon,Fade,vlr
+674857_2,Eternal Fire,Cypher,Fade,Astra,Neon,Phoenix,vlr
+674857_3,Eternal Fire,Vyse,Omen,Sage,Jett,Sova,vlr
+674858_0,Gentle Mates,Neon,Phoenix,Sova,Cypher,Omen,vlr
+674858_2,Gentle Mates,Phoenix,Cypher,Fade,Astra,Neon,vlr
+674858_3,Gentle Mates,Omen,Sova,Phoenix,Jett,Cypher,vlr
+674859_0,Karmine Corp,Omen,Fade,Chamber,Viper,Neon,vlr
+674859_2,Karmine Corp,Cypher,Phoenix,Neon,Omen,Sova,vlr
+674859_3,Karmine Corp,Phoenix,Fade,Cypher,Neon,Brimstone,vlr
+674859_4,Karmine Corp,Cypher,Phoenix,Omen,Neon,Sova,vlr
+674859_5,Karmine Corp,Viper,Harbor,Sova,Jett,Neon,vlr
+674860_0,Team Liquid,Fade,Cypher,Omen,Raze,Phoenix,vlr
+674860_2,Team Liquid,Cypher,Jett,Omen,Sova,Sage,vlr
+674861_2,Eternal Fire,Cypher,Neon,Fade,Omen,Raze,vlr
+674862_0,Natus Vincere,Cypher,Phoenix,Sova,Omen,Neon,vlr
+674862_2,Natus Vincere,Neon,Raze,Fade,Viper,Omen,vlr
+674862_3,Natus Vincere,Omen,Chamber,Neon,Viper,Fade,vlr
+674863_0,BBL Esports,Astra,Cypher,Phoenix,Fade,Neon,vlr
+674863_2,BBL Esports,Jett,Sova,Omen,Phoenix,Cypher,vlr
+674863_3,BBL Esports,Neon,Raze,Vyse,Fade,Omen,vlr
+674863_0,BBL Esports,Astra,Cypher,Phoenix,Fade,Neon,vlr
+674863_2,BBL Esports,Jett,Sova,Omen,Phoenix,Cypher,vlr
+674863_3,BBL Esports,Neon,Raze,Vyse,Fade,Omen,vlr
+674862_0,Natus Vincere,Cypher,Phoenix,Sova,Omen,Neon,vlr
+674862_2,Natus Vincere,Neon,Raze,Fade,Viper,Omen,vlr
+674862_3,Natus Vincere,Omen,Chamber,Neon,Viper,Fade,vlr
+674859_0,Karmine Corp,Omen,Fade,Chamber,Viper,Neon,vlr
+674859_2,Karmine Corp,Cypher,Phoenix,Neon,Omen,Sova,vlr
+674859_3,Karmine Corp,Phoenix,Fade,Cypher,Neon,Brimstone,vlr
+674859_4,Karmine Corp,Cypher,Phoenix,Omen,Neon,Sova,vlr
+674859_5,Karmine Corp,Viper,Harbor,Sova,Jett,Neon,vlr
+674861_2,Eternal Fire,Cypher,Neon,Fade,Omen,Raze,vlr
+674858_0,Gentle Mates,Neon,Phoenix,Sova,Cypher,Omen,vlr
+674858_2,Gentle Mates,Phoenix,Cypher,Fade,Astra,Neon,vlr
+674858_3,Gentle Mates,Omen,Sova,Phoenix,Jett,Cypher,vlr
+686501_0,Kryosis Esports,Raze,Vyse,Viper,Fade,Omen,vlr
+686501_2,Kryosis Esports,Vyse,Sova,Omen,KAY/O,Jett,vlr
+686502_2,Baltic Brits,Killjoy,Jett,Phoenix,Omen,Sova,vlr
+686503_2,Total Control,Sova,Chamber,Neon,Astra,Phoenix,vlr
+686504_0,Enisorail,Iso,Viper,Sova,Harbor,Jett,vlr
+686504_2,Enisorail,Fade,Viper,Vyse,Raze,Omen,vlr
+686504_3,Enisorail,Phoenix,Killjoy,Jett,Sova,Omen,vlr
+686505_0,Aromat,Chamber,Fade,Omen,Breach,Viper,vlr
+686505_2,Aromat,Chamber,Viper,Sova,Jett,Omen,vlr
+686506_0,YcatbIe,Phoenix,Killjoy,Raze,Fade,Omen,vlr
+686507_2,CSM,Astra,Jett,Phoenix,Fade,Vyse,vlr
+686508_0,FG Origins,Phoenix,Jett,Vyse,Omen,Sova,vlr
+686510_0,BOUZELOUF,Jett,Neon,Viper,Sova,Omen,vlr
+686510_2,BOUZELOUF,Phoenix,Vyse,Omen,Neon,Fade,vlr
+686510_3,BOUZELOUF,Neon,Killjoy,Sova,Phoenix,Omen,vlr
+686511_0,AquaEdge Esports,Viper,Fade,Raze,Neon,Omen,vlr
+686511_2,AquaEdge Esports,Vyse,Fade,Omen,Neon,Raze,vlr
+686511_3,AquaEdge Esports,Omen,Neon,Phoenix,Killjoy,Sova,vlr
+686512_0,KZ PLAYERS,Viper,Sova,Neon,Omen,Iso,vlr
+686513_0,FRG TSE SWE,Jett,Vyse,Raze,Omen,Fade,vlr
+686513_2,FRG TSE SWE,Vyse,Jett,Phoenix,Omen,Sova,vlr
+686515_0,Szach Mat,Jett,Skye,Astra,Viper,Raze,vlr
+686515_2,Szach Mat,Vyse,Jett,Omen,Phoenix,Sova,vlr
+686515_3,Szach Mat,Raze,Viper,Vyse,Fade,Omen,vlr
+686517_0,Melilla Titans,Vyse,Omen,Sova,Jett,KAY/O,vlr
+686517_2,Melilla Titans,Omen,Chamber,Sova,Jett,Phoenix,vlr
+686518_0,FRG UK,Jett,Phoenix,Omen,Killjoy,Sova,vlr
+686519_0,Baltic Brits,Phoenix,Jett,Omen,Killjoy,Sova,vlr
+686519_2,Baltic Brits,Omen,Sova,Killjoy,Jett,Phoenix,vlr
+686520_0,Enisorail,Jett,Harbor,Viper,Iso,Sova,vlr
+686520_2,Enisorail,Phoenix,Raze,Chamber,Fade,Brimstone,vlr
+686521_0,YcatbIe,Jett,Sova,Omen,Phoenix,Killjoy,vlr
+686521_2,YcatbIe,Chamber,Jett,Sova,Omen,Viper,vlr
+686521_3,YcatbIe,Killjoy,Fade,Phoenix,Omen,Raze,vlr
+686522_0,VENOM ESPOR,Chamber,Raze,Viper,Fade,Omen,vlr
+686522_2,VENOM ESPOR,Jett,Phoenix,Omen,Vyse,Sova,vlr
+686522_3,VENOM ESPOR,Raze,Omen,Jett,Viper,Skye,vlr
+686523_0,Esports Psycho,Raze,Omen,Viper,Fade,Vyse,vlr
+686523_2,Esports Psycho,Jett,Skye,Chamber,Raze,Clove,vlr
+686524_2,KZ PLAYERS,Astra,Viper,Sova,Neon,Iso,vlr
+686525_0,Szach Mat,Sova,Vyse,Phoenix,Omen,Jett,vlr
+686525_2,Szach Mat,Jett,Skye,Raze,Viper,Astra,vlr
+686525_3,Szach Mat,Omen,Raze,Fade,Vyse,Viper,vlr
+686526_2,CICADAS Gaming,Killjoy,Brimstone,Omen,Raze,Fade,vlr
+686526_3,CICADAS Gaming,Neon,Deadlock,Vyse,Sova,Omen,vlr
+686527_0,Enisorail,Vyse,Viper,Omen,Fade,Raze,vlr
+686527_2,Enisorail,Phoenix,Fade,Chamber,Raze,Brimstone,vlr
+686528_2,CSM,Sova,Jett,Omen,Killjoy,Phoenix,vlr
+686528_3,CSM,Sova,Jett,Vyse,Phoenix,Omen,vlr
+686529_0,Formulation Gaming,Chamber,Raze,Brimstone,Fade,Neon,vlr
+686529_2,Formulation Gaming,Phoenix,Fade,Jett,Viper,Omen,vlr
+686530_0,Ruan Duarte,Phoenix,Jett,Sova,Omen,Vyse,vlr
+686530_2,Ruan Duarte,Viper,Raze,Omen,Vyse,Fade,vlr
+686530_3,Ruan Duarte,Sage,Raze,Skye,Viper,Omen,vlr
+686527_0,Enisorail,Vyse,Viper,Omen,Fade,Raze,vlr
+686527_2,Enisorail,Phoenix,Fade,Chamber,Raze,Brimstone,vlr
+686528_2,CSM,Sova,Jett,Omen,Killjoy,Phoenix,vlr
+686528_3,CSM,Sova,Jett,Vyse,Phoenix,Omen,vlr
+686529_0,Formulation Gaming,Chamber,Raze,Brimstone,Fade,Neon,vlr
+686529_2,Formulation Gaming,Phoenix,Fade,Jett,Viper,Omen,vlr
+686530_0,Ruan Duarte,Phoenix,Jett,Sova,Omen,Vyse,vlr
+686530_2,Ruan Duarte,Viper,Raze,Omen,Vyse,Fade,vlr
+686530_3,Ruan Duarte,Sage,Raze,Skye,Viper,Omen,vlr
+686519_0,Baltic Brits,Phoenix,Jett,Omen,Killjoy,Sova,vlr
+686519_2,Baltic Brits,Omen,Sova,Killjoy,Jett,Phoenix,vlr
+681516_2,NRG,Raze,Vyse,Viper,Omen,Fade,vlr
+681517_0,Pigeons,Jett,Skye,Brimstone,Breach,Cypher,vlr
+681517_2,Pigeons,Jett,Sova,Omen,Deadlock,Cypher,vlr
+681519_0,Evictix,Omen,Jett,Killjoy,Sova,Viper,vlr
+681519_2,Evictix,Omen,Viper,Raze,Vyse,Fade,vlr
+681518_0,ROSE,Vyse,Clove,Fade,Omen,Raze,vlr
+681518_2,ROSE,Neon,Astra,Phoenix,Chamber,Fade,vlr
+681521_0,Azure Dragon Gaming,Cypher,Phoenix,Sova,Omen,Jett,vlr
+681521_2,Azure Dragon Gaming,Jett,Vyse,Omen,Skye,Raze,vlr
+681521_3,Azure Dragon Gaming,Viper,Jett,Reyna,Sova,Harbor,vlr
+681520_0,Dynamo,Omen,Iso,Vyse,Raze,Fade,vlr
+681520_2,Dynamo,Iso,Viper,Sova,Omen,Jett,vlr
+681522_0,Alliance Guardians,Harbor,Viper,Sova,KAY/O,Jett,vlr
+681522_2,Alliance Guardians,Omen,Viper,Fade,KAY/O,Raze,vlr
+681522_3,Alliance Guardians,KAY/O,Omen,Cypher,Jett,Fade,vlr
+681523_2,YFP,Jett,Phoenix,Sova,Omen,Cypher,vlr
+685247_0,Alliance Guardians,Viper,Deadlock,Raze,Omen,Fade,vlr
+685247_2,Alliance Guardians,Omen,Cypher,KAY/O,Fade,Jett,vlr
+685247_3,Alliance Guardians,Omen,Viper,Raze,Sage,Skye,vlr
+685246_0,Evil Geniuses Academy,Omen,Viper,Chamber,Sova,Jett,vlr
+685246_2,Evil Geniuses Academy,Omen,Chamber,KAY/O,Jett,Sova,vlr
+685246_3,Evil Geniuses Academy,Omen,Fade,Viper,Raze,Vyse,vlr
+685249_0,Dynamo,Vyse,Fade,Raze,Iso,Omen,vlr
+685248_0,YFP,Jett,Sova,Omen,Cypher,KAY/O,vlr
+685248_2,YFP,Vyse,Omen,Raze,Fade,Harbor,vlr
+685251_0,NRG,Viper,Raze,Vyse,Omen,Fade,vlr
+685250_2,Shopify Rebellion Black,Cypher,Fade,Astra,Jett,Phoenix,vlr
+685250_3,Shopify Rebellion Black,Fade,Chamber,Raze,Omen,Viper,vlr
+685253_0,FlyQuest,Jett,Phoenix,Fade,Astra,Vyse,vlr
+685253_2,FlyQuest,Raze,Skye,Viper,Omen,Jett,vlr
+685252_0,Azure Dragon Gaming,Omen,Raze,Skye,Jett,Vyse,vlr
+685252_2,Azure Dragon Gaming,Jett,Harbor,Reyna,Viper,Sova,vlr
+685252_0,Azure Dragon Gaming,Omen,Raze,Skye,Jett,Vyse,vlr
+685252_2,Azure Dragon Gaming,Jett,Harbor,Reyna,Viper,Sova,vlr
+685253_0,FlyQuest,Jett,Phoenix,Fade,Astra,Vyse,vlr
+685253_2,FlyQuest,Raze,Skye,Viper,Omen,Jett,vlr
+685250_2,Shopify Rebellion Black,Cypher,Fade,Astra,Jett,Phoenix,vlr
+685250_3,Shopify Rebellion Black,Fade,Chamber,Raze,Omen,Viper,vlr
+685251_0,NRG,Viper,Raze,Vyse,Omen,Fade,vlr
+685248_0,YFP,Jett,Sova,Omen,Cypher,KAY/O,vlr
+685248_2,YFP,Vyse,Omen,Raze,Fade,Harbor,vlr
+685412_0,PÃO COM RATO,Jett,Harbor,Sova,KAY/O,Viper,vlr
+685412_2,PÃO COM RATO,Vyse,Phoenix,Sova,Omen,Jett,vlr
+685411_0,Angels of Delusion,Jett,Vyse,Omen,Sage,Sova,vlr
+685413_2,Arashi GC,Raze,Fade,Viper,Omen,Vyse,vlr
+685414_0,MIBR GC,KAY/O,Jett,Omen,Killjoy,Sova,vlr
+685413_2,Arashi GC,Raze,Fade,Viper,Omen,Vyse,vlr
+685414_0,MIBR GC,KAY/O,Jett,Omen,Killjoy,Sova,vlr
+685411_0,Angels of Delusion,Jett,Vyse,Omen,Sage,Sova,vlr
+685412_0,PÃO COM RATO,Jett,Harbor,Sova,KAY/O,Viper,vlr
+685412_2,PÃO COM RATO,Vyse,Phoenix,Sova,Omen,Jett,vlr
+685317_0,ROLO COMPRESSOR,Vyse,Phoenix,Neon,Omen,Fade,vlr
+685317_2,ROLO COMPRESSOR,Cypher,Phoenix,Neon,Omen,Sova,vlr
+685318_0,L9,Omen,Neon,Jett,Fade,Vyse,vlr
+685318_2,L9,Harbor,Sova,Jett,Viper,Neon,vlr
+685318_0,L9,Omen,Neon,Jett,Fade,Vyse,vlr
+685318_2,L9,Harbor,Sova,Jett,Viper,Neon,vlr
+685317_0,ROLO COMPRESSOR,Vyse,Phoenix,Neon,Omen,Fade,vlr
+685317_2,ROLO COMPRESSOR,Cypher,Phoenix,Neon,Omen,Sova,vlr
+678026_0,Chivas Esports,Viper,Astra,Jett,Skye,Raze,vlr
+678026_2,Chivas Esports,Omen,Sova,Cypher,Jett,Phoenix,vlr
+678027_0,LAZER,Chamber,Sova,Harbor,Phoenix,Neon,vlr
+678027_2,LAZER,Fade,Vyse,Raze,Omen,Viper,vlr
+678028_0,LYON,Phoenix,Sova,Cypher,Omen,Jett,vlr
+678028_2,LYON,Phoenix,Viper,Raze,Fade,Omen,vlr
+678029_0,Grizzly Gang,Sova,Astra,Neon,Phoenix,Killjoy,vlr
+678029_2,Grizzly Gang,Raze,Clove,Fade,Vyse,Viper,vlr
+678039_0,AB3 Esports,Reyna,Jett,Sova,Clove,Viper,vlr
+678039_2,AB3 Esports,Reyna,Sova,Jett,Chamber,Clove,vlr
+678040_0,Contra,Phoenix,Killjoy,Jett,Astra,Sova,vlr
+678041_2,LAZER,Fade,Vyse,Viper,Raze,Omen,vlr
+678043_0,LAZER,Chamber,Sova,Phoenix,Harbor,Neon,vlr
+678044_2,Contra,Jett,Phoenix,Astra,Harbor,Sova,vlr
+678044_3,Contra,Deadlock,Cypher,Sova,Jett,Omen,vlr
+678045_0,FUSION,Omen,Viper,Vyse,Fade,Raze,vlr
+678045_2,FUSION,Sova,Killjoy,Astra,Neon,Phoenix,vlr
+678045_0,FUSION,Omen,Viper,Vyse,Fade,Raze,vlr
+678045_2,FUSION,Sova,Killjoy,Astra,Neon,Phoenix,vlr
+678044_2,Contra,Jett,Phoenix,Astra,Harbor,Sova,vlr
+678044_3,Contra,Deadlock,Cypher,Sova,Jett,Omen,vlr
+678043_0,LAZER,Chamber,Sova,Phoenix,Harbor,Neon,vlr
+678041_2,LAZER,Fade,Vyse,Viper,Raze,Omen,vlr
+676896_0,Leviatán,KAY/O,Harbor,Viper,Jett,Sova,vlr
+676896_2,Leviatán,Raze,Viper,Omen,Killjoy,Fade,vlr
+676897_2,ShindeN,Astra,KAY/O,Viper,Jett,Sova,vlr
+676898_0,BESTIA,Sova,Phoenix,Omen,Neon,Cypher,vlr
+676898_2,BESTIA,Neon,Astra,Phoenix,Killjoy,Fade,vlr
+676899_0,KRÜ SPARK,Raze,Omen,Viper,Vyse,Fade,vlr
+676899_2,KRÜ SPARK,Raze,Vyse,Omen,Viper,Fade,vlr
+676902_0,ShindeN,Jett,KAY/O,Sova,Harbor,Viper,vlr
+676903_2,BESTIA,Phoenix,Sova,Harbor,Neon,Viper,vlr
+676904_0,OXEN,Chamber,Viper,Fade,Omen,Raze,vlr
+676904_2,OXEN,KAY/O,Viper,Sova,Harbor,Jett,vlr
+676905_0,KRÜ SPARK,Viper,Chamber,Sage,Jett,Sova,vlr
+676905_2,KRÜ SPARK,Chamber,Fade,Jett,Omen,Phoenix,vlr
+676905_3,KRÜ SPARK,Sova,Omen,Phoenix,Jett,Cypher,vlr
+676908_0,Leviatán,Viper,Fade,Omen,Killjoy,Raze,vlr
+676908_3,Leviatán,Cypher,KAY/O,Sova,Jett,Omen,vlr
+676909_2,ShindeN,Omen,Jett,Phoenix,Sova,Cypher,vlr
+676909_3,ShindeN,Sova,KAY/O,Harbor,Viper,Jett,vlr
+676907_0,KRÜ SPARK,Vyse,Fade,Raze,Viper,Omen,vlr
+676907_2,KRÜ SPARK,Jett,Sage,Sova,Viper,Chamber,vlr
+676907_3,KRÜ SPARK,Omen,Phoenix,Cypher,Sova,Jett,vlr
+676906_2,KRÜ BLAZE,Vyse,Skye,Viper,Raze,Omen,vlr
+676906_2,KRÜ BLAZE,Vyse,Skye,Viper,Raze,Omen,vlr
+676907_0,KRÜ SPARK,Vyse,Fade,Raze,Viper,Omen,vlr
+676907_2,KRÜ SPARK,Jett,Sage,Sova,Viper,Chamber,vlr
+676907_3,KRÜ SPARK,Omen,Phoenix,Cypher,Sova,Jett,vlr
+676909_2,ShindeN,Omen,Jett,Phoenix,Sova,Cypher,vlr
+676909_3,ShindeN,Sova,KAY/O,Harbor,Viper,Jett,vlr
+676908_0,Leviatán,Viper,Fade,Omen,Killjoy,Raze,vlr
+676908_3,Leviatán,Cypher,KAY/O,Sova,Jett,Omen,vlr
+676905_0,KRÜ SPARK,Viper,Chamber,Sage,Jett,Sova,vlr
+676905_2,KRÜ SPARK,Chamber,Fade,Jett,Omen,Phoenix,vlr
+676905_3,KRÜ SPARK,Sova,Omen,Phoenix,Jett,Cypher,vlr
+681780_0,IGZIST,Astra,Fade,Killjoy,Jett,Phoenix,vlr
+681780_2,IGZIST,Neon,Sova,Chamber,Omen,Phoenix,vlr
+681781_0,FENNEL,Raze,Omen,Vyse,Viper,Fade,vlr
+681781_2,FENNEL,Omen,Jett,Viper,Sage,Fade,vlr
+681782_0,RIDDLE ORDER,Neon,Harbor,KAY/O,Viper,Sova,vlr
+681782_2,RIDDLE ORDER,Neon,Omen,Vyse,Fade,Viper,vlr
+681782_3,RIDDLE ORDER,Vyse,Fade,Neon,Viper,Omen,vlr
+681783_0,REJECT,Viper,Phoenix,Sova,Harbor,Jett,vlr
+681783_2,REJECT,Chamber,Raze,Omen,Fade,Viper,vlr
+681783_3,REJECT,Astra,Jett,Phoenix,Killjoy,Sova,vlr
+681784_0,FENNEL,Omen,Sova,Jett,Phoenix,Cypher,vlr
+681784_2,FENNEL,Vyse,Viper,Raze,Omen,Fade,vlr
+681784_3,FENNEL,Sage,Jett,Fade,Omen,Viper,vlr
+681785_0,RIDDLE ORDER,Omen,KAY/O,Vyse,Sova,Jett,vlr
+681785_2,RIDDLE ORDER,Omen,Neon,Fade,Vyse,Viper,vlr
+681785_3,RIDDLE ORDER,Harbor,Viper,Sova,Neon,KAY/O,vlr
+681786_0,REJECT,Phoenix,Viper,Sova,Harbor,Jett,vlr
+681786_2,REJECT,Phoenix,Killjoy,Astra,Jett,Fade,vlr
+681787_0,Insomnia,Jett,Fade,Raze,Vyse,Omen,vlr
+681787_2,Insomnia,Omen,Sova,Neon,Cypher,Deadlock,vlr
+681788_0,REJECT,Neon,Omen,Skye,Raze,Viper,vlr
+681788_2,REJECT,Omen,Jett,Deadlock,Cypher,Sova,vlr
+681789_0,RIDDLE ORDER,Sova,Jett,Vyse,Omen,KAY/O,vlr
+681789_3,RIDDLE ORDER,Neon,Fade,Viper,Vyse,Omen,vlr
+681790_0,Insomnia,Sova,Harbor,Jett,KAY/O,Viper,vlr
+681790_2,Insomnia,Deadlock,Jett,Omen,Cypher,Sova,vlr
+681790_3,Insomnia,Jett,Astra,Fade,Phoenix,Killjoy,vlr
+681791_0,QT DIG∞,Jett,Phoenix,Cypher,Omen,Sova,vlr
+681791_2,QT DIG∞,Astra,Fade,Jett,Phoenix,Killjoy,vlr
+681791_0,QT DIG∞,Jett,Phoenix,Cypher,Omen,Sova,vlr
+681791_2,QT DIG∞,Astra,Fade,Jett,Phoenix,Killjoy,vlr
+681790_0,Insomnia,Sova,Harbor,Jett,KAY/O,Viper,vlr
+681790_2,Insomnia,Deadlock,Jett,Omen,Cypher,Sova,vlr
+681790_3,Insomnia,Jett,Astra,Fade,Phoenix,Killjoy,vlr
+681789_0,RIDDLE ORDER,Sova,Jett,Vyse,Omen,KAY/O,vlr
+681789_3,RIDDLE ORDER,Neon,Fade,Viper,Vyse,Omen,vlr
+681788_0,REJECT,Neon,Omen,Skye,Raze,Viper,vlr
+681788_2,REJECT,Omen,Jett,Deadlock,Cypher,Sova,vlr
+681787_0,Insomnia,Jett,Fade,Raze,Vyse,Omen,vlr
+681787_2,Insomnia,Omen,Sova,Neon,Cypher,Deadlock,vlr
+681636_0,Ghost Gaming,Astra,Neon,Fade,Chamber,Phoenix,vlr
+681636_2,Ghost Gaming,Viper,Raze,Fade,Omen,Vyse,vlr
+681636_3,Ghost Gaming,Neon,Vyse,Omen,Fade,Viper,vlr
+681637_0,Wadadaa,Phoenix,Jett,Omen,Sova,Vyse,vlr
+681637_2,Wadadaa,Skye,Omen,Chamber,Raze,Viper,vlr
+681638_0,:3,Omen,Deadlock,Vyse,Sova,Jett,vlr
+681638_2,:3,Omen,Jett,Vyse,Raze,Fade,vlr
+681640_2,FlyQuest RED,Neon,Viper,Omen,Sova,Killjoy,vlr
+681641_0,SwimTrek Blue,Brimstone,Neon,Fade,Raze,Chamber,vlr
+681641_2,SwimTrek Blue,Fade,Vyse,Neon,Iso,Omen,vlr
+681644_0,Wadadaa,Sova,Omen,Phoenix,Jett,Vyse,vlr
+681644_2,Wadadaa,Astra,Chamber,Neon,Sova,Vyse,vlr
+681644_3,Wadadaa,Chamber,Jett,Astra,Viper,Sova,vlr
+681645_0,Sentinels,Phoenix,Killjoy,Astra,Jett,Fade,vlr
+681645_2,Sentinels,Vyse,Jett,Fade,Phoenix,Omen,vlr
+681645_0,Sentinels,Phoenix,Killjoy,Astra,Jett,Fade,vlr
+681645_2,Sentinels,Vyse,Jett,Fade,Phoenix,Omen,vlr
+681641_0,SwimTrek Blue,Brimstone,Neon,Fade,Raze,Chamber,vlr
+681641_2,SwimTrek Blue,Fade,Vyse,Neon,Iso,Omen,vlr
+681640_2,FlyQuest RED,Neon,Viper,Omen,Sova,Killjoy,vlr
+681644_0,Wadadaa,Sova,Omen,Phoenix,Jett,Vyse,vlr
+681644_2,Wadadaa,Astra,Chamber,Neon,Sova,Vyse,vlr
+681644_3,Wadadaa,Chamber,Jett,Astra,Viper,Sova,vlr
+668473_0,ELEVATE,Neon,Omen,Chamber,Fade,Viper,vlr
+668473_2,ELEVATE,Chamber,Astra,Phoenix,Neon,Sova,vlr
+668473_3,ELEVATE,Omen,Phoenix,Chamber,Neon,Sova,vlr
+668474_0,Team Liquid Brazil,Neon,Sova,Viper,KAY/O,Harbor,vlr
+668474_2,Team Liquid Brazil,Raze,Astra,Skye,Neon,Viper,vlr
+668475_0,TEAM EGO,Phoenix,Sova,Neon,Harbor,Viper,vlr
+668475_2,TEAM EGO,Neon,Phoenix,Cypher,Fade,Brimstone,vlr
+668482_2,RED Canids,Omen,Viper,Fade,Neon,Vyse,vlr
+668482_3,RED Canids,Neon,Vyse,Fade,Viper,Omen,vlr
+668481_0,INTZ,Vyse,Omen,Fade,Neon,Viper,vlr
+668481_2,INTZ,Neon,Sova,Astra,Killjoy,Phoenix,vlr
+668483_0,Team Liquid Brazil,Viper,Omen,Neon,Fade,Vyse,vlr
+668491_0,LA MASIA,Astra,Vyse,Sova,Neon,Phoenix,vlr
+668490_0,TEAM EGO,Phoenix,Neon,Fade,Astra,Cypher,vlr
+668490_2,TEAM EGO,Fade,Omen,Neon,Vyse,Viper,vlr
+668492_0,RED Canids,Neon,Viper,Vyse,Omen,Fade,vlr
+668492_2,RED Canids,Harbor,Viper,Jett,Sova,KAY/O,vlr
+681912_0,TEAM EGO,Cypher,Astra,Fade,Neon,Phoenix,vlr
+681912_2,TEAM EGO,Phoenix,Vyse,Sova,Neon,Omen,vlr
+681911_2,LA MASIA,Jett,Astra,KAY/O,Sova,Cypher,vlr
+681913_2,Team Liquid Brazil,Raze,Omen,Vyse,Viper,Fade,vlr
+681919_0,Team Liquid Brazil,KAY/O,Harbor,Jett,Sova,Viper,vlr
+681919_2,Team Liquid Brazil,Sova,Killjoy,Jett,Omen,KAY/O,vlr
+681918_0,TEAM EGO,Phoenix,Chamber,Neon,Astra,Fade,vlr
+681918_2,TEAM EGO,Phoenix,Cypher,Fade,Neon,Astra,vlr
+681918_3,TEAM EGO,Vyse,Neon,Omen,Phoenix,Fade,vlr
+681920_0,INTZ,Fade,Omen,Vyse,Raze,Viper,vlr
+681920_2,INTZ,Sova,Phoenix,Omen,Jett,Cypher,vlr
+681920_3,INTZ,Raze,Skye,Omen,Viper,Jett,vlr
+668470_0,TBK Esports,Omen,Viper,Raze,Vyse,Fade,vlr
+668471_2,ABACATUDOS,Astra,Neon,Chamber,Phoenix,Sova,vlr
+668472_2,F4TALITY,Chamber,Viper,Neon,Omen,Fade,vlr
+668472_3,F4TALITY,Neon,Chamber,Omen,Phoenix,Fade,vlr
+668478_0,MIBR Academy,Fade,Neon,Phoenix,Cypher,Astra,vlr
+668478_2,MIBR Academy,Sova,Cypher,Omen,Neon,Phoenix,vlr
+668479_0,PEEK,Omen,Phoenix,Cypher,Neon,Sova,vlr
+668479_2,PEEK,Breach,Brimstone,Chamber,Skye,Raze,vlr
+668480_0,ABACATUDOS,Astra,Phoenix,Neon,Chamber,Sova,vlr
+668488_2,FURIA Academy,Chamber,Phoenix,Astra,Neon,Sova,vlr
+668488_3,FURIA Academy,Neon,Fade,Brimstone,Breach,Chamber,vlr
+668487_0,F4TALITY,Viper,Fade,Omen,Vyse,Neon,vlr
+668489_0,PEEK,Vyse,Omen,Neon,Viper,Fade,vlr
+668489_2,PEEK,Sova,Phoenix,Cypher,Neon,Omen,vlr
+681908_2,FURIA Academy,Neon,Omen,Fade,Vyse,Viper,vlr
+681910_2,ABACATUDOS,Omen,Sova,Phoenix,Cypher,Jett,vlr
+681916_0,ABACATUDOS,Harbor,Sova,Jett,Omen,Iso,vlr
+681916_2,ABACATUDOS,Omen,Viper,Raze,Fade,Vyse,vlr
+681917_2,MIBR Academy,Viper,Omen,Skye,Killjoy,Jett,vlr
+681920_0,INTZ,Fade,Omen,Vyse,Raze,Viper,vlr
+681920_2,INTZ,Sova,Phoenix,Omen,Jett,Cypher,vlr
+681920_3,INTZ,Raze,Skye,Omen,Viper,Jett,vlr
+681918_0,TEAM EGO,Phoenix,Chamber,Neon,Astra,Fade,vlr
+681918_2,TEAM EGO,Phoenix,Cypher,Fade,Neon,Astra,vlr
+681918_3,TEAM EGO,Vyse,Neon,Omen,Phoenix,Fade,vlr
+681919_0,Team Liquid Brazil,KAY/O,Harbor,Jett,Sova,Viper,vlr
+681919_2,Team Liquid Brazil,Sova,Killjoy,Jett,Omen,KAY/O,vlr
+681917_2,MIBR Academy,Viper,Omen,Skye,Killjoy,Jett,vlr
+681293_0,Leosun Esports,Sova,Omen,Jett,Phoenix,Cypher,vlr
+681293_2,Leosun Esports,Chamber,Phoenix,Jett,Fade,Brimstone,vlr
+681294_2,S8UL Esports,Phoenix,Sova,Jett,Omen,Cypher,vlr
+681295_0,No Salary Peek,Vyse,Viper,Fade,Neon,Omen,vlr
+681295_3,No Salary Peek,Viper,Raze,Deadlock,Skye,Omen,vlr
+681296_0,Xtreme Scrims,Omen,Sova,Cypher,Breach,Jett,vlr
+681296_3,Xtreme Scrims,Vyse,Viper,Raze,Omen,Skye,vlr
+681297_0,No Salary Peek,Omen,Viper,Deadlock,Fade,Neon,vlr
+681297_2,No Salary Peek,Deadlock,Omen,Viper,Raze,Skye,vlr
+681298_2,S8UL Esports,Omen,Fade,Viper,Vyse,Raze,vlr
+681298_3,S8UL Esports,Viper,Omen,Jett,Raze,Skye,vlr
+681300_0,Leosun Esports,Skye,Fade,Jett,Vyse,Astra,vlr
+681300_2,Leosun Esports,Fade,Raze,Chamber,Omen,Reyna,vlr
+681301_2,Xtreme Scrims,Raze,Cypher,Brimstone,Breach,Fade,vlr
+681301_3,Xtreme Scrims,Cypher,Phoenix,Jett,Astra,Fade,vlr
+681302_0,The Rad Syndicate,Cypher,Omen,Reyna,Sova,Jett,vlr
+681302_2,The Rad Syndicate,Chamber,Astra,KAY/O,Sova,Jett,vlr
+681302_3,The Rad Syndicate,Jett,Sova,Omen,Cypher,Phoenix,vlr
+681303_0,No Salary Peek,Phoenix,Killjoy,Astra,Neon,Fade,vlr
+681304_2,S8UL Esports,Sova,Omen,Phoenix,Cypher,Jett,vlr
+681305_0,Asterisk,Sova,Chamber,Jett,Vyse,Omen,vlr
+681306_0,The Rad Syndicate,Neon,Raze,Fade,Vyse,Omen,vlr
+681306_2,The Rad Syndicate,Phoenix,Omen,Jett,Cypher,Sova,vlr
+681306_3,The Rad Syndicate,Sova,Cypher,Jett,KAY/O,Omen,vlr
+681307_0,Xtreme Scrims,Omen,Jett,Cypher,Breach,Sova,vlr
+681308_0,Xtreme Scrims,Sova,Yoru,Cypher,Deadlock,Omen,vlr
+681308_2,Xtreme Scrims,Jett,Cypher,Astra,Phoenix,Fade,vlr
+681309_0,No Salary Peek,Deadlock,Viper,Omen,Neon,Fade,vlr
+681309_2,No Salary Peek,Neon,Harbor,Sova,Chamber,Viper,vlr
+681310_0,Leosun Esports,Raze,Omen,Iso,Vyse,Fade,vlr
+681310_2,Leosun Esports,Omen,Sova,Killjoy,KAY/O,Jett,vlr
+681311_0,Asterisk,Sova,Clove,Breach,Jett,Cypher,vlr
+681311_2,Asterisk,Clove,Jett,KAY/O,Sova,Cypher,vlr
+681311_0,Asterisk,Sova,Clove,Breach,Jett,Cypher,vlr
+681311_2,Asterisk,Clove,Jett,KAY/O,Sova,Cypher,vlr
+681310_0,Leosun Esports,Raze,Omen,Iso,Vyse,Fade,vlr
+681310_2,Leosun Esports,Omen,Sova,Killjoy,KAY/O,Jett,vlr
+681309_0,No Salary Peek,Deadlock,Viper,Omen,Neon,Fade,vlr
+681309_2,No Salary Peek,Neon,Harbor,Sova,Chamber,Viper,vlr
+681308_0,Xtreme Scrims,Sova,Yoru,Cypher,Deadlock,Omen,vlr
+681308_2,Xtreme Scrims,Jett,Cypher,Astra,Phoenix,Fade,vlr
+681307_0,Xtreme Scrims,Omen,Jett,Cypher,Breach,Sova,vlr
+686244_0,Nidaros Esport,Fade,Phoenix,Cypher,Jett,Astra,vlr
+686244_2,Nidaros Esport,Jett,Omen,Deadlock,Sova,Cypher,vlr
+686244_3,Nidaros Esport,Astra,Killjoy,Viper,Jett,Sova,vlr
+686245_0,NTNUI UNTN,Chamber,Viper,Jett,Sova,Harbor,vlr
+686245_2,NTNUI UNTN,Vyse,Viper,Jett,Sova,Omen,vlr
+686246_2,THY KINGDOM COME,Omen,Killjoy,Phoenix,Sova,Jett,vlr
+686247_0,THY KINGDOM COME,Sova,Jett,Viper,Chamber,Astra,vlr
+686247_2,THY KINGDOM COME,Omen,Sova,Iso,Jett,Chamber,vlr
+686247_3,THY KINGDOM COME,Killjoy,Astra,Jett,Iso,Fade,vlr
+686247_0,THY KINGDOM COME,Sova,Jett,Viper,Chamber,Astra,vlr
+686247_2,THY KINGDOM COME,Omen,Sova,Iso,Jett,Chamber,vlr
+686247_3,THY KINGDOM COME,Killjoy,Astra,Jett,Iso,Fade,vlr
+686244_0,Nidaros Esport,Fade,Phoenix,Cypher,Jett,Astra,vlr
+686244_2,Nidaros Esport,Jett,Omen,Deadlock,Sova,Cypher,vlr
+686244_3,Nidaros Esport,Astra,Killjoy,Viper,Jett,Sova,vlr
+686245_0,NTNUI UNTN,Chamber,Viper,Jett,Sova,Harbor,vlr
+686245_2,NTNUI UNTN,Vyse,Viper,Jett,Sova,Omen,vlr
+686246_2,THY KINGDOM COME,Omen,Killjoy,Phoenix,Sova,Jett,vlr
+656838_2,San Jose State University,Phoenix,Omen,Killjoy,Neon,Sova,vlr
+656839_0,UCSD Gold,Jett,Chamber,Omen,Sova,Neon,vlr
+656839_2,UCSD Gold,Neon,Iso,Viper,Omen,Skye,vlr
+656840_0,Ball State,Sage,Omen,Iso,Sova,Neon,vlr
+656840_2,Ball State,Fade,Neon,Iso,Killjoy,Astra,vlr
+656841_0,Rutgers University,Neon,Omen,Killjoy,Sova,Phoenix,vlr
+656841_2,Rutgers University,Yoru,Viper,Fade,Raze,Clove,vlr
+656841_3,Rutgers University,Phoenix,Clove,Viper,Sova,Neon,vlr
+656843_2,Northwood University,Neon,Fade,Vyse,Omen,Iso,vlr
+656844_2,Baker College,Viper,Sova,Killjoy,Neon,Omen,vlr
+656845_0,Cumberland Phoenix,Neon,Viper,Fade,Omen,Raze,vlr
+656846_0,UST Esports,Killjoy,Viper,Sova,Omen,Jett,vlr
+656846_2,UST Esports,Chamber,Viper,Omen,Skye,Neon,vlr
+656847_0,Rutgers University,Sova,Phoenix,Astra,Vyse,Neon,vlr
+656847_2,Rutgers University,Viper,Sova,Phoenix,Jett,Omen,vlr
+656848_0,Northwood University,Vyse,Iso,Neon,Fade,Omen,vlr
+656848_2,Northwood University,Neon,Phoenix,Chamber,Astra,Fade,vlr
+656849_2,Harrisburg University,Neon,Skye,Chamber,Brimstone,Viper,vlr
+656849_3,Harrisburg University,Sova,Breach,Neon,Cypher,Omen,vlr
+656850_0,Rutgers University,Omen,Fade,Neon,Viper,Vyse,vlr
+656850_2,Rutgers University,Omen,Sova,Phoenix,Neon,Cypher,vlr
+656851_0,Fisher Navy,Brimstone,Skye,Viper,Neon,Phoenix,vlr
+656851_2,Fisher Navy,Viper,Sova,Jett,Neon,Astra,vlr
+656852_0,Winthrop University,Cypher,Neon,Brimstone,Raze,Breach,vlr
+656852_2,Winthrop University,Jett,Sova,Viper,Neon,Clove,vlr
+656854_0,Columbia College,Neon,Fade,Vyse,Omen,Raze,vlr
+656854_2,Columbia College,Killjoy,Neon,Omen,Viper,Sova,vlr
+656858_0,NC State Esports,Neon,Omen,Raze,Fade,Viper,vlr
+656858_2,NC State Esports,Neon,Vyse,Raze,Fade,Omen,vlr
+656859_0,Boise State,Raze,Omen,Neon,Vyse,Skye,vlr
+656859_2,Boise State,Viper,Clove,Killjoy,Sova,Neon,vlr
+656860_0,Mizzou Esports,Viper,Raze,Chamber,Omen,Skye,vlr
+656860_2,Mizzou Esports,KAY/O,Astra,Fade,Killjoy,Neon,vlr
+656861_2,Keiser University,Sage,Skye,Omen,Viper,Raze,vlr
+656861_3,Keiser University,Chamber,Omen,Fade,Neon,Sage,vlr
+656862_0,Columbia College,Neon,Fade,Omen,Vyse,Raze,vlr
+656862_2,Columbia College,Viper,Chamber,Astra,Neon,Sova,vlr
+656863_2,Esports at UCD Gold,Chamber,Brimstone,Raze,Breach,Neon,vlr
+656864_0,TAMU Maroon,Viper,Brimstone,Chamber,Skye,Raze,vlr
+656864_2,TAMU Maroon,Cypher,Neon,Omen,Reyna,Sova,vlr
+656864_3,TAMU Maroon,Viper,Omen,Raze,Skye,Neon,vlr
+656865_0,Tiffin University,Chamber,Phoenix,Sova,Omen,Neon,vlr
+656866_0,NC State Esports,Raze,Fade,Neon,Vyse,Omen,vlr
+656866_2,NC State Esports,Phoenix,Neon,Sova,Omen,Cypher,vlr
+656867_0,Boise State,Sova,Viper,Killjoy,Clove,Neon,vlr
+656867_2,Boise State,Raze,Skye,Omen,Vyse,Neon,vlr
+656867_3,Boise State,Viper,Jett,Sova,Neon,Clove,vlr
+656869_0,MBU Spartans,Neon,Fade,Reyna,Viper,Omen,vlr
+656869_2,MBU Spartans,Sova,Killjoy,Reyna,Omen,Neon,vlr
+656869_3,MBU Spartans,Viper,Raze,Brimstone,Skye,Jett,vlr
+656870_0,Baker College,Omen,Chamber,Fade,Viper,Neon,vlr
+656870_2,Baker College,Sage,Raze,Skye,Neon,Omen,vlr
+656871_0,St. Clair Saints,Raze,Omen,Viper,Vyse,Fade,vlr
+656871_2,St. Clair Saints,Omen,Killjoy,Neon,Viper,Sova,vlr
+656872_0,Ball State,Omen,Killjoy,Sage,Fade,Neon,vlr
+656872_2,Ball State,Raze,Phoenix,Fade,Killjoy,Brimstone,vlr
+656872_3,Ball State,Skye,Omen,Raze,Vyse,Neon,vlr
+656873_2,San Jose State University,Cypher,Sova,Jett,Neon,Omen,vlr
+656874_0,Columbia College,Omen,Raze,Neon,Fade,Vyse,vlr
+656874_2,Columbia College,Phoenix,Neon,Chamber,Fade,Astra,vlr
+656876_0,UC Irvine,Sova,Killjoy,Omen,Phoenix,Neon,vlr
+656876_2,UC Irvine,Cypher,Brimstone,Breach,Neon,Phoenix,vlr
+656877_0,UCSD Gold,Jett,Sova,Omen,Chamber,Neon,vlr
+656877_2,UCSD Gold,Jett,Skye,Neon,Brimstone,Chamber,vlr
+656878_0,St. Clair Saints,Omen,Vyse,Viper,Raze,Fade,vlr
+656878_3,St. Clair Saints,Raze,Omen,Skye,Viper,Vyse,vlr
+656879_0,Northwood University,Neon,Omen,Iso,Vyse,Fade,vlr
+656879_2,Northwood University,Skye,Astra,Neon,Chamber,Viper,vlr
+656879_3,Northwood University,Omen,Neon,Sova,Cypher,Jett,vlr
+656880_2,St. Clair Saints,Sova,Viper,Jett,Killjoy,Omen,vlr
+656881_0,Northwood University,Jett,Sova,Omen,Phoenix,Cypher,vlr
+656881_2,Northwood University,Raze,Brimstone,Viper,Skye,Chamber,vlr
+656882_0,Northwood University,Jett,Harbor,Phoenix,Sova,Viper,vlr
+656882_2,Northwood University,Jett,Phoenix,Cypher,Omen,Sova,vlr
+656883_0,Fisher Navy,Raze,Cypher,Phoenix,Brimstone,Fade,vlr
+656883_2,Fisher Navy,Omen,Cypher,Jett,Sova,Phoenix,vlr
+656883_3,Fisher Navy,Omen,Chamber,Raze,Skye,Viper,vlr
+656883_0,Fisher Navy,Raze,Cypher,Phoenix,Brimstone,Fade,vlr
+656883_2,Fisher Navy,Omen,Cypher,Jett,Sova,Phoenix,vlr
+656883_3,Fisher Navy,Omen,Chamber,Raze,Skye,Viper,vlr
+656882_0,Northwood University,Jett,Harbor,Phoenix,Sova,Viper,vlr
+656882_2,Northwood University,Jett,Phoenix,Cypher,Omen,Sova,vlr
+656881_0,Northwood University,Jett,Sova,Omen,Phoenix,Cypher,vlr
+656881_2,Northwood University,Raze,Brimstone,Viper,Skye,Chamber,vlr
+656852_0,Winthrop University,Cypher,Neon,Brimstone,Raze,Breach,vlr
+656852_2,Winthrop University,Jett,Sova,Viper,Neon,Clove,vlr
+656880_2,St. Clair Saints,Sova,Viper,Jett,Killjoy,Omen,vlr
+669089_0,KRÜ BLAZE,Viper,Raze,Omen,Skye,Deadlock,vlr
+669089_2,KRÜ BLAZE,Sova,Astra,Phoenix,Neon,Cypher,vlr
+669090_0,Olimpo Gold,Phoenix,Omen,Chamber,Fade,Neon,vlr
+669090_3,Olimpo Gold,Jett,Skye,Raze,Omen,Viper,vlr
+669091_0,Daruma Synergy,Neon,Raze,Fade,Vyse,Omen,vlr
+669091_2,Daruma Synergy,Neon,Breach,Brimstone,Cypher,Raze,vlr
+669092_0,Daruma Synergy,Deadlock,Cypher,Neon,Skye,Omen,vlr
+669092_2,Daruma Synergy,Fade,Neon,Omen,Vyse,Raze,vlr
+669093_0,Looking For Laburo,Breach,Omen,Neon,Cypher,Sova,vlr
+669093_2,Looking For Laburo,Brimstone,Viper,Neon,Skye,Gekko,vlr
+669094_2,KRÜ BLAZE,Vyse,Raze,Viper,Omen,Skye,vlr
+669095_0,Daruma Synergy,Jett,Omen,Sova,Iso,Viper,vlr
+669095_2,Daruma Synergy,Omen,Cypher,Phoenix,Jett,Sova,vlr
+669096_0,Looking For Laburo,Raze,Jett,Skye,Omen,Viper,vlr
+669096_2,Looking For Laburo,Phoenix,Killjoy,Jett,Omen,Sova,vlr
+669096_0,Looking For Laburo,Raze,Jett,Skye,Omen,Viper,vlr
+669096_2,Looking For Laburo,Phoenix,Killjoy,Jett,Omen,Sova,vlr
+669095_0,Daruma Synergy,Jett,Omen,Sova,Iso,Viper,vlr
+669095_2,Daruma Synergy,Omen,Cypher,Phoenix,Jett,Sova,vlr
+669094_2,KRÜ BLAZE,Vyse,Raze,Viper,Omen,Skye,vlr
+669093_0,Looking For Laburo,Breach,Omen,Neon,Cypher,Sova,vlr
+669093_2,Looking For Laburo,Brimstone,Viper,Neon,Skye,Gekko,vlr
+669092_0,Daruma Synergy,Deadlock,Cypher,Neon,Skye,Omen,vlr
+669092_2,Daruma Synergy,Fade,Neon,Omen,Vyse,Raze,vlr
+669107_0,Akave Esports GC,Fade,Viper,Vyse,Neon,Omen,vlr
+669107_2,Akave Esports GC,Skye,Neon,Viper,Vyse,Omen,vlr
+669108_0,MYVRA GC,Sage,Skye,Raze,Viper,Brimstone,vlr
+669109_0,FUSION X,Neon,Fade,Vyse,Omen,Viper,vlr
+669109_2,FUSION X,Fade,Astra,Killjoy,Neon,Chamber,vlr
+669110_0,FUSION X,Viper,Omen,Vyse,Fade,Neon,vlr
+669110_2,FUSION X,Astra,Fade,Chamber,Neon,Killjoy,vlr
+669110_3,FUSION X,Sova,Phoenix,Omen,Killjoy,Neon,vlr
+669111_2,Contra GC,Omen,Sova,Cypher,Neon,Phoenix,vlr
+669112_0,Akave Esports GC,Chamber,Raze,Viper,Brimstone,Skye,vlr
+669112_2,Akave Esports GC,Astra,Fade,Phoenix,Neon,Chamber,vlr
+669113_2,Contra GC,Astra,Jett,Harbor,Sova,KAY/O,vlr
+669114_0,FUSION X,Jett,Sova,Omen,Phoenix,Killjoy,vlr
+669114_2,FUSION X,Sova,Omen,Jett,Deadlock,Vyse,vlr
+669114_0,FUSION X,Jett,Sova,Omen,Phoenix,Killjoy,vlr
+669114_2,FUSION X,Sova,Omen,Jett,Deadlock,Vyse,vlr
+669113_2,Contra GC,Astra,Jett,Harbor,Sova,KAY/O,vlr
+669112_0,Akave Esports GC,Chamber,Raze,Viper,Brimstone,Skye,vlr
+669112_2,Akave Esports GC,Astra,Fade,Phoenix,Neon,Chamber,vlr
+669111_2,Contra GC,Omen,Sova,Cypher,Neon,Phoenix,vlr
+669110_0,FUSION X,Viper,Omen,Vyse,Fade,Neon,vlr
+669110_2,FUSION X,Astra,Fade,Chamber,Neon,Killjoy,vlr
+669110_3,FUSION X,Sova,Phoenix,Omen,Killjoy,Neon,vlr
+668687_2,Syn3rgy Dogos,Fade,Killjoy,Omen,Viper,Neon,vlr
+668688_2,Enisorail,Neon,Sova,Phoenix,Cypher,Omen,vlr
+668689_0,ARASIAN,Neon,Viper,Skye,Raze,Omen,vlr
+668689_2,ARASIAN,Chamber,Fade,Raze,Neon,Omen,vlr
+668690_0,tf up,Chamber,Skye,Omen,Fade,Jett,vlr
+668690_2,tf up,Cypher,Neon,Brimstone,Phoenix,Fade,vlr
+668691_2,Enisorail,Phoenix,Cypher,Neon,Sova,Omen,vlr
+668692_0,CICADAS Gaming,Killjoy,Neon,Breach,Sova,Omen,vlr
+668692_2,CICADAS Gaming,Jett,Neon,Omen,Fade,Viper,vlr
+668692_3,CICADAS Gaming,Neon,Omen,Vyse,Iso,Sova,vlr
+668693_0,Poyo Esports,Viper,Skye,Neon,Omen,Raze,vlr
+668693_2,Poyo Esports,Neon,Sova,Viper,Killjoy,Omen,vlr
+668694_0,CICADAS Gaming,Omen,Sova,Iso,Vyse,Neon,vlr
+668694_2,CICADAS Gaming,Omen,Sova,Killjoy,Neon,Breach,vlr
+668694_3,CICADAS Gaming,Jett,Sova,Neon,Viper,Omen,vlr
+668694_0,CICADAS Gaming,Omen,Sova,Iso,Vyse,Neon,vlr
+668694_2,CICADAS Gaming,Omen,Sova,Killjoy,Neon,Breach,vlr
+668694_3,CICADAS Gaming,Jett,Sova,Neon,Viper,Omen,vlr
+668693_0,Poyo Esports,Viper,Skye,Neon,Omen,Raze,vlr
+668693_2,Poyo Esports,Neon,Sova,Viper,Killjoy,Omen,vlr
+668691_2,Enisorail,Phoenix,Cypher,Neon,Sova,Omen,vlr
+668692_0,CICADAS Gaming,Killjoy,Neon,Breach,Sova,Omen,vlr
+668692_2,CICADAS Gaming,Jett,Neon,Omen,Fade,Viper,vlr
+668692_3,CICADAS Gaming,Neon,Omen,Vyse,Iso,Sova,vlr
+668687_2,Syn3rgy Dogos,Fade,Killjoy,Omen,Viper,Neon,vlr
+679845_0,GREENING CLAN,Killjoy,KAY/O,Omen,Sova,Jett,vlr
+679845_2,GREENING CLAN,Omen,Fade,Raze,Phoenix,Chamber,vlr
+679849_0,TOTALE Academy,Astra,Sova,Harbor,Jett,KAY/O,vlr
+679848_0,A NOVA ORDEM,Vyse,Omen,Raze,Skye,Jett,vlr
+679846_0,AXIS Anteaters,Phoenix,Jett,Omen,Sova,Cypher,vlr
+679846_2,AXIS Anteaters,Raze,Skye,Omen,Vyse,Fade,vlr
+679847_2,KRÜ,Raze,Omen,Vyse,Viper,Fade,vlr
+679876_0,NEOX,Skye,Chamber,Jett,Viper,Harbor,vlr
+679876_2,NEOX,Jett,Chamber,Skye,Omen,Cypher,vlr
+679872_0,Juventus Gaming,Omen,Phoenix,Jett,Sova,Cypher,vlr
+679872_2,Juventus Gaming,Viper,KAY/O,Chamber,Harbor,Jett,vlr
+679875_0,CCV Team,Omen,Jett,Vyse,Sova,Phoenix,vlr
+679875_2,CCV Team,Raze,Fade,Vyse,Viper,Omen,vlr
+679874_0,MAUA ESPORTS,Phoenix,Sova,Jett,Omen,Cypher,vlr
+679874_2,MAUA ESPORTS,Sova,KAY/O,Jett,Cypher,Omen,vlr
+679862_0,SYMPHONY E-SPORTS,Phoenix,Vyse,Jett,Astra,Fade,vlr
+679862_2,SYMPHONY E-SPORTS,Chamber,Sova,Omen,Jett,Deadlock,vlr
+679861_0,Sora Trinity,Jett,Killjoy,KAY/O,Sova,Omen,vlr
+679860_2,Juventus Red Fem,Fade,Vyse,Omen,Raze,Breach,vlr
+679863_0,Hydreigon,Sova,Harbor,Chamber,Neon,Astra,vlr
+679863_2,Hydreigon,Jett,Raze,Viper,Fade,Omen,vlr
+679878_2,Zetix,Jett,Sova,Phoenix,Killjoy,Omen,vlr
+679878_3,Zetix,Fade,Viper,Raze,Omen,Vyse,vlr
+679877_0,SYMPHONY E-SPORTS,Omen,Jett,Phoenix,Chamber,Sova,vlr
+679877_2,SYMPHONY E-SPORTS,Jett,Omen,Vyse,Neon,Fade,vlr
+679880_0,CSK GAMING,Omen,Jett,Sova,Reyna,Viper,vlr
+679880_2,CSK GAMING,Viper,Breach,Raze,Fade,Omen,vlr
+679872_0,Juventus Gaming,Omen,Phoenix,Jett,Sova,Cypher,vlr
+679872_2,Juventus Gaming,Viper,KAY/O,Chamber,Harbor,Jett,vlr
+679874_0,MAUA ESPORTS,Phoenix,Sova,Jett,Omen,Cypher,vlr
+679874_2,MAUA ESPORTS,Sova,KAY/O,Jett,Cypher,Omen,vlr
+679875_0,CCV Team,Omen,Jett,Vyse,Sova,Phoenix,vlr
+679875_2,CCV Team,Raze,Fade,Vyse,Viper,Omen,vlr
+679876_0,NEOX,Skye,Chamber,Jett,Viper,Harbor,vlr
+679876_2,NEOX,Jett,Chamber,Skye,Omen,Cypher,vlr
+686048_0,Monarch-X GC,Raze,Omen,Viper,Sage,Fade,vlr
+686048_2,Monarch-X GC,Raze,Fade,Vyse,Omen,Clove,vlr
+686049_2,Catnappers,Neon,Harbor,Astra,Jett,Sova,vlr
+686050_0,Skyline Secret,Raze,Skye,Omen,Jett,Viper,vlr
+686050_2,Skyline Secret,Viper,Chamber,Sova,Omen,Jett,vlr
+686051_0,WgW Rose,Sova,Omen,Phoenix,Cypher,Jett,vlr
+686051_2,WgW Rose,Vyse,Jett,Fade,Omen,Raze,vlr
+686051_3,WgW Rose,Sova,Phoenix,Jett,Omen,Killjoy,vlr
+686052_0,HyperSpeed Golden,Raze,Omen,Iso,Chamber,Fade,vlr
+686052_3,HyperSpeed Golden,Killjoy,Iso,Omen,Jett,Sova,vlr
+686053_0,Catnappers,Chamber,Neon,Sova,Omen,Phoenix,vlr
+686053_2,Catnappers,Omen,Raze,Cypher,Neon,Fade,vlr
+686054_0,Skyline Secret,Sova,Viper,Omen,Killjoy,Jett,vlr
+686054_2,Skyline Secret,Sova,Omen,Killjoy,Jett,Phoenix,vlr
+686055_0,WgW Rose,Omen,Sova,Jett,Phoenix,Killjoy,vlr
+686055_2,WgW Rose,Jett,Fade,Omen,Raze,Vyse,vlr
+686056_0,Catnappers,Viper,Clove,Jett,Skye,Raze,vlr
+686056_2,Catnappers,Phoenix,Astra,Fade,Neon,Chamber,vlr
+686057_0,Empire GC,Jett,Killjoy,Phoenix,Clove,Sova,vlr
+686058_0,Empire GC,Phoenix,Clove,Killjoy,Jett,Sova,vlr
+686058_2,Empire GC,Clove,Killjoy,Jett,Fade,Phoenix,vlr
+686058_0,Empire GC,Phoenix,Clove,Killjoy,Jett,Sova,vlr
+686058_2,Empire GC,Clove,Killjoy,Jett,Fade,Phoenix,vlr
+686056_0,Catnappers,Viper,Clove,Jett,Skye,Raze,vlr
+686056_2,Catnappers,Phoenix,Astra,Fade,Neon,Chamber,vlr
+686057_0,Empire GC,Jett,Killjoy,Phoenix,Clove,Sova,vlr
+686052_0,HyperSpeed Golden,Raze,Omen,Iso,Chamber,Fade,vlr
+686052_3,HyperSpeed Golden,Killjoy,Iso,Omen,Jett,Sova,vlr
+686053_0,Catnappers,Chamber,Neon,Sova,Omen,Phoenix,vlr
+686053_2,Catnappers,Omen,Raze,Cypher,Neon,Fade,vlr
+686724_0,Performative,Viper,Omen,Raze,Fade,Chamber,vlr
+686725_0,Yi-Jing,Neon,Jett,Harbor,Omen,Sova,vlr
+686725_2,Yi-Jing,Jett,Cypher,Phoenix,Sova,Omen,vlr
+686726_0,TROOPERS,Viper,Jett,Sova,Chamber,Harbor,vlr
+686726_3,TROOPERS,Jett,Phoenix,Astra,Chamber,Fade,vlr
+686728_2,Yi-Jing,Sova,Jett,Cypher,Omen,Phoenix,vlr
+686729_0,Noob Esports,Raze,Jett,Fade,Vyse,Omen,vlr
+686729_3,Noob Esports,Omen,Sova,Jett,KAY/O,Cypher,vlr
+686728_2,Yi-Jing,Sova,Jett,Cypher,Omen,Phoenix,vlr
+686729_0,Noob Esports,Raze,Jett,Fade,Vyse,Omen,vlr
+686729_3,Noob Esports,Omen,Sova,Jett,KAY/O,Cypher,vlr
+686724_0,Performative,Viper,Omen,Raze,Fade,Chamber,vlr
+686725_0,Yi-Jing,Neon,Jett,Harbor,Omen,Sova,vlr
+686725_2,Yi-Jing,Jett,Cypher,Phoenix,Sova,Omen,vlr
+686726_0,TROOPERS,Viper,Jett,Sova,Chamber,Harbor,vlr
+686726_3,TROOPERS,Jett,Phoenix,Astra,Chamber,Fade,vlr
+686949_0,AURA!,Killjoy,Jett,Sova,KAY/O,Omen,vlr
+686950_0,44 TEAM,Chamber,Omen,Phoenix,Sova,Jett,vlr
+686952_0,Lost Puppies Quackers,Phoenix,Jett,Omen,Cypher,Sova,vlr
+686953_0,ELEVATE Academy,Skye,Omen,Jett,Raze,Vyse,vlr
+686953_2,ELEVATE Academy,Chamber,Astra,Sova,Viper,Jett,vlr
+686953_0,ELEVATE Academy,Skye,Omen,Jett,Raze,Vyse,vlr
+686953_2,ELEVATE Academy,Chamber,Astra,Sova,Viper,Jett,vlr
+686949_0,AURA!,Killjoy,Jett,Sova,KAY/O,Omen,vlr
+686950_0,44 TEAM,Chamber,Omen,Phoenix,Sova,Jett,vlr
+686819_0,CCG Esports,Iso,Sova,Jett,Viper,Astra,vlr
+686820_0,Xora Esports,Chamber,Brimstone,Sova,Phoenix,Jett,vlr
+686820_2,Xora Esports,Omen,Phoenix,Sova,Chamber,Jett,vlr
+686823_0,HOOAH,Jett,Phoenix,Killjoy,Omen,Sova,vlr
+686823_2,HOOAH,Jett,Skye,Omen,Viper,Raze,vlr
+686824_0,Team Digital,Chamber,Jett,Omen,Phoenix,Sova,vlr
+686824_2,Team Digital,Sova,Omen,Jett,Chamber,Phoenix,vlr
+686824_3,Team Digital,Raze,Chamber,Omen,Viper,Fade,vlr
+686825_0,octonauts,Iso,Fade,Raze,Clove,Vyse,vlr
+686825_2,octonauts,Raze,Clove,Chamber,Skye,Viper,vlr
+686825_3,octonauts,Phoenix,Jett,Sova,Killjoy,Clove,vlr
+686826_0,KICK OUT,Phoenix,Chamber,Astra,Neon,Fade,vlr
+686826_2,KICK OUT,Omen,Reyna,Raze,Chamber,Fade,vlr
+686827_2,CCG Esports,Jett,Sova,Phoenix,Killjoy,Omen,vlr
+686828_0,Monarch X,Phoenix,Jett,Sova,Omen,Chamber,vlr
+686828_2,Monarch X,Phoenix,Jett,Omen,Sage,Sova,vlr
+686829_0,Xyra eSports,Viper,Sova,Jett,Harbor,KAY/O,vlr
+686829_2,Xyra eSports,Jett,Sova,Omen,Viper,Killjoy,vlr
+686831_2,HOOAH,Phoenix,Omen,Jett,Killjoy,Sova,vlr
+686832_2,Team Digital,Chamber,Omen,Phoenix,Jett,Sova,vlr
+686833_0,Inters,Vyse,Clove,Neon,Fade,Iso,vlr
+686833_2,Inters,Clove,Phoenix,Chamber,Sova,Neon,vlr
+686833_3,Inters,Omen,Vyse,Jett,Sova,KAY/O,vlr
+686834_0,KICK OUT,Chamber,Omen,Raze,Reyna,Fade,vlr
+686834_2,KICK OUT,Chamber,Omen,Phoenix,Sova,Jett,vlr
+686827_2,CCG Esports,Jett,Sova,Phoenix,Killjoy,Omen,vlr
+686828_0,Monarch X,Phoenix,Jett,Sova,Omen,Chamber,vlr
+686828_2,Monarch X,Phoenix,Jett,Omen,Sage,Sova,vlr
+686829_0,Xyra eSports,Viper,Sova,Jett,Harbor,KAY/O,vlr
+686829_2,Xyra eSports,Jett,Sova,Omen,Viper,Killjoy,vlr
+686831_2,HOOAH,Phoenix,Omen,Jett,Killjoy,Sova,vlr
+686905_0,365 enjoyers,Astra,Killjoy,Jett,Phoenix,Fade,vlr
+686905_2,365 enjoyers,Phoenix,Jett,Killjoy,Sova,Omen,vlr
+686905_3,365 enjoyers,Omen,Phoenix,Sova,Jett,Killjoy,vlr
+686906_0,VAY eSports,Omen,Sova,Cypher,Jett,Breach,vlr
+686906_2,VAY eSports,Omen,Jett,Sova,Cypher,KAY/O,vlr
+686908_0,enso chiquito,Fade,Raze,Cypher,Omen,Iso,vlr
+686908_2,enso chiquito,Phoenix,Clove,Sova,Jett,Chamber,vlr
+686909_0,DimoniX eSports,Sova,Jett,Cypher,Neon,Omen,vlr
+686909_2,DimoniX eSports,Fade,Jett,Killjoy,Phoenix,Astra,vlr
+686909_3,DimoniX eSports,Fade,Neon,Viper,Jett,Brimstone,vlr
+686910_0,Voltage Club,Cypher,Jett,Sova,Phoenix,Omen,vlr
+686911_0,Team Orion,Astra,Jett,Viper,KAY/O,Sova,vlr
+686912_2,Suzaku Esports,Cypher,Jett,Sova,Omen,KAY/O,vlr
+686914_0,VOLKANIC,Sova,Jett,Breach,Omen,Cypher,vlr
+686914_2,VOLKANIC,Viper,Neon,Omen,Sova,Vyse,vlr
+686915_0,VentuCorp eSports,Cypher,Sova,Jett,Phoenix,Omen,vlr
+686915_2,VentuCorp eSports,Jett,Phoenix,Omen,Cypher,Sova,vlr
+686916_0,Suzaku Esports,Cypher,Phoenix,Neon,Astra,Fade,vlr
+686916_2,Suzaku Esports,Sova,Omen,Cypher,KAY/O,Jett,vlr
+686914_0,VOLKANIC,Sova,Jett,Breach,Omen,Cypher,vlr
+686914_2,VOLKANIC,Viper,Neon,Omen,Sova,Vyse,vlr
+686915_0,VentuCorp eSports,Cypher,Sova,Jett,Phoenix,Omen,vlr
+686915_2,VentuCorp eSports,Jett,Phoenix,Omen,Cypher,Sova,vlr
+686916_0,Suzaku Esports,Cypher,Phoenix,Neon,Astra,Fade,vlr
+686916_2,Suzaku Esports,Sova,Omen,Cypher,KAY/O,Jett,vlr
+686905_0,365 enjoyers,Astra,Killjoy,Jett,Phoenix,Fade,vlr
+686905_2,365 enjoyers,Phoenix,Jett,Killjoy,Sova,Omen,vlr
+686905_3,365 enjoyers,Omen,Phoenix,Sova,Jett,Killjoy,vlr
+686906_0,VAY eSports,Omen,Sova,Cypher,Jett,Breach,vlr
+686906_2,VAY eSports,Omen,Jett,Sova,Cypher,KAY/O,vlr
+686908_0,enso chiquito,Fade,Raze,Cypher,Omen,Iso,vlr
+686908_2,enso chiquito,Phoenix,Clove,Sova,Jett,Chamber,vlr
+675201_0,Gen.G,Phoenix,Astra,Vyse,Neon,Fade,vlr
+675201_2,Gen.G,Chamber,Fade,Omen,Phoenix,Neon,vlr
+675201_3,Gen.G,Jett,Viper,Neon,Sova,Omen,vlr
+675202_0,DRX,Viper,Vyse,Raze,Omen,Fade,vlr
+675202_2,DRX,Jett,Viper,Killjoy,Sova,Omen,vlr
+675203_0,Nongshim RedForce,Fade,Phoenix,Astra,Chamber,Neon,vlr
+675203_2,Nongshim RedForce,Omen,Phoenix,Sova,Neon,Cypher,vlr
+675204_0,Global Esports,Fade,Omen,Jett,Viper,Raze,vlr
+675204_2,Global Esports,Killjoy,Neon,Astra,Phoenix,Fade,vlr
+675205_0,Rex Regum Qeon,Sova,Jett,Killjoy,Phoenix,Omen,vlr
+675205_2,Rex Regum Qeon,Chamber,Vyse,Omen,Sova,Jett,vlr
+675205_3,Rex Regum Qeon,Viper,Sova,Jett,KAY/O,Harbor,vlr
+675205_4,Rex Regum Qeon,Raze,Skye,Omen,Jett,Vyse,vlr
+675206_0,Global Esports,Viper,Fade,Omen,Raze,Jett,vlr
+675206_2,Global Esports,Neon,Phoenix,Fade,Killjoy,Astra,vlr
+675206_3,Global Esports,Neon,Cypher,Omen,Deadlock,Sova,vlr
+675206_4,Global Esports,Sova,Sage,Chamber,Viper,Neon,vlr
+675206_5,Global Esports,Jett,Omen,Vyse,Phoenix,Sova,vlr
+675207_0,DRX,Viper,Sage,Fade,Omen,Raze,vlr
+675207_2,DRX,Killjoy,Jett,Sova,Viper,Omen,vlr
+675207_3,DRX,KAY/O,Viper,Jett,Harbor,Sova,vlr
+675208_0,DetonatioN FocusMe,Jett,Omen,Cypher,Neon,Sova,vlr
+675208_2,DetonatioN FocusMe,Jett,Raze,Skye,Omen,Viper,vlr
+675208_3,DetonatioN FocusMe,Cypher,Jett,Omen,Neon,Skye,vlr
+675209_0,DRX,Omen,Viper,Jett,Sova,Killjoy,vlr
+675209_2,DRX,Sova,Jett,KAY/O,Viper,Harbor,vlr
+675210_0,T1,Neon,Harbor,Viper,Sova,KAY/O,vlr
+675210_2,T1,Cypher,Neon,Skye,Raze,Brimstone,vlr
+675211_0,Gen.G,Phoenix,Neon,Omen,Fade,Chamber,vlr
+675211_2,Gen.G,Astra,Phoenix,Neon,Fade,Vyse,vlr
+675211_3,Gen.G,Phoenix,Neon,Brimstone,Killjoy,Fade,vlr
+675211_4,Gen.G,Jett,Omen,Viper,Sova,Neon,vlr
+675211_0,Gen.G,Phoenix,Neon,Omen,Fade,Chamber,vlr
+675211_2,Gen.G,Astra,Phoenix,Neon,Fade,Vyse,vlr
+675211_3,Gen.G,Phoenix,Neon,Brimstone,Killjoy,Fade,vlr
+675211_4,Gen.G,Jett,Omen,Viper,Sova,Neon,vlr
+675210_0,T1,Neon,Harbor,Viper,Sova,KAY/O,vlr
+675210_2,T1,Cypher,Neon,Skye,Raze,Brimstone,vlr
+675209_0,DRX,Omen,Viper,Jett,Sova,Killjoy,vlr
+675209_2,DRX,Sova,Jett,KAY/O,Viper,Harbor,vlr
+675206_0,Global Esports,Viper,Fade,Omen,Raze,Jett,vlr
+675206_2,Global Esports,Neon,Phoenix,Fade,Killjoy,Astra,vlr
+675206_3,Global Esports,Neon,Cypher,Omen,Deadlock,Sova,vlr
+675206_4,Global Esports,Sova,Sage,Chamber,Viper,Neon,vlr
+675206_5,Global Esports,Jett,Omen,Vyse,Phoenix,Sova,vlr
+675208_0,DetonatioN FocusMe,Jett,Omen,Cypher,Neon,Sova,vlr
+675208_2,DetonatioN FocusMe,Jett,Raze,Skye,Omen,Viper,vlr
+675208_3,DetonatioN FocusMe,Cypher,Jett,Omen,Neon,Skye,vlr
+681009_0,Dragon Ranger Gaming,Sova,Omen,Neon,Killjoy,Viper,vlr
+681009_2,Dragon Ranger Gaming,Phoenix,Killjoy,Astra,Fade,Jett,vlr
+681010_2,Wolves Esports,Raze,Viper,Vyse,Deadlock,Omen,vlr
+681011_0,Any Questions Gaming,Raze,Jett,Vyse,Fade,Omen,vlr
+681011_2,Any Questions Gaming,Killjoy,Fade,Phoenix,Jett,Astra,vlr
+681013_0,Xi Lai Gaming,Skye,Brimstone,Neon,Chamber,Cypher,vlr
+681013_3,Xi Lai Gaming,Phoenix,Fade,Astra,Killjoy,Neon,vlr
+681014_0,KeepBest Gaming,Jett,Vyse,Sova,Phoenix,Omen,vlr
+681014_3,KeepBest Gaming,Raze,Phoenix,Brimstone,Cypher,Fade,vlr
+681015_2,EDward Gaming,Jett,Omen,Phoenix,Cypher,Fade,vlr
+681017_0,FunPlus Phoenix,Chamber,Fade,Sage,Brimstone,Neon,vlr
+681017_2,FunPlus Phoenix,Fade,Phoenix,Omen,Viper,Neon,vlr
+681018_0,Titan Esports Club,Raze,Jett,Omen,Skye,Viper,vlr
+681018_2,Titan Esports Club,Viper,Phoenix,Sova,Jett,Harbor,vlr
+681019_0,Nova Esports,Raze,Viper,Killjoy,Omen,Fade,vlr
+681019_2,Nova Esports,Neon,Killjoy,Astra,Skye,Vyse,vlr
+681020_0,Bilibili Gaming,Jett,Sova,Harbor,KAY/O,Viper,vlr
+681021_0,Titan Esports Club,Sova,Phoenix,Omen,Vyse,Jett,vlr
+681021_2,Titan Esports Club,Jett,Skye,Viper,Omen,Raze,vlr
+681022_2,TYLOO,Jett,Cypher,KAY/O,Omen,Sova,vlr
+681023_0,Nova Esports,Neon,Vyse,Killjoy,Astra,Skye,vlr
+681023_2,Nova Esports,Breach,Raze,Brimstone,Cypher,Neon,vlr
+681023_3,Nova Esports,Raze,Fade,Omen,Killjoy,Viper,vlr
+681023_4,Nova Esports,Viper,Raze,Deadlock,Astra,Skye,vlr
+681023_5,Nova Esports,Phoenix,Jett,Killjoy,Sova,Omen,vlr
+681024_0,TYLOO,Raze,Jett,Omen,Skye,Viper,vlr
+681024_2,TYLOO,Jett,Sova,Cypher,KAY/O,Omen,vlr
+681024_3,TYLOO,Omen,Cypher,Jett,Sova,Breach,vlr
+681024_5,TYLOO,Jett,Cypher,Skye,Reyna,Brimstone,vlr
+681023_0,Nova Esports,Neon,Vyse,Killjoy,Astra,Skye,vlr
+681023_2,Nova Esports,Breach,Raze,Brimstone,Cypher,Neon,vlr
+681023_3,Nova Esports,Raze,Fade,Omen,Killjoy,Viper,vlr
+681023_4,Nova Esports,Viper,Raze,Deadlock,Astra,Skye,vlr
+681023_5,Nova Esports,Phoenix,Jett,Killjoy,Sova,Omen,vlr
+681024_0,TYLOO,Raze,Jett,Omen,Skye,Viper,vlr
+681024_2,TYLOO,Jett,Sova,Cypher,KAY/O,Omen,vlr
+681024_3,TYLOO,Omen,Cypher,Jett,Sova,Breach,vlr
+681024_5,TYLOO,Jett,Cypher,Skye,Reyna,Brimstone,vlr
+681022_2,TYLOO,Jett,Cypher,KAY/O,Omen,Sova,vlr
+681021_0,Titan Esports Club,Sova,Phoenix,Omen,Vyse,Jett,vlr
+681021_2,Titan Esports Club,Jett,Skye,Viper,Omen,Raze,vlr
+681020_0,Bilibili Gaming,Jett,Sova,Harbor,KAY/O,Viper,vlr
+674912_2,BETTR2,Vyse,Omen,Chamber,Jett,Sova,vlr
+674913_0,MeatZn,Cypher,Sova,Phoenix,Neon,Omen,vlr
+674913_2,MeatZn,Vyse,Astra,Jett,Raze,Skye,vlr
+674914_3,FOREVER,Neon,Phoenix,Omen,Chamber,Sova,vlr
+674915_0,TROOPERS,Raze,Fade,Omen,Neon,Killjoy,vlr
+674915_2,TROOPERS,Jett,Vyse,Omen,Sova,Neon,vlr
+674915_3,TROOPERS,Killjoy,Omen,Jett,Sova,Phoenix,vlr
+674916_0,Performative,Fade,Raze,Omen,Neon,Vyse,vlr
+674916_2,Performative,Killjoy,Sova,Omen,Viper,Neon,vlr
+674917_0,Please Peg,Omen,Jett,Sova,Harbor,Vyse,vlr
+674917_2,Please Peg,Sova,Neon,Chamber,Omen,Phoenix,vlr
+674917_3,Please Peg,Raze,Vyse,Harbor,Fade,Omen,vlr
+674918_0,SleepCallKittys,Omen,Neon,Raze,Cypher,Fade,vlr
+674918_2,SleepCallKittys,Raze,Brimstone,Neon,Cypher,Fade,vlr
+674919_0,rabbit gang,Fade,Jett,Clove,Raze,Vyse,vlr
+674919_2,rabbit gang,Sova,Jett,Killjoy,Clove,Phoenix,vlr
+674920_0,MeatZn,Phoenix,Cypher,Neon,Omen,Sova,vlr
+674920_2,MeatZn,Phoenix,Cypher,Raze,Brimstone,Fade,vlr
+674920_3,MeatZn,Jett,Vyse,Astra,Fade,Phoenix,vlr
+674921_0,Clueless,Viper,Iso,Sova,Harbor,Jett,vlr
+674921_2,Clueless,Sova,Omen,Killjoy,Jett,Viper,vlr
+674922_0,Project Curry,Fade,Vyse,Omen,Raze,Phoenix,vlr
+674922_2,Project Curry,Jett,Omen,Sova,Killjoy,Phoenix,vlr
+674922_3,Project Curry,Chamber,Jett,Viper,Phoenix,Sova,vlr
+674923_0,Yi-Jing,Sova,Cypher,Omen,Jett,Phoenix,vlr
+674923_2,Yi-Jing,Chamber,Fade,Omen,Viper,Raze,vlr
+674924_0,Clueless,Viper,Vyse,Omen,Raze,Fade,vlr
+674924_2,Clueless,Omen,Killjoy,Sova,Jett,Viper,vlr
+674925_2,Yi-Jing,Omen,Jett,Cypher,Phoenix,Sova,vlr
+674926_0,Yi-Jing,Sage,Neon,Astra,Killjoy,Sova,vlr
+674927_2,Yi-Jing,Sova,Jett,Phoenix,Omen,Cypher,vlr
+674927_3,Yi-Jing,Harbor,Sova,Jett,Omen,Neon,vlr
+674927_4,Yi-Jing,Cypher,Phoenix,Jett,Omen,Sova,vlr
+674928_2,Noob Esports,Raze,Omen,Vyse,Fade,Jett,vlr
+674929_0,TROOPERS,Omen,Killjoy,Fade,Raze,Neon,vlr
+674929_2,TROOPERS,Viper,Skye,Raze,Jett,Omen,vlr
+674930_0,Please Peg,Omen,Vyse,Sova,Jett,Harbor,vlr
+674931_0,rabbit gang,Phoenix,Jett,Sova,Killjoy,Omen,vlr
+674932_0,Noob Esports,Jett,Raze,Omen,Fade,Vyse,vlr
+674932_2,Noob Esports,Cypher,Jett,Sova,Omen,KAY/O,vlr
+674933_0,Mejais Soulstealers,Cypher,Phoenix,Jett,Sova,Omen,vlr
+674933_2,Mejais Soulstealers,Viper,Skye,Chamber,Jett,Omen,vlr
+674934_2,Performative,Sova,Jett,Iso,Harbor,Omen,vlr
+674934_3,Performative,Omen,Chamber,Viper,Fade,Raze,vlr
+674935_2,rabbit gang,Fade,Phoenix,Astra,Jett,Chamber,vlr
+674936_0,Project Curry,Killjoy,Jett,Omen,Phoenix,Sova,vlr
+674937_0,Finishers,Viper,Sova,Cypher,Jett,Omen,vlr
+674937_2,Finishers,Cypher,Neon,Phoenix,Omen,Sova,vlr
+674937_3,Finishers,Neon,Omen,Raze,Fade,Vyse,vlr
+674938_0,Project Curry,Phoenix,Vyse,Omen,Raze,Fade,vlr
+674938_2,Project Curry,Raze,Omen,Phoenix,Skye,Viper,vlr
+674938_3,Project Curry,Phoenix,Omen,Jett,Cypher,Sova,vlr
+674939_0,Finishers,Viper,Harbor,Neon,Jett,Sova,vlr
+674939_2,Finishers,Neon,Raze,Omen,Vyse,Skye,vlr
+674940_0,Finishers,Phoenix,Sova,Cypher,Neon,Omen,vlr
+674940_2,Finishers,Cypher,Neon,Astra,Fade,Phoenix,vlr
+674941_0,Finishers,Omen,Neon,Vyse,Sova,Jett,vlr
+674941_2,Finishers,Phoenix,Neon,Cypher,Sova,Omen,vlr
+674941_3,Finishers,Skye,Vyse,Omen,Neon,Raze,vlr
+674927_2,Yi-Jing,Sova,Jett,Phoenix,Omen,Cypher,vlr
+674927_3,Yi-Jing,Harbor,Sova,Jett,Omen,Neon,vlr
+674927_4,Yi-Jing,Cypher,Phoenix,Jett,Omen,Sova,vlr
+674941_0,Finishers,Omen,Neon,Vyse,Sova,Jett,vlr
+674941_2,Finishers,Phoenix,Neon,Cypher,Sova,Omen,vlr
+674941_3,Finishers,Skye,Vyse,Omen,Neon,Raze,vlr
+674940_0,Finishers,Phoenix,Sova,Cypher,Neon,Omen,vlr
+674940_2,Finishers,Cypher,Neon,Astra,Fade,Phoenix,vlr
+674926_0,Yi-Jing,Sage,Neon,Astra,Killjoy,Sova,vlr
+674938_0,Project Curry,Phoenix,Vyse,Omen,Raze,Fade,vlr
+674938_2,Project Curry,Raze,Omen,Phoenix,Skye,Viper,vlr
+674938_3,Project Curry,Phoenix,Omen,Jett,Cypher,Sova,vlr
+683765_0,Natus Vincere Junior,Sage,Omen,Raze,Viper,Skye,vlr
+683765_2,Natus Vincere Junior,Phoenix,Sova,Neon,Cypher,Omen,vlr
+683766_0,UCAM Esports Club,Vyse,Omen,Neon,Viper,Fade,vlr
+683766_2,UCAM Esports Club,Fade,Raze,Viper,KAY/O,Omen,vlr
+683767_0,UCAM Esports Club,Vyse,Neon,Viper,Fade,Omen,vlr
+683767_2,UCAM Esports Club,Sova,Killjoy,Jett,Omen,Breach,vlr
+683768_0,REBORN,Jett,Omen,Sova,Cypher,Neon,vlr
+683768_4,REBORN,Neon,Chamber,Viper,Harbor,Sova,vlr
+683769_0,Joblife,Phoenix,Omen,Cypher,Sova,Jett,vlr
+683769_2,Joblife,Omen,Jett,Skye,Viper,Raze,vlr
+683768_0,REBORN,Jett,Omen,Sova,Cypher,Neon,vlr
+683768_4,REBORN,Neon,Chamber,Viper,Harbor,Sova,vlr
+683767_0,UCAM Esports Club,Vyse,Neon,Viper,Fade,Omen,vlr
+683767_2,UCAM Esports Club,Sova,Killjoy,Jett,Omen,Breach,vlr
+683769_0,Joblife,Phoenix,Omen,Cypher,Sova,Jett,vlr
+683769_2,Joblife,Omen,Jett,Skye,Viper,Raze,vlr
+683766_0,UCAM Esports Club,Vyse,Omen,Neon,Viper,Fade,vlr
+683766_2,UCAM Esports Club,Fade,Raze,Viper,KAY/O,Omen,vlr
+660369_0,Leviatán,Omen,Jett,Harbor,Neon,Sova,vlr
+660369_2,Leviatán,Viper,Fade,Omen,Phoenix,Neon,vlr
+660369_3,Leviatán,Astra,Chamber,Phoenix,Sova,Neon,vlr
+660370_0,100 Thieves,Chamber,Neon,Fade,Astra,Phoenix,vlr
+660370_2,100 Thieves,Fade,Omen,Raze,Neon,Cypher,vlr
+660371_0,Leviatán,Viper,Neon,Phoenix,Omen,Fade,vlr
+660371_3,Leviatán,Neon,Phoenix,Sova,Omen,Chamber,vlr
+660372_0,G2,Fade,Omen,Raze,Vyse,Viper,vlr
+660372_2,G2,Sova,Vyse,Harbor,Neon,Astra,vlr
+660373_0,G2,Sova,Astra,Vyse,Phoenix,Yoru,vlr
+660373_2,G2,Vyse,Astra,Fade,Neon,Phoenix,vlr
+660373_3,G2,Viper,Fade,Vyse,Astra,Raze,vlr
+660374_0,G2,Fade,Sage,Neon,Brimstone,Chamber,vlr
+660374_2,G2,Astra,Neon,Chamber,Fade,Phoenix,vlr
+660374_3,G2,Phoenix,Sova,Vyse,Yoru,Astra,vlr
+660374_4,G2,Neon,Phoenix,Vyse,Fade,Astra,vlr
+660374_5,G2,Astra,Raze,Viper,Fade,Vyse,vlr
+660375_0,NRG,Vyse,Fade,Neon,Viper,Omen,vlr
+660375_2,NRG,Sova,Phoenix,Neon,Omen,Cypher,vlr
+660376_0,LOUD,Astra,Sova,Jett,KAY/O,Harbor,vlr
+660376_2,LOUD,Omen,Neon,Skye,Raze,Viper,vlr
+660377_0,NRG,Sova,Jett,Harbor,KAY/O,Viper,vlr
+660377_2,NRG,Sova,Omen,Phoenix,Cypher,Neon,vlr
+660378_0,100 Thieves,Raze,Neon,Brimstone,Fade,Cypher,vlr
+660378_2,100 Thieves,Phoenix,Harbor,Sova,Cypher,Neon,vlr
+660379_0,100 Thieves,Neon,Raze,Cypher,Fade,Brimstone,vlr
+660379_2,100 Thieves,Cypher,Sova,Neon,Phoenix,Harbor,vlr
+660380_0,NRG,Vyse,Viper,Omen,Neon,Fade,vlr
+660380_2,NRG,Jett,KAY/O,Sova,Harbor,Viper,vlr
+660380_4,NRG,Sova,Phoenix,Cypher,Omen,Neon,vlr
+660380_5,NRG,Sova,Sage,Jett,Vyse,Omen,vlr
+660374_0,G2,Fade,Sage,Neon,Brimstone,Chamber,vlr
+660374_2,G2,Astra,Neon,Chamber,Fade,Phoenix,vlr
+660374_3,G2,Phoenix,Sova,Vyse,Yoru,Astra,vlr
+660374_4,G2,Neon,Phoenix,Vyse,Fade,Astra,vlr
+660374_5,G2,Astra,Raze,Viper,Fade,Vyse,vlr
+660380_0,NRG,Vyse,Viper,Omen,Neon,Fade,vlr
+660380_2,NRG,Jett,KAY/O,Sova,Harbor,Viper,vlr
+660380_4,NRG,Sova,Phoenix,Cypher,Omen,Neon,vlr
+660380_5,NRG,Sova,Sage,Jett,Vyse,Omen,vlr
+660379_0,100 Thieves,Neon,Raze,Cypher,Fade,Brimstone,vlr
+660379_2,100 Thieves,Cypher,Sova,Neon,Phoenix,Harbor,vlr
+660373_0,G2,Sova,Astra,Vyse,Phoenix,Yoru,vlr
+660373_2,G2,Vyse,Astra,Fade,Neon,Phoenix,vlr
+660373_3,G2,Viper,Fade,Vyse,Astra,Raze,vlr
+660378_0,100 Thieves,Raze,Neon,Brimstone,Fade,Cypher,vlr
+660378_2,100 Thieves,Phoenix,Harbor,Sova,Cypher,Neon,vlr
+683193_2,Jackpot,Iso,Astra,Viper,Jett,Sova,vlr
+683196_0,ORA Esports,Jett,Phoenix,Omen,Cypher,Sova,vlr
+683196_2,ORA Esports,Raze,Viper,Vyse,Fade,Omen,vlr
+683197_2,Chicken Tikka Masala,Iso,Sova,Harbor,Viper,Jett,vlr
+683198_0,Georgia Power,Sova,Chamber,Omen,Phoenix,Jett,vlr
+683198_2,Georgia Power,Raze,Omen,Phoenix,Chamber,Fade,vlr
+683199_0,NXG,Phoenix,Omen,Sova,Jett,Cypher,vlr
+683199_2,NXG,Phoenix,Cypher,Astra,Jett,Sova,vlr
+683200_0,HOOAH,Vyse,Clove,Neon,Omen,Fade,vlr
+683200_2,HOOAH,Clove,Viper,Jett,Iso,Sova,vlr
+683201_0,Jackpot,Iso,Astra,Jett,Sova,Viper,vlr
+683203_0,octonauts,Jett,Sova,Clove,Cypher,Phoenix,vlr
+683203_2,octonauts,Clove,Phoenix,Sova,Jett,Cypher,vlr
+683204_0,Blue Otter,Jett,Sova,Chamber,Phoenix,Omen,vlr
+683204_2,Blue Otter,KAY/O,Chamber,Raze,Omen,Fade,vlr
+683204_3,Blue Otter,Jett,Fade,Clove,Astra,Vyse,vlr
+683205_2,Chicken Tikka Masala,Omen,Sova,Cypher,Neon,Phoenix,vlr
+683206_0,Team Digital,Viper,KAY/O,Sova,Jett,Harbor,vlr
+683206_2,Team Digital,Omen,Viper,Fade,Raze,Chamber,vlr
+683207_0,Tempers,Sova,Omen,Neon,Cypher,Jett,vlr
+683207_2,Tempers,Jett,Chamber,Astra,Phoenix,Fade,vlr
+683207_3,Tempers,Killjoy,Phoenix,Sova,Omen,Jett,vlr
+683208_0,Nightblood Gaming,Skye,Neon,Omen,Raze,Viper,vlr
+683208_2,Nightblood Gaming,Jett,Omen,Cypher,Sova,Phoenix,vlr
+683208_3,Nightblood Gaming,Omen,Cypher,Sova,Phoenix,Neon,vlr
+683209_0,3 kids 2 dads,Phoenix,Cypher,Sova,Omen,Jett,vlr
+683210_0,Blue Otter,Sova,Clove,Jett,Killjoy,Omen,vlr
+683210_2,Blue Otter,Omen,Clove,Jett,Sova,Cypher,vlr
+683210_3,Blue Otter,Phoenix,Clove,Raze,Omen,Skye,vlr
+683211_0,Alliance Guardians,Omen,Jett,Cypher,KAY/O,Fade,vlr
+683211_2,Alliance Guardians,Omen,Raze,Deadlock,Viper,Fade,vlr
+683213_0,Nightblood Gaming,Omen,Neon,Sova,Phoenix,Cypher,vlr
+683213_2,Nightblood Gaming,Jett,Phoenix,Viper,Harbor,Sova,vlr
+683213_3,Nightblood Gaming,Jett,Cypher,Omen,Sova,Phoenix,vlr
+683214_0,Blue Otter,Sova,Killjoy,Clove,Jett,Omen,vlr
+683214_2,Blue Otter,Raze,Fade,Omen,Chamber,Clove,vlr
+683214_3,Blue Otter,Jett,Fade,Vyse,Astra,Clove,vlr
+683215_0,Nightblood Gaming,Viper,Raze,Vyse,Omen,Fade,vlr
+683215_2,Nightblood Gaming,Jett,Viper,Harbor,Phoenix,Sova,vlr
+683215_3,Nightblood Gaming,Neon,Phoenix,Sova,Omen,Cypher,vlr
+683216_0,Nightblood Gaming,Neon,Sova,Omen,Phoenix,Cypher,vlr
+683216_2,Nightblood Gaming,Jett,Viper,Harbor,Sova,Phoenix,vlr
+683216_3,Nightblood Gaming,Neon,Viper,Raze,Skye,Omen,vlr
+683216_0,Nightblood Gaming,Neon,Sova,Omen,Phoenix,Cypher,vlr
+683216_2,Nightblood Gaming,Jett,Viper,Harbor,Sova,Phoenix,vlr
+683216_3,Nightblood Gaming,Neon,Viper,Raze,Skye,Omen,vlr
+683214_0,Blue Otter,Sova,Killjoy,Clove,Jett,Omen,vlr
+683214_2,Blue Otter,Raze,Fade,Omen,Chamber,Clove,vlr
+683214_3,Blue Otter,Jett,Fade,Vyse,Astra,Clove,vlr
+683215_0,Nightblood Gaming,Viper,Raze,Vyse,Omen,Fade,vlr
+683215_2,Nightblood Gaming,Jett,Viper,Harbor,Phoenix,Sova,vlr
+683215_3,Nightblood Gaming,Neon,Phoenix,Sova,Omen,Cypher,vlr
+683209_0,3 kids 2 dads,Phoenix,Cypher,Sova,Omen,Jett,vlr
+683210_0,Blue Otter,Sova,Clove,Jett,Killjoy,Omen,vlr
+683210_2,Blue Otter,Omen,Clove,Jett,Sova,Cypher,vlr
+683210_3,Blue Otter,Phoenix,Clove,Raze,Omen,Skye,vlr
+683591_0,InControl GC,Raze,Vyse,Omen,Fade,Iso,vlr
+683593_0,Ophelia E-Sports Chimera,Phoenix,Killjoy,Jett,Astra,Fade,vlr
+683594_0,Sharkys Shivers,Reyna,Jett,Chamber,Harbor,Sova,vlr
+683594_2,Sharkys Shivers,Reyna,Deadlock,Sova,Omen,Jett,vlr
+683594_3,Sharkys Shivers,Phoenix,Raze,Cypher,Omen,Fade,vlr
+683595_0,SAPHHIC KITTIES UNITE,Raze,Vyse,Fade,Iso,Omen,vlr
+683596_0,InControl Blossom,Omen,Jett,Sova,Skye,Killjoy,vlr
+683596_2,InControl Blossom,Omen,Fade,Neon,Reyna,Vyse,vlr
+683598_0,Highcard GC,Sova,Phoenix,Jett,Omen,Cypher,vlr
+683598_2,Highcard GC,Phoenix,Vyse,Raze,Omen,Fade,vlr
+683599_0,Students of the Game,Sova,Jett,Cypher,Phoenix,Omen,vlr
+683599_2,Students of the Game,Viper,Fade,Omen,Jett,Vyse,vlr
+683600_0,BLUESTAR,Phoenix,Jett,Sova,Cypher,Omen,vlr
+683600_2,BLUESTAR,Fade,Astra,Vyse,Jett,Phoenix,vlr
+683601_0,Xtreme Scrims,Jett,Omen,Raze,Vyse,Fade,vlr
+683601_2,Xtreme Scrims,Jett,Killjoy,Omen,Sova,Phoenix,vlr
+683602_0,box combo,Neon,Chamber,Raze,Fade,Omen,vlr
+683602_2,box combo,Cypher,Neon,Jett,Sova,Omen,vlr
+683602_3,box combo,Neon,Sova,Cypher,Jett,Omen,vlr
+683603_0,BLUESTAR,Jett,Phoenix,Cypher,Sova,Omen,vlr
+683603_2,BLUESTAR,Iso,Fade,Omen,Raze,Vyse,vlr
+683604_0,Dynamo GC,Viper,Sova,Omen,Neon,Killjoy,vlr
+683604_2,Dynamo GC,Vyse,Neon,Fade,Omen,Viper,vlr
+683604_3,Dynamo GC,Sova,Neon,Omen,Phoenix,Killjoy,vlr
+683605_0,tiny fluffy kittens,Omen,Reyna,Skye,Deadlock,Neon,vlr
+683605_3,tiny fluffy kittens,Sova,Jett,Cypher,Clove,Phoenix,vlr
+683605_0,tiny fluffy kittens,Omen,Reyna,Skye,Deadlock,Neon,vlr
+683605_3,tiny fluffy kittens,Sova,Jett,Cypher,Clove,Phoenix,vlr
+683603_0,BLUESTAR,Jett,Phoenix,Cypher,Sova,Omen,vlr
+683603_2,BLUESTAR,Iso,Fade,Omen,Raze,Vyse,vlr
+683604_0,Dynamo GC,Viper,Sova,Omen,Neon,Killjoy,vlr
+683604_2,Dynamo GC,Vyse,Neon,Fade,Omen,Viper,vlr
+683604_3,Dynamo GC,Sova,Neon,Omen,Phoenix,Killjoy,vlr
+683599_0,Students of the Game,Sova,Jett,Cypher,Phoenix,Omen,vlr
+683599_2,Students of the Game,Viper,Fade,Omen,Jett,Vyse,vlr
+683600_0,BLUESTAR,Phoenix,Jett,Sova,Cypher,Omen,vlr
+683600_2,BLUESTAR,Fade,Astra,Vyse,Jett,Phoenix,vlr
+680953_0,Twisted Minds Orchid,Chamber,Viper,Sova,Harbor,Jett,vlr
+680953_2,Twisted Minds Orchid,Fade,Viper,Vyse,Omen,Raze,vlr
+680954_0,Barça eSports GC,Vyse,Fade,Viper,Omen,Raze,vlr
+680954_2,Barça eSports GC,Sova,Killjoy,Neon,Omen,Viper,vlr
+680955_0,GIANTX GC,Raze,Omen,Viper,Skye,Neon,vlr
+680955_2,GIANTX GC,Sova,Killjoy,Omen,Neon,Viper,vlr
+680955_3,GIANTX GC,Jett,Cypher,Omen,Sova,KAY/O,vlr
+680956_0,G2,Jett,Sova,Vyse,Omen,KAY/O,vlr
+680956_2,G2,Fade,Viper,Omen,Neon,Vyse,vlr
+680957_0,G2,KAY/O,Viper,Jett,Harbor,Sova,vlr
+680958_2,SK Nebula,Astra,Sova,Phoenix,Killjoy,Neon,vlr
+680958_3,SK Nebula,Omen,Chamber,Fade,Viper,Raze,vlr
+680959_0,SK Nebula,Astra,Neon,Sova,Killjoy,Phoenix,vlr
+680959_2,SK Nebula,Cypher,Sova,Omen,Phoenix,Neon,vlr
+680959_3,SK Nebula,Jett,Astra,Neon,Sova,Viper,vlr
+680960_0,SK Nebula,Fade,Astra,Neon,Viper,Skye,vlr
+680960_2,SK Nebula,Sova,Jett,Neon,Astra,Viper,vlr
+680960_3,SK Nebula,Fade,Chamber,Raze,Omen,Viper,vlr
+680960_4,SK Nebula,Omen,Cypher,Phoenix,Sova,Neon,vlr
+680960_5,SK Nebula,Jett,Omen,Cypher,Sova,KAY/O,vlr
+680958_2,SK Nebula,Astra,Sova,Phoenix,Killjoy,Neon,vlr
+680958_3,SK Nebula,Omen,Chamber,Fade,Viper,Raze,vlr
+680960_0,SK Nebula,Fade,Astra,Neon,Viper,Skye,vlr
+680960_2,SK Nebula,Sova,Jett,Neon,Astra,Viper,vlr
+680960_3,SK Nebula,Fade,Chamber,Raze,Omen,Viper,vlr
+680960_4,SK Nebula,Omen,Cypher,Phoenix,Sova,Neon,vlr
+680960_5,SK Nebula,Jett,Omen,Cypher,Sova,KAY/O,vlr
+680959_0,SK Nebula,Astra,Neon,Sova,Killjoy,Phoenix,vlr
+680959_2,SK Nebula,Cypher,Sova,Omen,Phoenix,Neon,vlr
+680959_3,SK Nebula,Jett,Astra,Neon,Sova,Viper,vlr
+680957_0,G2,KAY/O,Viper,Jett,Harbor,Sova,vlr
+680956_0,G2,Jett,Sova,Vyse,Omen,KAY/O,vlr
+680956_2,G2,Fade,Viper,Omen,Neon,Vyse,vlr
+682275_0,Dynasty,Omen,Vyse,KAY/O,Jett,Sova,vlr
+682275_2,Dynasty,Fade,Viper,Omen,Vyse,Raze,vlr
+682276_0,T1,Phoenix,Sova,Omen,Jett,Vyse,vlr
+682276_2,T1,Jett,Raze,Fade,Vyse,Omen,vlr
+682276_3,T1,Jett,Harbor,Sova,Clove,Chamber,vlr
+682277_2,Marine Region Academy,Cypher,Phoenix,Sova,Neon,Omen,vlr
+682277_3,Marine Region Academy,Harbor,Astra,Sova,Jett,Neon,vlr
+682279_0,AquaEdge Esports,Vyse,Omen,Neon,Phoenix,Sova,vlr
+682279_2,AquaEdge Esports,Viper,Neon,Vyse,Omen,Fade,vlr
+682279_3,AquaEdge Esports,Neon,Sova,Phoenix,Astra,Cypher,vlr
+682280_3,NGU eSports,Omen,Jett,Sova,Cypher,Phoenix,vlr
+682281_0,VENOM ESPOR,Omen,Raze,Fade,Viper,Chamber,vlr
+682281_2,VENOM ESPOR,Phoenix,Omen,Sova,Jett,Vyse,vlr
+682281_3,VENOM ESPOR,Jett,Chamber,Omen,Viper,Sova,vlr
+682282_0,LARPAHOLICS,Killjoy,Omen,Sova,Jett,KAY/O,vlr
+682282_2,LARPAHOLICS,Phoenix,Jett,Sova,Omen,Cypher,vlr
+682283_0,T1,Phoenix,Omen,Sova,Jett,Vyse,vlr
+682285_0,Melilla Titans,Viper,Jett,Sova,Omen,Killjoy,vlr
+682286_0,LARPAHOLICS,Raze,Omen,Cypher,Fade,Jett,vlr
+682286_2,LARPAHOLICS,Killjoy,Sova,Omen,KAY/O,Jett,vlr
+682286_3,LARPAHOLICS,Astra,Yoru,Jett,Sova,Chamber,vlr
+682288_0,LARPAHOLICS,Phoenix,Sova,Jett,Cypher,Omen,vlr
+682288_2,LARPAHOLICS,Omen,Killjoy,Jett,KAY/O,Sova,vlr
+682289_0,LARPAHOLICS,Raze,Phoenix,Chamber,Omen,Fade,vlr
+682289_2,LARPAHOLICS,Sova,Cypher,Omen,Jett,Phoenix,vlr
+682289_3,LARPAHOLICS,Sova,Jett,Viper,KAY/O,Astra,vlr
+682289_4,LARPAHOLICS,Sova,Killjoy,KAY/O,Omen,Jett,vlr
+682290_0,Melilla Titans,Phoenix,Fade,Chamber,Clove,Jett,vlr
+682290_2,Melilla Titans,Cypher,Iso,Sova,Jett,Omen,vlr
+682290_3,Melilla Titans,Cypher,Raze,Iso,Omen,Fade,vlr
+682289_0,LARPAHOLICS,Raze,Phoenix,Chamber,Omen,Fade,vlr
+682289_2,LARPAHOLICS,Sova,Cypher,Omen,Jett,Phoenix,vlr
+682289_3,LARPAHOLICS,Sova,Jett,Viper,KAY/O,Astra,vlr
+682289_4,LARPAHOLICS,Sova,Killjoy,KAY/O,Omen,Jett,vlr
+682290_0,Melilla Titans,Phoenix,Fade,Chamber,Clove,Jett,vlr
+682290_2,Melilla Titans,Cypher,Iso,Sova,Jett,Omen,vlr
+682290_3,Melilla Titans,Cypher,Raze,Iso,Omen,Fade,vlr
+682288_0,LARPAHOLICS,Phoenix,Sova,Jett,Cypher,Omen,vlr
+682288_2,LARPAHOLICS,Omen,Killjoy,Jett,KAY/O,Sova,vlr
+682283_0,T1,Phoenix,Omen,Sova,Jett,Vyse,vlr
+683267_0,XIQUE-XIQUE 2.0,Raze,Fade,Astra,Vyse,Phoenix,vlr
+683269_0,kgaronakama,Sova,Killjoy,Omen,Phoenix,Jett,vlr
+683270_0,arkane,Chamber,Jett,KAY/O,Reyna,Omen,vlr
+683271_0,FAZ GELO,Fade,Raze,Viper,Phoenix,Omen,vlr
+683272_0,matuta302,Omen,Killjoy,Jett,Sova,Phoenix,vlr
+683273_0,Convergence,Phoenix,Viper,Neon,Omen,Fade,vlr
+683274_0,Lendas OFC,Raze,Vyse,Jett,Skye,Omen,vlr
+683275_0,RAGE esports.,Astra,KAY/O,Viper,Sova,Jett,vlr
+683276_0,RE$ENHUDOS,Raze,Iso,Omen,Cypher,Skye,vlr
+683277_0,AL Zenith,Phoenix,Omen,Neon,Sova,Killjoy,vlr
+683278_0,Pink Devils,Fade,Phoenix,Vyse,Omen,Raze,vlr
+683279_0,Phantom Team,Omen,Viper,Deadlock,Raze,Fade,vlr
+683280_0,henrique e juliano,Jett,Killjoy,Omen,Raze,Sova,vlr
+683283_0,Matxhpoint,Viper,Sova,Harbor,Jett,KAY/O,vlr
+683284_0,AL Knights,Killjoy,Omen,Sova,Jett,KAY/O,vlr
+683285_0,OsSupers Academy,Phoenix,Raze,Cypher,Omen,Breach,vlr
+683286_0,Família dos Baiano,Viper,Raze,Omen,Vyse,Fade,vlr
+683288_0,44 TEAM,Jett,Iso,Sova,Omen,Harbor,vlr
+683290_0,Team SODA,Jett,Omen,Phoenix,Sova,Killjoy,vlr
+683291_0,Void Prime,Sova,Jett,Harbor,Viper,KAY/O,vlr
+683292_0,NEXT TEAMM,Chamber,Jett,Omen,Phoenix,Sova,vlr
+683294_0,Vanity Vortex,Sova,Phoenix,Killjoy,Omen,Jett,vlr
+683295_0,Chevette pegando F,Phoenix,Omen,Jett,KAY/O,Cypher,vlr
+683296_0,Guaxi e Amigos!,Jett,Breach,Brimstone,Cypher,Phoenix,vlr
+683297_0,44 AIM,Raze,Vyse,Fade,Viper,Omen,vlr
+683298_0,TotalePRO,Omen,Raze,Neon,Vyse,Fade,vlr
+683300_0,Tropa da Winx,Jett,Phoenix,Cypher,Omen,Sova,vlr
+683301_0,Agropesca Jacare,Jett,Sova,Phoenix,Vyse,Omen,vlr
+683302_0,ELEVATE Academy,Phoenix,Omen,Sova,Jett,Cypher,vlr
+683304_0,Pink Devils,Jett,Sova,Omen,Phoenix,Killjoy,vlr
+683305_0,Suricats,Sova,Omen,Neon,Phoenix,Killjoy,vlr
+683307_0,Lost Puppies Quackers,Sova,Jett,Phoenix,Harbor,Cypher,vlr
+683308_0,Shalom!,Omen,Jett,Sova,Vyse,Phoenix,vlr
+683309_0,44 TEAM,Phoenix,Sova,Chamber,Omen,Jett,vlr
+683310_0,Team SODA,Sova,Omen,Killjoy,Jett,Phoenix,vlr
+683312_0,six one aim3rs,Raze,Fade,Vyse,Omen,Viper,vlr
+683313_0,ForgedToShine,Chamber,Fade,Omen,Jett,Phoenix,vlr
+683314_0,TotalePRO,Omen,Fade,Cypher,Phoenix,Neon,vlr
+683315_0,Tropa da Winx,Jett,Omen,Raze,Vyse,Fade,vlr
+683316_0,ELEVATE Academy,Phoenix,Omen,Cypher,Jett,Sova,vlr
+683317_0,AL Zenith,Phoenix,Killjoy,Omen,Sova,Neon,vlr
+683319_0,Shalom!,Jett,Omen,Phoenix,Sova,Cypher,vlr
+683321_0,A NOVA ORDEM,Jett,Vyse,Skye,Raze,Omen,vlr
+683322_0,TotalePRO,Raze,Omen,Viper,Vyse,Fade,vlr
+683323_0,ELEVATE Academy,Omen,Skye,Jett,Raze,Vyse,vlr
+683325_0,44 TEAM,Omen,Phoenix,Jett,Chamber,Sova,vlr
+683326_0,dn e amigos,Jett,Omen,Vyse,Raze,Skye,vlr
+683328_0,A NOVA ORDEM,Jett,Chamber,Harbor,KAY/O,Fade,vlr
+683329_0,Lost Puppies Quackers,Jett,Sova,Phoenix,Cypher,Omen,vlr
+683329_0,Lost Puppies Quackers,Jett,Sova,Phoenix,Cypher,Omen,vlr
+683328_0,A NOVA ORDEM,Jett,Chamber,Harbor,KAY/O,Fade,vlr
+683323_0,ELEVATE Academy,Omen,Skye,Jett,Raze,Vyse,vlr
+681832_0,Rzeczpospolita,Omen,Viper,Chamber,Fade,Raze,vlr
+681832_2,Rzeczpospolita,Viper,Raze,Cypher,Omen,Jett,vlr
+681832_0,Rzeczpospolita,Omen,Viper,Chamber,Fade,Raze,vlr
+681832_2,Rzeczpospolita,Viper,Raze,Cypher,Omen,Jett,vlr
+660470_0,Da Nang GrandStand,Omen,Neon,Chamber,Fade,Raze,vlr
+660470_2,Da Nang GrandStand,Raze,Viper,Omen,Skye,Neon,vlr
+660472_0,Sentinels,Skye,Chamber,Viper,Neon,Omen,vlr
+660472_2,Sentinels,Phoenix,Cypher,Sova,Omen,Neon,vlr
+660473_0,ROY Esports,Jett,Viper,Omen,Sova,Neon,vlr
+660473_2,ROY Esports,Fade,Neon,Omen,Raze,Viper,vlr
+660473_3,ROY Esports,Fade,Chamber,Phoenix,Neon,Astra,vlr
+660475_0,Sentinels,Skye,Omen,Chamber,Neon,Viper,vlr
+660475_2,Sentinels,Jett,Vyse,Raze,Omen,Fade,vlr
+660475_3,Sentinels,Cypher,Sova,Omen,Jett,Neon,vlr
+660476_0,1Tap Esports,Astra,Fade,Neon,Vyse,Omen,vlr
+660476_2,1Tap Esports,Viper,Vyse,Neon,Omen,Sova,vlr
+660477_0,ROY Esports,Chamber,Fade,Omen,Viper,Raze,vlr
+660478_0,ROY Esports,Chamber,Raze,Jett,Fade,Omen,vlr
+660478_2,ROY Esports,Omen,Phoenix,Cypher,Jett,Sova,vlr
+660478_3,ROY Esports,Chamber,Omen,Fade,Raze,Viper,vlr
+660479_2,Sushifly,Omen,Skye,Clove,Chamber,Raze,vlr
+660479_3,Sushifly,Fade,Raze,Brimstone,Chamber,Skye,vlr
+660481_0,Da Nang GrandStand,Neon,Omen,Raze,Skye,Viper,vlr
+660481_2,Da Nang GrandStand,Chamber,Omen,Neon,Fade,Raze,vlr
+660484_0,1Tap Esports,Raze,Vyse,Omen,Fade,Jett,vlr
+660484_2,1Tap Esports,Viper,Jett,Raze,Omen,Skye,vlr
+660484_3,1Tap Esports,Phoenix,Jett,Viper,Sova,Harbor,vlr
+660484_4,1Tap Esports,Raze,Jett,Skye,Viper,Brimstone,vlr
+660484_5,1Tap Esports,Phoenix,Fade,Killjoy,Jett,Astra,vlr
+660478_0,ROY Esports,Chamber,Raze,Jett,Fade,Omen,vlr
+660478_2,ROY Esports,Omen,Phoenix,Cypher,Jett,Sova,vlr
+660478_3,ROY Esports,Chamber,Omen,Fade,Raze,Viper,vlr
+660484_0,1Tap Esports,Raze,Vyse,Omen,Fade,Jett,vlr
+660484_2,1Tap Esports,Viper,Jett,Raze,Omen,Skye,vlr
+660484_3,1Tap Esports,Phoenix,Jett,Viper,Sova,Harbor,vlr
+660484_4,1Tap Esports,Raze,Jett,Skye,Viper,Brimstone,vlr
+660484_5,1Tap Esports,Phoenix,Fade,Killjoy,Jett,Astra,vlr
+660477_0,ROY Esports,Chamber,Fade,Omen,Viper,Raze,vlr
+662870_0,Macko Esports,Vyse,Viper,Omen,Skye,Neon,vlr
+662870_2,Macko Esports,Omen,Neon,Viper,Sova,KAY/O,vlr
+662871_2,i gommisti,Phoenix,Chamber,Neon,Omen,Sova,vlr
+662871_3,i gommisti,Chamber,Jett,Sova,Astra,Viper,vlr
+662872_0,sardegnaenjoyers,Fade,Viper,Vyse,Omen,Neon,vlr
+662872_2,sardegnaenjoyers,Cypher,Fade,Phoenix,Omen,Neon,vlr
+662873_0,sardegnaenjoyers,Deadlock,Brimstone,Viper,Raze,Fade,vlr
+662874_0,INPUTLAG,Phoenix,Neon,Fade,Astra,Killjoy,vlr
+662874_2,INPUTLAG,Neon,Brimstone,Skye,Viper,Phoenix,vlr
+662875_0,thegiornalisti,Neon,Chamber,Harbor,Viper,Skye,vlr
+662875_2,thegiornalisti,Harbor,Chamber,Viper,Skye,Neon,vlr
+662875_3,thegiornalisti,Viper,Chamber,Neon,Harbor,Skye,vlr
+662876_0,INPUTLAG,Omen,Neon,Fade,Raze,Viper,vlr
+662876_2,INPUTLAG,Fade,Phoenix,Astra,Killjoy,Neon,vlr
+662876_3,INPUTLAG,Neon,Fade,Killjoy,Omen,Viper,vlr
+662877_2,Abstract,Neon,Raze,Vyse,Omen,Fade,vlr
+662878_0,Abstract,Raze,Fade,Vyse,Omen,Neon,vlr
+662878_2,Abstract,Astra,Raze,Skye,Neon,Viper,vlr
+662879_0,Abstract,Astra,Fade,Phoenix,Neon,Killjoy,vlr
+662879_3,Abstract,Raze,Omen,Vyse,Fade,Neon,vlr
+662873_0,sardegnaenjoyers,Deadlock,Brimstone,Viper,Raze,Fade,vlr
+662879_0,Abstract,Astra,Fade,Phoenix,Neon,Killjoy,vlr
+662879_3,Abstract,Raze,Omen,Vyse,Fade,Neon,vlr
+662872_0,sardegnaenjoyers,Fade,Viper,Vyse,Omen,Neon,vlr
+662872_2,sardegnaenjoyers,Cypher,Fade,Phoenix,Omen,Neon,vlr
+662878_0,Abstract,Raze,Fade,Vyse,Omen,Neon,vlr
+662878_2,Abstract,Astra,Raze,Skye,Neon,Viper,vlr
+662876_0,INPUTLAG,Omen,Neon,Fade,Raze,Viper,vlr
+662876_2,INPUTLAG,Fade,Phoenix,Astra,Killjoy,Neon,vlr
+662876_3,INPUTLAG,Neon,Fade,Killjoy,Omen,Viper,vlr
+678625_2,Les Anges,Chamber,Vyse,Omen,Jett,Sova,vlr
+678626_0,Lille Esports GC,Jett,Viper,Harbor,Sova,Phoenix,vlr
+678626_2,Lille Esports GC,Iso,Vyse,Fade,Raze,Omen,vlr
+678627_0,Tan´i Tenryu,Jett,Killjoy,Omen,Phoenix,Sova,vlr
+678628_0,Era Queens F8,Sova,Omen,Cypher,Jett,Phoenix,vlr
+678628_2,Era Queens F8,Phoenix,Raze,Killjoy,Fade,Omen,vlr
+678629_0,FRG GC,Sova,Cypher,Jett,Phoenix,Omen,vlr
+678629_3,FRG GC,Raze,Viper,Omen,Vyse,Fade,vlr
+678630_0,Team Réality,Sova,Killjoy,Jett,Phoenix,Omen,vlr
+678631_0,No Names,Jett,Phoenix,Killjoy,Fade,Astra,vlr
+678632_0,Parma Esports,Sova,KAY/O,Killjoy,Jett,Omen,vlr
+678632_2,Parma Esports,Viper,Raze,Cypher,Skye,Omen,vlr
+678635_0,Caldya Esport GC,Chamber,Phoenix,Neon,Fade,Astra,vlr
+678635_2,Caldya Esport GC,Sova,Neon,Harbor,Viper,Iso,vlr
+678636_0,Nap Lovers,Omen,Fade,Vyse,Raze,Viper,vlr
+678636_3,Nap Lovers,Raze,Neon,Vyse,Clove,Skye,vlr
+678637_0,AlUla GC,Vyse,Sova,Sage,Astra,Neon,vlr
+678637_2,AlUla GC,KAY/O,Astra,Sova,Viper,Jett,vlr
+678639_2,NO AURA JUSTS LUCK,Chamber,Fade,Astra,Phoenix,Neon,vlr
+678640_0,Total Control GC,KAY/O,Jett,Sova,Omen,Cypher,vlr
+678640_2,Total Control GC,Reyna,Fade,Jett,Astra,Chamber,vlr
+678641_0,Lille Esports GC,Jett,Sova,Harbor,Phoenix,Viper,vlr
+678641_2,Lille Esports GC,Omen,Raze,Fade,Vyse,Iso,vlr
+678642_0,NOVO Nightingale,Raze,Chamber,Omen,Viper,Fade,vlr
+678642_2,NOVO Nightingale,Raze,Chamber,Skye,Viper,Astra,vlr
+678643_0,FOKUS Sakura,Omen,Raze,Vyse,Viper,Fade,vlr
+678643_2,FOKUS Sakura,Raze,Fade,Brimstone,Phoenix,Cypher,vlr
+678644_0,Parma Esports,Astra,Chamber,Jett,Viper,Sova,vlr
+678644_2,Parma Esports,Jett,KAY/O,Sova,Omen,Killjoy,vlr
+678645_0,FALKE VENOM,Sova,Harbor,KAY/O,Viper,Jett,vlr
+678645_2,FALKE VENOM,Jett,Phoenix,Fade,Cypher,Astra,vlr
+678646_0,Joblife GC,Viper,Omen,Raze,Jett,Skye,vlr
+678646_2,Joblife GC,Deadlock,Omen,Cypher,Fade,Sage,vlr
+678648_2,RIZON Sugar,Fade,Killjoy,Astra,Jett,Phoenix,vlr
+678649_0,NOVO Nightingale,Phoenix,Sova,Jett,Omen,Cypher,vlr
+678649_2,NOVO Nightingale,Skye,Sova,Omen,Jett,Viper,vlr
+678649_3,NOVO Nightingale,Skye,Raze,Astra,Viper,Chamber,vlr
+678650_2,LOUD,Cypher,Jett,Raze,Deadlock,Omen,vlr
+678651_3,Caldya Esport GC,Phoenix,Neon,Sova,Cypher,Omen,vlr
+678652_2,Habos Babos,Fade,Raze,Omen,Viper,Vyse,vlr
+678653_0,FOKUS Sakura,Phoenix,Jett,Sova,Omen,Cypher,vlr
+678653_2,FOKUS Sakura,Sova,Phoenix,Astra,Jett,Cypher,vlr
+678654_2,Bitfix Puppies,Breach,Viper,Fade,Raze,Omen,vlr
+678653_0,FOKUS Sakura,Phoenix,Jett,Sova,Omen,Cypher,vlr
+678653_2,FOKUS Sakura,Sova,Phoenix,Astra,Jett,Cypher,vlr
+678654_2,Bitfix Puppies,Breach,Viper,Fade,Raze,Omen,vlr
+678649_0,NOVO Nightingale,Phoenix,Sova,Jett,Omen,Cypher,vlr
+678649_2,NOVO Nightingale,Skye,Sova,Omen,Jett,Viper,vlr
+678649_3,NOVO Nightingale,Skye,Raze,Astra,Viper,Chamber,vlr
+678650_2,LOUD,Cypher,Jett,Raze,Deadlock,Omen,vlr
+678213_0,Minecraft is Calling,Chamber,Viper,Fade,Clove,Raze,vlr
+678213_2,Minecraft is Calling,Viper,Chamber,Clove,Skye,Raze,vlr
+678214_0,Vulcan Rising,Viper,Fade,Vyse,Raze,Omen,vlr
+678214_2,Vulcan Rising,Sova,Omen,Vyse,KAY/O,Jett,vlr
+678215_2,Hello Kitty Krew,Jett,Cypher,Omen,Neon,Sova,vlr
+678216_2,Focused On Gaming,Sova,Clove,Iso,Jett,Cypher,vlr
+678217_2,Eternal Focus Night,Phoenix,Jett,Omen,Chamber,Sova,vlr
+678218_0,Low Cortisol Gaming,Fade,Vyse,Viper,Raze,Omen,vlr
+678218_2,Low Cortisol Gaming,Sova,Cypher,Jett,Viper,Astra,vlr
+678219_0,Revitalize,Cypher,Sova,Omen,Neon,Phoenix,vlr
+678219_2,Revitalize,Omen,Neon,Fade,Vyse,Viper,vlr
+678220_0,Alex Banyasz Fan Club,Sova,Phoenix,Omen,Jett,Killjoy,vlr
+678220_2,Alex Banyasz Fan Club,Clove,Viper,Fade,Deadlock,Raze,vlr
+678221_0,Minecraft is Calling,Chamber,Viper,Fade,Raze,Clove,vlr
+678221_2,Minecraft is Calling,Phoenix,Chamber,Omen,Sova,Jett,vlr
+678221_3,Minecraft is Calling,Phoenix,Clove,Cypher,Sova,Jett,vlr
+678222_0,Snaked by lyrical,Omen,Phoenix,Cypher,Jett,Sova,vlr
+678222_2,Snaked by lyrical,Omen,Sova,Phoenix,Killjoy,Jett,vlr
+678223_0,NXG,Omen,Fade,Jett,Cypher,Raze,vlr
+678224_0,Focused On Gaming,Cypher,Jett,Clove,Phoenix,Sova,vlr
+678225_0,Tempers,Chamber,Skye,Raze,Omen,Viper,vlr
+678226_0,Divinity,Vyse,Deadlock,Omen,Jett,Sova,vlr
+678226_2,Divinity,Sova,Omen,Cypher,Neon,Phoenix,vlr
+678227_0,ORA Esports,Fade,Omen,Raze,Chamber,Viper,vlr
+678227_2,ORA Esports,Deadlock,Vyse,Sova,Jett,Omen,vlr
+678227_3,ORA Esports,Chamber,Viper,Sova,Jett,Astra,vlr
+678229_2,Snaked by lyrical,Sova,Omen,Killjoy,Jett,Phoenix,vlr
+678231_0,really good players,Clove,KAY/O,Jett,Sova,Sage,vlr
+678231_2,really good players,Iso,Viper,Omen,Fade,Raze,vlr
+678234_0,ORA Esports,KAY/O,Jett,Sova,Vyse,Omen,vlr
+678234_2,ORA Esports,Clove,Vyse,Fade,Raze,Jett,vlr
+678235_0,Division One,Neon,Raze,Chamber,Fade,Omen,vlr
+678235_2,Division One,Phoenix,Omen,Sova,Killjoy,Jett,vlr
+678235_0,Division One,Neon,Raze,Chamber,Fade,Omen,vlr
+678235_2,Division One,Phoenix,Omen,Sova,Killjoy,Jett,vlr
+678234_0,ORA Esports,KAY/O,Jett,Sova,Vyse,Omen,vlr
+678234_2,ORA Esports,Clove,Vyse,Fade,Raze,Jett,vlr
+678229_2,Snaked by lyrical,Sova,Omen,Killjoy,Jett,Phoenix,vlr
+680937_0,NC State Esports,Fade,Raze,Viper,Omen,Killjoy,vlr
+680937_2,NC State Esports,Omen,Chamber,Jett,Sova,Viper,vlr
+680938_0,Baker College,Jett,Sova,Killjoy,Phoenix,Omen,vlr
+680938_2,Baker College,Sage,Skye,Omen,Jett,Raze,vlr
+680938_3,Baker College,Astra,Jett,Iso,Viper,Sova,vlr
+680939_0,Fisher Navy,Fade,Phoenix,Cypher,Brimstone,Jett,vlr
+680939_2,Fisher Navy,Cypher,Phoenix,Sova,Omen,Jett,vlr
+680940_0,UNCW,Omen,Iso,Killjoy,Fade,Raze,vlr
+680941_2,UNCW,Fade,Raze,Omen,Iso,Killjoy,vlr
+680942_2,UCSD Gold,Phoenix,Omen,Sova,Jett,Cypher,vlr
+680944_0,Baker College,Viper,Reyna,Sova,Jett,Astra,vlr
+680944_2,Baker College,Raze,Fade,Jett,Brimstone,Cypher,vlr
+680947_0,Baker College,Raze,Brimstone,Jett,Skye,Chamber,vlr
+680947_2,Baker College,Fade,Raze,Brimstone,Jett,Cypher,vlr
+680948_2,UCSD Gold,Jett,Chamber,Viper,Sova,Omen,vlr
+680949_0,Northwood University,Viper,Raze,Astra,Skye,Chamber,vlr
+680949_2,Northwood University,Raze,Fade,Phoenix,Brimstone,Cypher,vlr
+680949_0,Northwood University,Viper,Raze,Astra,Skye,Chamber,vlr
+680949_2,Northwood University,Raze,Fade,Phoenix,Brimstone,Cypher,vlr
+680948_2,UCSD Gold,Jett,Chamber,Viper,Sova,Omen,vlr
+680947_0,Baker College,Raze,Brimstone,Jett,Skye,Chamber,vlr
+680947_2,Baker College,Fade,Raze,Brimstone,Jett,Cypher,vlr
+660381_0,Team Heretics,Brimstone,Cypher,Raze,Fade,Neon,vlr
+660381_2,Team Heretics,Astra,Fade,Neon,Phoenix,Cypher,vlr
+660381_3,Team Heretics,Raze,Fade,Neon,Omen,Vyse,vlr
+660382_0,Team Vitality,Sova,KAY/O,Neon,Chamber,Astra,vlr
+660382_2,Team Vitality,Sova,Omen,Vyse,Phoenix,Neon,vlr
+660382_3,Team Vitality,Viper,Omen,Raze,Vyse,Fade,vlr
+660383_0,Eternal Fire,Astra,Cypher,Neon,Phoenix,Fade,vlr
+660383_3,Eternal Fire,Viper,Fade,Raze,Omen,Neon,vlr
+660384_0,Team Vitality,Jett,Sova,Viper,KAY/O,Harbor,vlr
+660384_2,Team Vitality,Omen,Phoenix,Sova,Neon,Cypher,vlr
+660385_0,Team Vitality,Sova,Astra,Neon,KAY/O,Chamber,vlr
+660385_2,Team Vitality,Vyse,Phoenix,Sova,Neon,Omen,vlr
+660385_3,Team Vitality,Raze,Viper,Omen,Fade,Neon,vlr
+660386_0,Team Heretics,Sage,Neon,Sova,Chamber,Viper,vlr
+660386_2,Team Heretics,Vyse,Raze,Omen,Neon,Fade,vlr
+660386_3,Team Heretics,Vyse,Astra,Neon,Fade,Raze,vlr
+660386_4,Team Heretics,Jett,Cypher,Sova,Omen,Neon,vlr
+660386_5,Team Heretics,Astra,Jett,Fade,Cypher,Neon,vlr
+660387_0,BBL Esports,Viper,Jett,Omen,Sova,Neon,vlr
+660387_2,BBL Esports,Sova,Omen,Jett,Deadlock,Cypher,vlr
+660388_0,Gentle Mates,Raze,Astra,Viper,Jett,Skye,vlr
+660388_2,Gentle Mates,Cypher,Omen,Sova,Phoenix,Jett,vlr
+660388_3,Gentle Mates,Phoenix,Fade,Cypher,Astra,Raze,vlr
+660389_0,Team Heretics,Cypher,Raze,Fade,Brimstone,Neon,vlr
+660389_2,Team Heretics,Fade,Vyse,Neon,Raze,Omen,vlr
+660389_3,Team Heretics,Sova,Omen,Jett,Neon,Cypher,vlr
+660390_0,Gentle Mates,Cypher,Sova,Phoenix,Jett,Omen,vlr
+660390_2,Gentle Mates,Omen,Cypher,Fade,Raze,Jett,vlr
+660391_0,Eternal Fire,Raze,Omen,Neon,Fade,Cypher,vlr
+660391_2,Eternal Fire,Fade,Cypher,Neon,Raze,Astra,vlr
+660391_3,Eternal Fire,Astra,Jett,Sova,Cypher,Phoenix,vlr
+660392_0,Team Heretics,Neon,Sova,Jett,Omen,Cypher,vlr
+660392_2,Team Heretics,Raze,Vyse,Omen,Neon,Fade,vlr
+660392_3,Team Heretics,Sova,Omen,Cypher,Neon,Jett,vlr
+660392_4,Team Heretics,Sova,Chamber,Viper,Neon,Sage,vlr
+660386_0,Team Heretics,Sage,Neon,Sova,Chamber,Viper,vlr
+660386_2,Team Heretics,Vyse,Raze,Omen,Neon,Fade,vlr
+660386_3,Team Heretics,Vyse,Astra,Neon,Fade,Raze,vlr
+660386_4,Team Heretics,Jett,Cypher,Sova,Omen,Neon,vlr
+660386_5,Team Heretics,Astra,Jett,Fade,Cypher,Neon,vlr
+660392_0,Team Heretics,Neon,Sova,Jett,Omen,Cypher,vlr
+660392_2,Team Heretics,Raze,Vyse,Omen,Neon,Fade,vlr
+660392_3,Team Heretics,Sova,Omen,Cypher,Neon,Jett,vlr
+660392_4,Team Heretics,Sova,Chamber,Viper,Neon,Sage,vlr
+660391_0,Eternal Fire,Raze,Omen,Neon,Fade,Cypher,vlr
+660391_2,Eternal Fire,Fade,Cypher,Neon,Raze,Astra,vlr
+660391_3,Eternal Fire,Astra,Jett,Sova,Cypher,Phoenix,vlr
+660385_0,Team Vitality,Sova,Astra,Neon,KAY/O,Chamber,vlr
+660385_2,Team Vitality,Vyse,Phoenix,Sova,Neon,Omen,vlr
+660385_3,Team Vitality,Raze,Viper,Omen,Fade,Neon,vlr
+660390_0,Gentle Mates,Cypher,Sova,Phoenix,Jett,Omen,vlr
+660390_2,Gentle Mates,Omen,Cypher,Fade,Raze,Jett,vlr
+680540_0,SirSepias,Omen,Cypher,Sova,Iso,Jett,vlr
+680541_0,VentuCorp Legends,Sova,Phoenix,Omen,Jett,Cypher,vlr
+680541_2,VentuCorp Legends,Sova,Phoenix,Cypher,Omen,Jett,vlr
+680542_0,VAY eSports,Sova,Jett,Killjoy,KAY/O,Omen,vlr
+680542_3,VAY eSports,Viper,Raze,Skye,Chamber,Omen,vlr
+680543_0,Suzaku Esports,Astra,Fade,Jett,Phoenix,Chamber,vlr
+680543_2,Suzaku Esports,Cypher,Astra,Fade,Neon,Phoenix,vlr
+680544_0,Team Orion,Astra,Viper,Sova,KAY/O,Jett,vlr
+680544_2,Team Orion,Fade,Chamber,Omen,Vyse,Raze,vlr
+680545_0,Voltage Club,Chamber,Astra,Sova,Jett,Phoenix,vlr
+680545_2,Voltage Club,Chamber,Jett,Phoenix,Omen,Sova,vlr
+680546_0,Locked Esports,Jett,Omen,Chamber,Raze,Fade,vlr
+680546_2,Locked Esports,Omen,Sova,Cypher,Phoenix,Jett,vlr
+680547_0,Fraudes FC,Omen,Chamber,Fade,Raze,Deadlock,vlr
+680547_2,Fraudes FC,Phoenix,Jett,Sova,Omen,Cypher,vlr
+680547_3,Fraudes FC,Phoenix,Sova,Jett,Omen,Chamber,vlr
+680548_0,VentuCorp eSports,Cypher,Jett,Sova,Omen,Phoenix,vlr
+680548_2,VentuCorp eSports,Cypher,Jett,Omen,Sova,Phoenix,vlr
+680548_3,VentuCorp eSports,Viper,Chamber,Jett,Fade,Omen,vlr
+680549_0,Suzaku Esports,Omen,Cypher,KAY/O,Sova,Jett,vlr
+680549_3,Suzaku Esports,Neon,Fade,Vyse,Omen,Viper,vlr
+680550_0,VOLKANIC,Vyse,Omen,Raze,Viper,Fade,vlr
+680550_2,VOLKANIC,KAY/O,Omen,Cypher,Jett,Sova,vlr
+680551_0,BRRR,Sova,Cypher,Jett,Iso,Omen,vlr
+680552_0,MIAU,Sova,Clove,Chamber,Jett,Phoenix,vlr
+680552_2,MIAU,Phoenix,Sova,Jett,Omen,Killjoy,vlr
+680553_2,BRRR,Omen,Jett,KAY/O,Sova,Cypher,vlr
+680553_3,BRRR,Phoenix,Astra,Vyse,Jett,Fade,vlr
+680554_0,BRRR,Jett,KAY/O,Sova,Omen,Cypher,vlr
+680554_3,BRRR,Jett,Cypher,Sova,Omen,Breach,vlr
+680554_0,BRRR,Jett,KAY/O,Sova,Omen,Cypher,vlr
+680554_3,BRRR,Jett,Cypher,Sova,Omen,Breach,vlr
+680552_0,MIAU,Sova,Clove,Chamber,Jett,Phoenix,vlr
+680552_2,MIAU,Phoenix,Sova,Jett,Omen,Killjoy,vlr
+680553_2,BRRR,Omen,Jett,KAY/O,Sova,Cypher,vlr
+680553_3,BRRR,Phoenix,Astra,Vyse,Jett,Fade,vlr
+680548_0,VentuCorp eSports,Cypher,Jett,Sova,Omen,Phoenix,vlr
+680548_2,VentuCorp eSports,Cypher,Jett,Omen,Sova,Phoenix,vlr
+680548_3,VentuCorp eSports,Viper,Chamber,Jett,Fade,Omen,vlr
+680549_0,Suzaku Esports,Omen,Cypher,KAY/O,Sova,Jett,vlr
+680549_3,Suzaku Esports,Neon,Fade,Vyse,Omen,Viper,vlr
+680799_0,Lost Puppies,Raze,Omen,Vyse,Fade,Jett,vlr
+680799_2,Lost Puppies,Omen,Phoenix,Sova,Jett,Killjoy,vlr
+680799_3,Lost Puppies,Jett,Phoenix,Omen,Sova,Killjoy,vlr
+680800_2,CICADAS Gaming,Fade,Raze,Brimstone,Killjoy,Omen,vlr
+680800_2,CICADAS Gaming,Fade,Raze,Brimstone,Killjoy,Omen,vlr
+680799_0,Lost Puppies,Raze,Omen,Vyse,Fade,Jett,vlr
+680799_2,Lost Puppies,Omen,Phoenix,Sova,Jett,Killjoy,vlr
+680799_3,Lost Puppies,Jett,Phoenix,Omen,Sova,Killjoy,vlr
+681193_0,Georgia Tech Gold,Omen,Sova,Jett,Cypher,Phoenix,vlr
+681195_0,Georgia Tech Gold,Omen,Raze,Fade,Vyse,Jett,vlr
+681197_0,West Georgia,Omen,Sova,Jett,Phoenix,Vyse,vlr
+681194_0,SMC Esports,Jett,Harbor,Sova,Omen,Killjoy,vlr
+681196_0,Niner Esports,Jett,Cypher,Sova,Clove,Phoenix,vlr
+681199_0,SMC Esports,Neon,Omen,Jett,Sova,Viper,vlr
+681198_0,SMC Esports,Astra,Neon,Sova,Jett,Viper,vlr
+681216_0,West Georgia,Sova,Neon,Viper,Harbor,KAY/O,vlr
+681218_0,SMC Esports,Jett,Viper,Sova,Omen,Neon,vlr
+681219_0,Georgia Tech Gold,Jett,Raze,Skye,Clove,Viper,vlr
+681220_0,UGA Black,Sova,Cypher,Jett,Omen,Phoenix,vlr
+681220_2,UGA Black,Phoenix,Jett,Sova,Omen,Killjoy,vlr
+681221_0,Kennesaw State Gold,Phoenix,Jett,Sova,Chamber,Omen,vlr
+681221_2,Kennesaw State Gold,Harbor,Fade,Vyse,Raze,Omen,vlr
+681222_0,West Georgia,Viper,Harbor,Neon,KAY/O,Sova,vlr
+681224_0,SMC Esports,Chamber,Omen,Viper,Neon,Skye,vlr
+681225_0,Georgia Tech Gold,Jett,Skye,Viper,Raze,Omen,vlr
+681225_2,Georgia Tech Gold,Omen,Jett,Phoenix,Cypher,Sova,vlr
+681225_3,Georgia Tech Gold,Raze,Vyse,Jett,Omen,Fade,vlr
+681221_0,Kennesaw State Gold,Phoenix,Jett,Sova,Chamber,Omen,vlr
+681221_2,Kennesaw State Gold,Harbor,Fade,Vyse,Raze,Omen,vlr
+681225_0,Georgia Tech Gold,Jett,Skye,Viper,Raze,Omen,vlr
+681225_2,Georgia Tech Gold,Omen,Jett,Phoenix,Cypher,Sova,vlr
+681225_3,Georgia Tech Gold,Raze,Vyse,Jett,Omen,Fade,vlr
+681220_0,UGA Black,Sova,Cypher,Jett,Omen,Phoenix,vlr
+681220_2,UGA Black,Phoenix,Jett,Sova,Omen,Killjoy,vlr
+681224_0,SMC Esports,Chamber,Omen,Viper,Neon,Skye,vlr
+681222_0,West Georgia,Viper,Harbor,Neon,KAY/O,Sova,vlr
+666488_0,Global Esports,Neon,Viper,Sage,Sova,Chamber,vlr
+666488_2,Global Esports,Killjoy,Fade,Phoenix,Astra,Neon,vlr
+666489_0,Sentinels,Raze,Omen,Vyse,Jett,Skye,vlr
+666489_2,Sentinels,Phoenix,Cypher,Fade,Brimstone,Neon,vlr
+666490_0,Global Esports,Chamber,Neon,Sage,Sova,Viper,vlr
+666490_2,Global Esports,Vyse,Viper,Neon,Fade,Omen,vlr
+666490_3,Global Esports,Phoenix,Fade,Killjoy,Neon,Astra,vlr
+666491_0,Sentinels,Fade,Jett,Phoenix,Vyse,Astra,vlr
+666491_2,Sentinels,Omen,Jett,Raze,Skye,Vyse,vlr
+666492_0,Sentinels,Jett,Skye,Raze,Omen,Viper,vlr
+666492_2,Sentinels,Jett,Sova,Neon,Omen,Viper,vlr
+666493_0,Paper Rex,Astra,Jett,Fade,Phoenix,Killjoy,vlr
+666493_2,Paper Rex,Jett,Skye,Vyse,Omen,Raze,vlr
+666493_3,Paper Rex,Neon,Killjoy,Raze,Brimstone,Breach,vlr
+666494_0,DetonatioN FocusMe,Sova,Cypher,Jett,Omen,Neon,vlr
+666494_2,DetonatioN FocusMe,Omen,Sova,Viper,Jett,Neon,vlr
+666494_3,DetonatioN FocusMe,Raze,Neon,Vyse,Omen,Fade,vlr
+666495_0,Nongshim RedForce,Phoenix,Chamber,Astra,Neon,Fade,vlr
+666495_2,Nongshim RedForce,Yoru,Fade,Omen,Viper,Neon,vlr
+666495_3,Nongshim RedForce,Omen,Neon,Sova,Yoru,Killjoy,vlr
+666496_2,Rex Regum Qeon,Neon,Omen,Viper,Chamber,Fade,vlr
+666496_3,Rex Regum Qeon,Harbor,Sova,KAY/O,Viper,Neon,vlr
+666497_2,DRX,KAY/O,Viper,Sova,Jett,Harbor,vlr
+666497_3,DRX,Skye,Astra,Vyse,Raze,Jett,vlr
+666498_0,Paper Rex,Jett,Raze,Omen,Skye,Viper,vlr
+666498_2,Paper Rex,Sova,Yoru,Vyse,Sage,Omen,vlr
+666498_3,Paper Rex,Jett,Omen,Viper,Sova,Neon,vlr
+666499_0,Paper Rex,Fade,Jett,Omen,Phoenix,Chamber,vlr
+666499_2,Paper Rex,Raze,Skye,Jett,Vyse,Omen,vlr
+666499_3,Paper Rex,Yoru,Omen,Sage,Sova,Vyse,vlr
+666493_0,Paper Rex,Astra,Jett,Fade,Phoenix,Killjoy,vlr
+666493_2,Paper Rex,Jett,Skye,Vyse,Omen,Raze,vlr
+666493_3,Paper Rex,Neon,Killjoy,Raze,Brimstone,Breach,vlr
+666499_0,Paper Rex,Fade,Jett,Omen,Phoenix,Chamber,vlr
+666499_2,Paper Rex,Raze,Skye,Jett,Vyse,Omen,vlr
+666499_3,Paper Rex,Yoru,Omen,Sage,Sova,Vyse,vlr
+666498_0,Paper Rex,Jett,Raze,Omen,Skye,Viper,vlr
+666498_2,Paper Rex,Sova,Yoru,Vyse,Sage,Omen,vlr
+666498_3,Paper Rex,Jett,Omen,Viper,Sova,Neon,vlr
+666492_0,Sentinels,Jett,Skye,Raze,Omen,Viper,vlr
+666492_2,Sentinels,Jett,Sova,Neon,Omen,Viper,vlr
+666497_2,DRX,KAY/O,Viper,Sova,Jett,Harbor,vlr
+666497_3,DRX,Skye,Astra,Vyse,Raze,Jett,vlr
+678776_2,ELEVATE Academy,Astra,Sova,Jett,Viper,Chamber,vlr
+678776_2,ELEVATE Academy,Astra,Sova,Jett,Viper,Chamber,vlr
+657964_0,EVOPLAY,Fade,Raze,Vyse,Neon,Omen,vlr
+657964_2,EVOPLAY,Brimstone,Neon,Raze,Killjoy,Breach,vlr
+657965_0,Formulation Gaming,Raze,Fade,Cypher,Omen,Neon,vlr
+657966_0,Natus Vincere Junior,Skye,Brimstone,Raze,Viper,Chamber,vlr
+657967_0,Team Liquid Academy,Viper,Neon,Omen,Skye,Raze,vlr
+657967_2,Team Liquid Academy,Killjoy,Neon,Fade,Phoenix,Astra,vlr
+657967_3,Team Liquid Academy,Sova,KAY/O,Neon,Astra,Viper,vlr
+657968_0,MIR,Omen,Phoenix,Fade,Vyse,Neon,vlr
+657968_3,MIR,Neon,Sova,KAY/O,Astra,Chamber,vlr
+657969_0,Team Liquid Academy,Skye,Omen,Raze,Neon,Viper,vlr
+657969_2,Team Liquid Academy,Killjoy,Fade,Neon,Phoenix,Astra,vlr
+657970_0,Natus Vincere Junior,Sova,Jett,Omen,Neon,Viper,vlr
+657971_3,Enterprise Esports,Jett,Phoenix,Cypher,Omen,Sova,vlr
+657972_0,Team Liquid Academy,Skye,Neon,Viper,Raze,Omen,vlr
+657972_2,Team Liquid Academy,Phoenix,Sova,Omen,Neon,Cypher,vlr
+657972_3,Team Liquid Academy,Iso,Gekko,Neon,Viper,Brimstone,vlr
+657972_4,Team Liquid Academy,Viper,Vyse,Fade,Omen,Neon,vlr
+657973_0,Formulation Gaming,Neon,Raze,Fade,Cypher,Omen,vlr
+657974_0,BONK,Neon,Fade,Viper,Cypher,Omen,vlr
+657974_2,BONK,Cypher,Omen,Breach,Sova,Neon,vlr
+657974_3,BONK,Cypher,Viper,Neon,Skye,Omen,vlr
+657975_0,Formulation Gaming,Fade,Omen,Cypher,Neon,Raze,vlr
+657975_2,Formulation Gaming,Sova,Astra,Killjoy,Neon,Phoenix,vlr
+657976_0,BONK,Neon,Fade,Cypher,Omen,Viper,vlr
+657976_2,BONK,Cypher,Viper,Skye,Neon,Omen,vlr
+657977_0,Enterprise Esports,Astra,Raze,Neon,Chamber,Skye,vlr
+657977_2,Enterprise Esports,Neon,Raze,Vyse,Omen,Fade,vlr
+657977_3,Enterprise Esports,Neon,Brimstone,Killjoy,Skye,Raze,vlr
+657978_2,Enterprise Esports,Jett,Brimstone,Killjoy,Skye,Raze,vlr
+657979_0,Bitfix Gaming,Brimstone,Skye,Neon,Raze,Viper,vlr
+657979_2,Bitfix Gaming,Neon,Viper,Phoenix,Omen,Fade,vlr
+657979_3,Bitfix Gaming,Phoenix,Neon,Omen,Cypher,Sova,vlr
+657980_2,EVOPLAY,Fade,Omen,Vyse,Raze,Neon,vlr
+657980_3,EVOPLAY,Phoenix,Neon,Astra,Killjoy,Fade,vlr
+657981_0,BONK,Omen,Neon,Skye,Cypher,Viper,vlr
+657981_2,BONK,Cypher,Omen,Neon,Fade,Viper,vlr
+657981_3,BONK,Cypher,Breach,Neon,Omen,Sova,vlr
+657982_0,Bitfix Gaming,Skye,Brimstone,Viper,Neon,Raze,vlr
+657982_2,Bitfix Gaming,Neon,Phoenix,Astra,Killjoy,Fade,vlr
+657983_0,Team Liquid Academy,Phoenix,Fade,Cypher,Neon,Astra,vlr
+657983_2,Team Liquid Academy,Astra,Jett,Viper,Sova,KAY/O,vlr
+657984_0,Team Liquid Academy,Sova,Neon,Phoenix,Omen,Cypher,vlr
+657984_2,Team Liquid Academy,Fade,Neon,Phoenix,Cypher,Astra,vlr
+657984_4,Team Liquid Academy,KAY/O,Sova,Viper,Jett,Astra,vlr
+657984_5,Team Liquid Academy,Raze,Viper,Skye,Neon,Omen,vlr
+657972_0,Team Liquid Academy,Skye,Neon,Viper,Raze,Omen,vlr
+657972_2,Team Liquid Academy,Phoenix,Sova,Omen,Neon,Cypher,vlr
+657972_3,Team Liquid Academy,Iso,Gekko,Neon,Viper,Brimstone,vlr
+657972_4,Team Liquid Academy,Viper,Vyse,Fade,Omen,Neon,vlr
+657984_0,Team Liquid Academy,Sova,Neon,Phoenix,Omen,Cypher,vlr
+657984_2,Team Liquid Academy,Fade,Neon,Phoenix,Cypher,Astra,vlr
+657984_4,Team Liquid Academy,KAY/O,Sova,Viper,Jett,Astra,vlr
+657984_5,Team Liquid Academy,Raze,Viper,Skye,Neon,Omen,vlr
+657983_0,Team Liquid Academy,Phoenix,Fade,Cypher,Neon,Astra,vlr
+657983_2,Team Liquid Academy,Astra,Jett,Viper,Sova,KAY/O,vlr
+657971_3,Enterprise Esports,Jett,Phoenix,Cypher,Omen,Sova,vlr
+657978_2,Enterprise Esports,Jett,Brimstone,Killjoy,Skye,Raze,vlr
+661105_2,Division One,Phoenix,Chamber,Fade,Astra,Neon,vlr
+661106_0,Azure Dragon Gaming,Viper,Sova,Jett,Neon,Omen,vlr
+661106_2,Azure Dragon Gaming,Brimstone,Raze,Breach,Cypher,Neon,vlr
+661107_2,QoR,Cypher,Sova,Neon,Omen,Breach,vlr
+661109_0,M80,Neon,Cypher,Brimstone,KAY/O,Breach,vlr
+661109_2,M80,Neon,Fade,Viper,Omen,Vyse,vlr
+661112_0,Shopify Rebellion Black,Brimstone,Cypher,Iso,Skye,Neon,vlr
+661112_3,Shopify Rebellion Black,Chamber,Skye,Astra,Cypher,Neon,vlr
+661112_4,Shopify Rebellion Black,Sova,Astra,Viper,Jett,Neon,vlr
+661113_2,Azure Dragon Gaming,Jett,Sova,Viper,Omen,Neon,vlr
+661114_3,FlyQuest,Fade,Astra,Phoenix,Neon,Chamber,vlr
+661115_2,Division One,Sova,Phoenix,Neon,Omen,Cypher,vlr
+661117_0,FlyQuest,Reyna,Viper,Omen,Jett,Sova,vlr
+661117_2,FlyQuest,Chamber,Phoenix,Fade,Neon,Astra,vlr
+661118_0,Division One,Viper,Astra,Sova,Neon,Jett,vlr
+661112_0,Shopify Rebellion Black,Brimstone,Cypher,Iso,Skye,Neon,vlr
+661112_3,Shopify Rebellion Black,Chamber,Skye,Astra,Cypher,Neon,vlr
+661112_4,Shopify Rebellion Black,Sova,Astra,Viper,Jett,Neon,vlr
+661118_0,Division One,Viper,Astra,Sova,Neon,Jett,vlr
+661117_0,FlyQuest,Reyna,Viper,Omen,Jett,Sova,vlr
+661117_2,FlyQuest,Chamber,Phoenix,Fade,Neon,Astra,vlr
+664042_0,Team Spire,Harbor,KAY/O,Jett,Sova,Viper,vlr
+664042_2,Team Spire,Raze,Fade,Omen,Viper,Vyse,vlr
+664043_0,VillianArc,Omen,Chamber,Neon,Sova,Viper,vlr
+664043_2,VillianArc,Sage,Omen,Chamber,Fade,Neon,vlr
+664044_0,VillianArc,Chamber,Fade,Neon,Sage,Omen,vlr
+664044_2,VillianArc,Chamber,Omen,Sova,Neon,Viper,vlr
+664045_0,VillianArc,Sova,Astra,Cypher,Neon,Chamber,vlr
+664045_2,VillianArc,Neon,Omen,Chamber,Sage,Fade,vlr
+664045_3,VillianArc,Neon,Chamber,Omen,Viper,Sova,vlr
+664046_0,Stallions Esports,Omen,Fade,Neon,Viper,Raze,vlr
+664046_2,Stallions Esports,Omen,Raze,Neon,Viper,Skye,vlr
+664046_3,Stallions Esports,Astra,Cypher,Sova,Phoenix,Jett,vlr
+664047_0,Stallions Esports,Raze,Omen,Skye,Neon,Viper,vlr
+664047_2,Stallions Esports,Omen,Fade,Neon,Raze,Viper,vlr
+664045_0,VillianArc,Sova,Astra,Cypher,Neon,Chamber,vlr
+664045_2,VillianArc,Neon,Omen,Chamber,Sage,Fade,vlr
+664045_3,VillianArc,Neon,Chamber,Omen,Viper,Sova,vlr
+664047_0,Stallions Esports,Raze,Omen,Skye,Neon,Viper,vlr
+664047_2,Stallions Esports,Omen,Fade,Neon,Raze,Viper,vlr
+664044_0,VillianArc,Chamber,Fade,Neon,Sage,Omen,vlr
+664044_2,VillianArc,Chamber,Omen,Sova,Neon,Viper,vlr
+664046_0,Stallions Esports,Omen,Fade,Neon,Viper,Raze,vlr
+664046_2,Stallions Esports,Omen,Raze,Neon,Viper,Skye,vlr
+664046_3,Stallions Esports,Astra,Cypher,Sova,Phoenix,Jett,vlr
+664043_0,VillianArc,Omen,Chamber,Neon,Sova,Viper,vlr
+664043_2,VillianArc,Sage,Omen,Chamber,Fade,Neon,vlr
+664806_0,Ghools Esports,Phoenix,Omen,Viper,Neon,Sova,vlr
+664806_2,Ghools Esports,Killjoy,Neon,Phoenix,Omen,Sova,vlr
+664806_3,Ghools Esports,Vyse,Neon,Raze,Fade,Omen,vlr
+664807_0,Team RA'AD,Sova,Chamber,Neon,Omen,Viper,vlr
+664807_2,Team RA'AD,Sova,Breach,Jett,Omen,Cypher,vlr
+664807_3,Team RA'AD,Killjoy,Sova,Omen,KAY/O,Jett,vlr
+664808_0,Team RA'AD,Viper,Chamber,Sova,Omen,Neon,vlr
+664808_2,Team RA'AD,Cypher,Raze,Fade,Neon,Omen,vlr
+664809_0,BAAM Esports,Sova,Cypher,Jett,Omen,Breach,vlr
+664809_2,BAAM Esports,Raze,Breach,Fade,Viper,Omen,vlr
+664810_2,BAAM Esports,Omen,Viper,Raze,Breach,Fade,vlr
+664810_3,BAAM Esports,Neon,Viper,Killjoy,Omen,Sova,vlr
+664811_0,BAAM Esports,Breach,Viper,Omen,Raze,Fade,vlr
+664809_0,BAAM Esports,Sova,Cypher,Jett,Omen,Breach,vlr
+664809_2,BAAM Esports,Raze,Breach,Fade,Viper,Omen,vlr
+664811_0,BAAM Esports,Breach,Viper,Omen,Raze,Fade,vlr
+664810_2,BAAM Esports,Omen,Viper,Raze,Breach,Fade,vlr
+664810_3,BAAM Esports,Neon,Viper,Killjoy,Omen,Sova,vlr
+664808_0,Team RA'AD,Viper,Chamber,Sova,Omen,Neon,vlr
+664808_2,Team RA'AD,Cypher,Raze,Fade,Neon,Omen,vlr
+664807_0,Team RA'AD,Sova,Chamber,Neon,Omen,Viper,vlr
+664807_2,Team RA'AD,Sova,Breach,Jett,Omen,Cypher,vlr
+664807_3,Team RA'AD,Killjoy,Sova,Omen,KAY/O,Jett,vlr
+662918_0,SMC Esports,Viper,Sova,Jett,Omen,Neon,vlr
+662919_0,CPP Gold,Sova,Omen,Phoenix,Jett,Killjoy,vlr
+662920_0,USC Gold,Chamber,Omen,Phoenix,Jett,Skye,vlr
+662921_2,USC Gold,Jett,Omen,Killjoy,Sova,Phoenix,vlr
+662923_0,SMC Esports,Sova,Jett,Omen,Killjoy,Harbor,vlr
+662921_2,USC Gold,Jett,Omen,Killjoy,Sova,Phoenix,vlr
+662923_0,SMC Esports,Sova,Jett,Omen,Killjoy,Harbor,vlr
+662920_0,USC Gold,Chamber,Omen,Phoenix,Jett,Skye,vlr
+662919_0,CPP Gold,Sova,Omen,Phoenix,Jett,Killjoy,vlr
+649786_0,Joblife,Raze,Viper,Omen,Neon,Skye,vlr
+649786_3,Joblife,Viper,Fade,Omen,Raze,Vyse,vlr
+649787_0,F9 EICAR,Viper,Skye,Omen,Neon,Raze,vlr
+649787_2,F9 EICAR,Neon,Killjoy,Sova,Omen,Viper,vlr
+649787_3,F9 EICAR,Breach,Fade,Neon,Brimstone,Cypher,vlr
+649788_0,Mandatory,Omen,Killjoy,Neon,Viper,Sova,vlr
+649788_2,Mandatory,Viper,Omen,Neon,Skye,Sage,vlr
+649789_2,WIP Esports,Raze,Omen,Fade,Vyse,Viper,vlr
+649789_3,WIP Esports,Chamber,Omen,Viper,Raze,Skye,vlr
+649790_0,F9 EICAR,Vyse,Fade,Viper,Neon,Omen,vlr
+649790_2,F9 EICAR,Viper,Raze,Omen,Neon,Skye,vlr
+649791_2,WIP Esports,Breach,Cypher,Fade,Brimstone,Raze,vlr
+649791_3,WIP Esports,Sova,Viper,Neon,Jett,Harbor,vlr
+649791_4,WIP Esports,Viper,Raze,Fade,Vyse,Omen,vlr
+649789_2,WIP Esports,Raze,Omen,Fade,Vyse,Viper,vlr
+649789_3,WIP Esports,Chamber,Omen,Viper,Raze,Skye,vlr
+649791_2,WIP Esports,Breach,Cypher,Fade,Brimstone,Raze,vlr
+649791_3,WIP Esports,Sova,Viper,Neon,Jett,Harbor,vlr
+649791_4,WIP Esports,Viper,Raze,Fade,Vyse,Omen,vlr
+649790_0,F9 EICAR,Vyse,Fade,Viper,Neon,Omen,vlr
+649790_2,F9 EICAR,Viper,Raze,Omen,Neon,Skye,vlr
+649788_0,Mandatory,Omen,Killjoy,Neon,Viper,Sova,vlr
+649788_2,Mandatory,Viper,Omen,Neon,Skye,Sage,vlr
+649787_0,F9 EICAR,Viper,Skye,Omen,Neon,Raze,vlr
+649787_2,F9 EICAR,Neon,Killjoy,Sova,Omen,Viper,vlr
+649787_3,F9 EICAR,Breach,Fade,Neon,Brimstone,Cypher,vlr
+663047_0,HGE Esport,Killjoy,Brimstone,Neon,Breach,Raze,vlr
+663047_2,HGE Esport,Astra,Chamber,Phoenix,Sova,Neon,vlr
+663048_0,Melilla Titans,Raze,Cypher,Neon,Omen,Fade,vlr
+663048_2,Melilla Titans,Sova,Astra,Jett,KAY/O,Viper,vlr
+663049_2,Ramboot Club,Sova,Neon,Killjoy,Viper,Omen,vlr
+663049_3,Ramboot Club,Omen,Fade,Viper,Vyse,Neon,vlr
+663050_0,Falke Esports,Fade,Neon,Omen,Vyse,Viper,vlr
+663050_2,Falke Esports,Neon,Raze,Skye,Omen,Viper,vlr
+663051_0,KPI Gaming,Sova,Omen,Chamber,Neon,Phoenix,vlr
+663052_0,NOVO Esports,Omen,Neon,Breach,Vyse,Fade,vlr
+663052_2,NOVO Esports,Sova,Cypher,Neon,Omen,Breach,vlr
+663052_3,NOVO Esports,Raze,Fade,Cypher,Viper,Omen,vlr
+663053_0,Otakar Esports,Sova,Phoenix,Cypher,Omen,Neon,vlr
+663053_2,Otakar Esports,Neon,Vyse,Raze,Omen,Fade,vlr
+663053_3,Otakar Esports,Brimstone,Neon,Skye,Phoenix,Cypher,vlr
+663054_0,UCAM Esports Club,Astra,Cypher,Neon,Fade,Phoenix,vlr
+663054_2,UCAM Esports Club,Viper,Omen,Neon,Fade,Chamber,vlr
+663054_3,UCAM Esports Club,Brimstone,Chamber,Skye,Viper,Neon,vlr
+663055_0,UCAM Esports Club,Chamber,Brimstone,Viper,Skye,Neon,vlr
+663055_2,UCAM Esports Club,Omen,Viper,Vyse,Fade,Neon,vlr
+663057_0,Barça eSports,Fade,Omen,Chamber,Viper,Neon,vlr
+663057_3,Barça eSports,Neon,Raze,Viper,Skye,Brimstone,vlr
+663057_4,Barça eSports,Neon,Viper,Vyse,Fade,Omen,vlr
+663058_0,HGE Esport,Raze,Brimstone,Killjoy,Breach,Neon,vlr
+663058_2,HGE Esport,Neon,Sova,Chamber,Phoenix,Astra,vlr
+663058_3,HGE Esport,Omen,Raze,Viper,Neon,Fade,vlr
+663059_0,Melilla Titans,Jett,Omen,Breach,Cypher,Sova,vlr
+663059_2,Melilla Titans,Cypher,Raze,Fade,Omen,Neon,vlr
+663060_0,HGE Esport,Raze,Brimstone,Neon,Killjoy,Breach,vlr
+663060_2,HGE Esport,Astra,Viper,Fade,Neon,Raze,vlr
+663060_3,HGE Esport,Neon,Raze,Fade,Omen,Viper,vlr
+663061_0,Falke Esports,Fade,Astra,Phoenix,Neon,Cypher,vlr
+663061_2,Falke Esports,Viper,Neon,Skye,Raze,Omen,vlr
+663062_3,KPI Gaming,Cypher,Sova,Jett,Neon,Omen,vlr
+663063_0,Falke Esports,Sova,Omen,Viper,Killjoy,Neon,vlr
+663063_2,Falke Esports,Neon,Chamber,Skye,Brimstone,Viper,vlr
+663065_2,Otakar Esports,Cypher,Neon,Sova,Omen,Phoenix,vlr
+663057_0,Barça eSports,Fade,Omen,Chamber,Viper,Neon,vlr
+663057_3,Barça eSports,Neon,Raze,Viper,Skye,Brimstone,vlr
+663057_4,Barça eSports,Neon,Viper,Vyse,Fade,Omen,vlr
+663065_2,Otakar Esports,Cypher,Neon,Sova,Omen,Phoenix,vlr
+663063_0,Falke Esports,Sova,Omen,Viper,Killjoy,Neon,vlr
+663063_2,Falke Esports,Neon,Chamber,Skye,Brimstone,Viper,vlr
+663062_3,KPI Gaming,Cypher,Sova,Jett,Neon,Omen,vlr
+659563_0,Be Good,Sova,Phoenix,Neon,Killjoy,Omen,vlr
+659563_2,Be Good,Sage,Skye,Neon,Omen,Raze,vlr
+659563_3,Be Good,Jett,Skye,Clove,Brimstone,Neon,vlr
+659564_0,La Familia,Viper,Brimstone,Neon,Skye,Raze,vlr
+659564_2,La Familia,Raze,Killjoy,Neon,Brimstone,Breach,vlr
+659564_3,La Familia,Breach,Sova,Omen,Neon,Killjoy,vlr
+659565_0,Nomads,Killjoy,Phoenix,Astra,Fade,Neon,vlr
+659565_2,Nomads,Phoenix,Neon,Omen,Cypher,Sova,vlr
+659566_0,Hive,Sova,Jett,Neon,Omen,Cypher,vlr
+659566_2,Hive,Omen,Fade,Chamber,Jett,Neon,vlr
+659567_0,NEVERLAND713,Jett,Omen,Neon,Viper,Skye,vlr
+659567_2,NEVERLAND713,Vyse,Fade,Phoenix,Neon,Omen,vlr
+659568_0,Kertanegara Esports,Astra,Raze,Neon,Fade,Omen,vlr
+659568_2,Kertanegara Esports,Omen,Viper,Raze,Jett,Skye,vlr
+659568_3,Kertanegara Esports,Chamber,Killjoy,Astra,Fade,Neon,vlr
+659569_0,Alter Ego,Omen,Vyse,Fade,Neon,Raze,vlr
+659570_0,Alter Ego,Fade,Neon,Vyse,Omen,Raze,vlr
+659570_2,Alter Ego,Vyse,Fade,Neon,Omen,Raze,vlr
+659570_3,Alter Ego,Omen,Sova,Viper,Jett,Raze,vlr
+659571_0,La Familia,Skye,Chamber,Viper,Brimstone,Neon,vlr
+659571_2,La Familia,Cypher,Phoenix,Jett,Sova,Omen,vlr
+659572_0,Hive,Skye,Neon,Cypher,Sage,Omen,vlr
+659572_2,Hive,Fade,Jett,Astra,Neon,Vyse,vlr
+659573_0,La Familia,Sova,Cypher,Jett,Neon,Omen,vlr
+659573_2,La Familia,Jett,Viper,Sova,Omen,Neon,vlr
+659574_2,Nomads,Skye,Raze,Chamber,Brimstone,Neon,vlr
+659575_0,NEVERLAND713,Cypher,Sova,Brimstone,Reyna,Jett,vlr
+659575_2,NEVERLAND713,Fade,Vyse,Phoenix,Omen,Neon,vlr
+659575_3,NEVERLAND713,Phoenix,Sova,Neon,Cypher,Omen,vlr
+659576_0,NEVERLAND713,Phoenix,Cypher,Sova,Omen,Neon,vlr
+659576_2,NEVERLAND713,Jett,Brimstone,Sova,Reyna,Cypher,vlr
+659576_3,NEVERLAND713,Omen,Vyse,Phoenix,Fade,Neon,vlr
+659570_0,Alter Ego,Fade,Neon,Vyse,Omen,Raze,vlr
+659570_2,Alter Ego,Vyse,Fade,Neon,Omen,Raze,vlr
+659570_3,Alter Ego,Omen,Sova,Viper,Jett,Raze,vlr
+659576_0,NEVERLAND713,Phoenix,Cypher,Sova,Omen,Neon,vlr
+659576_2,NEVERLAND713,Jett,Brimstone,Sova,Reyna,Cypher,vlr
+659576_3,NEVERLAND713,Omen,Vyse,Phoenix,Fade,Neon,vlr
+659575_0,NEVERLAND713,Cypher,Sova,Brimstone,Reyna,Jett,vlr
+659575_2,NEVERLAND713,Fade,Vyse,Phoenix,Omen,Neon,vlr
+659575_3,NEVERLAND713,Phoenix,Sova,Neon,Cypher,Omen,vlr
+659569_0,Alter Ego,Omen,Vyse,Fade,Neon,Raze,vlr
+659574_2,Nomads,Skye,Raze,Chamber,Brimstone,Neon,vlr
+660485_0,Team NKT,Brimstone,Viper,Neon,Skye,Deadlock,vlr
+660485_2,Team NKT,Neon,Omen,Skye,Viper,Raze,vlr
+660485_3,Team NKT,Phoenix,Omen,Sova,Cypher,Neon,vlr
+660486_0,XOXO-01,Fade,Vyse,Phoenix,Neon,Brimstone,vlr
+660486_2,XOXO-01,Fade,Omen,Neon,Raze,Viper,vlr
+660487_2,555,Omen,Raze,Neon,Fade,Vyse,vlr
+660489_0,Sharper Esports,Fade,Raze,Vyse,Brimstone,Deadlock,vlr
+660489_2,Sharper Esports,Skye,Viper,Deadlock,Omen,Neon,vlr
+660490_0,XGOD,Omen,Jett,Sova,Neon,Viper,vlr
+660491_0,555,Omen,Neon,Viper,Raze,Skye,vlr
+660491_2,555,Killjoy,Phoenix,Astra,Fade,Neon,vlr
+660492_0,555,Phoenix,Neon,Killjoy,Fade,Astra,vlr
+660492_2,555,Neon,Omen,Jett,Cypher,Sova,vlr
+660493_0,XOXO-01,Vyse,Neon,Raze,Fade,Omen,vlr
+660493_2,XOXO-01,Vyse,Neon,Phoenix,Brimstone,Fade,vlr
+660493_3,XOXO-01,Breach,Killjoy,Sova,Neon,Omen,vlr
+660494_0,NongKaiTod,Omen,Fade,Vyse,Neon,Raze,vlr
+660495_0,XOXO-01,Neon,Viper,Jett,Sova,Omen,vlr
+660495_2,XOXO-01,Vyse,Neon,Phoenix,Brimstone,Fade,vlr
+660495_3,XOXO-01,Sova,Killjoy,Neon,Breach,Omen,vlr
+660496_2,NongKaiTod,Raze,Vyse,Neon,Fade,Omen,vlr
+660498_2,Team NKT,KAY/O,Skye,Cypher,Omen,Neon,vlr
+660492_0,555,Phoenix,Neon,Killjoy,Fade,Astra,vlr
+660492_2,555,Neon,Omen,Jett,Cypher,Sova,vlr
+660498_2,Team NKT,KAY/O,Skye,Cypher,Omen,Neon,vlr
+660491_0,555,Omen,Neon,Viper,Raze,Skye,vlr
+660491_2,555,Killjoy,Phoenix,Astra,Fade,Neon,vlr
+660496_2,NongKaiTod,Raze,Vyse,Neon,Fade,Omen,vlr
+660436_0,Zorvex,Omen,Sova,Jett,Neon,Killjoy,vlr
+660436_2,Zorvex,Chamber,Astra,Sova,Phoenix,Neon,vlr
+660436_3,Zorvex,Raze,Omen,Fade,Neon,Vyse,vlr
+660437_2,Fortune Puwa,Neon,Cypher,Sova,Phoenix,Omen,vlr
+660438_2,Homeless,Omen,Neon,Viper,KAY/O,Sova,vlr
+660439_2,NU BULLDOGS,Sova,Jett,Omen,Cypher,Neon,vlr
+660440_2,Jade Lions,Chamber,Fade,Viper,Neon,Omen,vlr
+660440_3,Jade Lions,Phoenix,Omen,Cypher,Neon,Fade,vlr
+660441_0,NAOS,Brimstone,KAY/O,Sage,Neon,Gekko,vlr
+660442_2,NAOS,Vyse,Astra,Fade,Neon,Phoenix,vlr
+660443_0,Jade Lions,Phoenix,Chamber,Fade,Jett,Astra,vlr
+660443_3,Jade Lions,Omen,Cypher,Jett,Breach,Skye,vlr
+660444_0,Fortune Puwa,Raze,Cypher,Omen,Fade,Neon,vlr
+660444_3,Fortune Puwa,Neon,Cypher,Phoenix,Omen,Sova,vlr
+660445_0,NU BULLDOGS,Omen,Vyse,Raze,Fade,Neon,vlr
+660445_2,NU BULLDOGS,Raze,Fade,Omen,Viper,Neon,vlr
+660446_0,Zorvex,Neon,Omen,Viper,Sova,Jett,vlr
+660446_2,Zorvex,Neon,Raze,Fade,Viper,Omen,vlr
+660447_0,NU BULLDOGS,Neon,Vyse,Omen,Fade,Raze,vlr
+660447_3,NU BULLDOGS,Neon,Omen,Viper,Fade,Raze,vlr
+660448_0,Jade Lions,Sova,Viper,Omen,Jett,Neon,vlr
+660448_2,Jade Lions,Brimstone,Viper,Neon,Skye,Chamber,vlr
+660449_0,Jade Lions,Viper,Jett,Sova,Harbor,Phoenix,vlr
+660443_0,Jade Lions,Phoenix,Chamber,Fade,Jett,Astra,vlr
+660443_3,Jade Lions,Omen,Cypher,Jett,Breach,Skye,vlr
+660449_0,Jade Lions,Viper,Jett,Sova,Harbor,Phoenix,vlr
+660448_0,Jade Lions,Sova,Viper,Omen,Jett,Neon,vlr
+660448_2,Jade Lions,Brimstone,Viper,Neon,Skye,Chamber,vlr
+660442_2,NAOS,Vyse,Astra,Fade,Neon,Phoenix,vlr
+660447_0,NU BULLDOGS,Neon,Vyse,Omen,Fade,Raze,vlr
+660447_3,NU BULLDOGS,Neon,Omen,Viper,Fade,Raze,vlr
+659579_0,Breakpoint,Iso,Killjoy,Omen,Sova,Neon,vlr
+659580_0,Galaxy ReigN,Raze,Omen,Cypher,Fade,Neon,vlr
+659580_2,Galaxy ReigN,Omen,Jett,Cypher,Neon,Fade,vlr
+659580_3,Galaxy ReigN,Sova,Astra,Jett,Neon,Viper,vlr
+659582_2,Rival Esports,Iso,Sova,Viper,Neon,Harbor,vlr
+659583_0,Trinity,Neon,Sova,Chamber,Viper,Omen,vlr
+659583_3,Trinity,Astra,Sova,Jett,Omen,Neon,vlr
+659584_2,Rival Esports,Viper,Killjoy,Omen,Sova,Neon,vlr
+659585_2,Unsigned5,Vyse,Omen,Viper,Skye,Neon,vlr
+659586_2,XLB,Neon,Sova,Killjoy,Viper,Omen,vlr
+659587_2,Galaxy ReigN,Raze,Neon,Omen,Cypher,Skye,vlr
+659587_3,Galaxy ReigN,Sova,Phoenix,Omen,Neon,Cypher,vlr
+659589_2,Breakpoint,Sova,Jett,Astra,Chamber,Neon,vlr
+659590_0,XLB,Sova,Neon,Harbor,Phoenix,Viper,vlr
+659590_3,XLB,Killjoy,Omen,Neon,Sova,Viper,vlr
+659591_0,XLB,Neon,Omen,Killjoy,Viper,Sova,vlr
+659591_2,XLB,Raze,Chamber,Viper,Fade,Omen,vlr
+659591_3,XLB,Phoenix,Viper,Neon,Sova,Harbor,vlr
+659586_2,XLB,Neon,Sova,Killjoy,Viper,Omen,vlr
+659585_2,Unsigned5,Vyse,Omen,Viper,Skye,Neon,vlr
+659591_0,XLB,Neon,Omen,Killjoy,Viper,Sova,vlr
+659591_2,XLB,Raze,Chamber,Viper,Fade,Omen,vlr
+659591_3,XLB,Phoenix,Viper,Neon,Sova,Harbor,vlr
+659590_0,XLB,Sova,Neon,Harbor,Phoenix,Viper,vlr
+659590_3,XLB,Killjoy,Omen,Neon,Sova,Viper,vlr
+676655_0,TANSA,Chamber,Sova,Jett,Phoenix,Omen,vlr
+676655_3,TANSA,Jett,Sova,Omen,Reyna,Cypher,vlr
+676656_0,Biztech Society,Clove,Raze,Jett,Vyse,Fade,vlr
+676656_2,Biztech Society,Raze,Sova,Chamber,Jett,Clove,vlr
+676657_0,AUEC,Phoenix,Deadlock,Sova,Clove,Jett,vlr
+676657_0,AUEC,Phoenix,Deadlock,Sova,Clove,Jett,vlr
+676656_0,Biztech Society,Clove,Raze,Jett,Vyse,Fade,vlr
+676656_2,Biztech Society,Raze,Sova,Chamber,Jett,Clove,vlr
+676655_0,TANSA,Chamber,Sova,Jett,Phoenix,Omen,vlr
+676655_3,TANSA,Jett,Sova,Omen,Reyna,Cypher,vlr
+675241_0,Team Spire,Vyse,Viper,Omen,Fade,Neon,vlr
+675241_2,Team Spire,Raze,Viper,Fade,Omen,Vyse,vlr
+675242_2,BAAM Esports,Sova,Killjoy,Neon,Omen,Jett,vlr
+675243_0,Victory,Neon,Raze,Fade,Omen,Killjoy,vlr
+675243_2,Victory,Sova,Raze,Neon,Killjoy,Astra,vlr
+675244_0,Twelve Esports,Omen,Viper,Sova,Neon,Killjoy,vlr
+675244_2,Twelve Esports,Omen,Vyse,Fade,Neon,Viper,vlr
+675245_3,RAFHA eSPORTS,Viper,Sova,Neon,Jett,Omen,vlr
+675246_0,Al-Ahli Esports,Harbor,Jett,Sova,Viper,Neon,vlr
+675247_0,AlQadsiah Esports,Viper,Fade,Killjoy,Omen,Raze,vlr
+675247_2,AlQadsiah Esports,Killjoy,Sova,Neon,Viper,Omen,vlr
+675247_3,AlQadsiah Esports,Sova,Jett,Viper,KAY/O,Harbor,vlr
+675248_0,AlQadsiah Esports,Vyse,Viper,Neon,Skye,Omen,vlr
+675248_2,AlQadsiah Esports,Harbor,Jett,KAY/O,Viper,Sova,vlr
+675248_3,AlQadsiah Esports,KAY/O,Killjoy,Sova,Jett,Omen,vlr
+675248_4,AlQadsiah Esports,Viper,Neon,Killjoy,Sova,Omen,vlr
+675249_0,Victory,Skye,Jett,Viper,Astra,Raze,vlr
+675249_2,Victory,Breach,Neon,Killjoy,Brimstone,Raze,vlr
+675249_3,Victory,Jett,Chamber,Omen,Sova,Raze,vlr
+675250_0,Team Spire,Viper,Neon,Sova,Omen,Killjoy,vlr
+675250_2,Team Spire,Neon,Fade,Killjoy,Astra,Phoenix,vlr
+675250_3,Team Spire,Viper,Vyse,Omen,Fade,Raze,vlr
+675251_0,Twelve Esports,Neon,Vyse,Viper,Omen,Fade,vlr
+675251_2,Twelve Esports,Omen,Raze,Breach,Viper,Fade,vlr
+675251_3,Twelve Esports,Sova,KAY/O,Killjoy,Jett,Omen,vlr
+675252_0,BAAM Esports,Omen,Raze,Viper,Vyse,Fade,vlr
+675252_2,BAAM Esports,Omen,Neon,Jett,Sova,Cypher,vlr
+675252_3,BAAM Esports,Omen,Viper,Sova,Jett,Neon,vlr
+675253_0,Al-Ahli Esports,Sova,Phoenix,Omen,Neon,Cypher,vlr
+675253_2,Al-Ahli Esports,Sova,Phoenix,Neon,Omen,Cypher,vlr
+675253_3,Al-Ahli Esports,Fade,Raze,Omen,Viper,Neon,vlr
+675254_3,RAFHA eSPORTS,Viper,Fade,Chamber,Neon,Omen,vlr
+675248_0,AlQadsiah Esports,Vyse,Viper,Neon,Skye,Omen,vlr
+675248_2,AlQadsiah Esports,Harbor,Jett,KAY/O,Viper,Sova,vlr
+675248_3,AlQadsiah Esports,KAY/O,Killjoy,Sova,Jett,Omen,vlr
+675248_4,AlQadsiah Esports,Viper,Neon,Killjoy,Sova,Omen,vlr
+675254_3,RAFHA eSPORTS,Viper,Fade,Chamber,Neon,Omen,vlr
+675253_0,Al-Ahli Esports,Sova,Phoenix,Omen,Neon,Cypher,vlr
+675253_2,Al-Ahli Esports,Sova,Phoenix,Neon,Omen,Cypher,vlr
+675253_3,Al-Ahli Esports,Fade,Raze,Omen,Viper,Neon,vlr
+675247_0,AlQadsiah Esports,Viper,Fade,Killjoy,Omen,Raze,vlr
+675247_2,AlQadsiah Esports,Killjoy,Sova,Neon,Viper,Omen,vlr
+675247_3,AlQadsiah Esports,Sova,Jett,Viper,KAY/O,Harbor,vlr
+675251_0,Twelve Esports,Neon,Vyse,Viper,Omen,Fade,vlr
+675251_2,Twelve Esports,Omen,Raze,Breach,Viper,Fade,vlr
+675251_3,Twelve Esports,Sova,KAY/O,Killjoy,Jett,Omen,vlr
+661066_0,Galatasaray Esports,Vyse,Neon,Raze,Omen,Fade,vlr
+661066_2,Galatasaray Esports,Viper,Omen,Neon,Jett,Sova,vlr
+661067_0,FUT Esports Academy,Chamber,Brimstone,Neon,Fade,Breach,vlr
+661067_2,FUT Esports Academy,Raze,Omen,Neon,Viper,Fade,vlr
+661068_0,Misa Esports,Omen,Breach,Cypher,Sova,Neon,vlr
+661069_3,REBORN,Phoenix,Viper,Neon,Sova,Harbor,vlr
+661070_0,Beşiktaş Esports,Neon,Chamber,Fade,Phoenix,Omen,vlr
+661070_2,Beşiktaş Esports,Omen,Vyse,Raze,Viper,Fade,vlr
+661070_3,Beşiktaş Esports,Viper,Neon,Raze,Omen,Skye,vlr
+661070_4,Beşiktaş Esports,Sova,Jett,Omen,Viper,Neon,vlr
+661071_2,Fire Flux Esports,Neon,Cypher,Astra,Fade,Phoenix,vlr
+661071_3,Fire Flux Esports,Vyse,Viper,Fade,Neon,Omen,vlr
+661073_2,Fire Flux Esports,Fade,Neon,Viper,Omen,Vyse,vlr
+661074_0,Galatasaray Esports,Cypher,Omen,Neon,Breach,Sova,vlr
+661074_2,Galatasaray Esports,Neon,Omen,Viper,Jett,Sova,vlr
+661075_2,FUT Esports Academy,Omen,Fade,Neon,Viper,Raze,vlr
+661076_3,Misa Esports,Neon,Viper,Omen,Fade,Phoenix,vlr
+661070_0,Beşiktaş Esports,Neon,Chamber,Fade,Phoenix,Omen,vlr
+661070_2,Beşiktaş Esports,Omen,Vyse,Raze,Viper,Fade,vlr
+661070_3,Beşiktaş Esports,Viper,Neon,Raze,Omen,Skye,vlr
+661070_4,Beşiktaş Esports,Sova,Jett,Omen,Viper,Neon,vlr
+661076_3,Misa Esports,Neon,Viper,Omen,Fade,Phoenix,vlr
+661075_2,FUT Esports Academy,Omen,Fade,Neon,Viper,Raze,vlr
+661069_3,REBORN,Phoenix,Viper,Neon,Sova,Harbor,vlr
+661074_0,Galatasaray Esports,Cypher,Omen,Neon,Breach,Sova,vlr
+661074_2,Galatasaray Esports,Neon,Omen,Viper,Jett,Sova,vlr
+664907_0,RIZON,Omen,Sova,Vyse,Viper,Neon,vlr
+664908_2,FOKUS,Omen,Viper,Raze,Neon,Fade,vlr
+664909_2,FOKUS,Sova,Omen,Viper,Neon,KAY/O,vlr
+664909_3,FOKUS,Fade,Omen,Raze,Viper,Neon,vlr
+664909_4,FOKUS,Neon,Cypher,Phoenix,Sova,Omen,vlr
+664909_5,FOKUS,Raze,Fade,Skye,Viper,Brimstone,vlr
+664909_2,FOKUS,Sova,Omen,Viper,Neon,KAY/O,vlr
+664909_3,FOKUS,Fade,Omen,Raze,Viper,Neon,vlr
+664909_4,FOKUS,Neon,Cypher,Phoenix,Sova,Omen,vlr
+664909_5,FOKUS,Raze,Fade,Skye,Viper,Brimstone,vlr
+664908_2,FOKUS,Omen,Viper,Raze,Neon,Fade,vlr
+664907_0,RIZON,Omen,Sova,Vyse,Viper,Neon,vlr
+685123_0,Cobweb eSports,Jett,Chamber,Skye,Raze,Omen,vlr
+685123_2,Cobweb eSports,Raze,Jett,Fade,Omen,Killjoy,vlr
+685123_3,Cobweb eSports,Killjoy,Jett,Phoenix,Fade,Astra,vlr
+685124_0,L9,Phoenix,Sova,Jett,Omen,Cypher,vlr
+685124_3,L9,Chamber,Harbor,Jett,Viper,Sova,vlr
+685125_0,L9,Jett,Cypher,Phoenix,Omen,Sova,vlr
+685125_2,L9,Vyse,Fade,Viper,Omen,Raze,vlr
+685125_3,L9,Astra,Jett,Phoenix,Chamber,Fade,vlr
+685125_4,L9,Jett,Brimstone,Viper,Chamber,Skye,vlr
+685125_0,L9,Jett,Cypher,Phoenix,Omen,Sova,vlr
+685125_2,L9,Vyse,Fade,Viper,Omen,Raze,vlr
+685125_3,L9,Astra,Jett,Phoenix,Chamber,Fade,vlr
+685125_4,L9,Jett,Brimstone,Viper,Chamber,Skye,vlr
+685124_0,L9,Phoenix,Sova,Jett,Omen,Cypher,vlr
+685124_3,L9,Chamber,Harbor,Jett,Viper,Sova,vlr
+685123_0,Cobweb eSports,Jett,Chamber,Skye,Raze,Omen,vlr
+685123_2,Cobweb eSports,Raze,Jett,Fade,Omen,Killjoy,vlr
+685123_3,Cobweb eSports,Killjoy,Jett,Phoenix,Fade,Astra,vlr
+659474_0,Wuxi Titan Esports Club(Titan Esports Club),Phoenix,Sova,Viper,Neon,Harbor,vlr
+659474_2,Wuxi Titan Esports Club(Titan Esports Club),Neon,Vyse,Raze,Omen,Fade,vlr
+659475_0,TYLOO,Phoenix,Cypher,Fade,Omen,Neon,vlr
+659475_3,TYLOO,Astra,Phoenix,Neon,Cypher,Fade,vlr
+659476_2,Trace,Neon,Omen,Raze,Fade,Vyse,vlr
+659478_0,JD Mall JDG Esports(JDG Esports),Raze,Neon,Omen,Vyse,Fade,vlr
+659479_0,EDward Gaming,Cypher,Brimstone,Jett,Neon,Skye,vlr
+659479_2,EDward Gaming,Raze,Fade,Omen,Vyse,Neon,vlr
+659480_0,EDward Gaming,Viper,Omen,Jett,Raze,Skye,vlr
+659480_2,EDward Gaming,Viper,Harbor,Sova,KAY/O,Jett,vlr
+659481_3,Xi Lai Gaming,Sova,KAY/O,Viper,Neon,Omen,vlr
+659481_4,Xi Lai Gaming,Killjoy,Omen,Neon,Viper,Sova,vlr
+659482_0,TYLOO,Astra,Phoenix,Cypher,Neon,Fade,vlr
+659483_0,Dragon Ranger Gaming,Cypher,Sova,Jett,Omen,Neon,vlr
+659481_3,Xi Lai Gaming,Sova,KAY/O,Viper,Neon,Omen,vlr
+659481_4,Xi Lai Gaming,Killjoy,Omen,Neon,Viper,Sova,vlr
+659480_0,EDward Gaming,Viper,Omen,Jett,Raze,Skye,vlr
+659480_2,EDward Gaming,Viper,Harbor,Sova,KAY/O,Jett,vlr
+646419_0,HANAMI,Harbor,Sage,Fade,Vyse,Chamber,vlr
+646419_2,HANAMI,Chamber,Sage,Harbor,Fade,Vyse,vlr
+646420_0,INDIGO,Omen,Vyse,Neon,Fade,Viper,vlr
+646420_2,INDIGO,Omen,Sova,Vyse,Neon,Chamber,vlr
+646421_0,everlasting,Astra,Killjoy,Neon,Phoenix,Fade,vlr
+646421_2,everlasting,Jett,Killjoy,Neon,Omen,Sova,vlr
+646423_0,INDIGO,Omen,Viper,Fade,Neon,Vyse,vlr
+646423_2,INDIGO,Sova,Chamber,Vyse,Omen,Neon,vlr
+646424_0,FOKUS Sakura,Skye,Omen,Viper,Raze,Neon,vlr
+646424_2,FOKUS Sakura,Omen,Sova,Killjoy,Viper,Neon,vlr
+646425_0,HANAMI,Viper,Neon,Astra,Iso,Sova,vlr
+646425_2,HANAMI,Omen,Killjoy,Neon,Sova,Viper,vlr
+646426_2,LEO Azalea,Neon,Vyse,Omen,Sova,Chamber,vlr
+646426_3,LEO Azalea,Neon,Astra,Chamber,Harbor,Skye,vlr
+646427_0,everlasting,Raze,Omen,Fade,Killjoy,Neon,vlr
+646427_2,everlasting,Omen,Neon,Phoenix,Cypher,Sova,vlr
+646428_0,FOKUS Sakura,Neon,Sova,Omen,Viper,Killjoy,vlr
+646428_2,FOKUS Sakura,Skye,Chamber,Viper,Omen,Neon,vlr
+646424_0,FOKUS Sakura,Skye,Omen,Viper,Raze,Neon,vlr
+646424_2,FOKUS Sakura,Omen,Sova,Killjoy,Viper,Neon,vlr
+646428_0,FOKUS Sakura,Neon,Sova,Omen,Viper,Killjoy,vlr
+646428_2,FOKUS Sakura,Skye,Chamber,Viper,Omen,Neon,vlr
+646427_0,everlasting,Raze,Omen,Fade,Killjoy,Neon,vlr
+646427_2,everlasting,Omen,Neon,Phoenix,Cypher,Sova,vlr
+646423_0,INDIGO,Omen,Viper,Fade,Neon,Vyse,vlr
+646423_2,INDIGO,Sova,Chamber,Vyse,Omen,Neon,vlr
+646425_0,HANAMI,Viper,Neon,Astra,Iso,Sova,vlr
+646425_2,HANAMI,Omen,Killjoy,Neon,Sova,Viper,vlr
+671281_0,Alliance Guardians,Viper,Fade,Omen,Raze,Chamber,vlr
+671281_2,Alliance Guardians,Raze,Viper,Omen,Skye,Chamber,vlr
+671281_3,Alliance Guardians,KAY/O,Sova,Jett,Omen,Cypher,vlr
+671282_2,NXG,Sova,Chamber,Jett,Omen,Phoenix,vlr
+671282_3,NXG,Phoenix,Sova,Cypher,Jett,Omen,vlr
+671283_0,Inters,Raze,Viper,Omen,Fade,Iso,vlr
+671284_2,Alphaware Olympians,Jett,Sova,Omen,Viper,Killjoy,vlr
+671285_0,Pigeons,Sova,Harbor,Jett,Viper,Phoenix,vlr
+671285_2,Pigeons,Viper,Raze,Skye,Astra,Jett,vlr
+671285_3,Pigeons,Skye,Phoenix,Astra,Jett,Cypher,vlr
+671286_0,Max Passion,Sova,Cypher,Omen,Phoenix,Jett,vlr
+671286_2,Max Passion,Sova,Omen,Cypher,Neon,Phoenix,vlr
+671287_2,Kindred,Omen,Viper,Vyse,Raze,Fade,vlr
+671289_3,why we peeking,Chamber,Sova,Omen,Jett,Iso,vlr
+671290_3,Jackpot,KAY/O,Omen,Killjoy,Jett,Sova,vlr
+671292_0,really good players,Jett,Sova,KAY/O,Clove,Sage,vlr
+671292_2,really good players,Raze,Viper,Fade,Iso,Omen,vlr
+671293_2,Inters,Sova,Vyse,Omen,KAY/O,Jett,vlr
+671293_3,Inters,Raze,Iso,Fade,Omen,Viper,vlr
+671294_0,baboons,Iso,Cypher,Sova,Omen,Jett,vlr
+671294_2,baboons,Iso,Raze,Vyse,Omen,Fade,vlr
+671295_0,Pigeons,Jett,Sova,Phoenix,Cypher,Astra,vlr
+671295_2,Pigeons,Cypher,Phoenix,Jett,Skye,Astra,vlr
+671295_3,Pigeons,Sova,Jett,Clove,Cypher,Phoenix,vlr
+671296_0,Tempers,Jett,Sova,Vyse,Chamber,Omen,vlr
+671296_2,Tempers,Jett,Viper,Chamber,Sova,Omen,vlr
+671296_3,Tempers,Chamber,Raze,Omen,Fade,Viper,vlr
+671297_0,Certified Turtles,Viper,Chamber,Omen,Fade,Raze,vlr
+671298_2,why we peeking,Raze,Skye,Chamber,Sage,Clove,vlr
+671299_2,really good players,Omen,Viper,Raze,Iso,Fade,vlr
+671300_0,Patrick Star GIF,Clove,Sova,Viper,Killjoy,Jett,vlr
+671302_0,retired at 21,Fade,Jett,Skye,Vyse,Omen,vlr
+671302_2,retired at 21,Brimstone,Jett,Breach,Phoenix,Chamber,vlr
+671303_2,Team Digital,KAY/O,Sova,Killjoy,Omen,Jett,vlr
+671304_0,Patrick Star GIF,Raze,Viper,Fade,Iso,Omen,vlr
+671304_2,Patrick Star GIF,Phoenix,Omen,Jett,Cypher,Sova,vlr
+671305_0,Certified Turtles,Raze,Omen,Viper,Chamber,Fade,vlr
+671306_0,Pigeons,Jett,Astra,Skye,Raze,Viper,vlr
+671306_2,Pigeons,Raze,Jett,Fade,Cypher,Astra,vlr
+671306_0,Pigeons,Jett,Astra,Skye,Raze,Viper,vlr
+671306_2,Pigeons,Raze,Jett,Fade,Cypher,Astra,vlr
+671304_0,Patrick Star GIF,Raze,Viper,Fade,Iso,Omen,vlr
+671304_2,Patrick Star GIF,Phoenix,Omen,Jett,Cypher,Sova,vlr
+671305_0,Certified Turtles,Raze,Omen,Viper,Chamber,Fade,vlr
+671299_2,really good players,Omen,Viper,Raze,Iso,Fade,vlr
+671300_0,Patrick Star GIF,Clove,Sova,Viper,Killjoy,Jett,vlr
+669705_0,YAS Academy,Phoenix,Vyse,Omen,Neon,Sova,vlr
+669705_2,YAS Academy,Sova,Omen,Neon,Phoenix,Cypher,vlr
+669706_0,Royal Foxes,Sova,Neon,Breach,Cypher,Omen,vlr
+669706_2,Royal Foxes,Omen,Raze,Viper,Fade,Neon,vlr
+669707_0,VAY eSports,Sova,Omen,Cypher,Neon,Breach,vlr
+669707_2,VAY eSports,Viper,Omen,Skye,Raze,Vyse,vlr
+669708_0,Oxygen Gaming,Cypher,Jett,Astra,Phoenix,Fade,vlr
+669708_2,Oxygen Gaming,Neon,Sova,Phoenix,Cypher,Omen,vlr
+669708_3,Oxygen Gaming,Omen,Cypher,Neon,Phoenix,Sova,vlr
+669709_0,FRG UK,Jett,Omen,Viper,Sova,Neon,vlr
+669709_2,FRG UK,Phoenix,Killjoy,Astra,Neon,Fade,vlr
+669709_3,FRG UK,Omen,Phoenix,Neon,Sova,Killjoy,vlr
+669710_0,Glacial Guardians,Viper,Omen,Killjoy,Neon,Sova,vlr
+669710_2,Glacial Guardians,Omen,Raze,Viper,Vyse,Fade,vlr
+669711_0,FRG,Neon,Vyse,Fade,Viper,Omen,vlr
+669711_2,FRG,Vyse,Viper,Omen,Skye,Neon,vlr
+669711_3,FRG,Sova,Jett,Neon,Viper,Harbor,vlr
+669712_0,Glacial Guardians,Neon,Sova,KAY/O,Omen,Killjoy,vlr
+669712_2,Glacial Guardians,Omen,Phoenix,Sova,Cypher,Neon,vlr
+669711_0,FRG,Neon,Vyse,Fade,Viper,Omen,vlr
+669711_2,FRG,Vyse,Viper,Omen,Skye,Neon,vlr
+669711_3,FRG,Sova,Jett,Neon,Viper,Harbor,vlr
+669712_0,Glacial Guardians,Neon,Sova,KAY/O,Omen,Killjoy,vlr
+669712_2,Glacial Guardians,Omen,Phoenix,Sova,Cypher,Neon,vlr
+669709_0,FRG UK,Jett,Omen,Viper,Sova,Neon,vlr
+669709_2,FRG UK,Phoenix,Killjoy,Astra,Neon,Fade,vlr
+669709_3,FRG UK,Omen,Phoenix,Neon,Sova,Killjoy,vlr
+669710_0,Glacial Guardians,Viper,Omen,Killjoy,Neon,Sova,vlr
+669710_2,Glacial Guardians,Omen,Raze,Viper,Vyse,Fade,vlr
+669707_0,VAY eSports,Sova,Omen,Cypher,Neon,Breach,vlr
+669707_2,VAY eSports,Viper,Omen,Skye,Raze,Vyse,vlr
+654969_0,Meikai Dolls,Iso,Sova,Neon,Viper,Cypher,vlr
+654969_2,Meikai Dolls,Omen,Neon,Sova,Iso,Cypher,vlr
+654970_0,Meikai Dolls,Neon,Raze,Omen,Chamber,Fade,vlr
+654970_2,Meikai Dolls,Neon,Viper,Cypher,Sova,Iso,vlr
+654971_0,Meikai Dolls,Iso,Omen,Neon,Yoru,Skye,vlr
+654971_2,Meikai Dolls,Killjoy,Omen,Phoenix,Neon,Sova,vlr
+654972_2,Ninetails,Phoenix,Sova,Astra,Viper,Neon,vlr
+654971_0,Meikai Dolls,Iso,Omen,Neon,Yoru,Skye,vlr
+654971_2,Meikai Dolls,Killjoy,Omen,Phoenix,Neon,Sova,vlr
+654972_2,Ninetails,Phoenix,Sova,Astra,Viper,Neon,vlr
+654970_0,Meikai Dolls,Neon,Raze,Omen,Chamber,Fade,vlr
+654970_2,Meikai Dolls,Neon,Viper,Cypher,Sova,Iso,vlr
+654969_0,Meikai Dolls,Iso,Sova,Neon,Viper,Cypher,vlr
+654969_2,Meikai Dolls,Omen,Neon,Sova,Iso,Cypher,vlr
+666338_0,Sasanqua,Omen,Breach,Sova,Neon,Cypher,vlr
+666339_0,FENNEL GC,Omen,Viper,Skye,Neon,Raze,vlr
+666339_2,FENNEL GC,Viper,Vyse,Fade,Neon,Omen,vlr
+666340_0,EOTO,Sova,Cypher,Neon,Omen,Phoenix,vlr
+666341_2,Sasanqua,Fade,Phoenix,Astra,Neon,Killjoy,vlr
+666342_2,Uwinks,Astra,Yoru,Sova,Harbor,KAY/O,vlr
+666340_0,EOTO,Sova,Cypher,Neon,Omen,Phoenix,vlr
+666342_2,Uwinks,Astra,Yoru,Sova,Harbor,KAY/O,vlr
+666341_2,Sasanqua,Fade,Phoenix,Astra,Neon,Killjoy,vlr
+666339_0,FENNEL GC,Omen,Viper,Skye,Neon,Raze,vlr
+666339_2,FENNEL GC,Viper,Vyse,Fade,Neon,Omen,vlr
+666338_0,Sasanqua,Omen,Breach,Sova,Neon,Cypher,vlr
+668760_0,Kitchener Waterloo Pink,Astra,Fade,Phoenix,Chamber,Neon,vlr
+668760_2,Kitchener Waterloo Pink,Sage,Skye,Omen,Neon,Cypher,vlr
+668760_0,Kitchener Waterloo Pink,Astra,Fade,Phoenix,Chamber,Neon,vlr
+668760_2,Kitchener Waterloo Pink,Sage,Skye,Omen,Neon,Cypher,vlr
+666686_0,1 cheater 4 chuds,Fade,Phoenix,Brimstone,Killjoy,KAY/O,vlr
+666689_2,Max Passion,Gekko,Jett,Harbor,Cypher,Skye,vlr
+666690_0,80PercentClear,Reyna,Clove,Jett,Sova,Cypher,vlr
+666691_3,OCE5N,Reyna,Yoru,Chamber,Skye,Harbor,vlr
+666693_0,breys kfc bucket,Sage,Harbor,Phoenix,Fade,Raze,vlr
+666693_2,breys kfc bucket,Omen,Phoenix,KAY/O,Vyse,Gekko,vlr
+666694_0,Bipolar Bears,KAY/O,Jett,Brimstone,Cypher,Fade,vlr
+666694_2,Bipolar Bears,Sova,Cypher,Raze,Yoru,Clove,vlr
+666695_0,Elisabeth Marchini fans,Chamber,Jett,Sage,Harbor,Gekko,vlr
+666695_2,Elisabeth Marchini fans,Jett,Brimstone,Vyse,Clove,Gekko,vlr
+666695_3,Elisabeth Marchini fans,Jett,Sova,KAY/O,Clove,Harbor,vlr
+666697_2,Argon Esports,Jett,Yoru,Fade,Killjoy,Clove,vlr
+666700_0,justice for jinwoo,Reyna,Clove,Breach,Cypher,Sova,vlr
+666700_2,justice for jinwoo,Cypher,KAY/O,Yoru,Omen,Skye,vlr
+666701_2,NXG,Yoru,Iso,Cypher,Astra,Skye,vlr
+666703_3,Koala university,Astra,Sova,Sage,Cypher,KAY/O,vlr
+666705_0,The Powerpuff Girls,Killjoy,Reyna,Clove,Raze,Fade,vlr
+666706_2,last dance,Breach,Clove,Gekko,Jett,Vyse,vlr
+666707_0,Hydra Esports,Iso,Fade,Cypher,Clove,Raze,vlr
+666708_0,CSP Val Orange,Sova,Sage,Jett,Clove,Yoru,vlr
+666708_2,CSP Val Orange,Harbor,Yoru,Deadlock,Fade,Raze,vlr
+666709_2,80PercentClear,Jett,Sova,Clove,KAY/O,Deadlock,vlr
+666710_0,CRWNZ,Killjoy,KAY/O,Jett,Reyna,Clove,vlr
+666713_0,Blue Otter,Omen,Cypher,Sova,Sage,Reyna,vlr
+666714_0,Patrick Star GIF,Phoenix,Yoru,Omen,Deadlock,Fade,vlr
+666714_2,Patrick Star GIF,Cypher,Astra,Iso,Deadlock,Sova,vlr
+666714_3,Patrick Star GIF,Sage,Raze,Clove,Killjoy,Harbor,vlr
+666714_0,Patrick Star GIF,Phoenix,Yoru,Omen,Deadlock,Fade,vlr
+666714_2,Patrick Star GIF,Cypher,Astra,Iso,Deadlock,Sova,vlr
+666714_3,Patrick Star GIF,Sage,Raze,Clove,Killjoy,Harbor,vlr
+666713_0,Blue Otter,Omen,Cypher,Sova,Sage,Reyna,vlr
+666708_0,CSP Val Orange,Sova,Sage,Jett,Clove,Yoru,vlr
+666708_2,CSP Val Orange,Harbor,Yoru,Deadlock,Fade,Raze,vlr
+666709_2,80PercentClear,Jett,Sova,Clove,KAY/O,Deadlock,vlr
+667818_0,Team Exe,Fade,Clove,Vyse,Raze,Phoenix,vlr
+667819_2,Toxic Team,Sova,Phoenix,Clove,Chamber,Neon,vlr
+667820_2,HaNoi Dental,Neon,Omen,Viper,Sova,Jett,vlr
+667821_2,Griffin Egoist,Chamber,Raze,Viper,Brimstone,Skye,vlr
+667822_2,One dream for all,Omen,Raze,Fade,Killjoy,Neon,vlr
+667823_0,Crocodile Tears,Neon,Chamber,Raze,Brimstone,Skye,vlr
+667823_2,Crocodile Tears,Raze,Vyse,Fade,Clove,Jett,vlr
+667826_2,Imagine Breaker,Phoenix,Neon,Sova,Cypher,Omen,vlr
+667827_0,Griffin Egoist,Killjoy,Sova,Neon,Omen,Viper,vlr
+667827_2,Griffin Egoist,Chamber,Brimstone,Raze,Skye,Viper,vlr
+667828_0,Da Nang GrandStand,Raze,Omen,Neon,Skye,Viper,vlr
+667828_2,Da Nang GrandStand,Chamber,Raze,Fade,Omen,Neon,vlr
+667830_0,Griffin Egoist,Viper,Vyse,Omen,Neon,Fade,vlr
+667831_0,Homeless Gang,Neon,Omen,Chamber,Sova,Phoenix,vlr
+667831_3,Homeless Gang,Viper,Chamber,Neon,Brimstone,Skye,vlr
+667832_2,Da Nang GrandStand,Raze,Neon,Skye,Omen,Viper,vlr
+667832_3,Da Nang GrandStand,Neon,Chamber,Fade,Raze,Clove,vlr
+667832_2,Da Nang GrandStand,Raze,Neon,Skye,Omen,Viper,vlr
+667832_3,Da Nang GrandStand,Neon,Chamber,Fade,Raze,Clove,vlr
+667830_0,Griffin Egoist,Viper,Vyse,Omen,Neon,Fade,vlr
+667831_0,Homeless Gang,Neon,Omen,Chamber,Sova,Phoenix,vlr
+667831_3,Homeless Gang,Viper,Chamber,Neon,Brimstone,Skye,vlr
+667827_0,Griffin Egoist,Killjoy,Sova,Neon,Omen,Viper,vlr
+667827_2,Griffin Egoist,Chamber,Brimstone,Raze,Skye,Viper,vlr
+658282_0,ALTERNATE aTTaX EVO,Omen,Viper,Jett,Sage,Sova,vlr
+658282_2,ALTERNATE aTTaX EVO,Omen,Neon,Fade,Viper,Sage,vlr
+658282_3,ALTERNATE aTTaX EVO,KAY/O,Neon,Viper,Fade,Omen,vlr
+658283_0,Glacial Guardians,Omen,Viper,Chamber,Fade,Raze,vlr
+658283_2,Glacial Guardians,Sova,Omen,Viper,Killjoy,Neon,vlr
+658285_0,TwoFace Gaming,Chamber,Sova,Viper,Neon,Omen,vlr
+658285_2,TwoFace Gaming,Sova,Neon,Phoenix,Cypher,Omen,vlr
+658286_0,Glacial Guardians,Killjoy,Sova,Neon,Omen,Viper,vlr
+658286_2,Glacial Guardians,Raze,Fade,Viper,Omen,Chamber,vlr
+658286_3,Glacial Guardians,Brimstone,Raze,Skye,Chamber,Viper,vlr
+658287_0,Ingenious Esports,Astra,Viper,Vyse,Neon,Sova,vlr
+658287_2,Ingenious Esports,Raze,Vyse,Astra,Skye,Viper,vlr
+658287_3,Ingenious Esports,Viper,Omen,Neon,Skye,Raze,vlr
+658288_0,TeamOrangeGaming,Chamber,Viper,Neon,Omen,Fade,vlr
+658289_0,Reveal Multigaming,Phoenix,Jett,Astra,Cypher,Fade,vlr
+658289_2,Reveal Multigaming,Viper,Fade,Omen,Cypher,Neon,vlr
+658289_3,Reveal Multigaming,Cypher,Sage,Fade,Clove,Jett,vlr
+658289_4,Reveal Multigaming,Cypher,Phoenix,Sova,Clove,Jett,vlr
+658290_0,Sissi State Punks,Neon,Fade,Raze,Vyse,Omen,vlr
+658290_2,Sissi State Punks,Fade,Chamber,Omen,Raze,Neon,vlr
+658291_0,TwoFace Gaming,Sova,Viper,Neon,Omen,Chamber,vlr
+658291_2,TwoFace Gaming,Skye,Neon,Viper,Brimstone,Raze,vlr
+658292_2,ALTERNATE aTTaX EVO,Viper,Omen,Neon,Sage,Fade,vlr
+658293_2,TwoFace Gaming,Raze,Skye,Viper,Brimstone,Neon,vlr
+658294_0,Glacial Guardians,Phoenix,Astra,Fade,Chamber,Neon,vlr
+658294_2,Glacial Guardians,Raze,Chamber,Omen,Fade,Viper,vlr
+658295_0,Ingenious Esports,Vyse,Viper,Omen,Fade,Neon,vlr
+658295_2,Ingenious Esports,Neon,Vyse,Fade,Omen,Viper,vlr
+658289_0,Reveal Multigaming,Phoenix,Jett,Astra,Cypher,Fade,vlr
+658289_2,Reveal Multigaming,Viper,Fade,Omen,Cypher,Neon,vlr
+658289_3,Reveal Multigaming,Cypher,Sage,Fade,Clove,Jett,vlr
+658289_4,Reveal Multigaming,Cypher,Phoenix,Sova,Clove,Jett,vlr
+658295_0,Ingenious Esports,Vyse,Viper,Omen,Fade,Neon,vlr
+658295_2,Ingenious Esports,Neon,Vyse,Fade,Omen,Viper,vlr
+658294_0,Glacial Guardians,Phoenix,Astra,Fade,Chamber,Neon,vlr
+658294_2,Glacial Guardians,Raze,Chamber,Omen,Fade,Viper,vlr
+658288_0,TeamOrangeGaming,Chamber,Viper,Neon,Omen,Fade,vlr
+658292_2,ALTERNATE aTTaX EVO,Viper,Omen,Neon,Sage,Fade,vlr
+650947_0,FUEGO,Omen,Fade,Chamber,Phoenix,Neon,vlr
+650947_2,FUEGO,Omen,Viper,Neon,Fade,Phoenix,vlr
+650948_2,Tezcat Gaming,Neon,Viper,Fade,Omen,Chamber,vlr
+650948_3,Tezcat Gaming,Neon,Sova,Astra,Chamber,Viper,vlr
+650949_2,Contra,Omen,Raze,Neon,Viper,Fade,vlr
+650949_3,Contra,Phoenix,Fade,Chamber,Neon,Omen,vlr
+650949_2,Contra,Omen,Raze,Neon,Viper,Fade,vlr
+650949_3,Contra,Phoenix,Fade,Chamber,Neon,Omen,vlr
+650948_2,Tezcat Gaming,Neon,Viper,Fade,Omen,Chamber,vlr
+650948_3,Tezcat Gaming,Neon,Sova,Astra,Chamber,Viper,vlr
+650947_0,FUEGO,Omen,Fade,Chamber,Phoenix,Neon,vlr
+650947_2,FUEGO,Omen,Viper,Neon,Fade,Phoenix,vlr
+650934_0,University War,Viper,Neon,Omen,Skye,Raze,vlr
+650934_2,University War,Neon,Fade,Raze,Vyse,Omen,vlr
+650935_0,9z Globant,Neon,Chamber,Sova,Phoenix,Astra,vlr
+650936_0,KRÜ SPARK,Jett,Viper,Astra,Neon,Sova,vlr
+650936_2,KRÜ SPARK,Brimstone,Viper,Raze,Neon,Skye,vlr
+650936_3,KRÜ SPARK,Astra,Chamber,Neon,KAY/O,Sova,vlr
+650936_4,KRÜ SPARK,Raze,Vyse,Viper,Omen,Fade,vlr
+650936_0,KRÜ SPARK,Jett,Viper,Astra,Neon,Sova,vlr
+650936_2,KRÜ SPARK,Brimstone,Viper,Raze,Neon,Skye,vlr
+650936_3,KRÜ SPARK,Astra,Chamber,Neon,KAY/O,Sova,vlr
+650936_4,KRÜ SPARK,Raze,Vyse,Viper,Omen,Fade,vlr
+650935_0,9z Globant,Neon,Chamber,Sova,Phoenix,Astra,vlr
+650934_0,University War,Viper,Neon,Omen,Skye,Raze,vlr
+650934_2,University War,Neon,Fade,Raze,Vyse,Omen,vlr
+628315_0,MIBR GC,Viper,Astra,Skye,Neon,Raze,vlr
+628315_2,MIBR GC,Harbor,Sova,Astra,Neon,Jett,vlr
+628316_0,MIBR GC,Neon,Sova,Jett,Harbor,Astra,vlr
+628316_2,MIBR GC,Raze,Fade,Omen,Neon,Vyse,vlr
+628317_2,Team Liquid Brazil,Neon,Sova,KAY/O,Viper,Harbor,vlr
+628317_3,Team Liquid Brazil,Cypher,Omen,Sova,Breach,Neon,vlr
+628318_0,Evil Geniuses GC,Raze,Viper,Vyse,Omen,Fade,vlr
+628318_2,Evil Geniuses GC,Omen,Viper,Neon,Sova,Killjoy,vlr
+628319_2,Evil Geniuses GC,Raze,Astra,Jett,Skye,Viper,vlr
+628319_3,Evil Geniuses GC,Raze,Viper,Brimstone,Skye,Chamber,vlr
+628317_2,Team Liquid Brazil,Neon,Sova,KAY/O,Viper,Harbor,vlr
+628317_3,Team Liquid Brazil,Cypher,Omen,Sova,Breach,Neon,vlr
+628319_2,Evil Geniuses GC,Raze,Astra,Jett,Skye,Viper,vlr
+628319_3,Evil Geniuses GC,Raze,Viper,Brimstone,Skye,Chamber,vlr
+628316_0,MIBR GC,Neon,Sova,Jett,Harbor,Astra,vlr
+628316_2,MIBR GC,Raze,Fade,Omen,Neon,Vyse,vlr
+628318_0,Evil Geniuses GC,Raze,Viper,Vyse,Omen,Fade,vlr
+628318_2,Evil Geniuses GC,Omen,Viper,Neon,Sova,Killjoy,vlr
+628315_0,MIBR GC,Viper,Astra,Skye,Neon,Raze,vlr
+628315_2,MIBR GC,Harbor,Sova,Astra,Neon,Jett,vlr
+645957_0,Clueless,Sova,Cypher,Omen,Phoenix,Neon,vlr
+645957_3,Clueless,Brimstone,Viper,Skye,Raze,Chamber,vlr
+645958_2,Traffic Cones,Viper,Chamber,Clove,Neon,Sova,vlr
+645958_3,Traffic Cones,Jett,Fade,Chamber,Clove,Phoenix,vlr
+645959_0,Rambunctious Bears,Raze,Vyse,Omen,Neon,Fade,vlr
+645959_2,Rambunctious Bears,Sage,Killjoy,Sova,Jett,Omen,vlr
+645960_0,Finishers,Chamber,Viper,Fade,Neon,Omen,vlr
+645960_2,Finishers,Neon,Skye,Viper,Omen,Cypher,vlr
+645960_3,Finishers,Neon,Omen,Cypher,Sova,Skye,vlr
+645961_2,Clueless,Brimstone,Skye,Chamber,Raze,Viper,vlr
+645962_2,Densi's Kittens,Viper,Brimstone,Neon,Raze,Skye,vlr
+645963_0,Rambunctious Bears,Vyse,Raze,Jett,Omen,Fade,vlr
+645964_0,GG Gaming Lounge,Fade,Neon,Omen,Viper,Raze,vlr
+645964_2,GG Gaming Lounge,Chamber,Fade,Neon,Omen,Raze,vlr
+645965_0,Bonkers,Omen,Vyse,Skye,Raze,Deadlock,vlr
+645965_2,Bonkers,Jett,Viper,Sova,Astra,Neon,vlr
+645966_0,Carlos Disciples,Jett,Viper,Sova,Neon,Astra,vlr
+645966_2,Carlos Disciples,Fade,Neon,Raze,Chamber,Omen,vlr
+645968_0,BaosLittleBuns,Raze,Skye,Brimstone,Jett,Deadlock,vlr
+645968_2,BaosLittleBuns,Omen,Sova,Cypher,Viper,Jett,vlr
+645968_3,BaosLittleBuns,Jett,Neon,Vyse,Fade,Omen,vlr
+645969_0,Noob Esports,Phoenix,Chamber,Sova,Omen,Neon,vlr
+645970_2,Traffic Cones,Phoenix,Omen,Killjoy,Sova,Jett,vlr
+645970_3,Traffic Cones,Raze,Viper,Clove,Jett,Skye,vlr
+645971_0,TROOPERS,Omen,Killjoy,Fade,Raze,Neon,vlr
+645971_2,TROOPERS,Deadlock,Brimstone,Skye,Viper,Neon,vlr
+645971_3,TROOPERS,Astra,Phoenix,Killjoy,Neon,Fade,vlr
+645972_0,Finishers,Neon,Viper,Chamber,Omen,Fade,vlr
+645972_2,Finishers,Fade,Phoenix,Viper,Brimstone,Neon,vlr
+645973_0,Rambunctious Bears,Raze,Omen,Vyse,Fade,Phoenix,vlr
+645973_2,Rambunctious Bears,Killjoy,Jett,Sova,Phoenix,Clove,vlr
+645974_0,BaosLittleBuns,Chamber,Astra,Phoenix,Neon,Fade,vlr
+645975_0,GG Gaming Lounge,Chamber,Omen,Raze,Fade,Neon,vlr
+645975_2,GG Gaming Lounge,Omen,Viper,Neon,Raze,Fade,vlr
+645976_0,BaosLittleBuns,Skye,Raze,Brimstone,Neon,Deadlock,vlr
+645976_2,BaosLittleBuns,Neon,Omen,Sova,Phoenix,Cypher,vlr
+645977_0,BaosLittleBuns,Omen,Chamber,Sova,Phoenix,Neon,vlr
+645977_2,BaosLittleBuns,Phoenix,Chamber,Fade,Omen,Neon,vlr
+645977_3,BaosLittleBuns,Cypher,Sova,Viper,Omen,Jett,vlr
+645968_0,BaosLittleBuns,Raze,Skye,Brimstone,Jett,Deadlock,vlr
+645968_2,BaosLittleBuns,Omen,Sova,Cypher,Viper,Jett,vlr
+645968_3,BaosLittleBuns,Jett,Neon,Vyse,Fade,Omen,vlr
+645977_0,BaosLittleBuns,Omen,Chamber,Sova,Phoenix,Neon,vlr
+645977_2,BaosLittleBuns,Phoenix,Chamber,Fade,Omen,Neon,vlr
+645977_3,BaosLittleBuns,Cypher,Sova,Viper,Omen,Jett,vlr
+645976_0,BaosLittleBuns,Skye,Raze,Brimstone,Neon,Deadlock,vlr
+645976_2,BaosLittleBuns,Neon,Omen,Sova,Phoenix,Cypher,vlr
+660667_0,The Covenant GC,Raze,Skye,Viper,Neon,Omen,vlr
+660667_2,The Covenant GC,Omen,Killjoy,Fade,Neon,Raze,vlr
+660668_2,ZEXAR ROSE,Sova,Neon,Cypher,Phoenix,Omen,vlr
+660669_0,The Covenant GC,Killjoy,Raze,Fade,Omen,Neon,vlr
+660669_2,The Covenant GC,Jett,Sova,Astra,KAY/O,Viper,vlr
+660669_3,The Covenant GC,Neon,Killjoy,Omen,Phoenix,Sova,vlr
+660670_2,SIGN Stellar,Cypher,Raze,Omen,Skye,Fade,vlr
+660672_0,Zentrix Jinx,Killjoy,Astra,Fade,Neon,Phoenix,vlr
+660672_2,Zentrix Jinx,Breach,Killjoy,Neon,Fade,Omen,vlr
+660672_3,Zentrix Jinx,Killjoy,Fade,Neon,Omen,Phoenix,vlr
+660673_0,SIGN Stellar,Chamber,Reyna,Sova,Jett,Viper,vlr
+660673_3,SIGN Stellar,Breach,Killjoy,Omen,Jett,Sova,vlr
+660674_0,Team Luna,Jett,Phoenix,Sova,Omen,Killjoy,vlr
+660674_2,Team Luna,Raze,Fade,Brimstone,Skye,Cypher,vlr
+660675_0,Team Luna,Cypher,Sova,Omen,Jett,Breach,vlr
+660675_2,Team Luna,Fade,Cypher,Raze,Skye,Brimstone,vlr
+660676_0,Team Luna,Raze,Omen,Breach,Viper,Fade,vlr
+660676_2,Team Luna,Sova,Cypher,Omen,Breach,Jett,vlr
+660676_3,Team Luna,Fade,Cypher,Raze,Skye,Omen,vlr
+660677_0,Beans,Killjoy,Sova,Raze,Omen,Phoenix,vlr
+660677_2,Beans,Vyse,Omen,Fade,Raze,Reyna,vlr
+660678_0,Naw do gyar,Jett,Reyna,Viper,Sova,Astra,vlr
+660678_2,Naw do gyar,Phoenix,Sova,Omen,Killjoy,Neon,vlr
+660679_0,The Covenant GC,Raze,Neon,Viper,Omen,Skye,vlr
+660679_2,The Covenant GC,Killjoy,Raze,Fade,Neon,Omen,vlr
+660680_0,Naw do gyar,Jett,Astra,Viper,Reyna,Sova,vlr
+660680_2,Naw do gyar,Jett,Phoenix,Fade,Killjoy,Astra,vlr
+660680_3,Naw do gyar,Omen,Phoenix,Sova,Jett,Killjoy,vlr
+660681_0,The Covenant GC,Viper,Skye,Neon,Brimstone,Raze,vlr
+660681_2,The Covenant GC,Skye,Neon,Omen,Viper,Raze,vlr
+660682_0,Zentrix Jinx,Astra,Killjoy,Phoenix,Neon,Fade,vlr
+660682_2,Zentrix Jinx,Fade,Breach,Omen,Neon,Killjoy,vlr
+660683_0,Leosun Leona,Vyse,Fade,Raze,Omen,Breach,vlr
+660683_2,Leosun Leona,Chamber,Breach,Cypher,Brimstone,Raze,vlr
+660683_3,Leosun Leona,Sova,Cypher,Omen,Phoenix,Jett,vlr
+660684_0,ZEXAR ROSE,Jett,Viper,Sova,Omen,Chamber,vlr
+660684_2,ZEXAR ROSE,Omen,Neon,Phoenix,Sova,Cypher,vlr
+660710_0,Zentrix Jinx,Omen,Reyna,Sova,Cypher,Neon,vlr
+660710_2,Zentrix Jinx,Killjoy,Fade,Neon,Omen,Reyna,vlr
+660676_0,Team Luna,Raze,Omen,Breach,Viper,Fade,vlr
+660676_2,Team Luna,Sova,Cypher,Omen,Breach,Jett,vlr
+660676_3,Team Luna,Fade,Cypher,Raze,Skye,Omen,vlr
+660675_0,Team Luna,Cypher,Sova,Omen,Jett,Breach,vlr
+660675_2,Team Luna,Fade,Cypher,Raze,Skye,Brimstone,vlr
+660684_0,ZEXAR ROSE,Jett,Viper,Sova,Omen,Chamber,vlr
+660684_2,ZEXAR ROSE,Omen,Neon,Phoenix,Sova,Cypher,vlr
+660710_0,Zentrix Jinx,Omen,Reyna,Sova,Cypher,Neon,vlr
+660710_2,Zentrix Jinx,Killjoy,Fade,Neon,Omen,Reyna,vlr
+660683_0,Leosun Leona,Vyse,Fade,Raze,Omen,Breach,vlr
+660683_2,Leosun Leona,Chamber,Breach,Cypher,Brimstone,Raze,vlr
+660683_3,Leosun Leona,Sova,Cypher,Omen,Phoenix,Jett,vlr
+663033_0,Kitsune Shadows,Omen,Sova,Neon,Killjoy,Viper,vlr
+663033_2,Kitsune Shadows,Neon,Viper,Skye,Brimstone,Fade,vlr
+663033_3,Kitsune Shadows,Neon,Fade,Omen,Vyse,KAY/O,vlr
+663034_0,Filhas de Luyta,Sova,Viper,Neon,Killjoy,Omen,vlr
+663036_2,Juventus Red Fem,Sova,Chamber,Astra,Viper,Neon,vlr
+663037_0,PREÁ NATION,Sova,Phoenix,Killjoy,Neon,Astra,vlr
+663037_2,PREÁ NATION,Fade,Phoenix,Brimstone,Viper,Neon,vlr
+663038_0,PÃO COM RATO,Neon,Fade,Omen,Vyse,Raze,vlr
+663038_2,PÃO COM RATO,Omen,Viper,Skye,Raze,Neon,vlr
+663039_0,PÃO COM RATO,Omen,Neon,Cypher,Sova,Phoenix,vlr
+663039_2,PÃO COM RATO,Fade,Vyse,Neon,Raze,Omen,vlr
+663039_3,PÃO COM RATO,Raze,Neon,Cypher,Breach,Brimstone,vlr
+663039_0,PÃO COM RATO,Omen,Neon,Cypher,Sova,Phoenix,vlr
+663039_2,PÃO COM RATO,Fade,Vyse,Neon,Raze,Omen,vlr
+663039_3,PÃO COM RATO,Raze,Neon,Cypher,Breach,Brimstone,vlr
+663037_0,PREÁ NATION,Sova,Phoenix,Killjoy,Neon,Astra,vlr
+663037_2,PREÁ NATION,Fade,Phoenix,Brimstone,Viper,Neon,vlr
+663038_0,PÃO COM RATO,Neon,Fade,Omen,Vyse,Raze,vlr
+663038_2,PÃO COM RATO,Omen,Viper,Skye,Raze,Neon,vlr
+663033_0,Kitsune Shadows,Omen,Sova,Neon,Killjoy,Viper,vlr
+663033_2,Kitsune Shadows,Neon,Viper,Skye,Brimstone,Fade,vlr
+663033_3,Kitsune Shadows,Neon,Fade,Omen,Vyse,KAY/O,vlr
+663034_0,Filhas de Luyta,Sova,Viper,Neon,Killjoy,Omen,vlr
+663129_0,Banger Banger Banger,Viper,Neon,Omen,Raze,Skye,vlr
+663129_2,Banger Banger Banger,Viper,Omen,Killjoy,Sova,Neon,vlr
+663129_3,Banger Banger Banger,Fade,Viper,Omen,Raze,Vyse,vlr
+663130_3,Lexible,Killjoy,Fade,Neon,Omen,Breach,vlr
+663131_0,Million Flowerz,Fade,Neon,Chamber,Astra,KAY/O,vlr
+663131_2,Million Flowerz,Omen,Vyse,Skye,Fade,Neon,vlr
+663132_0,XtremeDogs,Skye,Raze,Neon,Viper,Brimstone,vlr
+663132_2,XtremeDogs,Chamber,Omen,Fade,Raze,Breach,vlr
+663133_0,SYA esport,Omen,Phoenix,Sova,Cypher,Neon,vlr
+663133_2,SYA esport,Raze,Vyse,Fade,Neon,Omen,vlr
+663134_0,ProDes,Iso,Omen,Chamber,Fade,Neon,vlr
+663134_2,ProDes,Yoru,Omen,Fade,Viper,Raze,vlr
+663135_0,V9,Omen,Fade,Phoenix,Viper,Neon,vlr
+663135_2,V9,Raze,Viper,Skye,Phoenix,Brimstone,vlr
+663136_0,Coalesce,Raze,Neon,Brimstone,Viper,Skye,vlr
+663136_2,Coalesce,Omen,Viper,Neon,Raze,Fade,vlr
+663136_3,Coalesce,Omen,Vyse,Sova,Viper,Neon,vlr
+663137_0,Que La Famille,Omen,Viper,Vyse,Neon,Fade,vlr
+663137_2,Que La Famille,Omen,Neon,Fade,Cypher,Viper,vlr
+663138_0,NOKAR Esport,Omen,Fade,Raze,Neon,Vyse,vlr
+663138_2,NOKAR Esport,Viper,Raze,Skye,Neon,Omen,vlr
+663139_0,Exalty,Astra,Viper,Jett,Iso,Sova,vlr
+663139_2,Exalty,Omen,Jett,Skye,Viper,Raze,vlr
+663139_3,Exalty,Omen,Killjoy,Sova,Jett,Neon,vlr
+663140_0,2L8,Sova,Astra,Jett,Neon,Viper,vlr
+663140_2,2L8,Clove,Cypher,Sova,Neon,Astra,vlr
+663142_0,FRG UK,Phoenix,Sova,Killjoy,Omen,Neon,vlr
+663142_2,FRG UK,Omen,Viper,Jett,Sova,Neon,vlr
+663143_2,Team Sezen,Jett,Viper,Neon,Omen,Sova,vlr
+663144_0,Total Control,Vyse,Viper,Neon,Omen,Fade,vlr
+663144_2,Total Control,Viper,Chamber,Neon,Brimstone,Skye,vlr
+663145_2,Lexible,Omen,Killjoy,Breach,Fade,Neon,vlr
+663145_3,Lexible,Cypher,Sova,Neon,Omen,Breach,vlr
+663146_0,XtremeDogs,Raze,Skye,Brimstone,Viper,Neon,vlr
+663146_2,XtremeDogs,Neon,Skye,Raze,Omen,Chamber,vlr
+663146_3,XtremeDogs,Omen,Skye,Viper,Neon,Raze,vlr
+663147_0,EVOPLAY,Phoenix,Astra,Fade,Killjoy,Neon,vlr
+663147_2,EVOPLAY,Fade,Vyse,Neon,Raze,Omen,vlr
+663147_3,EVOPLAY,Phoenix,Cypher,Omen,Sova,Neon,vlr
+663148_0,Twisted Saints Esports,Omen,Neon,Vyse,Skye,Viper,vlr
+663148_2,Twisted Saints Esports,Viper,Chamber,Fade,Omen,Neon,vlr
+663148_3,Twisted Saints Esports,Astra,Chamber,Vyse,Fade,Neon,vlr
+663149_0,NOKAR Esport,Omen,Skye,Neon,Raze,Viper,vlr
+663149_2,NOKAR Esport,Omen,Raze,Neon,Fade,Viper,vlr
+663149_3,NOKAR Esport,Skye,Chamber,Astra,Neon,Phoenix,vlr
+663150_0,2L8,Jett,Astra,Neon,Viper,Sova,vlr
+663150_2,2L8,Neon,Omen,Cypher,Phoenix,Sova,vlr
+663151_0,FRG UK,Omen,Raze,Neon,Fade,Vyse,vlr
+663151_2,FRG UK,Sova,Viper,Neon,Jett,Omen,vlr
+663152_0,FULL BOX 200,Viper,Brimstone,Chamber,Skye,Neon,vlr
+663152_2,FULL BOX 200,Viper,Omen,Chamber,Fade,Neon,vlr
+663152_3,FULL BOX 200,Killjoy,Omen,Neon,Sova,Phoenix,vlr
+663153_0,Plop,Viper,Omen,Jett,Fade,Skye,vlr
+663153_2,Plop,Fade,Viper,Vyse,Omen,Raze,vlr
+663154_0,Twisted Saints Esports,Omen,Viper,Chamber,Fade,Neon,vlr
+663154_2,Twisted Saints Esports,Astra,Fade,Vyse,Neon,Chamber,vlr
+663154_3,Twisted Saints Esports,Omen,Neon,Viper,Chamber,Fade,vlr
+663155_0,fullP4,Sova,Jett,Omen,Cypher,Neon,vlr
+663155_2,fullP4,Neon,Skye,Viper,Omen,Raze,vlr
+663155_3,fullP4,Chamber,Fade,Astra,Neon,Phoenix,vlr
+663157_0,Twisted Saints Esports,Chamber,Viper,Fade,Neon,Omen,vlr
+663157_2,Twisted Saints Esports,Viper,Omen,Vyse,Neon,Skye,vlr
+663159_0,fullP4,Skye,Neon,Raze,Omen,Viper,vlr
+663159_2,fullP4,Jett,Sova,Neon,Omen,Cypher,vlr
+663159_0,fullP4,Skye,Neon,Raze,Omen,Viper,vlr
+663159_2,fullP4,Jett,Sova,Neon,Omen,Cypher,vlr
+663157_0,Twisted Saints Esports,Chamber,Viper,Fade,Neon,Omen,vlr
+663157_2,Twisted Saints Esports,Viper,Omen,Vyse,Neon,Skye,vlr
+663153_0,Plop,Viper,Omen,Jett,Fade,Skye,vlr
+663153_2,Plop,Fade,Viper,Vyse,Omen,Raze,vlr
+663154_0,Twisted Saints Esports,Omen,Viper,Chamber,Fade,Neon,vlr
+663154_2,Twisted Saints Esports,Astra,Fade,Vyse,Neon,Chamber,vlr
+663154_3,Twisted Saints Esports,Omen,Neon,Viper,Chamber,Fade,vlr
