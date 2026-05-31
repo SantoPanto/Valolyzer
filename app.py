@@ -2,6 +2,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 import time
+import requests
 
 # --- VALORANT CUSTOM CSS ---
 # --- VALORANT ELITE UI CUSTOM CSS ---
@@ -127,8 +128,26 @@ VALORANT_AGENTS = sorted([
     "Deadlock", "Iso", "Clove", "Vyse"
 ])
 
-VALID_MAPS = ['ascent', 'bind', 'haven', 'split', 'lotus', 'sunset', 'abyss', 'icebox', 'fracture', 'breeze', 'pearl']
+VALID_MAPS = ['Ascent', 'Bind', 'Haven', 'Split', 'Lotus', 'Sunset', 'Abyss', 'Icebox', 'Fracture', 'Breeze', 'Pearl']
+# Ajan ikon linkleri (Valorant API'den doğrudan çekiyoruz)
+@st.cache_data
+def get_agent_icons():
+    """Valorant API'den TÜM ajanların en güncel ikonlarını otomatik çeker."""
+    icons = {}
+    try:
+        # Sadece oynanabilir ajanları filtreleyerek çekiyoruz
+        response = requests.get("https://valorant-api.com/v1/agents?isPlayableCharacter=true")
+        if response.status_code == 200:
+            data = response.json()['data']
+            for agent in data:
+                # API'den gelen ismi ve ikon URL'sini sözlüğe kaydediyoruz
+                icons[agent['displayName']] = agent['displayIcon']
+    except Exception as e:
+        st.warning("Ajan ikonları yüklenirken bir hata oluştu, internet bağlantınızı kontrol edin.")
+    return icons
 
+# Uygulama açıldığında tüm ikonlar sadece 1 kere çekilip hafızaya alınır
+AGENT_ICONS = get_agent_icons()
 # --- Modüler Fonksiyonlar ---
 
 @st.cache_resource
@@ -153,31 +172,54 @@ def setup_page_config():
         layout="wide"
     )
 
-    st.title("🎮 Valolyzer - Valorant Maç Tahmini")
-    st.markdown(
-        "Haritayı ve takım ajan kompozisyonlarını seçin, "
-        "yapay zeka modelimiz maç sonucunu tahmin etsin!"
-    )
+    # --- GELİŞMİŞ VE MODERN BAŞLIK (HERO SECTION) ---
+    header_html = """
+    <div style="text-align: center; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid rgba(56, 62, 68, 0.5);">
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 58px; font-weight: 800; color: #ece8e1; text-transform: uppercase; letter-spacing: 4px; margin-bottom: 10px; text-shadow: 0px 4px 15px rgba(0,0,0,0.4);">
+            <span style="color: #ff4655;">VALO</span>LYZER
+        </h1>
+        <p style="font-family: 'Lato', sans-serif; font-size: 18px; color: #8b97a2; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+            Yapay Zeka Destekli E-Spor Karar Destek ve Analiz Motoru
+        </p>
+        <div style="margin-top: 15px;">
+            <span style="background-color: rgba(0, 252, 207, 0.1); border: 1px solid #00fccf; color: #00fccf; padding: 5px 12px; border-radius: 4px; font-size: 13px; font-family: 'Poppins', sans-serif; font-weight: bold; letter-spacing: 1px;">
+                V 1.0.0
+            </span>
+            <span style="background-color: rgba(255, 70, 85, 0.1); border: 1px solid #ff4655; color: #ff4655; padding: 5px 12px; border-radius: 4px; font-size: 13px; font-family: 'Poppins', sans-serif; font-weight: bold; letter-spacing: 1px; margin-left: 10px;">
+                ML MODEL: LOGISTIC REGRESSION
+            </span>
+        </div>
+    </div>
+    """
+    st.markdown(header_html, unsafe_allow_html=True)
+    
 
 
 def get_map_selection(model_columns, map_agent_stats):
-    """Harita seçimini ve harita bazlı ajan istatistiklerini gösterir."""
-    # Extract available maps from model columns
-    available_maps = sorted([
-        col.replace('map_', '') 
-        for col in model_columns 
-        if col.startswith('map_') and col.replace('map_', '') != 'unknown'
-    ])
+    # Haritaları model sütunlarından dinamik çekmek yerine doğrudan sabit listeyi kullanıyoruz
+    available_maps = ['Ascent', 'Bind', 'Haven', 'Split', 'Lotus', 'Sunset', 'Abyss', 'Icebox', 'Fracture', 'Breeze', 'Pearl']
+    
+    selected_map = st.selectbox("📍 MAÇIN OYNANACAĞI HARİTAYI SEÇİN", available_maps)
+    
+    # Harita seçildiyse başlığı göster
+    if selected_map:
+        st.markdown(f"### 📊 {selected_map} Haritası Performans Analizi")
+        
+    return selected_map.lower() # Alt satırlarda hata olmaması için küçük harfe çevirip dönüyoruz
 
-    selected_map = st.selectbox("🗺️ Maçın Oynanacağı Haritayı Seçin", available_maps)
-    format_func=lambda x: x.capitalize()
+    selected_map = st.selectbox("📍 MAÇIN OYNANACAĞI HARİTAYI SEÇİN", available_maps, format_func=lambda x: x.capitalize())
 
-    st.markdown(f"### 📊 {selected_map.capitalize()} Haritası Performans Analizi")
+    # HATA BURADA OLUYORDU: selected_map None olduğunda bu satır çalışıyordu.
+    # Şunu ekliyoruz:
+    if selected_map:
+        st.markdown(f"### 📊 {selected_map.capitalize()} Haritası Performans Analizi")
 
     # Kontrol: Harita verisi var mı VE liste boş değil mi?
-    if selected_map in map_agent_stats and isinstance(map_agent_stats[selected_map], list) and len(map_agent_stats[selected_map]) > 0:
+    # selected_map'in varlığını burada da teyit ediyoruz
+    if selected_map and selected_map in map_agent_stats and isinstance(map_agent_stats[selected_map], list) and len(map_agent_stats[selected_map]) > 0:
         top_agents = map_agent_stats[selected_map]
         
+        # ... (geri kalan kodlar aynen kalsın)
         # Sütunları oluşturmadan önce güvenli bir şekilde sayıyı alıyoruz
         num_cols = len(top_agents)
         cols = st.columns(num_cols)
@@ -192,21 +234,44 @@ def get_map_selection(model_columns, map_agent_stats):
 
 
 def get_team_inputs():
-    """Takım ajan seçimlerini kullanıcıdan alır."""
-
+    """Takım ajan seçimlerini kullanıcıdan alır ve oyun içi gibi görselleştirir."""
+    
     st.markdown("---")
-    st.subheader("📊 Takım Kompozisyonları")
-
+    st.markdown("<h2 style='text-align: center; color: #ece8e1; font-family: Poppins, sans-serif;'>👥 TAKIM KOMPOZİSYONLARI</h2>", unsafe_allow_html=True)
+    
     col1, col2 = st.columns(2)
-
+    
     with col1:
         st.markdown("### 🛡️ MAVİ TAKIM (SAVUNANLAR)")
         team1_agents = st.multiselect(
-            "Saha Ajanlarını Görevlendir (Tam 5 Adet):", 
+            "Saha Ajanlarını Görevlendir (Tam 5 Adet):",
             VALORANT_AGENTS,
             max_selections=5,
             key="t1"
         )
+        
+        # --- Mavi Takım Görsel Önizleme (Turkuaz Parlama) ---
+        html1 = "<div style='display: flex; gap: 12px; margin-top: 15px; justify-content: center;'>"
+        for i in range(5):
+            if i < len(team1_agents):
+                agent = team1_agents[i]
+                # İkonu al, yoksa varsayılan
+                icon_url = AGENT_ICONS.get(agent, "https://media.valorant-api.com/agents/default/displayicon.png")
+                html1 += f"""
+                <div style='text-align: center; width: 65px; transition: 0.3s;'>
+                    <img src="{icon_url}" style='width: 65px; height: 65px; border-radius: 8px; border: 2px solid #00fccf; box-shadow: 0 0 10px rgba(0, 252, 207, 0.6); object-fit: cover;'>
+                    <p style='font-size: 11px; margin-top: 5px; color: #ece8e1; font-weight: bold; font-family: Poppins, sans-serif;'>{agent}</p>
+                </div>"""
+            else:
+                html1 += f"""
+                <div style='text-align: center; width: 65px;'>
+                    <div style='width: 65px; height: 65px; border-radius: 8px; border: 2px dashed #383e44; background-color: rgba(31, 41, 51, 0.4); display: flex; align-items: center; justify-content: center;'>
+                        <span style='color: #383e44; font-size: 24px; font-weight: bold;'>?</span>
+                    </div>
+                    <p style='font-size: 11px; margin-top: 5px; color: #8b97a2; font-family: Poppins, sans-serif;'>Boş</p>
+                </div>"""
+        html1 += "</div>"
+        st.markdown(html1, unsafe_allow_html=True)
 
     with col2:
         st.markdown("### ⚔️ KIRMIZI TAKIM (SALDIRANLAR)")
@@ -216,6 +281,29 @@ def get_team_inputs():
             max_selections=5,
             key="t2"
         )
+        
+        # --- Kırmızı Takım Görsel Önizleme (Kırmızı Parlama) ---
+        html2 = "<div style='display: flex; gap: 12px; margin-top: 15px; justify-content: center;'>"
+        for i in range(5):
+            if i < len(team2_agents):
+                agent = team2_agents[i]
+                icon_url = AGENT_ICONS.get(agent, "https://media.valorant-api.com/agents/default/displayicon.png")
+                html2 += f"""
+                <div style='text-align: center; width: 65px; transition: 0.3s;'>
+                    <img src="{icon_url}" style='width: 65px; height: 65px; border-radius: 8px; border: 2px solid #ff4655; box-shadow: 0 0 10px rgba(255, 70, 85, 0.6); object-fit: cover;'>
+                    <p style='font-size: 11px; margin-top: 5px; color: #ece8e1; font-weight: bold; font-family: Poppins, sans-serif;'>{agent}</p>
+                </div>"""
+            else:
+                html2 += f"""
+                <div style='text-align: center; width: 65px;'>
+                    <div style='width: 65px; height: 65px; border-radius: 8px; border: 2px dashed #383e44; background-color: rgba(31, 41, 51, 0.4); display: flex; align-items: center; justify-content: center;'>
+                        <span style='color: #383e44; font-size: 24px; font-weight: bold;'>?</span>
+                    </div>
+                    <p style='font-size: 11px; margin-top: 5px; color: #8b97a2; font-family: Poppins, sans-serif;'>Boş</p>
+                </div>"""
+        html2 += "</div>"
+        st.markdown(html2, unsafe_allow_html=True)
+        
     return team1_agents, team2_agents
 
 
@@ -330,8 +418,40 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
     import random
     import time
     
-    with st.spinner("⚔️ Yapay zeka ajan eşleşmelerini ve harita sinerjisini analiz ediyor..."):
-        time.sleep(2.5)
+    # --- DİNAMİK YÜKLEME (LOADING) ANİMASYONU ---
+    loading_placeholder = st.empty()
+    progress_bar = st.progress(0)
+
+    # Adım adım gösterilecek havalı/teknik mesajlar
+    loading_messages = [
+        "🗺️ Harita topolojisi ve meta verileri çekiliyor...",
+        "🛡️ Mavi takım savunma sinerjileri hesaplanıyor...",
+        "⚔️ Kırmızı takım saldırı gücü analiz ediliyor...",
+        "🧠 Lojistik Regresyon modeli matrisleri çözüyor...",
+        "✨ Tahmin raporu derleniyor..."
+    ]
+
+    # Barı 1'den 100'e kadar yavaşça doldur
+    for i in range(100):
+        progress_bar.progress(i + 1)
+        
+        # Yüzdeye göre mesajı değiştir
+        if i == 5:
+            loading_placeholder.markdown(f"<h4 style='color: #00fccf; text-align: center;'>{loading_messages[0]}</h4>", unsafe_allow_html=True)
+        elif i == 25:
+            loading_placeholder.markdown(f"<h4 style='color: #00fccf; text-align: center;'>{loading_messages[1]}</h4>", unsafe_allow_html=True)
+        elif i == 50:
+            loading_placeholder.markdown(f"<h4 style='color: #00fccf; text-align: center;'>{loading_messages[2]}</h4>", unsafe_allow_html=True)
+        elif i == 75:
+            loading_placeholder.markdown(f"<h4 style='color: #00fccf; text-align: center;'>{loading_messages[3]}</h4>", unsafe_allow_html=True)
+        elif i == 90:
+            loading_placeholder.markdown(f"<h4 style='color: #ece8e1; text-align: center;'>{loading_messages[4]}</h4>", unsafe_allow_html=True)
+            
+        time.sleep(0.02) # Toplam yükleme süresini belirler (Yaklaşık 2 saniye)
+
+    # İşlem bitince yükleme yazılarını ve barı ekrandan temizle
+    loading_placeholder.empty()
+    progress_bar.empty()
     
     st.markdown("---")
     st.markdown("<h2 style='text-align: center; color: #ff4655;'>🔮 SİMÜLASYON SONUCU</h2>", unsafe_allow_html=True)
@@ -362,24 +482,66 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
         taktik_not = "Kritik Sinerji Farkı"
         delta_kriter = "Kesin Meta Üstünlüğü"
 
-    # Kartları Ekrana Basıyoruz
-    with res_col1:
-        st.metric(label="🏆 Beklenen Kazanan", value=winner_team)
-    with res_col2:
-        st.metric(label="🎯 Kazanma Olasılığı", value=f"%{win_prob:.1f}", delta=delta_kriter)
-    with res_col3:
-        st.metric(label="📊 Hakimiyet Durumu", value=hakimiyet, delta=taktik_not)
-        
-    st.write("")
-    st.markdown(f"**📊 {winner_team} Hakimiyet Seviyesi:**")
-    st.progress(int(win_prob))
+  # --- 4. SAVAŞ RAPORU (BATTLE REPORT) ÖZET KARTI ---
     
+    # Kazanan takımın rengine göre (Mavi veya Kırmızı) tema belirliyoruz
+    winner_color = "#00fccf" if winner_team == "MAVİ TAKIM" else "#ff4655"
+    
+    report_html = f"""
+<div style="background-color: #1f2933; border-left: 5px solid {winner_color}; padding: 25px; border-radius: 8px; box-shadow: 0 8px 16px rgba(0,0,0,0.4); margin-top: 20px; margin-bottom: 30px;">
+    <h2 style="text-align: center; color: {winner_color}; margin-top: 0; font-family: 'Poppins', sans-serif; letter-spacing: 2px;">🛡️ KESİN SAVAŞ RAPORU</h2>
+    <p style="text-align: center; color: #bdc3c7; font-size: 16px; margin-bottom: 20px;">Valolyzer Yapay Zeka Motoru Kararını Verdi</p>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; align-items: center;">
+        <div style="text-align: center; margin: 10px; flex: 1;">
+            <p style="color: #8b97a2; font-size: 13px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold;">Beklenen Kazanan</p>
+            <h3 style="color: {winner_color}; margin: 0; font-size: 32px; font-family: 'Poppins', sans-serif;">{winner_team}</h3>
+        </div>
+        <div style="width: 2px; background-color: #383e44; height: 60px;"></div>
+        <div style="text-align: center; margin: 10px; flex: 1;">
+            <p style="color: #8b97a2; font-size: 13px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold;">Kazanma Olasılığı</p>
+            <h3 style="color: #ece8e1; margin: 0; font-size: 32px; font-family: 'Poppins', sans-serif;">%{win_prob:.1f}</h3>
+            <p style="color: {winner_color}; font-size: 13px; margin-top: 5px; font-weight: bold;">{delta_kriter}</p>
+        </div>
+        <div style="width: 2px; background-color: #383e44; height: 60px;"></div>
+        <div style="text-align: center; margin: 10px; flex: 1;">
+            <p style="color: #8b97a2; font-size: 13px; margin-bottom: 5px; text-transform: uppercase; font-weight: bold;">Taktiksel Durum</p>
+            <h3 style="color: #ece8e1; margin: 0; font-size: 26px; font-family: 'Poppins', sans-serif;">{hakimiyet}</h3>
+            <p style="color: {winner_color}; font-size: 13px; margin-top: 5px; font-weight: bold;">{taktik_not}</p>
+        </div>
+    </div>
+</div>
+    """
+    
+    st.markdown(report_html, unsafe_allow_html=True)
+    # Savaş raporunun detaylı açıklaması
+    with st.expander("❓ Bu Rapor Nasıl Okunmalı?"):
+        st.markdown("""
+        <div style='color: #bdc3c7; line-height: 1.6; font-size: 15px;'>
+            <p><strong style='color: #00fccf;'>🎯 Kazanma Olasılığı:</strong> Yapay zeka modelimizin binlerce profesyonel/yüksek kademeli maçı analiz ederek çıkardığı matematiksel galibiyet oranıdır. Sadece ajan seçimlerine değil; ajanların <em>bu spesifik haritadaki</em> geçmiş başarılarına ve takım içi yetenek sinerjilerine dayanarak hesaplanır.</p>
+            <p><strong style='color: #00fccf;'>♟️ Taktiksel Durum:</strong> İki takım arasındaki güç farkının oyun içine nasıl yansıyacağını özetler:</p>
+            <ul>
+                <li><strong>Başa Baş Mücadele (%50-55):</strong> İki kompozisyon taktiksel olarak denk. Bireysel yetenek (aim), ilk kan (first blood) oranları ve takım iletişimi maçın kaderini belirler.</li>
+                <li><strong>Kompozisyon Avantajı (%55-65):</strong> Avantajlı takımın, harita kontrolü ve entry (giriş) potansiyeli açısından net bir taktiksel üstünlüğü var.</li>
+                <li><strong>Kritik Sinerji Farkı (%65+):</strong> Meta uyumu ve ajan komboları kusursuz eşleşmiş. Dezavantajlı takımın kazanması için ciddi bir taktiksel hata (throw) yapılması veya olağanüstü bir bireysel performans (carry) gerekir.</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
     # --- 2. GERÇEK VERİYE DAYALI AJAN ETKİSİ (IMPACT) ---
     st.write("")
     st.markdown("<br><h3 style='color: #ece8e1; border-bottom: 1px solid #383e44; padding-bottom: 10px; font-size: 20px;'>🌟 KAZANAN TAKIM: GERÇEK AJAN ETKİ (IMPACT) DAĞILIMI</h3>", unsafe_allow_html=True)
     
-    feature_importances = model.feature_importances_
-    feature_dict = dict(zip(model_columns, feature_importances))
+    # --- GERÇEK AJAN ETKİSİ (IMPACT) HESAPLAMA ---
+    # Modelin türüne göre doğru veriyi çekiyoruz (LogisticRegression veya RandomForest)
+    if hasattr(model, 'feature_importances_'):
+        importances = model.feature_importances_
+    elif hasattr(model, 'coef_'):
+        # LogisticRegression katsayıları 2D olabilir (tek sınıflı modellerde [0]), 1D'ye indiriyoruz
+        importances = abs(model.coef_[0]) 
+    else:
+        # Hiçbiri değilse hata almamak için tüm özelliklere eşit puan veriyoruz
+        importances = [1.0 / len(model_columns)] * len(model_columns)
+        
+    feature_dict = dict(zip(model_columns, importances))
     
     raw_impacts = []
     for agent in winning_agents:
@@ -419,15 +581,19 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
     """, unsafe_allow_html=True)
 
     for agent, impact in impact_data:
+        # Ajanın ikonu sözlükte varsa al, yoksa soru işaretli/varsayılan bir ikon koy
+        icon_url = AGENT_ICONS.get(agent, "https://media.valorant-api.com/agents/default/displayicon.png")
+        
         bar_html = f"""
         <div style="display: flex; align-items: center; margin-bottom: 12px;">
-            <div style="width: 100px; font-weight: bold; color: #ece8e1; font-family: 'Poppins', sans-serif;">{agent}</div>
+            <img src="{icon_url}" style="width: 35px; height: 35px; margin-right: 12px; border-radius: 6px; border: 1px solid #383e44;">
+            <div style="width: 90px; font-weight: bold; color: #ece8e1; font-family: 'Poppins', sans-serif;">{agent}</div>
             <div style="flex-grow: 1; margin-right: 15px;">
                 <div class="impact-bar-bg">
                     <div class="impact-bar-fill" style="width: {impact}%;"></div>
                 </div>
             </div>
-            <div style="width: 40px; text-align: right; color: #00fccf; font-weight: bold;">%{impact}</div>
+            <div style="width: 45px; text-align: right; color: #00fccf; font-weight: bold;">%{impact}</div>
         </div>
         """
         st.markdown(bar_html, unsafe_allow_html=True)
@@ -453,39 +619,58 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
     
     st.balloons()
 
+import plotly.express as px
+import pandas as pd
 
 def display_feature_importance(model, model_columns):
-    """
-    Modelin coefficients'ini görselleştirir.
-    LogisticRegression için: positive coefficients favor Team 1 win, negative favor Team 2 win.
-    """
-
-    st.markdown("---")
-    st.subheader("🧠 Model Bu Kararı Nasıl Verdi?")
-
-    with st.expander("Feature Importance Grafiğini Göster"):
-
-        st.info(
-            "Aşağıdaki grafik modelin karar verirken en çok önem verdiği 15 özelliği göstermektedir. "
-            "Pozitif değerler Team 1 kazanışını lehine, negatif değerler Team 2 kazanışını lehine çalışır."
-        )
-
-        # Get absolute coefficients for importance ranking
-        coefficients = np.abs(model.coef_[0])
-
-        feature_importance_df = pd.DataFrame({
-            'Özellik': model_columns,
-            'Etki Puanı': coefficients
-        })
-
-        top_features = (
-            feature_importance_df
-            .sort_values(by='Etki Puanı', ascending=False)
-            .head(15)
-            .set_index('Özellik')
-        )
-
-        st.bar_chart(top_features)
+    """Gelişmiş, interaktif ve LogisticRegression uyumlu Feature Importance grafiği."""
+    
+    st.markdown("<h3 style='color: #ece8e1;'>📊 MODEL KARAR ANALİZİ (FEATURE IMPORTANCE)</h3>", unsafe_allow_html=True)
+    
+    # LogisticRegression veya RandomForest ayrımı
+    if hasattr(model, 'feature_importances_'):
+        importances = model.feature_importances_
+    elif hasattr(model, 'coef_'):
+        # LogisticRegression katsayıları 2D gelebilir, tek boyuta indiriyoruz
+        importances = abs(model.coef_[0]) 
+    else:
+        # LogisticRegression coef_ değerleri hata verirse varsayılan atama
+        importances = [0.0] * len(model_columns)
+        st.warning("Bu model tipi için feature importance görselleştirilemiyor.")
+    
+    # Veriyi hazırlıyoruz
+    df = pd.DataFrame({'Özellik': model_columns, 'Önem Derecesi': importances})
+    df = df.sort_values(by='Önem Derecesi', ascending=False).head(10)
+    
+    # Plotly ile grafik
+    fig = px.bar(
+        df, 
+        x='Önem Derecesi', 
+        y='Özellik', 
+        orientation='h',
+        color='Önem Derecesi',
+        color_continuous_scale='Reds'
+    )
+    
+    fig.update_layout(
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font_color='#ece8e1',
+        showlegend=False,
+        margin=dict(l=20, r=20, t=20, b=20)
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
+    # --- GRAFİK ALTI AÇIKLAMA PANELİ ---
+    with st.expander("🔍 Bu Veriler Ne Anlama Geliyor?"):
+        st.markdown("""
+        Bu grafik, kullandığımız **Lojistik Regresyon** modelinin maç sonucuna karar verirken hangi değişkenlere (ajanlar, harita özellikleri) en çok ağırlık verdiğini gösterir.
+        
+        * **Önem Derecesi (Yüksek Değer):** Modelin, bu ajanın veya değişkenin maçın kaderini belirlediğine dair "güven" skorudur. 
+        * **Katsayı Mantığı:** Lojistik regresyonda bu skorlar, değişkenin galibiyete olan **pozitif veya negatif etkisini** temsil eder. Çubuk ne kadar uzunsa, o değişkenin tahmin başarımız üzerindeki etkisi o kadar belirgindir.
+        
+        **Özetle:** En tepedeki 3 ajan, şu anki meta içerisinde modelin "en kritik" bulduğu seçimlerdir.
+        """)
 
 
 # --- Ana Program Akışı ---
@@ -509,7 +694,6 @@ def main():
 
     # Tahmin butonu
     st.markdown("---")
-
     if st.button("🔮 Maç Sonucunu Tahmin Et", use_container_width=True):
 
         # Validasyon
@@ -518,9 +702,7 @@ def main():
             st.warning(
                 "Lütfen her iki takım için de tam 5 ajan seçin!"
             )
-
         else:
-
             # Tahmin işlemi
             prediction, probability = predict_match(
                 selected_map,
@@ -532,7 +714,6 @@ def main():
                 agent_synergies,
                 agent_map_winrates
             )
-
             # Sonuç gösterimi
             display_prediction_result(
             prediction,
@@ -542,14 +723,22 @@ def main():
             model,
             model_columns
         )
-
             # Feature importance grafiği
             display_feature_importance(
                 model,
                 model_columns
             )
-
-
+            # --- 5. PROFESYONEL FOOTER (İMZA) ---
+    footer_html = """
+    <div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #383e44;">
+        <p style="color: #8b97a2; font-family: 'Lato', sans-serif; font-size: 15px; line-height: 1.8;">
+            🚀 <strong>VALOLYZER</strong> | Yapay Zeka Destekli E-Spor Analiz Motoru <br>
+            Geliştirici Ekip: <span style="color: #00fccf; font-weight: bold;">Fatih Şahin</span>, <span style="color: #00fccf; font-weight: bold;">Süha Tüfekçi</span>, <span style="color: #00fccf; font-weight: bold;">Arda Berat Kosor</span><br>
+            <span style="font-size: 13px; color: #5c6773;">Bilgisayar Mühendisliği Bölümü</span>
+        </p>
+    </div>
+    """
+    st.markdown(footer_html, unsafe_allow_html=True)
 # Program başlangıcı
 if __name__ == "__main__":
     main()
