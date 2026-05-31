@@ -436,12 +436,12 @@ def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
 
     # ================== MAP-AGENT INTERACTION FEATURES ==================
     for agent in team1_agents:
-        interaction_col = f"{agent}_{selected_map}_diff"
+        interaction_col = f"{agent}_{selected_map.lower()}_diff"
         if interaction_col in input_data:
             input_data[interaction_col] += 1
 
     for agent in team2_agents:
-        interaction_col = f"{agent}_{selected_map}_diff"
+        interaction_col = f"{agent}_{selected_map.lower()}_diff"
         if interaction_col in input_data:
             input_data[interaction_col] -= 1
 

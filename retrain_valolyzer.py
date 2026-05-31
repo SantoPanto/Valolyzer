@@ -312,7 +312,7 @@ for fold, (train_idx, val_idx) in enumerate(skf.split(cv_df, cv_df['target']), 1
     X_val_fold = val_fold_sym.drop('target', axis=1)
     y_val_fold = val_fold_sym['target']
     
-    model = LogisticRegression(fit_intercept=False, max_iter=1000)
+    model = LogisticRegression(fit_intercept=False, max_iter=1000, C=0.05)
     model.fit(X_train_fold, y_train_fold)
     
     val_acc = model.score(X_val_fold, y_val_fold)
@@ -331,7 +331,7 @@ y_train = train_final['target']
 X_test = test_final.drop('target', axis=1)
 y_test = test_final['target']
 
-final_model = LogisticRegression(fit_intercept=False, max_iter=1000)
+final_model = LogisticRegression(fit_intercept=False, max_iter=1000, C=0.05)
 final_model.fit(X_train, y_train)
 
 train_acc = final_model.score(X_train, y_train)
