@@ -3,6 +3,7 @@ import numpy as np
 import joblib
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split, StratifiedKFold
+from sklearn.metrics import log_loss
 from difflib import SequenceMatcher
 
 print("🚀 Valolyzer AI Training Module - Initializing...")
@@ -280,8 +281,8 @@ for agent1, agent2 in AGENT_SYNERGIES:
 
 print(f"✅ Created {len(feature_cols)} features")
 
-# --- STEP 6 & 7: CROSS VALIDATION AND FINAL MODEL TRAINING ---
-print("\n⚖️  Applying K=5 Cross Validation and Symmetric Training...")
+# --- STEP 6: HYPERPARAMETER OPTIMIZATION & CROSS VALIDATION ---
+print("\n⚖️  Applying K=5 Cross Validation with Hyperparameter Tuning...")
 df_normal = df_clean[feature_cols].copy()
 df_normal['target'] = df_clean['team_a_won'].astype(int)
 
@@ -295,34 +296,48 @@ def make_symmetric(df):
     df_swapped['target'] = (1 - df['target']).astype(int)
     return pd.concat([df, df_swapped], ignore_index=True).dropna()
 
-print(f"\n📊 Starting 5-Fold Cross Validation on Training Data ({len(cv_df)} normal maps)...")
+C_values = [0.001, 0.005, 0.01, 0.02, 0.05, 0.1]
+best_c = None
+best_val_score = float('inf')  # We want lowest log loss
+
+print(f"\n📊 Starting Grid Search on {len(C_values)} parameters (Train/Val splits from {len(cv_df)} normal maps)...")
+print("   (Optimizing for Log Loss to ensure realistic % win probabilities)")
 skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-fold_accuracies = []
 
-for fold, (train_idx, val_idx) in enumerate(skf.split(cv_df, cv_df['target']), 1):
-    train_fold = cv_df.iloc[train_idx]
-    val_fold = cv_df.iloc[val_idx]
-    
-    # Make folds symmetric to prevent leakage
-    train_fold_sym = make_symmetric(train_fold)
-    val_fold_sym = make_symmetric(val_fold)
-    
-    X_train_fold = train_fold_sym.drop('target', axis=1)
-    y_train_fold = train_fold_sym['target']
-    X_val_fold = val_fold_sym.drop('target', axis=1)
-    y_val_fold = val_fold_sym['target']
-    
-    model = LogisticRegression(fit_intercept=False, max_iter=1000, C=0.05)
-    model.fit(X_train_fold, y_train_fold)
-    
-    val_acc = model.score(X_val_fold, y_val_fold)
-    fold_accuracies.append(val_acc)
-    print(f"   Fold {fold}: Validation Accuracy = {val_acc:.2%}")
+for c_val in C_values:
+    fold_scores = []
+    for train_idx, val_idx in skf.split(cv_df, cv_df['target']):
+        train_fold = cv_df.iloc[train_idx]
+        val_fold = cv_df.iloc[val_idx]
+        
+        # Make folds symmetric to prevent leakage
+        train_fold_sym = make_symmetric(train_fold)
+        val_fold_sym = make_symmetric(val_fold)
+        
+        X_train_fold = train_fold_sym.drop('target', axis=1)
+        y_train_fold = train_fold_sym['target']
+        X_val_fold = val_fold_sym.drop('target', axis=1)
+        y_val_fold = val_fold_sym['target']
+        
+        model = LogisticRegression(fit_intercept=False, max_iter=1000, C=c_val)
+        model.fit(X_train_fold, y_train_fold)
+        
+        # Calculate Log Loss instead of Accuracy
+        y_val_prob = model.predict_proba(X_val_fold)
+        loss = log_loss(y_val_fold, y_val_prob)
+        fold_scores.append(loss)
 
-avg_val_acc = np.mean(fold_accuracies)
-print(f"✅ K-Fold CV Completed. Average Validation Accuracy: {avg_val_acc:.2%}")
+    avg_val_loss = np.mean(fold_scores)
+    print(f"   [C={c_val:.3f}] Average Validation Log Loss: {avg_val_loss:.4f}")
+    
+    if avg_val_loss < best_val_score:
+        best_val_score = avg_val_loss
+        best_c = c_val
 
-print("\n🤖 Training Final Model on 80% Data and Evaluating on 20% Test Set...")
+print(f"🌟 Best Parameter Found: C={best_c} with {best_val_score:.4f} Log Loss")
+
+# --- STEP 7: FINAL MODEL TRAINING ---
+print(f"\n🤖 Training Final Model on 80% Data (C={best_c}) and Evaluating on 20% Test Set...")
 train_final = make_symmetric(cv_df)
 test_final = make_symmetric(test_df)
 
@@ -331,7 +346,7 @@ y_train = train_final['target']
 X_test = test_final.drop('target', axis=1)
 y_test = test_final['target']
 
-final_model = LogisticRegression(fit_intercept=False, max_iter=1000, C=0.05)
+final_model = LogisticRegression(fit_intercept=False, max_iter=1000, C=best_c)
 final_model.fit(X_train, y_train)
 
 train_acc = final_model.score(X_train, y_train)
@@ -340,6 +355,7 @@ test_acc = final_model.score(X_test, y_test)
 print(f"✅ Final Model trained successfully")
 print(f"   Train maps: {len(train_final)} (Normal+Swapped)")
 print(f"   Test maps: {len(test_final)} (Normal+Swapped)")
+print(f"   Best Parameter Used (C): {best_c}")
 print(f"   Final Training Accuracy (80%): {train_acc:.2%}")
 print(f"   Final Test Accuracy (20%):     {test_acc:.2%}")
 print(f"   Features used: {len(feature_cols)}")
