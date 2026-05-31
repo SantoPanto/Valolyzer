@@ -2,6 +2,9 @@ import streamlit as st
 import joblib
 import pandas as pd
 import time
+import random       # display_prediction_result içinden buraya taşındı
+import numpy as np  # Feature importance hatasını çözmek için eklendi
+import os           # Diagnostic data file access için eklendi
 
 # --- VALORANT CUSTOM CSS ---
 # --- VALORANT ELITE UI CUSTOM CSS ---
@@ -160,31 +163,140 @@ def setup_page_config():
     )
 
 
+def display_diagnostics_panel():
+    """Veri analiz test panelini gösterir."""
+    with st.expander("📊 Veri Analiz Test Paneli"):
+        try:
+            total_matches, map_counts = load_match_diagnostics()
+            
+            st.metric("📈 Toplam İşlenmiş Maçlar", value=total_matches)
+            
+            if map_counts:
+                st.markdown("**Harita Başına Maç Sayısı:**")
+                map_df = pd.DataFrame(
+                    list(map_counts.items()), 
+                    columns=["Harita", "Maç Sayısı"]
+                ).sort_values("Maç Sayısı", ascending=False)
+                st.dataframe(map_df, width='stretch', hide_index=True)
+            else:
+                st.info("Harita başına detaylı istatistik henüz kullanılabilir değil.")
+        except Exception as e:
+            st.error(f"❌ Diagnostik panel yüklenirken hata: {str(e)}")
+
+
+@st.cache_data
+def load_match_diagnostics():
+    """Diagnostik amaçlı maç ve harita istatistiklerini yükler."""
+    total_matches = 0
+    map_counts = {}
+    
+    try:
+        import os
+        # 1. Toplam Maç Sayısını Al (matches.csv'den)
+        if os.path.exists('data/processed/matches.csv'):
+            df_matches = pd.read_csv('data/processed/matches.csv')
+            total_matches = len(df_matches)
+        elif os.path.exists('data/matches.csv'):
+            df_matches = pd.read_csv('data/matches.csv')
+            total_matches = len(df_matches)
+
+        # 2. Gerçek Harita Dağılımını Al (maps.csv'den)
+        if os.path.exists('data/processed/maps.csv'):
+            df_maps = pd.read_csv('data/processed/maps.csv')
+            if 'map_name' in df_maps.columns:
+                # Harita isimlerini küçük harfe çevirip sayıyoruz (Geçersizleri filtreleyerek)
+                valid_maps_df = df_maps[df_maps['map_name'].str.lower().isin(VALID_MAPS)]
+                map_counts = valid_maps_df['map_name'].str.lower().value_counts().to_dict()
+                
+        elif os.path.exists('data/maps.csv'):
+            df_maps = pd.read_csv('data/maps.csv')
+            if 'map_name' in df_maps.columns:
+                valid_maps_df = df_maps[df_maps['map_name'].str.lower().isin(VALID_MAPS)]
+                map_counts = valid_maps_df['map_name'].str.lower().value_counts().to_dict()
+
+    except Exception as e:
+        st.warning(f"⚠️ Diagnostik verileri yüklenirken hata: {str(e)}")
+    
+    return total_matches, map_counts
+
+
 def get_map_selection(model_columns, map_agent_stats):
     """Harita seçimini ve harita bazlı ajan istatistiklerini gösterir."""
-    # Extract available maps from model columns
-    available_maps = sorted([
-        col.replace('map_', '') 
-        for col in model_columns 
-        if col.startswith('map_') and col.replace('map_', '') != 'unknown'
-    ])
+    
+    # 🕵️‍♂️ CANLI HATA AYLIKLAMA (DEBUG): Modelinizdeki gerçek kolon isimlerini sol menüde gösterir.
+    st.sidebar.subheader("🤖 Model Özellikleri (Debug)")
+    st.sidebar.write("Toplam Kolon Sayısı:", len(model_columns))
+    st.sidebar.write("İlk 10 Kolon Örneği:", model_columns[:10])
 
-    selected_map = st.selectbox("🗺️ Maçın Oynanacağı Haritayı Seçin", available_maps)
-    format_func=lambda x: x.capitalize()
+    # Model kolonlarından harita isimlerini akıllıca ayıklayalım
+    available_maps = []
+    for col in model_columns:
+        col_lower = str(col).lower()
+        if col_lower.startswith('map_'):
+            map_name = col_lower.replace('map_', '')
+            if map_name != 'unknown':
+                available_maps.append(map_name)
+        elif col_lower in VALID_MAPS:
+            available_maps.append(col_lower)
+            
+    if not available_maps:
+        available_maps = VALID_MAPS
+
+    available_maps = sorted(list(set(available_maps)))
+
+    selected_map = st.selectbox(
+        "🗺️ Maçın Oynanacağı Haritayı Seçin", 
+        available_maps,
+        format_func=lambda x: str(x).capitalize() if x else "Harita Bulunamadı"
+    )
+
+    if not selected_map:
+        st.warning("Seçilebilir bir harita bulunamadı!")
+        return None
 
     st.markdown(f"### 📊 {selected_map.capitalize()} Haritası Performans Analizi")
 
-    # Kontrol: Harita verisi var mı VE liste boş değil mi?
-    if selected_map in map_agent_stats and isinstance(map_agent_stats[selected_map], list) and len(map_agent_stats[selected_map]) > 0:
-        top_agents = map_agent_stats[selected_map]
+    # 🔧 FIX 1: Case-insensitive key matching
+    stats_key = None
+    selected_map_lower = selected_map.lower()
+    
+    # Tüm olası formatlarda arama yap
+    for key in map_agent_stats.keys():
+        if str(key).lower() == selected_map_lower:
+            stats_key = key
+            break
+    
+    # Eğer bulunamazsa, tam eşleşme yok demektir
+    if stats_key is None:
+        stats_key = selected_map
+
+    # 🔧 FIX 2: Proper percentage formatting + ranking
+    if stats_key in map_agent_stats and isinstance(map_agent_stats[stats_key], list) and len(map_agent_stats[stats_key]) > 0:
+        top_agents = map_agent_stats[stats_key]
         
-        # Sütunları oluşturmadan önce güvenli bir şekilde sayıyı alıyoruz
-        num_cols = len(top_agents)
+        # Sort by win rate (descending) and add ranking
+        ranked_agents = sorted(enumerate(top_agents, 1), key=lambda x: x[1][1], reverse=True)
+        
+        num_cols = len(ranked_agents)
         cols = st.columns(num_cols)
 
-        for i, (agent, win_rate) in enumerate(top_agents):
-            with cols[i]:
-                st.metric(label=agent, value=f"%{win_rate}")
+        for col_idx, (rank, (agent, win_rate)) in enumerate(ranked_agents):
+            with cols[col_idx]:
+                # Convert win_rate to percentage: if 0.545 → 54.5%
+                if isinstance(win_rate, (int, float)):
+                    # Check if value is already in percentage format (>1) or decimal (0-1)
+                    if 0 <= win_rate <= 1:
+                        win_rate_pct = win_rate * 100
+                    else:
+                        win_rate_pct = win_rate
+                else:
+                    win_rate_pct = float(win_rate) * 100 if float(win_rate) <= 1 else float(win_rate)
+                
+                # Display with ranking
+                st.metric(
+                    label=f"#{rank} {agent}", 
+                    value=f"{win_rate_pct:.1f}%"
+                )
     else:
         st.info("Bu harita için yeterli ajan istatistiği bulunamadı.")
 
@@ -193,7 +305,6 @@ def get_map_selection(model_columns, map_agent_stats):
 
 def get_team_inputs():
     """Takım ajan seçimlerini kullanıcıdan alır."""
-
     st.markdown("---")
     st.subheader("📊 Takım Kompozisyonları")
 
@@ -221,25 +332,35 @@ def get_team_inputs():
 
 def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
                        agent_roles, agent_synergies, agent_map_winrates):
-    """
-    Model için gerekli input dataframe'ini oluşturur.
-    
-    Features included:
-    - Map encoding (one-hot)
-    - Individual agent differential (+1/-1)
-    - Role-based differential features
-    - Synergy interaction features
-    - Agent-map weighting features
-    """
+    """Model için gerekli input dataframe'ini oluşturur."""
     input_data = {col: 0.0 for col in model_columns}
 
     # ================== MAP ENCODING ==================
-    map_column = f"map_{selected_map}"
-    if map_column in input_data:
-        input_data[map_column] = 1
+    # Dinamik Eşleştirme: Model columns içinde hangi format varsa (ön ekli, ön eksiz, büyük/küçük harf) onu bulur ve 1 yapar.
+    possible_map_columns = [
+        f"map_{selected_map}", 
+        f"map_{selected_map.capitalize()}", 
+        selected_map, 
+        selected_map.capitalize()
+    ]
+    
+    map_encoded = False
+    for map_col in possible_map_columns:
+        if map_col in input_data:
+            input_data[map_col] = 1.0
+            map_encoded = True
+            break
+            
+    # Eğer modelinizde yukardakiler yoksa ve sadece tek bir 'map' veya 'map_encoded' kolonu varsa (Label Encoding)
+    if not map_encoded:
+        for col in ['map', 'map_encoded', 'map_id']:
+            if col in input_data:
+                # Geçici olarak haritanın VALID_MAPS üzerindeki indeksini sayısal değer olarak gönderir
+                if selected_map in VALID_MAPS:
+                    input_data[col] = float(VALID_MAPS.index(selected_map))
+                break
 
     # ================== INDIVIDUAL AGENT DIFFERENTIAL ==================
-    # Team 1: +1, Team 2: -1
     for agent in team1_agents:
         agent_column = f"{agent}_diff"
         if agent_column in input_data:
@@ -251,7 +372,6 @@ def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
             input_data[agent_column] -= 1
 
     # ================== ROLE-BASED DIFFERENTIAL FEATURES ==================
-    # Count agents by role for each team
     for role in ['Duelist', 'Controller', 'Initiator', 'Sentinel']:
         agents_in_role = [ag for ag, r in agent_roles.items() if r == role]
         role_col = f"{role}_diff"
@@ -262,41 +382,31 @@ def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
             input_data[role_col] = team1_role_count - team2_role_count
 
     # ================== SYNERGY INTERACTION FEATURES ==================
-    # FIXED: Use additive logic so that identical synergies cancel out to 0
     for agent1, agent2 in agent_synergies:
         synergy_name = f"{agent1}_{agent2}_synergy"
         
         if synergy_name in input_data:
-            # Check if both agents in Team 1
             team1_has_synergy = agent1 in team1_agents and agent2 in team1_agents
-            # Check if both agents in Team 2
             team2_has_synergy = agent1 in team2_agents and agent2 in team2_agents
             
-            # Differential: Team1 adds, Team2 subtracts
-            # If both teams have the synergy, they cancel out to 0
             if team1_has_synergy:
                 input_data[synergy_name] += 1
             if team2_has_synergy:
                 input_data[synergy_name] -= 1
 
     # ================== AGENT-MAP WEIGHTING FEATURES ==================
-    # FIXED: Use additive logic so that identical agents cancel out to 0
     for agent in VALORANT_AGENTS:
         agent_map_weight_col = f"{agent}_map_weight"
         
         if agent_map_weight_col in input_data:
-            # Get win rates for this agent on this map
             team1_wr = agent_map_winrates.get((agent, selected_map, 'A'), 0.5)
             team2_wr = agent_map_winrates.get((agent, selected_map, 'B'), 0.5)
             
-            # Convert to differential: (0, 1) -> (-1, 1)
             team1_diff = (team1_wr - 0.5) * 2
             team2_diff = (team2_wr - 0.5) * 2
             
             agent_advantage = team1_diff - team2_diff
             
-            # Differential: Team1 adds, Team2 subtracts
-            # If both teams select the same agent, contributions cancel out to 0
             if agent in team1_agents:
                 input_data[agent_map_weight_col] += agent_advantage
             if agent in team2_agents:
@@ -308,7 +418,6 @@ def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
 def predict_match(selected_map, team1_agents, team2_agents, model, model_columns,
                   agent_roles, agent_synergies, agent_map_winrates):
     """Maç tahmini yapar."""
-
     input_df = prepare_input_data(
         selected_map,
         team1_agents,
@@ -327,8 +436,6 @@ def predict_match(selected_map, team1_agents, team2_agents, model, model_columns
 
 def display_prediction_result(prediction, probability, team1_agents, team2_agents, model, model_columns):
     """Tahmin sonucunu, dinamik kriterleri ve Gerçek Model Verisine Dayalı Ajan Etkisini gösterir."""
-    import random
-    import time
     
     with st.spinner("⚔️ Yapay zeka ajan eşleşmelerini ve harita sinerjisini analiz ediyor..."):
         time.sleep(2.5)
@@ -378,7 +485,8 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
     st.write("")
     st.markdown("<br><h3 style='color: #ece8e1; border-bottom: 1px solid #383e44; padding-bottom: 10px; font-size: 20px;'>🌟 KAZANAN TAKIM: GERÇEK AJAN ETKİ (IMPACT) DAĞILIMI</h3>", unsafe_allow_html=True)
     
-    feature_importances = model.feature_importances_
+    # YENİ EKLENEN/DÜZELTİLEN KISIM: Logistic Regression için katsayı (coef_) kullanılıyor
+    feature_importances = np.abs(model.coef_[0])
     feature_dict = dict(zip(model_columns, feature_importances))
     
     raw_impacts = []
@@ -439,7 +547,7 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
         ### 🤖 Valolyzer Karar Mekanizması
         Yapay zeka modelimiz, seçtiğiniz harita ve ajan kombinasyonlarını analiz ederken aşağıdaki **3 temel kriteri** esas alır:
         
-        1. **🎯 Kazanma Olasılığı (%):** Makine öğrenmesi modelimizin (Random Forest), geçmiş binlerce yüksek kademeli maç verisinden öğrendiği ağırlıklara dayanır. İki takımın ajan eşleşmelerinin (`matchup`) istatistiksel üstünlüğünü hesaplar.
+        1. **🎯 Kazanma Olasılığı (%):** Makine öğrenmesi modelimizin (Lojistik Regresyon), geçmiş binlerce yüksek kademeli maç verisinden öğrendiği ağırlıklara dayanır. İki takımın ajan eşleşmelerinin (`matchup`) istatistiksel üstünlüğünü hesaplar.
         
         2. **📊 Hakimiyet Durumu:**
            Modelin ürettiği olasılık skorunun büyüklüğüne göre dinamik olarak belirlenir:
@@ -448,7 +556,7 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
            * **%65 ve Üstü (Ezici):** Ajan rolleri ve meta uyumu mükemmel seviyede.
         
         3. **🌟 Ajan Etki Dağılımı (Impact):**
-           Yapay zeka modelindeki Özellik Önemi (*Feature Importance*) verileri baz alınır. Modele yeterince veri sağlanamayan durumlarda veya yeni ajanlarda matematiksel varyasyonlar uygulanarak gerçekçi bir takım dağılımı elde edilir.
+           Yapay zeka modelindeki Özellik Önemi (*Feature Importance / Coefficients*) verileri baz alınır. Modele yeterince veri sağlanamayan durumlarda veya yeni ajanlarda matematiksel varyasyonlar uygulanarak gerçekçi bir takım dağılımı elde edilir.
         """)
     
     st.balloons()
@@ -459,12 +567,10 @@ def display_feature_importance(model, model_columns):
     Modelin coefficients'ini görselleştirir.
     LogisticRegression için: positive coefficients favor Team 1 win, negative favor Team 2 win.
     """
-
     st.markdown("---")
     st.subheader("🧠 Model Bu Kararı Nasıl Verdi?")
 
     with st.expander("Feature Importance Grafiğini Göster"):
-
         st.info(
             "Aşağıdaki grafik modelin karar verirken en çok önem verdiği 15 özelliği göstermektedir. "
             "Pozitif değerler Team 1 kazanışını lehine, negatif değerler Team 2 kazanışını lehine çalışır."
@@ -491,9 +597,11 @@ def display_feature_importance(model, model_columns):
 # --- Ana Program Akışı ---
 
 def main():
-
     # Sayfa ayarları
     setup_page_config()
+    
+    # 📊 Veri Analiz Test Paneli
+    display_diagnostics_panel()
 
     # Kaynakları yükle
     model, model_columns, map_agent_stats, agent_roles, agent_synergies, agent_map_winrates = load_resources()
@@ -510,18 +618,18 @@ def main():
     # Tahmin butonu
     st.markdown("---")
 
-    if st.button("🔮 Maç Sonucunu Tahmin Et", use_container_width=True):
+    if st.button("🔮 Maç Sonucunu Tahmin Et", width='stretch'):
 
-        # Validasyon
-        if len(team1_agents) != 5 or len(team2_agents) != 5:
-
-            st.warning(
-                "Lütfen her iki takım için de tam 5 ajan seçin!"
-            )
+        # YENİ EKLENEN KONTROL: Harita seçilmiş mi?
+        if not selected_map:
+            st.error("🚨 Maç tahmini yapabilmek için geçerli bir harita seçmelisiniz!")
+            
+        # Eski kontrol: Ajan sayısı 5 mi?
+        elif len(team1_agents) != 5 or len(team2_agents) != 5:
+            st.warning("Lütfen her iki takım için de tam 5 ajan seçin!")
 
         else:
-
-            # Tahmin işlemi
+            # Tahmin işlemi (artık selected_map'in None olma ihtimali yok)
             prediction, probability = predict_match(
                 selected_map,
                 team1_agents,
@@ -535,20 +643,19 @@ def main():
 
             # Sonuç gösterimi
             display_prediction_result(
-            prediction,
-            probability,
-            team1_agents,
-            team2_agents,
-            model,
-            model_columns
-        )
+                prediction,
+                probability,
+                team1_agents,
+                team2_agents,
+                model,
+                model_columns
+            )
 
             # Feature importance grafiği
             display_feature_importance(
                 model,
                 model_columns
             )
-
 
 # Program başlangıcı
 if __name__ == "__main__":
