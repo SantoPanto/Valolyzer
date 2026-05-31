@@ -227,12 +227,12 @@ def load_match_diagnostics():
     
     try:
         import os
-        # 1. Toplam Maç Sayısını Al (matches.csv'den)
-        if os.path.exists('data/processed/matches.csv'):
-            df_matches = pd.read_csv('data/processed/matches.csv')
+        # 1. Toplam İşlenmiş Harita (Maç) Sayısını Al (maps.csv'den)
+        if os.path.exists('data/processed/maps.csv'):
+            df_matches = pd.read_csv('data/processed/maps.csv')
             total_matches = len(df_matches)
-        elif os.path.exists('data/matches.csv'):
-            df_matches = pd.read_csv('data/matches.csv')
+        elif os.path.exists('data/maps.csv'):
+            df_matches = pd.read_csv('data/maps.csv')
             total_matches = len(df_matches)
 
         # 2. Gerçek Harita Dağılımını Al (maps.csv'den)
@@ -433,6 +433,17 @@ def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
         agent_column = f"{agent}_diff"
         if agent_column in input_data:
             input_data[agent_column] -= 1
+
+    # ================== MAP-AGENT INTERACTION FEATURES ==================
+    for agent in team1_agents:
+        interaction_col = f"{agent}_{selected_map}_diff"
+        if interaction_col in input_data:
+            input_data[interaction_col] += 1
+
+    for agent in team2_agents:
+        interaction_col = f"{agent}_{selected_map}_diff"
+        if interaction_col in input_data:
+            input_data[interaction_col] -= 1
 
     # ================== ROLE-BASED DIFFERENTIAL FEATURES ==================
     for role in ['Duelist', 'Controller', 'Initiator', 'Sentinel']:

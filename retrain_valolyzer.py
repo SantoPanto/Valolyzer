@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import joblib
 from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split, StratifiedKFold
 from difflib import SequenceMatcher
 
 print("🚀 Valolyzer AI Training Module - Initializing...")
@@ -231,6 +232,18 @@ for agent in AGENT_ROLES.keys():
         df_clean[diff_col] = df_clean[col_t1].astype(int) - df_clean[col_t2].astype(int)
         feature_cols.append(diff_col)
 
+# Map-Agent Interaction features (Agent diff on specific map)
+for map_name in VALID_MAPS:
+    map_mask = (df_clean['map_name'].str.lower() == map_name.lower()).astype(int)
+    for agent in AGENT_ROLES.keys():
+        col_t1 = f"{agent}_t1"
+        col_t2 = f"{agent}_t2"
+        if col_t1 in df_clean.columns and col_t2 in df_clean.columns:
+            interaction_col = f"{agent}_{map_name}_diff"
+            agent_diff = df_clean[col_t1].astype(int) - df_clean[col_t2].astype(int)
+            df_clean[interaction_col] = agent_diff * map_mask
+            feature_cols.append(interaction_col)
+
 # Role-based features (count of duelists, controllers, etc.)
 for role in ['Duelist', 'Controller', 'Initiator', 'Sentinel']:
     agents_in_role = [ag for ag, r in AGENT_ROLES.items() if r == role]
@@ -267,36 +280,73 @@ for agent1, agent2 in AGENT_SYNERGIES:
 
 print(f"✅ Created {len(feature_cols)} features")
 
-# --- STEP 6: CREATE SYMMETRIC DATASET (SIDE-INDEPENDENT) ---
-print("\n⚖️  Creating symmetric dataset (swapping teams)...")
+# --- STEP 6 & 7: CROSS VALIDATION AND FINAL MODEL TRAINING ---
+print("\n⚖️  Applying K=5 Cross Validation and Symmetric Training...")
 df_normal = df_clean[feature_cols].copy()
 df_normal['target'] = df_clean['team_a_won'].astype(int)
 
-df_swapped = df_clean[feature_cols].copy()
-# Flip all differential features when teams are swapped
-for col in feature_cols:
-    df_swapped[col] = -df_swapped[col]
-# Flip target: if team_a won, now team_b won (which is now team_a after swap)
-df_swapped['target'] = (1 - df_clean['team_a_won']).astype(int)
+# Hold out 20% for Final Test Set. The rest (80%) is for Training & CV.
+cv_df, test_df = train_test_split(df_normal, test_size=0.2, random_state=42, stratify=df_normal['target'])
 
-df_final = pd.concat([df_normal, df_swapped], ignore_index=True).dropna()
-print(f"   Original dataset: {len(df_normal)} maps")
-print(f"   Swapped dataset: {len(df_swapped)} maps")
-print(f"   Combined dataset: {len(df_final)} maps (training samples)")
+def make_symmetric(df):
+    df_swapped = df.copy()
+    for col in feature_cols:
+        df_swapped[col] = -df_swapped[col]
+    df_swapped['target'] = (1 - df['target']).astype(int)
+    return pd.concat([df, df_swapped], ignore_index=True).dropna()
 
-# --- STEP 7: TRAIN LOGISTIC REGRESSION MODEL ---
-print("\n🤖 Training Logistic Regression Model...")
-X = df_final.drop('target', axis=1)
-y = df_final['target']
+print(f"\n📊 Starting 5-Fold Cross Validation on Training Data ({len(cv_df)} normal maps)...")
+skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+fold_accuracies = []
 
-model = LogisticRegression(fit_intercept=False, max_iter=1000)
-model.fit(X, y)
+for fold, (train_idx, val_idx) in enumerate(skf.split(cv_df, cv_df['target']), 1):
+    train_fold = cv_df.iloc[train_idx]
+    val_fold = cv_df.iloc[val_idx]
+    
+    # Make folds symmetric to prevent leakage
+    train_fold_sym = make_symmetric(train_fold)
+    val_fold_sym = make_symmetric(val_fold)
+    
+    X_train_fold = train_fold_sym.drop('target', axis=1)
+    y_train_fold = train_fold_sym['target']
+    X_val_fold = val_fold_sym.drop('target', axis=1)
+    y_val_fold = val_fold_sym['target']
+    
+    model = LogisticRegression(fit_intercept=False, max_iter=1000)
+    model.fit(X_train_fold, y_train_fold)
+    
+    val_acc = model.score(X_val_fold, y_val_fold)
+    fold_accuracies.append(val_acc)
+    print(f"   Fold {fold}: Validation Accuracy = {val_acc:.2%}")
 
-# Calculate training accuracy
-train_acc = model.score(X, y)
-print(f"✅ Model trained successfully")
-print(f"   Training accuracy: {train_acc:.2%}")
+avg_val_acc = np.mean(fold_accuracies)
+print(f"✅ K-Fold CV Completed. Average Validation Accuracy: {avg_val_acc:.2%}")
+
+print("\n🤖 Training Final Model on 80% Data and Evaluating on 20% Test Set...")
+train_final = make_symmetric(cv_df)
+test_final = make_symmetric(test_df)
+
+X_train = train_final.drop('target', axis=1)
+y_train = train_final['target']
+X_test = test_final.drop('target', axis=1)
+y_test = test_final['target']
+
+final_model = LogisticRegression(fit_intercept=False, max_iter=1000)
+final_model.fit(X_train, y_train)
+
+train_acc = final_model.score(X_train, y_train)
+test_acc = final_model.score(X_test, y_test)
+
+print(f"✅ Final Model trained successfully")
+print(f"   Train maps: {len(train_final)} (Normal+Swapped)")
+print(f"   Test maps: {len(test_final)} (Normal+Swapped)")
+print(f"   Final Training Accuracy (80%): {train_acc:.2%}")
+print(f"   Final Test Accuracy (20%):     {test_acc:.2%}")
 print(f"   Features used: {len(feature_cols)}")
+
+# Keep X and model definitions so saving artifacts works
+X = train_final.drop('target', axis=1)
+model = final_model
 
 # --- STEP 8: SAVE ALL ARTIFACTS ---
 print("\n💾 Saving model artifacts...")
