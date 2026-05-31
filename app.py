@@ -127,16 +127,22 @@ VALORANT_AGENTS = sorted([
     "Deadlock", "Iso", "Clove", "Vyse"
 ])
 
+VALID_MAPS = ['ascent', 'bind', 'haven', 'split', 'lotus', 'sunset', 'abyss', 'icebox', 'fracture', 'breeze', 'pearl']
+
 # --- Modüler Fonksiyonlar ---
 
 @st.cache_resource
 def load_resources():
-    """Modeli, sütun yapılarını ve harita istatistiklerini yükler."""
-    loaded_model = joblib.load('valorant_rf_model.pkl')
+    """Modeli, sütun yapılarını, harita istatistiklerini ve metadata yükler."""
+    loaded_model = joblib.load('valorant_lr_model.pkl')
     loaded_columns = joblib.load('model_columns.pkl')
     loaded_map_stats = joblib.load('map_agent_stats.pkl')
+    loaded_agent_roles = joblib.load('agent_roles.pkl')
+    loaded_agent_synergies = joblib.load('agent_synergies.pkl')
+    loaded_agent_map_winrates = joblib.load('agent_map_winrates.pkl')
 
-    return loaded_model, loaded_columns, loaded_map_stats
+    return (loaded_model, loaded_columns, loaded_map_stats, 
+            loaded_agent_roles, loaded_agent_synergies, loaded_agent_map_winrates)
 
 
 def setup_page_config():
@@ -156,7 +162,7 @@ def setup_page_config():
 
 def get_map_selection(model_columns, map_agent_stats):
     """Harita seçimini ve harita bazlı ajan istatistiklerini gösterir."""
-    # app.py içindeki get_map_selection fonksiyonunda:
+    # Extract available maps from model columns
     available_maps = sorted([
         col.replace('map_', '') 
         for col in model_columns 
@@ -213,45 +219,104 @@ def get_team_inputs():
     return team1_agents, team2_agents
 
 
-def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns):
-    """Model için gerekli input dataframe'ini oluşturur."""
+def prepare_input_data(selected_map, team1_agents, team2_agents, model_columns,
+                       agent_roles, agent_synergies, agent_map_winrates):
+    """
+    Model için gerekli input dataframe'ini oluşturur.
+    
+    Features included:
+    - Map encoding (one-hot)
+    - Individual agent differential (+1/-1)
+    - Role-based differential features
+    - Synergy interaction features
+    - Agent-map weighting features
+    """
+    input_data = {col: 0.0 for col in model_columns}
 
-    # Tüm feature'ları 0 yap
-    input_data = {col: 0 for col in model_columns}
-
-    # Seçilen haritayı aktif et
+    # ================== MAP ENCODING ==================
     map_column = f"map_{selected_map}"
-
     if map_column in input_data:
         input_data[map_column] = 1
 
-    # Team 1 ajanları
+    # ================== INDIVIDUAL AGENT DIFFERENTIAL ==================
+    # Team 1: +1, Team 2: -1
     for agent in team1_agents:
-
-        agent_column = f"{agent}_t1"
-
+        agent_column = f"{agent}_diff"
         if agent_column in input_data:
-            input_data[agent_column] = 1
+            input_data[agent_column] += 1
 
-    # Team 2 ajanları
     for agent in team2_agents:
-
-        agent_column = f"{agent}_t2"
-
+        agent_column = f"{agent}_diff"
         if agent_column in input_data:
-            input_data[agent_column] = 1
+            input_data[agent_column] -= 1
+
+    # ================== ROLE-BASED DIFFERENTIAL FEATURES ==================
+    # Count agents by role for each team
+    for role in ['Duelist', 'Controller', 'Initiator', 'Sentinel']:
+        agents_in_role = [ag for ag, r in agent_roles.items() if r == role]
+        role_col = f"{role}_diff"
+        
+        if role_col in input_data:
+            team1_role_count = sum(1 for ag in team1_agents if ag in agents_in_role)
+            team2_role_count = sum(1 for ag in team2_agents if ag in agents_in_role)
+            input_data[role_col] = team1_role_count - team2_role_count
+
+    # ================== SYNERGY INTERACTION FEATURES ==================
+    # FIXED: Use additive logic so that identical synergies cancel out to 0
+    for agent1, agent2 in agent_synergies:
+        synergy_name = f"{agent1}_{agent2}_synergy"
+        
+        if synergy_name in input_data:
+            # Check if both agents in Team 1
+            team1_has_synergy = agent1 in team1_agents and agent2 in team1_agents
+            # Check if both agents in Team 2
+            team2_has_synergy = agent1 in team2_agents and agent2 in team2_agents
+            
+            # Differential: Team1 adds, Team2 subtracts
+            # If both teams have the synergy, they cancel out to 0
+            if team1_has_synergy:
+                input_data[synergy_name] += 1
+            if team2_has_synergy:
+                input_data[synergy_name] -= 1
+
+    # ================== AGENT-MAP WEIGHTING FEATURES ==================
+    # FIXED: Use additive logic so that identical agents cancel out to 0
+    for agent in VALORANT_AGENTS:
+        agent_map_weight_col = f"{agent}_map_weight"
+        
+        if agent_map_weight_col in input_data:
+            # Get win rates for this agent on this map
+            team1_wr = agent_map_winrates.get((agent, selected_map, 'A'), 0.5)
+            team2_wr = agent_map_winrates.get((agent, selected_map, 'B'), 0.5)
+            
+            # Convert to differential: (0, 1) -> (-1, 1)
+            team1_diff = (team1_wr - 0.5) * 2
+            team2_diff = (team2_wr - 0.5) * 2
+            
+            agent_advantage = team1_diff - team2_diff
+            
+            # Differential: Team1 adds, Team2 subtracts
+            # If both teams select the same agent, contributions cancel out to 0
+            if agent in team1_agents:
+                input_data[agent_map_weight_col] += agent_advantage
+            if agent in team2_agents:
+                input_data[agent_map_weight_col] -= agent_advantage
 
     return pd.DataFrame([input_data])
 
 
-def predict_match(selected_map, team1_agents, team2_agents, model, model_columns):
+def predict_match(selected_map, team1_agents, team2_agents, model, model_columns,
+                  agent_roles, agent_synergies, agent_map_winrates):
     """Maç tahmini yapar."""
 
     input_df = prepare_input_data(
         selected_map,
         team1_agents,
         team2_agents,
-        model_columns
+        model_columns,
+        agent_roles,
+        agent_synergies,
+        agent_map_winrates
     )
 
     prediction = model.predict(input_df)[0]
@@ -390,7 +455,10 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
 
 
 def display_feature_importance(model, model_columns):
-    """Modelin en önemli feature'larını grafik olarak gösterir."""
+    """
+    Modelin coefficients'ini görselleştirir.
+    LogisticRegression için: positive coefficients favor Team 1 win, negative favor Team 2 win.
+    """
 
     st.markdown("---")
     st.subheader("🧠 Model Bu Kararı Nasıl Verdi?")
@@ -398,19 +466,20 @@ def display_feature_importance(model, model_columns):
     with st.expander("Feature Importance Grafiğini Göster"):
 
         st.info(
-            "Aşağıdaki grafik modelin karar verirken "
-            "en çok önem verdiği 15 özelliği göstermektedir."
+            "Aşağıdaki grafik modelin karar verirken en çok önem verdiği 15 özelliği göstermektedir. "
+            "Pozitif değerler Team 1 kazanışını lehine, negatif değerler Team 2 kazanışını lehine çalışır."
         )
 
-        importances = model.feature_importances_
+        # Get absolute coefficients for importance ranking
+        coefficients = np.abs(model.coef_[0])
 
-        feature_imp_df = pd.DataFrame({
+        feature_importance_df = pd.DataFrame({
             'Özellik': model_columns,
-            'Etki Puanı': importances
+            'Etki Puanı': coefficients
         })
 
         top_features = (
-            feature_imp_df
+            feature_importance_df
             .sort_values(by='Etki Puanı', ascending=False)
             .head(15)
             .set_index('Özellik')
@@ -427,7 +496,7 @@ def main():
     setup_page_config()
 
     # Kaynakları yükle
-    model, model_columns, map_agent_stats = load_resources()
+    model, model_columns, map_agent_stats, agent_roles, agent_synergies, agent_map_winrates = load_resources()
 
     # Harita seçimi + harita istatistikleri
     selected_map = get_map_selection(
@@ -458,7 +527,10 @@ def main():
                 team1_agents,
                 team2_agents,
                 model,
-                model_columns
+                model_columns,
+                agent_roles,
+                agent_synergies,
+                agent_map_winrates
             )
 
             # Sonuç gösterimi
