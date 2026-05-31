@@ -27,8 +27,10 @@ class VLRScraper(BaseScraper):
             await self._scrape_events()
             logger.info(f"Found {len(self.events)} events")
 
-            for event in self.events[:5]:  # Limit to recent 5 events for testing
+            # Bütün etkinlikleri çeker (Dikkat: Çok uzun sürebilir)
+            for event in self.events[:100]: 
                 await self._scrape_event_matches(event)
+                await asyncio.sleep(2)
 
             return {
                 "matches": self.matches,
@@ -42,29 +44,38 @@ class VLRScraper(BaseScraper):
             raise
 
     async def _scrape_events(self):
-        """Scrape events from vlr.gg/events."""
+        """Scrape events from vlr.gg/events across multiple pages."""
         try:
             client = await self.http_client
-            html = await client.get(self.EVENTS_URL)
-            if not html:
-                #logger.warning("Failed to fetch events page")
-                return
+            
+            # 1'den 5'e kadar olan etkinlik sayfalarını gezer (Daha fazla veri için 10 yapabilirsiniz)
+            for page in range(1, 6):
+                page_url = f"{self.EVENTS_URL}/?page={page}"
+                logger.info(f"Etkinlikler çekiliyor: Sayfa {page}...")
+                
+                html = await client.get(page_url)
+                if not html:
+                    continue
 
-            soup = BeautifulSoup(html, "html.parser")
-            event_items = soup.find_all("a", class_="event-item")
+                soup = BeautifulSoup(html, "html.parser")
+                event_items = soup.find_all("a", class_="event-item")
 
-            for item in event_items:
-                event_url = item.get("href")
-                event_name = item.find("div", class_="event-item-title")
-                event_date = item.find("div", class_="event-item-date")
+                for item in event_items:
+                    event_url = item.get("href")
+                    event_name = item.find("div", class_="event-item-title")
+                    event_date = item.find("div", class_="event-item-date")
 
-                if event_url and event_name:
-                    self.events.append({
-                        "name": event_name.get_text(strip=True),
-                        "url": urljoin(self.BASE_URL, event_url),
-                        "date": event_date.get_text(strip=True) if event_date else None,
-                        "source_id": event_url.split("/")[-1],
-                    })
+                    if event_url and event_name:
+                        self.events.append({
+                            "name": event_name.get_text(strip=True),
+                            "url": urljoin(self.BASE_URL, event_url),
+                            "date": event_date.get_text(strip=True) if event_date else None,
+                            "source_id": event_url.split("/")[-1],
+                        })
+                        
+                # Siteyi yormamak ve banlanmamak için sayfalar arası çok ufak bir bekleme
+                await asyncio.sleep(1)
+                
         except Exception as e:
             logger.error(f"Error scraping events: {e}")
 
@@ -85,6 +96,8 @@ class VLRScraper(BaseScraper):
                 match_url = match_item.get("href")
                 if match_url:
                     await self._scrape_match_detail(urljoin(self.BASE_URL, match_url), event)
+                    # Her maç sayfasına girişte 0.5 saniye bekle (Spam engelleme)
+                    await asyncio.sleep(0.5)
         except Exception as e:
             logger.error(f"Error scraping event {event['name']}: {e}")
 
@@ -221,6 +234,11 @@ class VLRScraper(BaseScraper):
                 if element:
                     text = element.get_text(strip=True)
                     if text and not text.lower().startswith("unknown"):
+                        # Gerçek harita ismini metnin içinden cımbızla al
+                        valid_maps = ['ascent', 'bind', 'haven', 'split', 'lotus', 'sunset', 'abyss', 'icebox', 'fracture', 'breeze', 'pearl']
+                        for m in valid_maps:
+                            if m in text.lower():
+                                return m.capitalize()
                         return text
             
             return None

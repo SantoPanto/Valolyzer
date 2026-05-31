@@ -285,4 +285,28 @@ class ScheduledPipeline:
 
 
 if __name__ == "__main__":
-    print("Pipeline module loaded")
+    from scrapers.vlr.vlr_scraper import VLRScraper
+
+    async def main_run():
+        logger.info("Terminal üzerinden başlatma isteği alındı...")
+        
+        # 1. Scraper'ı (Veri çekiciyi) hazırlıyoruz
+        vlr = VLRScraper()
+        
+        # 2. Pipeline'ı (Ana sistemi) kuruyoruz
+        pipeline = ValolyzerPipeline(
+            scrapers=[vlr],
+            data_dir="data",
+            output_format="csv"
+        )
+        
+        # 3. Sistemi çalıştırıyoruz
+        result = await pipeline.run(sequential=True)
+        
+        print("\n" + "="*50)
+        print(f"İŞLEM SONUCU: {result['status'].upper()}")
+        print(f"Geçen Süre: {result.get('duration_seconds', 0):.2f} saniye")
+        print("="*50 + "\n")
+
+    # Asenkron fonksiyonu çalıştır
+    asyncio.run(main_run())
