@@ -130,7 +130,8 @@ VALORANT_AGENTS = sorted([
     "Deadlock", "Iso", "Clove", "Vyse"
 ])
 
-VALID_MAPS = ['Ascent', 'Bind', 'Haven', 'Split', 'Lotus', 'Sunset', 'Abyss', 'Icebox', 'Fracture', 'Breeze', 'Pearl']
+# Geliştirme aşamasında yeterli veri olmadığı için geçici olarak kapatılan haritalar: 'Sunset', 'Abyss', 'Icebox'
+VALID_MAPS = ['Ascent', 'Bind', 'Haven', 'Split', 'Lotus', 'Fracture', 'Breeze', 'Pearl']
 # Ajan ikon linkleri (Valorant API'den doğrudan çekiyoruz)
 @st.cache_data
 def get_agent_icons():
@@ -211,7 +212,7 @@ def display_diagnostics_panel():
                     list(map_counts.items()), 
                     columns=["Harita", "Maç Sayısı"]
                 ).sort_values("Maç Sayısı", ascending=False)
-                st.dataframe(map_df, width='stretch', hide_index=True)
+                st.dataframe(map_df, use_container_width=True, hide_index=True)
             else:
                 st.info("Harita başına detaylı istatistik henüz kullanılabilir değil.")
         except Exception as e:
@@ -235,18 +236,25 @@ def load_match_diagnostics():
             total_matches = len(df_matches)
 
         # 2. Gerçek Harita Dağılımını Al (maps.csv'den)
+        df_maps = None
         if os.path.exists('data/processed/maps.csv'):
             df_maps = pd.read_csv('data/processed/maps.csv')
-            if 'map_name' in df_maps.columns:
-                # Harita isimlerini küçük harfe çevirip sayıyoruz (Geçersizleri filtreleyerek)
-                valid_maps_df = df_maps[df_maps['map_name'].str.lower().isin(VALID_MAPS)]
-                map_counts = valid_maps_df['map_name'].str.lower().value_counts().to_dict()
-                
         elif os.path.exists('data/maps.csv'):
             df_maps = pd.read_csv('data/maps.csv')
-            if 'map_name' in df_maps.columns:
-                valid_maps_df = df_maps[df_maps['map_name'].str.lower().isin(VALID_MAPS)]
-                map_counts = valid_maps_df['map_name'].str.lower().value_counts().to_dict()
+
+        if df_maps is not None and 'map_name' in df_maps.columns:
+            # VALID_MAPS'teki haritaları küçük harfe çevirip eşleştiriyoruz
+            valid_maps_lower = [m.lower() for m in VALID_MAPS]
+            
+            # Sütundaki veriyi küçük harfe çevir
+            df_maps['map_name_lower'] = df_maps['map_name'].astype(str).str.lower()
+            
+            # Sadece geçerli haritaları filtrele
+            valid_maps_df = df_maps[df_maps['map_name_lower'].isin(valid_maps_lower)]
+            
+            # Sayımları yap ve ilk harflerini büyük yaparak (Örn: ascent -> Ascent) sözlüğe ekle
+            counts = valid_maps_df['map_name_lower'].value_counts().to_dict()
+            map_counts = {k.capitalize(): v for k, v in counts.items()}
 
     except Exception as e:
         st.warning(f"⚠️ Diagnostik verileri yüklenirken hata: {str(e)}")
@@ -255,83 +263,37 @@ def load_match_diagnostics():
 
 
 def get_map_selection(model_columns, map_agent_stats):
-    # Haritaları model sütunlarından dinamik çekmek yerine doğrudan sabit listeyi kullanıyoruz
-    available_maps = ['Ascent', 'Bind', 'Haven', 'Split', 'Lotus', 'Sunset', 'Abyss', 'Icebox', 'Fracture', 'Breeze', 'Pearl']
-    
-    selected_map = st.selectbox("📍 MAÇIN OYNANACAĞI HARİTAYI SEÇİN", available_maps)
-    
-    # Harita seçildiyse başlığı göster
-    if selected_map:
-        st.markdown(f"### 📊 {selected_map} Haritası Performans Analizi")
-        
-    return selected_map.lower() # Alt satırlarda hata olmaması için küçük harfe çevirip dönüyoruz
-
-    selected_map = st.selectbox("📍 MAÇIN OYNANACAĞI HARİTAYI SEÇİN", available_maps, format_func=lambda x: x.capitalize())
     """Harita seçimini ve harita bazlı ajan istatistiklerini gösterir."""
     
-    # 🕵️‍♂️ CANLI HATA AYLIKLAMA (DEBUG): Modelinizdeki gerçek kolon isimlerini sol menüde gösterir.
-    st.sidebar.subheader("🤖 Model Özellikleri (Debug)")
-    st.sidebar.write("Toplam Kolon Sayısı:", len(model_columns))
-    st.sidebar.write("İlk 10 Kolon Örneği:", model_columns[:10])
-
-    # Model kolonlarından harita isimlerini akıllıca ayıklayalım
-    available_maps = []
-    for col in model_columns:
-        col_lower = str(col).lower()
-        if col_lower.startswith('map_'):
-            map_name = col_lower.replace('map_', '')
-            if map_name != 'unknown':
-                available_maps.append(map_name)
-        elif col_lower in VALID_MAPS:
-            available_maps.append(col_lower)
-            
-    if not available_maps:
-        available_maps = VALID_MAPS
-
-    available_maps = sorted(list(set(available_maps)))
-
     selected_map = st.selectbox(
-        "🗺️ Maçın Oynanacağı Haritayı Seçin", 
-        available_maps,
-        format_func=lambda x: str(x).capitalize() if x else "Harita Bulunamadı"
+        "📍 MAÇIN OYNANACAĞI HARİTAYI SEÇİN", 
+        VALID_MAPS
     )
 
     if not selected_map:
         st.warning("Seçilebilir bir harita bulunamadı!")
         return None
 
-    # HATA BURADA OLUYORDU: selected_map None olduğunda bu satır çalışıyordu.
-    # Şunu ekliyoruz:
-    if selected_map:
-        st.markdown(f"### 📊 {selected_map.capitalize()} Haritası Performans Analizi")
+    # Başlığı Göster
+    st.markdown(f"### 📊 {selected_map} Haritası Performans Analizi")
 
-    # Kontrol: Harita verisi var mı VE liste boş değil mi?
-    # selected_map'in varlığını burada da teyit ediyoruz
-    if selected_map and selected_map in map_agent_stats and isinstance(map_agent_stats[selected_map], list) and len(map_agent_stats[selected_map]) > 0:
-        top_agents = map_agent_stats[selected_map]
-        
-        # ... (geri kalan kodlar aynen kalsın)
-        # Sütunları oluşturmadan önce güvenli bir şekilde sayıyı alıyoruz
-        num_cols = len(top_agents)
-    # 🔧 FIX 1: Case-insensitive key matching
+    # FIX 1: Harita ismini büyük/küçük harf duyarsız olarak map_agent_stats içinde ara
     stats_key = None
     selected_map_lower = selected_map.lower()
     
-    # Tüm olası formatlarda arama yap
     for key in map_agent_stats.keys():
         if str(key).lower() == selected_map_lower:
             stats_key = key
             break
     
-    # Eğer bulunamazsa, tam eşleşme yok demektir
     if stats_key is None:
         stats_key = selected_map
 
-    # 🔧 FIX 2: Proper percentage formatting + ranking
+    # FIX 2: Ajan oranlarını listeleme
     if stats_key in map_agent_stats and isinstance(map_agent_stats[stats_key], list) and len(map_agent_stats[stats_key]) > 0:
         top_agents = map_agent_stats[stats_key]
         
-        # Sort by win rate (descending) and add ranking
+        # Kazanma oranlarına göre sırala
         ranked_agents = sorted(enumerate(top_agents, 1), key=lambda x: x[1][1], reverse=True)
         
         num_cols = len(ranked_agents)
@@ -339,31 +301,27 @@ def get_map_selection(model_columns, map_agent_stats):
 
         for col_idx, (rank, (agent, win_rate)) in enumerate(ranked_agents):
             with cols[col_idx]:
-                # Convert win_rate to percentage: if 0.545 → 54.5%
+                # Değeri % formatına çevirme (0.54 -> 54.0)
                 if isinstance(win_rate, (int, float)):
-                    # Check if value is already in percentage format (>1) or decimal (0-1)
-                    if 0 <= win_rate <= 1:
-                        win_rate_pct = win_rate * 100
-                    else:
-                        win_rate_pct = win_rate
+                    win_rate_pct = win_rate * 100 if 0 <= win_rate <= 1 else win_rate
                 else:
                     win_rate_pct = float(win_rate) * 100 if float(win_rate) <= 1 else float(win_rate)
                 
-                # Display with ranking
                 st.metric(
                     label=f"#{rank} {agent}", 
-                    value=f"{win_rate_pct:.1f}%"
+                    value=f"%{win_rate_pct:.1f}"
                 )
     else:
         st.info("Bu harita için yeterli ajan istatistiği bulunamadı.")
 
-    return selected_map
+    # Fonksiyonun dönmesi gereken yeri EN SONA taşıdık
+    return selected_map.lower()
 
 
 def get_team_inputs():
     """Takım ajan seçimlerini kullanıcıdan alır ve oyun içi gibi görselleştirir."""
     
-    """Takım ajan seçimlerini kullanıcıdan alır."""
+    
     st.markdown("---")
     st.markdown("<h2 style='text-align: center; color: #ece8e1; font-family: Poppins, sans-serif;'>👥 TAKIM KOMPOZİSYONLARI</h2>", unsafe_allow_html=True)
     

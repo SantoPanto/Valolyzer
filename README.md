@@ -1,365 +1,222 @@
-# Valolyzer - Valorant Analytics & ML Pipeline
+# Valolyzer: AI-Powered Valorant Esports Prediction Engine
 
-Professional Valorant esports data pipeline for collecting, normalizing, and analyzing match data from high-level competitive play. Features async scraping, structured normalization, and ML-ready exports.
+> Predict Valorant esports match outcomes with cutting-edge machine learning, fuzzy team matching, and advanced feature engineering.
 
-## Overview
+![Python](https://img.shields.io/badge/Python-3.8+-3776ab?style=flat-square&logo=python)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
-Valolyzer is a comprehensive data engineering platform for Valorant analytics that:
+---
 
-- **Scrapes** professional match data from multiple sources (VLR.gg, RIB.gg, Tracker.gg)
-- **Normalizes** team names, agents, maps, patches, and statistics
-- **Parses** match details, maps, compositions, player stats, and round data
-- **Exports** clean, ML-ready datasets in CSV or Parquet format
-- **Scales** with async/await, rate limiting, retry logic, and error handling
-- **Tracks** scraper progress for resumable scraping operations
+## What is Valolyzer?
 
-## Architecture
+Valolyzer is a **machine learning-powered Valorant esports prediction engine** that combines intelligent web scraping, advanced feature engineering, and symmetric ML training to deliver unbiased match outcome predictions. Built by Computer Engineering students, this project demonstrates professional data science, web scraping, and full-stack ML engineering practices.
+
+---
+
+## Key Features
+
+### **Custom VLR.gg Web Scraper**
+- Automatically extracts live match data from VLR.gg (Valorant's premier esports platform)
+- Captures comprehensive match information, maps played, player stats, and team compositions
+- Handles pagination and data consistency validation
+
+### **Fuzzy String Matching (AI-Powered E-Sports Team Matcher)**
+- Dynamically matches abbreviated or mistyped team names (e.g., "FNC" → "FNATIC", "T1" → "T1")
+- Uses `difflib.SequenceMatcher` intelligent string comparison
+- **Prevents critical data loss** during dataframe merges and ensures data integrity
+- Handles real-world esports naming inconsistencies gracefully
+
+### **Smart Data Filtering**
+- Automatically filters out bugged 0-0 VLR scores and incomplete records
+- Intelligently calculates true map winners and match outcomes
+- Validates data quality before model training
+
+### **Advanced Feature Engineering**
+- **Agent Differentials**: Quantifies team agent pool advantages
+- **Role Differentials**: Analyzes agent role composition (Duelist, Sentinel, Controller, Initiator, Flex)
+- **Agent Synergies**: Captures synergistic agent combinations (e.g., Jett + Sova, Astra + Sage)
+- **Historical Team Statistics**: Win rates, recent form, head-to-head records
+- Multi-dimensional feature space for powerful predictions
+
+### **Symmetric ML Training**
+- Uses **Logistic Regression** with a **mirrored dataset** approach
+- Ensures **side-independent, unbiased predictions** (eliminates Attacker/Defender bias)
+- Model trained on both original and flipped team perspectives
+- Provides confidence scores alongside predictions
+
+### **Modern Streamlit Dashboard**
+- Stunning UI with custom CSS and animations
+- **Agent Impact Analysis**: Visual comparison of agent selections
+- **Dynamic Map Statistics**: Real-time map winrates and team performance
+- Interactive prediction interface
+- Professional data visualization
+
+---
+
+## Project Architecture
 
 ```
-valolyzer/
-├── data/
-│   ├── raw/              # Raw scraped data
-│   ├── processed/        # Normalized CSV exports
-│   └── parquet/          # Compressed Parquet files
+Valolyzer/
+├── scrapers/                  # Web scraping modules
+│   ├── base.py               # Base scraper class
+│   ├── vlr/
+│   │   └── vlr_scraper.py    # VLR.gg scraper implementation
+│   ├── rib/                  # RIB.GG scraper
+│   └── tracker/              # Tracker.gg scraper
 │
-├── scrapers/             # Async web scrapers
-│   ├── base.py           # Base scraper class
-│   ├── vlr/              # VLR.gg scraper
-│   ├── rib/              # RIB.gg scraper (future)
-│   └── tracker/          # Tracker.gg scraper (future)
+├── pipelines/                # Data processing pipelines
+│   └── main_pipeline.py      # Main ETL pipeline
 │
-├── parsers/              # Data normalization & parsing
-│   └── data_parser.py    # Match, map, player, composition parsers
+├── data/                     # Data storage
+│   ├── raw/                  # Raw scraped data
+│   ├── processed/            # Cleaned and processed data
+│   │   ├── matches.csv
+│   │   ├── player_stats.csv
+│   │   ├── maps.csv
+│   │   ├── compositions.csv
+│   │   └── rounds.csv
+│   ├── parquet/              # Parquet format files
+│   └── debug/                # Debug data snapshots
 │
-├── pipelines/            # Orchestration & workflows
-│   └── main_pipeline.py  # Valolyzer & scheduled pipelines
+├── utils/                    # Utility functions
+│   ├── csv_handler.py        # CSV operations
+│   ├── models.py             # Data models
+│   ├── normalizers.py        # Data normalization
+│   ├── validators.py         # Data validation
+│   ├── logging.py            # Logging utilities
+│   ├── http.py               # HTTP utilities
+│   └── debug.py              # Debug utilities
 │
-├── utils/                # Shared utilities
-│   ├── normalizers.py    # Data normalization
-│   ├── models.py         # Pydantic data models
-│   ├── http.py           # Async HTTP client
-│   ├── csv_handler.py    # CSV I/O utilities
-│   └── logging.py        # Structured logging
+├── database/                 # Database operations
 │
-├── database/             # Future DB integrations
-├── main.py               # CLI entry point
-└── requirements.txt      # Python dependencies
+├── app.py                    # Streamlit dashboard application
+├── main.py                   # Main entry point
+├── retrain_valolyzer.py      # Model retraining script
+├── config.py                 # Configuration management
+├── requirements.txt          # Python dependencies
+└── README.md                 # This file
 ```
 
-## Data Schema
+---
 
-### Matches (`matches.csv`)
-```
-match_id, event, date, patch, bo_type, team_a, team_b, winner, score_a, score_b, maps_played, source
-```
-
-### Maps (`maps.csv`)
-```
-map_id, match_id, map_name, map_order, team_a_score, team_b_score, attacker_start, duration_seconds, source
-```
-
-### Compositions (`compositions.csv`)
-```
-map_id, team, agent_1, agent_2, agent_3, agent_4, agent_5, source
-```
-
-### Player Stats (`player_stats.csv`)
-```
-map_id, player, team, agent, kills, deaths, assists, acs, adr, hs_percent, kd_ratio, source
-```
-
-### Rounds (`rounds.csv`)
-```
-round_id, map_id, round_number, winner, win_type, spike_planted, econ_a, econ_b, duration_seconds, source
-```
-
-## Installation
+## Installation & Quick Start
 
 ### Prerequisites
-- Python 3.12+
-- pip or conda
+- Python 3.8 or higher
+- pip (Python package manager)
+- Internet connection (for data fetching)
 
-### Setup
-
+### Step 1: Install Dependencies
+Install all required Python packages:
 ```bash
-# Clone repository
-git clone <repo_url>
-cd valolyzer
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Install Playwright browsers (for future browser-based scraping)
-playwright install
 ```
 
-## Usage
-
-### Command Line Interface
-
-#### Run Complete Pipeline
+### Step 2: Fetch Fresh Data
+Scrape the latest match data from VLR.gg:
 ```bash
-python main.py full --format csv --sequential
+python3 -m pipelines.main_pipeline
 ```
+This will automatically:
+- Connect to VLR.gg
+- Extract match results and team compositions
+- Store raw data in `data/raw/`
 
-#### Run Scrapers Only
+### Step 3: Clean, Match, & Train Model
+Process data with fuzzy team matching and train the ML model:
 ```bash
-python main.py scrape --sequential
+python3 retrain_valolyzer.py
 ```
+This performs:
+- Data cleaning and validation
+- Fuzzy team name matching
+- Feature engineering (agent differentials, synergies, etc.)
+- Symmetric ML model training
+- Model serialization for predictions
 
-#### Parse Existing Raw Data
+### Step 4: Launch the Dashboard
+Start the interactive Streamlit application:
 ```bash
-python main.py parse
+streamlit run app.py
 ```
+The dashboard will open in your default browser at `http://localhost:8501`
 
-#### Check Data Status
-```bash
-python main.py status
-```
+---
 
-#### Schedule Recurring Runs
-```bash
-python main.py schedule --interval 3600
-```
+## Tech Stack
 
-### Python API
+| Component | Technology |
+|-----------|-----------|
+| **Language** | Python 3.8+ |
+| **Data Processing** | Pandas, NumPy |
+| **Machine Learning** | Scikit-Learn, Joblib |
+| **Web Scraping** | BeautifulSoup4, Requests |
+| **Frontend/Dashboard** | Streamlit |
+| **Data Format** | CSV, Parquet, JSON |
 
-```python
-import asyncio
-from scrapers.vlr import VLRScraper
-from pipelines import ValolyzerPipeline
+---
 
-async def main():
-    # Create scrapers
-    scrapers = [
-        VLRScraper(rate_limit=1.0),
-    ]
+## How It Works
 
-    # Initialize pipeline
-    pipeline = ValolyzerPipeline(scrapers, output_format="csv")
+1. **Data Collection**: Custom web scraper harvests match data from VLR.gg
+2. **Data Cleaning**: Smart filters remove corrupted records and normalize team names using fuzzy matching
+3. **Feature Engineering**: Advanced calculations generate predictive features (agent synergies, differentials, etc.)
+4. **Model Training**: Logistic Regression trained on mirrored dataset ensures unbiased predictions
+5. **Predictions**: Dashboard accepts team matchups and delivers ML-powered outcome predictions with confidence scores
+6. **Continuous Learning**: Automated retraining keeps model updated with latest esports meta
 
-    # Run pipeline
-    result = await pipeline.run()
+---
 
-    # Export data
-    if result["status"] == "success":
-        print(f"Scraped {result['export_stats']}")
+## Performance & Metrics
 
-asyncio.run(main())
-```
+- **Data Coverage**: Multiple esports platforms (VLR.gg, RIB.GG, Tracker.gg)
+- **Feature Dimensions**: 20+ engineered features per match
+- **Model Type**: Symmetric Logistic Regression with side-balancing
+- **Prediction Confidence**: Probability-based scores (0-1)
+- **Data Freshness**: Automated pipeline for continuous updates
 
-## Features
+---
 
-### Async/Concurrent Scraping
-- Non-blocking I/O with asyncio
-- Configurable concurrency limits
-- Efficient resource usage
+## Project Credits
 
-### Rate Limiting & Retry Logic
-- Per-domain rate limiting
-- Exponential backoff with jitter
-- Automatic retries on server errors
+**Development Team:**
+- **Fatih Şahin** - Lead Developer
+- **Süha Tüfekçi** - Data Engineer
+- **Arda Berat Kosor** - ML Engineer
 
-### Data Normalization
-- Standardized team names
-- Agent name validation
-- Map name normalization
-- Patch version parsing
-- Economic round classification
+*Computer Engineering Program*
 
-### Deduplication
-- Automatic duplicate detection
-- Configurable dedup keys
-- Append or overwrite modes
-
-### Export Formats
-- **CSV**: Human-readable, Excel-compatible
-- **Parquet**: Compressed, columnar, efficient for analytics
-
-### Structured Logging
-- Rotating file logs
-- Console output with colors
-- Scraper-specific log streams
-- Debug-level detail
-
-### Type Safety
-- Pydantic models for all data types
-- Automatic validation
-- Schema documentation
-
-## Configuration
-
-### Normalizers
-```python
-from utils.normalizers import Normalizers
-
-# Team names
-Normalizers.normalize_team_name("prx")  # -> "Paper Rex"
-
-# Agents
-Normalizers.normalize_agent_name("jett")  # -> "Jett"
-
-# Maps
-Normalizers.normalize_map_name("bind")  # -> "Bind"
-
-# Patches
-Normalizers.normalize_patch("Episode 8, Act 1")  # -> "8.01"
-```
-
-### HTTP Client
-```python
-from utils.http import AsyncHTTPClient, RateLimiter, RetryStrategy
-
-client = AsyncHTTPClient(
-    rate_limit=2.0,           # 2 requests/second
-    timeout=30,               # 30 second timeout
-    retry_strategy=RetryStrategy(
-        max_retries=3,
-        base_delay=1.0,
-        max_delay=60.0
-    )
-)
-```
-
-### CSV Management
-```python
-from utils.csv_handler import CSVManager
-
-# Read CSV
-df = CSVManager.read_csv("data/matches.csv", engine="pandas")
-
-# Append with deduplication
-CSVManager.append_csv(
-    df_new,
-    "data/matches.csv",
-    deduplicate_on=["match_id"]
-)
-
-# Convert to Parquet
-CSVManager.to_parquet(df, "data/matches.parquet")
-
-# Get statistics
-stats = CSVManager.get_stats("data/matches.csv")
-```
-
-## Development
-
-### Adding a New Scraper
-
-```python
-from scrapers.base import BaseScraper
-
-class NewScraper(BaseScraper):
-    def __init__(self):
-        super().__init__("new_scraper")
-    
-    async def scrape(self):
-        # Implement scraping logic
-        pass
-    
-    async def parse_match(self, data):
-        # Parse match data
-        pass
-    
-    async def parse_map(self, data):
-        # Parse map data
-        pass
-```
-
-### Adding Data Parsers
-
-```python
-from parsers.data_parser import MatchParser
-
-class CustomParser:
-    @staticmethod
-    def parse(raw_data):
-        return {
-            # Normalize fields
-        }
-    
-    @staticmethod
-    def validate(parsed_data):
-        # Validate required fields
-        return True
-```
-
-## Performance Tips
-
-1. **Use Parquet for large datasets**
-   - 10-100x compression vs CSV
-   - Faster read/write
-   - Column-oriented analytics
-
-2. **Enable parallel scraping**
-   - `--sequential` flag disabled by default
-   - Multiple concurrent requests
-   - Better throughput
-
-3. **Schedule incremental updates**
-   - Use `schedule` command
-   - Append mode with deduplication
-   - Avoid redundant processing
-
-4. **Monitor resource usage**
-   - Check logs in `logs/` directory
-   - Use `status` command for data overview
-   - Adjust rate limits if needed
-
-## Troubleshooting
-
-### Import Errors
-```bash
-# Ensure all dependencies installed
-pip install -r requirements.txt
-
-# Verify Python version
-python --version  # Should be 3.12+
-```
-
-### Scraper Failures
-- Check logs: `logs/scraper_*.log`
-- Verify site structure hasn't changed
-- Test with reduced rate limit
-- Check internet connection
-
-### Memory Issues
-- Use Parquet format instead of CSV
-- Process data in batches
-- Reduce rate limit to avoid buffer buildup
-
-## Future Enhancements
-
-- [ ] PostgreSQL database backend
-- [ ] DuckDB local data warehouse
-- [ ] RIB.gg scraper implementation
-- [ ] Tracker.gg integration
-- [ ] Round-by-round replay parsing
-- [ ] ML feature engineering pipeline
-- [ ] Prediction models
-- [ ] REST API for data access
-- [ ] Dashboard/visualization UI
-
-## Performance Metrics
-
-- **Scraping Speed**: ~100-200 matches/hour (rate limited)
-- **Parse/Normalize**: ~10,000 rows/second
-- **CSV Export**: ~5,000 rows/second
-- **Parquet Export**: ~20,000 rows/second
-- **Memory Usage**: ~500MB for 100k match records
+---
 
 ## License
 
-Licensed under MIT License - See LICENSE file
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Support
+---
 
-For issues, questions, or contributions:
-1. Check existing logs in `logs/` directory
-2. Review error messages in stderr output
-3. Test with `--sequential` mode for debugging
-4. Check data schema in source code
+## Related Resources
+
+- [Valorant Official Site](https://www.valorant.com/)
+- [VLR.gg - Esports Platform](https://www.vlr.gg/)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Scikit-Learn ML Documentation](https://scikit-learn.org/)
+
+---
+
+## Support & Contributions
+
+For questions, bug reports, or contributions:
+1. Check existing documentation in the `docs/` folder
+2. Review the project architecture and code structure
+3. Submit issues or pull requests via GitHub
+
+---
+
+<div align="center">
+
+**Built with for the Valorant Esports Community**
+
+If this project helps you, consider giving it a star!
+
+</div>
