@@ -508,14 +508,13 @@ def predict_match(selected_map, team1_agents, team2_agents, model, model_columns
     return prediction, probability
 
 
-def display_prediction_result(prediction, probability, team1_agents, team2_agents, model, model_columns):
+def display_prediction_result(prediction, probability, team1_agents, team2_agents, model, model_columns, selected_map):
     """Tahmin sonucunu, dinamik kriterleri ve Gerçek Model Verisine Dayalı Ajan Etkisini gösterir."""
     
     # --- DİNAMİK YÜKLEME (LOADING) ANİMASYONU ---
     loading_placeholder = st.empty()
     progress_bar = st.progress(0)
 
-    # Adım adım gösterilecek havalı/teknik mesajlar
     loading_messages = [
         "🗺️ Harita topolojisi ve meta verileri çekiliyor...",
         "🛡️ Mavi takım savunma sinerjileri hesaplanıyor...",
@@ -524,11 +523,8 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
         "✨ Tahmin raporu derleniyor..."
     ]
 
-    # Barı 1'den 100'e kadar yavaşça doldur
     for i in range(100):
         progress_bar.progress(i + 1)
-        
-        # Yüzdeye göre mesajı değiştir
         if i == 5:
             loading_placeholder.markdown(f"<h4 style='color: #00fccf; text-align: center;'>{loading_messages[0]}</h4>", unsafe_allow_html=True)
         elif i == 25:
@@ -539,17 +535,13 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
             loading_placeholder.markdown(f"<h4 style='color: #00fccf; text-align: center;'>{loading_messages[3]}</h4>", unsafe_allow_html=True)
         elif i == 90:
             loading_placeholder.markdown(f"<h4 style='color: #ece8e1; text-align: center;'>{loading_messages[4]}</h4>", unsafe_allow_html=True)
-            
-        time.sleep(0.02) # Toplam yükleme süresini belirler (Yaklaşık 2 saniye)
+        time.sleep(0.02)
 
-    # İşlem bitince yükleme yazılarını ve barı ekrandan temizle
     loading_placeholder.empty()
     progress_bar.empty()
     
     st.markdown("---")
     st.markdown("<h2 style='text-align: center; color: #ff4655;'>🔮 SİMÜLASYON SONUCU</h2>", unsafe_allow_html=True)
-    
-    res_col1, res_col2, res_col3 = st.columns(3)
     
     # 1. KİMLİK TESPİTİ VE DİNAMİK DELTA YAZILARI
     if prediction == 1:
@@ -561,7 +553,6 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
         winner_team = "KIRMIZI TAKIM"
         winning_agents = team2_agents
 
-    # Dinamik Hakimiyet ve Delta
     if 50 <= win_prob < 55:
         hakimiyet = "Dengeli"
         taktik_not = "Başa Baş Mücadele"
@@ -575,9 +566,6 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
         taktik_not = "Kritik Sinerji Farkı"
         delta_kriter = "Kesin Meta Üstünlüğü"
 
-  # --- 4. SAVAŞ RAPORU (BATTLE REPORT) ÖZET KARTI ---
-    
-    # Kazanan takımın rengine göre (Mavi veya Kırmızı) tema belirliyoruz
     winner_color = "#00fccf" if winner_team == "MAVİ TAKIM" else "#ff4655"
     
     report_html = f"""
@@ -604,47 +592,42 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
     </div>
 </div>
     """
-    
     st.markdown(report_html, unsafe_allow_html=True)
-    # Savaş raporunun detaylı açıklaması
+
     with st.expander("❓ Bu Rapor Nasıl Okunmalı?"):
         st.markdown("""
         <div style='color: #bdc3c7; line-height: 1.6; font-size: 15px;'>
-            <p><strong style='color: #00fccf;'>🎯 Kazanma Olasılığı:</strong> Yapay zeka modelimizin binlerce profesyonel/yüksek kademeli maçı analiz ederek çıkardığı matematiksel galibiyet oranıdır. Sadece ajan seçimlerine değil; ajanların <em>bu spesifik haritadaki</em> geçmiş başarılarına ve takım içi yetenek sinerjilerine dayanarak hesaplanır.</p>
-            <p><strong style='color: #00fccf;'>♟️ Taktiksel Durum:</strong> İki takım arasındaki güç farkının oyun içine nasıl yansıyacağını özetler:</p>
-            <ul>
-                <li><strong>Başa Baş Mücadele (%50-55):</strong> İki kompozisyon taktiksel olarak denk. Bireysel yetenek (aim), ilk kan (first blood) oranları ve takım iletişimi maçın kaderini belirler.</li>
-                <li><strong>Kompozisyon Avantajı (%55-65):</strong> Avantajlı takımın, harita kontrolü ve entry (giriş) potansiyeli açısından net bir taktiksel üstünlüğü var.</li>
-                <li><strong>Kritik Sinerji Farkı (%65+):</strong> Meta uyumu ve ajan komboları kusursuz eşleşmiş. Dezavantajlı takımın kazanması için ciddi bir taktiksel hata (throw) yapılması veya olağanüstü bir bireysel performans (carry) gerekir.</li>
-            </ul>
+            <p><strong style='color: #00fccf;'>🎯 Kazanma Olasılığı:</strong> Yapay zeka modelimizin binlerce profesyonel/yüksek kademeli maçı analiz ederek çıkardığı matematiksel galibiyet oranıdır.</p>
         </div>
         """, unsafe_allow_html=True)
+
     # --- 2. GERÇEK VERİYE DAYALI AJAN ETKİSİ (IMPACT) ---
     st.write("")
     st.markdown("<br><h3 style='color: #ece8e1; border-bottom: 1px solid #383e44; padding-bottom: 10px; font-size: 20px;'>🌟 KAZANAN TAKIM: GERÇEK AJAN ETKİ (IMPACT) DAĞILIMI</h3>", unsafe_allow_html=True)
     
-    # --- GERÇEK AJAN ETKİSİ (IMPACT) HESAPLAMA ---
-    # Modelin türüne göre doğru veriyi çekiyoruz (LogisticRegression veya RandomForest)
-    if hasattr(model, 'feature_importances_'):
-        importances = model.feature_importances_
-    elif hasattr(model, 'coef_'):
-        # LogisticRegression katsayıları 2D olabilir (tek sınıflı modellerde [0]), 1D'ye indiriyoruz
-        importances = abs(model.coef_[0]) 
+    # Katsayıları çekme ve sözlük oluşturma
+    if hasattr(model, 'coef_'):
+        feature_importances = np.abs(model.coef_[0])
+    elif hasattr(model, 'feature_importances_'):
+        feature_importances = model.feature_importances_
     else:
-        # Hiçbiri değilse hata almamak için tüm özelliklere eşit puan veriyoruz
-        importances = [1.0 / len(model_columns)] * len(model_columns)
+        feature_importances = [1.0 / len(model_columns)] * len(model_columns)
         
-    feature_dict = dict(zip(model_columns, importances))
-    # YENİ EKLENEN/DÜZELTİLEN KISIM: Logistic Regression için katsayı (coef_) kullanılıyor
-    feature_importances = np.abs(model.coef_[0])
     feature_dict = dict(zip(model_columns, feature_importances))
+    
+    # Diğer haritaları tespit edip hariç tutma listesi hazırlıyoruz
+    diger_haritalar = [m.lower() for m in VALID_MAPS if m.lower() != selected_map.lower()]
     
     raw_impacts = []
     for agent in winning_agents:
         agent_weight = 0
         for col, imp in feature_dict.items():
-            if agent.lower() in col.lower():
-                agent_weight += imp
+            col_lower = col.lower()
+            # Özellik, ilgili ajanın adını barındırıyor mu?
+            if agent.lower() in col_lower:
+                # Seçilen harici diğer haritaların adını barındırıyorsa hesaba katma
+                if not any(harita in col_lower for harita in diger_haritalar):
+                    agent_weight += imp
         raw_impacts.append(agent_weight)
     
     # ORGANİK VERİ YUMUŞATMA (SMOOTHING)
@@ -656,9 +639,11 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
             smoothed_impacts.append(random.uniform(0.005, 0.015))
             
     total_impact = sum(smoothed_impacts)
-    final_impacts = [(w / total_impact) * 100 for w in smoothed_impacts]
+    if total_impact > 0:
+        final_impacts = [(w / total_impact) * 100 for w in smoothed_impacts]
+    else:
+        final_impacts = [20.0] * len(smoothed_impacts)
         
-    # Küsuratları düzeltip toplamın tam 100 olduğundan emin olma
     impact_ints = [int(round(i)) for i in final_impacts]
     fark = 100 - sum(impact_ints)
     
@@ -677,7 +662,6 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
     """, unsafe_allow_html=True)
 
     for agent, impact in impact_data:
-        # Ajanın ikonu sözlükte varsa al, yoksa soru işaretli/varsayılan bir ikon koy
         icon_url = AGENT_ICONS.get(agent, "https://media.valorant-api.com/agents/default/displayicon.png")
         
         bar_html = f"""
@@ -694,36 +678,22 @@ def display_prediction_result(prediction, probability, team1_agents, team2_agent
         """
         st.markdown(bar_html, unsafe_allow_html=True)
         
-    # --- 3. AÇIKLAMA PANELİ ---
     st.write("")
     with st.expander("🔍 Bu Tahmin ve İstatistikler Neye Göre Hesaplanıyor?"):
         st.markdown("""
         ### 🤖 Valolyzer Karar Mekanizması
-        Yapay zeka modelimiz, seçtiğiniz harita ve ajan kombinasyonlarını analiz ederken aşağıdaki **3 temel kriteri** esas alır:
-        
-        1. **🎯 Kazanma Olasılığı (%):** Makine öğrenmesi modelimizin (Lojistik Regresyon), geçmiş binlerce yüksek kademeli maç verisinden öğrendiği ağırlıklara dayanır. İki takımın ajan eşleşmelerinin (`matchup`) istatistiksel üstünlüğünü hesaplar.
-        
-        2. **📊 Hakimiyet Durumu:**
-           Modelin ürettiği olasılık skorunun büyüklüğüne göre dinamik olarak belirlenir:
-           * **%50 - %55 Arası (Dengeli):** İki takımın kompozisyonu yakın güçte, kaderi anlık stratejiler belirleyecek.
-           * **%55 - %65 Arası (Üstün):** Bir takımın, haritaya veya rakip ajanlara karşı net bir taktiksel üstünlüğü var.
-           * **%65 ve Üstü (Ezici):** Ajan rolleri ve meta uyumu mükemmel seviyede.
-        
-        3. **🌟 Ajan Etki Dağılımı (Impact):**
-           Yapay zeka modelindeki Özellik Önemi (*Feature Importance / Coefficients*) verileri baz alınır. Modele yeterince veri sağlanamayan durumlarda veya yeni ajanlarda matematiksel varyasyonlar uygulanarak gerçekçi bir takım dağılımı elde edilir.
+        Yapay zeka modelimiz, seçtiğiniz harita ve ajan kombinasyonlarını analiz ederken katsayıları temel alır.
         """)
-    
     st.balloons()
 
 import plotly.express as px
 import pandas as pd
 
-def display_feature_importance(model, model_columns, team1_agents, team2_agents):
-    """Sadece maçta bulunan ajanlara göre filtrelenmiş Model Karar Analizi grafiği."""
+def display_feature_importance(model, model_columns, team1_agents, team2_agents, selected_map):
+    """Sadece maçta bulunan ajanlara ve seçili haritaya göre filtrelenmiş Model Karar Analizi grafiği."""
     
     st.markdown("<h3 style='color: #ece8e1; margin-top: 30px;'>📊 SADECE SEÇİLEN AJANLARIN ETKİ ANALİZİ</h3>", unsafe_allow_html=True)
     
-    # Model verilerini çek
     if hasattr(model, 'feature_importances_'):
         importances = model.feature_importances_
     elif hasattr(model, 'coef_'):
@@ -731,18 +701,32 @@ def display_feature_importance(model, model_columns, team1_agents, team2_agents)
     else:
         importances = [0.0] * len(model_columns)
         
-    # Veriyi Dataframe'e çevir
     df = pd.DataFrame({'Özellik': model_columns, 'Önem Derecesi': importances})
     
-    # --- CAN ALICI NOKTA: FİLTRELEME ---
-    # Sadece Mavi ve Kırmızı takımdaki ajanların isimlerini içeren özellikleri tut
     secilen_ajanlar = team1_agents + team2_agents
-    df = df[df['Özellik'].apply(lambda x: any(ajan in x for ajan in secilen_ajanlar))]
     
-    # En önemli 10 tanesini sırala
+    # Diğer haritaları tespit et
+    diger_haritalar = [m.lower() for m in VALID_MAPS if m.lower() != selected_map.lower()]
+    
+    # Gelişmiş Filtreleme Fonksiyonu
+    def is_relevant_feature(ozellik):
+        ozellik_kucuk = ozellik.lower()
+        
+        # 1. Özellik seçili ajanlardan birini barındırıyor mu?
+        if not any(ajan.lower() in ozellik_kucuk for ajan in secilen_ajanlar):
+            return False
+            
+        # 2. Özellik, seçili olmayan DİĞER haritaların adını barındırıyor mu?
+        if any(harita in ozellik_kucuk for harita in diger_haritalar):
+            return False
+            
+        return True
+
+    # Sadece doğru harita ve ajan kombinasyonlarını filtrele
+    df = df[df['Özellik'].apply(is_relevant_feature)]
+    
     df = df.sort_values(by='Önem Derecesi', ascending=False).head(10)
     
-    # Plotly ile grafik çizimi
     fig = px.bar(
         df,
         x='Önem Derecesi',
@@ -752,23 +736,8 @@ def display_feature_importance(model, model_columns, team1_agents, team2_agents)
         color_continuous_scale='Reds'
     )
     
-    # Arka planı transparan yapıp arayüze tam yediriyoruz
     fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)', font=dict(color='#ece8e1'))
     st.plotly_chart(fig, use_container_width=True)
-    # --- GRAFİK ALTI AÇIKLAMA PANELİ ---
-    with st.expander("🔍 Bu Veriler Ne Anlama Geliyor?"):
-        st.markdown("""
-        Bu grafik, kullandığımız **Lojistik Regresyon** modelinin maç sonucuna karar verirken hangi değişkenlere (ajanlar, harita özellikleri) en çok ağırlık verdiğini gösterir.
-        
-        * **Önem Derecesi (Yüksek Değer):** Modelin, bu ajanın veya değişkenin maçın kaderini belirlediğine dair "güven" skorudur. 
-        * **Katsayı Mantığı:** Lojistik regresyonda bu skorlar, değişkenin galibiyete olan **pozitif veya negatif etkisini** temsil eder. Çubuk ne kadar uzunsa, o değişkenin tahmin başarımız üzerindeki etkisi o kadar belirgindir.
-        
-        **Özetle:** En tepedeki 3 ajan, şu anki meta içerisinde modelin "en kritik" bulduğu seçimlerdir.
-        """)
-    """
-    Modelin coefficients'ini görselleştirir.
-    LogisticRegression için: positive coefficients favor Team 1 win, negative favor Team 2 win.
-    """
     
 
 
@@ -815,14 +784,13 @@ def main():
                 model, model_columns, agent_roles, 
                 agent_synergies, agent_map_winrates
             )
-            # Savaş Raporunu ve Grafikleri Çizdir
+            # Savaş Raporunu ve Grafikleri Çizdir (selected_map parametresi eklendi)
             display_prediction_result(
-                prediction, probability, team1_agents, team2_agents, model, model_columns
+                prediction, probability, team1_agents, team2_agents, model, model_columns, selected_map
             )
             
-            # YENİ VE AKILLI KIRMIZI GRAFİĞİ ÇAĞIR
-            display_feature_importance(model, model_columns, team1_agents, team2_agents)
-            # Savaş Raporunu ve Grafikleri Çizdir
+            # Seçilen Ajanların Etki Analizi Grafiği
+            display_feature_importance(model, model_columns, team1_agents, team2_agents, selected_map)
            
             
             
