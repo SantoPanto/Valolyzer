@@ -213,6 +213,31 @@ For questions, bug reports, or contributions:
 
 ---
 
+## Model Dosyaları Hakkında Bilgilendirme
+Projemizde kullandığımız eğitilmiş makine öğrenmesi model dosyalarının (`.pkl`) boyutları oldukça küçük olduğu için harici bir indirme bağlantısına gerek duyulmamıştır. Tüm model dosyaları doğrudan teslim edilen proje klasörünün (.zip) içerisine dahil edilmiştir ve anında çalıştırılmaya hazırdır.
+
+---
+
+## Örnek Giriş ve Çıktı (Sample Input & Output)
+
+Sistemimizin tahminleme modeline gönderilen örnek veri formatı ve modelin ürettiği çıktı şu şekildedir:
+
+**Örnek Giriş (Input):**
+Kullanıcı Streamlit arayüzünden iki takım seçtiğinde arka planda modele şu özellikler (features) gönderilir:
+- Takım 1: Mavi Takım(Savunanlar)
+- Takım 2: Kırmızı Takım(Saldıranlar)
+- Seçilen Harita: Ascent
+- Ajan Farkları (Agent Differentials): [0.5, -0.2, 0.1, 0.8, -0.4]
+- Takım Formu (Son 5 maç kazanma oranı): Takım 1 (0.8), Takım 2 (0.6)
+
+**Örnek Çıktı (Output):**
+Model, bu verileri işledikten sonra takımların kazanma olasılıklarını ve güven skorunu döndürür:
+- Kazanan Tahmini: Mavi Takım(Savunanlar)
+- Kazanma İhtimali (Confidence Score): %68.5
+- Taktiksel Durum: Üstün / Kritik Sinerji Farkı 
+
+--- 
+
 <div align="center">
 
 **Built with for the Valorant Esports Community**
