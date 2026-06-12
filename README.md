@@ -227,8 +227,6 @@ Kullanıcı Streamlit arayüzünden iki takım seçtiğinde arka planda modele �
 - Takım 1: Mavi Takım(Savunanlar)
 - Takım 2: Kırmızı Takım(Saldıranlar)
 - Seçilen Harita: Ascent
-- Ajan Farkları (Agent Differentials): [0.5, -0.2, 0.1, 0.8, -0.4]
-- Takım Formu (Son 5 maç kazanma oranı): Takım 1 (0.8), Takım 2 (0.6)
 
 **Örnek Çıktı (Output):**
 Model, bu verileri işledikten sonra takımların kazanma olasılıklarını ve güven skorunu döndürür:
